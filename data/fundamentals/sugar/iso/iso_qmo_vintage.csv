@@ -1,0 +1,7 @@
+﻿vintage,report,release_date,revision,market_year,balance_mt,production_mt,consumption_mt,exports_mt,imports_mt,ending_stocks_mt,stock_to_use_pct,prior_year_balance_mt,sources_short
+QMO-2025-08,Quarterly Market Outlook - August 2025,2025-08-29,initial,2025/26,-0.231,180.593,180.824,63.890,63.768,92.489,50.95,4.879,agri-food-update+nasdaq+msweet
+QMO-2025-11,Quarterly Market Outlook - November 2025,2025-11-17,2nd,2025/26,1.625,181.770,180.140,,,,,2.916,cnfin+hisugar+tradingeconomics+nasdaq
+QMO-2026-02,Quarterly Market Outlook - February 2026,2026-02-27,3rd,2025/26,1.218,181.287,180.069,64.324,63.222,93.300,51.81,3.464,chinimandi+sina+163+baonghean
+QMO-2026-05,Quarterly Market Outlook - May 2026,2026-05,4th,2025/26,2.244,,179.760,,,,44.15,3.196,isosugar+ponnisugars
+QMO-2026-08,Quarterly Market Outlook - August 2026,2026-08,5th,2025/26,1.1,,179.6,,,,,isosugar+jin10+chinimandi+cropgpt
+QMO-2026-08-2627,Quarterly Market Outlook - August 2026 (2026/27 首版),2026-08,initial-2026/27,2026/27,-0.2,,180.4,,,,,isosugar+jin10+cropgpt

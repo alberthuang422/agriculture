@@ -1,0 +1,366 @@
+[
+ {
+  "file": "world_sugar_balance_august_2017.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3860,
+   "production_kt": 167773,
+   "consumption_kt": 171633
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -4962,
+   "production_kt": 164261,
+   "consumption_kt": 169223
+  }
+ },
+ {
+  "file": "world_sugar_balance_august_2018.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -2847,
+   "production_kt": 169594,
+   "consumption_kt": 172441
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -5848,
+   "production_kt": 164141,
+   "consumption_kt": 169989
+  }
+ },
+ {
+  "file": "world_sugar_balance_august_2020.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3095,
+   "production_kt": 169073,
+   "consumption_kt": 172168
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -6462,
+   "production_kt": 163825,
+   "consumption_kt": 170287
+  }
+ },
+ {
+  "file": "world_sugar_balance_august_2021.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -2940,
+   "production_kt": 169073,
+   "consumption_kt": 172013
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -6462,
+   "production_kt": 163825,
+   "consumption_kt": 170287
+  }
+ },
+ {
+  "file": "world_sugar_balance_august_2022.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3610,
+   "production_kt": 169073,
+   "consumption_kt": 172683
+  },
+  "2015/16": {
+   "surplus_deficit_kt": null,
+   "production_kt": null,
+   "consumption_kt": null
+  }
+ },
+ {
+  "file": "world_sugar_balance_august_2023.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": null,
+   "production_kt": null,
+   "consumption_kt": null
+  },
+  "2015/16": {
+   "surplus_deficit_kt": null,
+   "production_kt": null,
+   "consumption_kt": null
+  }
+ },
+ {
+  "file": "world_sugar_balance_august_2024.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": null,
+   "production_kt": null,
+   "consumption_kt": null
+  },
+  "2015/16": {
+   "surplus_deficit_kt": null,
+   "production_kt": null,
+   "consumption_kt": null
+  }
+ },
+ {
+  "file": "world_sugar_balance_february_2017.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -5869,
+   "production_kt": 168334,
+   "consumption_kt": 174203
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -5359,
+   "production_kt": 166072,
+   "consumption_kt": 171431
+  }
+ },
+ {
+  "file": "world_sugar_balance_february_2018.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -2543,
+   "production_kt": 168228,
+   "consumption_kt": 170771
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -4870,
+   "production_kt": 164210,
+   "consumption_kt": 169080
+  }
+ },
+ {
+  "file": "world_sugar_balance_february_2019.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -2962,
+   "production_kt": 169479,
+   "consumption_kt": 172441
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -5848,
+   "production_kt": 164141,
+   "consumption_kt": 169989
+  }
+ },
+ {
+  "file": "world_sugar_balance_february_2020.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3414,
+   "production_kt": 169080,
+   "consumption_kt": 172494
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -6491,
+   "production_kt": 164114,
+   "consumption_kt": 170605
+  }
+ },
+ {
+  "file": "world_sugar_balance_february_2021.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3095,
+   "production_kt": 169073,
+   "consumption_kt": 172168
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -6462,
+   "production_kt": 163825,
+   "consumption_kt": 170287
+  }
+ },
+ {
+  "file": "world_sugar_balance_february_2022.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3610,
+   "production_kt": 169073,
+   "consumption_kt": 172683
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -6462,
+   "production_kt": 163825,
+   "consumption_kt": 170287
+  }
+ },
+ {
+  "file": "world_sugar_balance_february_2023.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3610,
+   "production_kt": 169073,
+   "consumption_kt": 172683
+  },
+  "2015/16": {
+   "surplus_deficit_kt": null,
+   "production_kt": null,
+   "consumption_kt": null
+  }
+ },
+ {
+  "file": "world_sugar_balance_february_2024.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": null,
+   "production_kt": null,
+   "consumption_kt": null
+  },
+  "2015/16": {
+   "surplus_deficit_kt": null,
+   "production_kt": null,
+   "consumption_kt": null
+  }
+ },
+ {
+  "file": "world_sugar_balance_may_2017.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -6465,
+   "production_kt": 165928,
+   "consumption_kt": 172393
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -4899,
+   "production_kt": 165424,
+   "consumption_kt": 170323
+  }
+ },
+ {
+  "file": "world_sugar_balance_may_2018.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3670,
+   "production_kt": 167853,
+   "consumption_kt": 171523
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -6015,
+   "production_kt": 164210,
+   "consumption_kt": 170225
+  }
+ },
+ {
+  "file": "world_sugar_balance_may_2020.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3414,
+   "production_kt": 169080,
+   "consumption_kt": 172494
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -6491,
+   "production_kt": 164114,
+   "consumption_kt": 170605
+  }
+ },
+ {
+  "file": "world_sugar_balance_may_2021.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -2940,
+   "production_kt": 169073,
+   "consumption_kt": 172013
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -6462,
+   "production_kt": 163825,
+   "consumption_kt": 170287
+  }
+ },
+ {
+  "file": "world_sugar_balance_may_2022.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3610,
+   "production_kt": 169073,
+   "consumption_kt": 172683
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -6462,
+   "production_kt": 163825,
+   "consumption_kt": 170287
+  }
+ },
+ {
+  "file": "world_sugar_balance_may_2023.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3610,
+   "production_kt": 169073,
+   "consumption_kt": 172683
+  },
+  "2015/16": {
+   "surplus_deficit_kt": null,
+   "production_kt": null,
+   "consumption_kt": null
+  }
+ },
+ {
+  "file": "world_sugar_balance_november_2017.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3105,
+   "production_kt": 168373,
+   "consumption_kt": 171478
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -4840,
+   "production_kt": 164253,
+   "consumption_kt": 169093
+  }
+ },
+ {
+  "file": "world_sugar_balance_november_2018.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -2847,
+   "production_kt": 169594,
+   "consumption_kt": 172441
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -5848,
+   "production_kt": 164141,
+   "consumption_kt": 169989
+  }
+ },
+ {
+  "file": "world_sugar_balance_november_2019.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3887,
+   "production_kt": 169080,
+   "consumption_kt": 172967
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -5864,
+   "production_kt": 164114,
+   "consumption_kt": 169978
+  }
+ },
+ {
+  "file": "world_sugar_balance_november_2020.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3095,
+   "production_kt": 169073,
+   "consumption_kt": 172168
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -6462,
+   "production_kt": 163825,
+   "consumption_kt": 170287
+  }
+ },
+ {
+  "file": "world_sugar_balance_november_2021.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -2940,
+   "production_kt": 169073,
+   "consumption_kt": 172013
+  },
+  "2015/16": {
+   "surplus_deficit_kt": -6462,
+   "production_kt": 163825,
+   "consumption_kt": 170287
+  }
+ },
+ {
+  "file": "world_sugar_balance_november_2022.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": -3610,
+   "production_kt": 169073,
+   "consumption_kt": 172683
+  },
+  "2015/16": {
+   "surplus_deficit_kt": null,
+   "production_kt": null,
+   "consumption_kt": null
+  }
+ },
+ {
+  "file": "world_sugar_balance_november_2023.pdf",
+  "2016/17": {
+   "surplus_deficit_kt": null,
+   "production_kt": null,
+   "consumption_kt": null
+  },
+  "2015/16": {
+   "surplus_deficit_kt": null,
+   "production_kt": null,
+   "consumption_kt": null
+  }
+ }
+]

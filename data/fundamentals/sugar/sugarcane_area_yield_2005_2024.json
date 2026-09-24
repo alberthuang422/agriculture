@@ -1,0 +1,1769 @@
+{
+ "meta": {
+  "source": "Our World in Data (FAOSTAT Production: Crops and livestock products, FAO 2025 release)",
+  "og_url_prod": "https://ourworldindata.org/grapher/sugar-cane-production",
+  "og_url_yield": "https://ourworldindata.org/grapher/sugar-cane-yields",
+  "item": "Sugar cane (FAOSTAT item 156)",
+  "defs": "production=tonnes; yield=t/ha(=FAOSTAT 5412); area_ha=production/yield",
+  "years": [
+   2005,
+   2024
+  ],
+  "latest_year_note": "FAO(OWID) 最新发布至 2024；2025 需 FAO 2026 年批次发布"
+ },
+ "countries": {
+  "全球": {
+   "entity_owid": "World",
+   "rows": [
+    {
+     "year": 2005,
+     "prod_t": 1306183600.0,
+     "yield_t_ha": 66.75,
+     "area_ha": 19569698.0,
+     "area_1000ha": 19569.7
+    },
+    {
+     "year": 2006,
+     "prod_t": 1417229700.0,
+     "yield_t_ha": 69.2,
+     "area_ha": 20479517.0,
+     "area_1000ha": 20479.5
+    },
+    {
+     "year": 2007,
+     "prod_t": 1602129800.0,
+     "yield_t_ha": 70.94,
+     "area_ha": 22584736.0,
+     "area_1000ha": 22584.7
+    },
+    {
+     "year": 2008,
+     "prod_t": 1716381000.0,
+     "yield_t_ha": 71.59,
+     "area_ha": 23974277.0,
+     "area_1000ha": 23974.3
+    },
+    {
+     "year": 2009,
+     "prod_t": 1673251300.0,
+     "yield_t_ha": 70.94,
+     "area_ha": 23588249.0,
+     "area_1000ha": 23588.2
+    },
+    {
+     "year": 2010,
+     "prod_t": 1676608800.0,
+     "yield_t_ha": 71.18,
+     "area_ha": 23554526.0,
+     "area_1000ha": 23554.5
+    },
+    {
+     "year": 2011,
+     "prod_t": 1792304300.0,
+     "yield_t_ha": 70.49,
+     "area_ha": 25425172.0,
+     "area_1000ha": 25425.2
+    },
+    {
+     "year": 2012,
+     "prod_t": 1829505300.0,
+     "yield_t_ha": 70.55,
+     "area_ha": 25931707.0,
+     "area_1000ha": 25931.7
+    },
+    {
+     "year": 2013,
+     "prod_t": 1904033400.0,
+     "yield_t_ha": 71.06,
+     "area_ha": 26795671.0,
+     "area_1000ha": 26795.7
+    },
+    {
+     "year": 2014,
+     "prod_t": 1887758800.0,
+     "yield_t_ha": 69.91,
+     "area_ha": 27002620.0,
+     "area_1000ha": 27002.6
+    },
+    {
+     "year": 2015,
+     "prod_t": 1873834000.0,
+     "yield_t_ha": 70.87,
+     "area_ha": 26440849.0,
+     "area_1000ha": 26440.8
+    },
+    {
+     "year": 2016,
+     "prod_t": 1881739300.0,
+     "yield_t_ha": 70.96,
+     "area_ha": 26517671.0,
+     "area_1000ha": 26517.7
+    },
+    {
+     "year": 2017,
+     "prod_t": 1837827100.0,
+     "yield_t_ha": 70.29,
+     "area_ha": 26147319.0,
+     "area_1000ha": 26147.3
+    },
+    {
+     "year": 2018,
+     "prod_t": 1934052100.0,
+     "yield_t_ha": 73.28,
+     "area_ha": 26391732.0,
+     "area_1000ha": 26391.7
+    },
+    {
+     "year": 2019,
+     "prod_t": 1962081700.0,
+     "yield_t_ha": 72.73,
+     "area_ha": 26979170.0,
+     "area_1000ha": 26979.2
+    },
+    {
+     "year": 2020,
+     "prod_t": 1882175400.0,
+     "yield_t_ha": 72.08,
+     "area_ha": 26111478.0,
+     "area_1000ha": 26111.5
+    },
+    {
+     "year": 2021,
+     "prod_t": 1866448900.0,
+     "yield_t_ha": 72.1,
+     "area_ha": 25887127.0,
+     "area_1000ha": 25887.1
+    },
+    {
+     "year": 2022,
+     "prod_t": 1921167400.0,
+     "yield_t_ha": 73.57,
+     "area_ha": 26114703.0,
+     "area_1000ha": 26114.7
+    },
+    {
+     "year": 2023,
+     "prod_t": 2017376400.0,
+     "yield_t_ha": 75.1,
+     "area_ha": 26862105.0,
+     "area_1000ha": 26862.1
+    },
+    {
+     "year": 2024,
+     "prod_t": 1939782000.0,
+     "yield_t_ha": 72.53,
+     "area_ha": 26743917.0,
+     "area_1000ha": 26743.9
+    }
+   ],
+   "years_present": 20
+  },
+  "中国": {
+   "entity_owid": "China",
+   "rows": [
+    {
+     "year": 2005,
+     "prod_t": 86638000.0,
+     "yield_t_ha": 63.97,
+     "area_ha": 1354349.0,
+     "area_1000ha": 1354.3
+    },
+    {
+     "year": 2006,
+     "prod_t": 97092200.0,
+     "yield_t_ha": 70.45,
+     "area_ha": 1378170.0,
+     "area_1000ha": 1378.2
+    },
+    {
+     "year": 2007,
+     "prod_t": 112950500.0,
+     "yield_t_ha": 71.23,
+     "area_ha": 1585760.0,
+     "area_1000ha": 1585.8
+    },
+    {
+     "year": 2008,
+     "prod_t": 124152400.0,
+     "yield_t_ha": 71.21,
+     "area_ha": 1743481.0,
+     "area_1000ha": 1743.5
+    },
+    {
+     "year": 2009,
+     "prod_t": 115586700.0,
+     "yield_t_ha": 68.09,
+     "area_ha": 1697470.0,
+     "area_1000ha": 1697.5
+    },
+    {
+     "year": 2010,
+     "prod_t": 110788700.0,
+     "yield_t_ha": 65.7,
+     "area_ha": 1686279.0,
+     "area_1000ha": 1686.3
+    },
+    {
+     "year": 2011,
+     "prod_t": 114434600.0,
+     "yield_t_ha": 66.48,
+     "area_ha": 1721209.0,
+     "area_1000ha": 1721.2
+    },
+    {
+     "year": 2012,
+     "prod_t": 123113900.0,
+     "yield_t_ha": 68.6,
+     "area_ha": 1794661.0,
+     "area_1000ha": 1794.7
+    },
+    {
+     "year": 2013,
+     "prod_t": 128201500.0,
+     "yield_t_ha": 70.58,
+     "area_ha": 1816490.0,
+     "area_1000ha": 1816.5
+    },
+    {
+     "year": 2014,
+     "prod_t": 125611300.0,
+     "yield_t_ha": 71.35,
+     "area_ha": 1760450.0,
+     "area_1000ha": 1760.5
+    },
+    {
+     "year": 2015,
+     "prod_t": 107064000.0,
+     "yield_t_ha": 72.54,
+     "area_ha": 1476000.0,
+     "area_1000ha": 1476.0
+    },
+    {
+     "year": 2016,
+     "prod_t": 103215000.0,
+     "yield_t_ha": 73.62,
+     "area_ha": 1402001.0,
+     "area_1000ha": 1402.0
+    },
+    {
+     "year": 2017,
+     "prod_t": 104404300.0,
+     "yield_t_ha": 76.13,
+     "area_ha": 1371361.0,
+     "area_1000ha": 1371.4
+    },
+    {
+     "year": 2018,
+     "prod_t": 108097100.0,
+     "yield_t_ha": 76.89,
+     "area_ha": 1405839.0,
+     "area_1000ha": 1405.8
+    },
+    {
+     "year": 2019,
+     "prod_t": 109388100.0,
+     "yield_t_ha": 78.66,
+     "area_ha": 1390729.0,
+     "area_1000ha": 1390.7
+    },
+    {
+     "year": 2020,
+     "prod_t": 108121000.0,
+     "yield_t_ha": 79.89,
+     "area_ha": 1353400.0,
+     "area_1000ha": 1353.4
+    },
+    {
+     "year": 2021,
+     "prod_t": 106663800.0,
+     "yield_t_ha": 81.05,
+     "area_ha": 1316070.0,
+     "area_1000ha": 1316.1
+    },
+    {
+     "year": 2022,
+     "prod_t": 103381300.0,
+     "yield_t_ha": 80.19,
+     "area_ha": 1289170.0,
+     "area_1000ha": 1289.2
+    },
+    {
+     "year": 2023,
+     "prod_t": 104565500.0,
+     "yield_t_ha": 82.65,
+     "area_ha": 1265130.0,
+     "area_1000ha": 1265.1
+    },
+    {
+     "year": 2024,
+     "prod_t": 102094400.0,
+     "yield_t_ha": 80.87,
+     "area_ha": 1262431.0,
+     "area_1000ha": 1262.4
+    }
+   ],
+   "years_present": 20
+  },
+  "巴西": {
+   "entity_owid": "Brazil",
+   "rows": [
+    {
+     "year": 2005,
+     "prod_t": 422956640.0,
+     "yield_t_ha": 72.85,
+     "area_ha": 5805521.0,
+     "area_1000ha": 5805.5
+    },
+    {
+     "year": 2006,
+     "prod_t": 477410660.0,
+     "yield_t_ha": 75.12,
+     "area_ha": 6355501.0,
+     "area_1000ha": 6355.5
+    },
+    {
+     "year": 2007,
+     "prod_t": 549707300.0,
+     "yield_t_ha": 77.63,
+     "area_ha": 7080918.0,
+     "area_1000ha": 7080.9
+    },
+    {
+     "year": 2008,
+     "prod_t": 645300160.0,
+     "yield_t_ha": 79.27,
+     "area_ha": 8140093.0,
+     "area_1000ha": 8140.1
+    },
+    {
+     "year": 2009,
+     "prod_t": 691606140.0,
+     "yield_t_ha": 80.26,
+     "area_ha": 8617554.0,
+     "area_1000ha": 8617.6
+    },
+    {
+     "year": 2010,
+     "prod_t": 717463800.0,
+     "yield_t_ha": 79.04,
+     "area_ha": 9076707.0,
+     "area_1000ha": 9076.7
+    },
+    {
+     "year": 2011,
+     "prod_t": 734006100.0,
+     "yield_t_ha": 76.45,
+     "area_ha": 9601315.0,
+     "area_1000ha": 9601.3
+    },
+    {
+     "year": 2012,
+     "prod_t": 721077300.0,
+     "yield_t_ha": 74.3,
+     "area_ha": 9705386.0,
+     "area_1000ha": 9705.4
+    },
+    {
+     "year": 2013,
+     "prod_t": 768090430.0,
+     "yield_t_ha": 75.34,
+     "area_ha": 10195163.0,
+     "area_1000ha": 10195.2
+    },
+    {
+     "year": 2014,
+     "prod_t": 736108500.0,
+     "yield_t_ha": 70.65,
+     "area_ha": 10419677.0,
+     "area_1000ha": 10419.7
+    },
+    {
+     "year": 2015,
+     "prod_t": 750290300.0,
+     "yield_t_ha": 74.2,
+     "area_ha": 10111373.0,
+     "area_1000ha": 10111.4
+    },
+    {
+     "year": 2016,
+     "prod_t": 768594200.0,
+     "yield_t_ha": 75.18,
+     "area_ha": 10223890.0,
+     "area_1000ha": 10223.9
+    },
+    {
+     "year": 2017,
+     "prod_t": 758646200.0,
+     "yield_t_ha": 74.46,
+     "area_ha": 10189202.0,
+     "area_1000ha": 10189.2
+    },
+    {
+     "year": 2018,
+     "prod_t": 747556800.0,
+     "yield_t_ha": 74.58,
+     "area_ha": 10024106.0,
+     "area_1000ha": 10024.1
+    },
+    {
+     "year": 2019,
+     "prod_t": 753470460.0,
+     "yield_t_ha": 74.66,
+     "area_ha": 10092428.0,
+     "area_1000ha": 10092.4
+    },
+    {
+     "year": 2020,
+     "prod_t": 756070600.0,
+     "yield_t_ha": 75.64,
+     "area_ha": 9996134.0,
+     "area_1000ha": 9996.1
+    },
+    {
+     "year": 2021,
+     "prod_t": 715679300.0,
+     "yield_t_ha": 71.77,
+     "area_ha": 9971372.0,
+     "area_1000ha": 9971.4
+    },
+    {
+     "year": 2022,
+     "prod_t": 725729000.0,
+     "yield_t_ha": 73.43,
+     "area_ha": 9882617.0,
+     "area_1000ha": 9882.6
+    },
+    {
+     "year": 2023,
+     "prod_t": 782058240.0,
+     "yield_t_ha": 77.9,
+     "area_ha": 10039143.0,
+     "area_1000ha": 10039.1
+    },
+    {
+     "year": 2024,
+     "prod_t": 759662460.0,
+     "yield_t_ha": 75.58,
+     "area_ha": 10051276.0,
+     "area_1000ha": 10051.3
+    }
+   ],
+   "years_present": 20
+  },
+  "印度": {
+   "entity_owid": "India",
+   "rows": [
+    {
+     "year": 2005,
+     "prod_t": 237088400.0,
+     "yield_t_ha": 64.75,
+     "area_ha": 3661501.0,
+     "area_1000ha": 3661.5
+    },
+    {
+     "year": 2006,
+     "prod_t": 281171800.0,
+     "yield_t_ha": 66.93,
+     "area_ha": 4201102.0,
+     "area_1000ha": 4201.1
+    },
+    {
+     "year": 2007,
+     "prod_t": 355519700.0,
+     "yield_t_ha": 69.03,
+     "area_ha": 5149996.0,
+     "area_1000ha": 5150.0
+    },
+    {
+     "year": 2008,
+     "prod_t": 348187900.0,
+     "yield_t_ha": 68.88,
+     "area_ha": 5055198.0,
+     "area_1000ha": 5055.2
+    },
+    {
+     "year": 2009,
+     "prod_t": 285029300.0,
+     "yield_t_ha": 64.55,
+     "area_ha": 4415396.0,
+     "area_1000ha": 4415.4
+    },
+    {
+     "year": 2010,
+     "prod_t": 292301600.0,
+     "yield_t_ha": 70.02,
+     "area_ha": 4174598.0,
+     "area_1000ha": 4174.6
+    },
+    {
+     "year": 2011,
+     "prod_t": 342382000.0,
+     "yield_t_ha": 69.25,
+     "area_ha": 4944387.0,
+     "area_1000ha": 4944.4
+    },
+    {
+     "year": 2012,
+     "prod_t": 361037000.0,
+     "yield_t_ha": 71.63,
+     "area_ha": 5040002.0,
+     "area_1000ha": 5040.0
+    },
+    {
+     "year": 2013,
+     "prod_t": 341200000.0,
+     "yield_t_ha": 68.24,
+     "area_ha": 5000000.0,
+     "area_1000ha": 5000.0
+    },
+    {
+     "year": 2014,
+     "prod_t": 352142000.0,
+     "yield_t_ha": 70.57,
+     "area_ha": 4990003.0,
+     "area_1000ha": 4990.0
+    },
+    {
+     "year": 2015,
+     "prod_t": 362333000.0,
+     "yield_t_ha": 71.47,
+     "area_ha": 5069998.0,
+     "area_1000ha": 5070.0
+    },
+    {
+     "year": 2016,
+     "prod_t": 348448000.0,
+     "yield_t_ha": 70.39,
+     "area_ha": 4950002.0,
+     "area_1000ha": 4950.0
+    },
+    {
+     "year": 2017,
+     "prod_t": 306069000.0,
+     "yield_t_ha": 69.0,
+     "area_ha": 4435693.0,
+     "area_1000ha": 4435.7
+    },
+    {
+     "year": 2018,
+     "prod_t": 379904860.0,
+     "yield_t_ha": 80.2,
+     "area_ha": 4737063.0,
+     "area_1000ha": 4737.1
+    },
+    {
+     "year": 2019,
+     "prod_t": 405416200.0,
+     "yield_t_ha": 80.1,
+     "area_ha": 5061091.0,
+     "area_1000ha": 5061.1
+    },
+    {
+     "year": 2020,
+     "prod_t": 370500300.0,
+     "yield_t_ha": 80.5,
+     "area_ha": 4602682.0,
+     "area_1000ha": 4602.7
+    },
+    {
+     "year": 2021,
+     "prod_t": 405398720.0,
+     "yield_t_ha": 83.57,
+     "area_ha": 4851228.0,
+     "area_1000ha": 4851.2
+    },
+    {
+     "year": 2022,
+     "prod_t": 439424900.0,
+     "yield_t_ha": 84.91,
+     "area_ha": 5175410.0,
+     "area_1000ha": 5175.4
+    },
+    {
+     "year": 2023,
+     "prod_t": 490533340.0,
+     "yield_t_ha": 83.35,
+     "area_ha": 5885314.0,
+     "area_1000ha": 5885.3
+    },
+    {
+     "year": 2024,
+     "prod_t": 453158500.0,
+     "yield_t_ha": 78.95,
+     "area_ha": 5739598.0,
+     "area_1000ha": 5739.6
+    }
+   ],
+   "years_present": 20
+  },
+  "泰国": {
+   "entity_owid": "Thailand",
+   "rows": [
+    {
+     "year": 2005,
+     "prod_t": 49586360.0,
+     "yield_t_ha": 46.46,
+     "area_ha": 1067243.0,
+     "area_1000ha": 1067.2
+    },
+    {
+     "year": 2006,
+     "prod_t": 47658096.0,
+     "yield_t_ha": 49.37,
+     "area_ha": 965333.0,
+     "area_1000ha": 965.3
+    },
+    {
+     "year": 2007,
+     "prod_t": 64365480.0,
+     "yield_t_ha": 63.71,
+     "area_ha": 1010287.0,
+     "area_1000ha": 1010.3
+    },
+    {
+     "year": 2008,
+     "prod_t": 73501610.0,
+     "yield_t_ha": 69.73,
+     "area_ha": 1054108.0,
+     "area_1000ha": 1054.1
+    },
+    {
+     "year": 2009,
+     "prod_t": 66816450.0,
+     "yield_t_ha": 69.34,
+     "area_ha": 963646.0,
+     "area_1000ha": 963.6
+    },
+    {
+     "year": 2010,
+     "prod_t": 68807800.0,
+     "yield_t_ha": 68.15,
+     "area_ha": 1009582.0,
+     "area_1000ha": 1009.6
+    },
+    {
+     "year": 2011,
+     "prod_t": 95950420.0,
+     "yield_t_ha": 76.2,
+     "area_ha": 1259240.0,
+     "area_1000ha": 1259.2
+    },
+    {
+     "year": 2012,
+     "prod_t": 98400460.0,
+     "yield_t_ha": 76.75,
+     "area_ha": 1282082.0,
+     "area_1000ha": 1282.1
+    },
+    {
+     "year": 2013,
+     "prod_t": 100095580.0,
+     "yield_t_ha": 75.74,
+     "area_ha": 1321594.0,
+     "area_1000ha": 1321.6
+    },
+    {
+     "year": 2014,
+     "prod_t": 103697010.0,
+     "yield_t_ha": 76.64,
+     "area_ha": 1353026.0,
+     "area_1000ha": 1353.0
+    },
+    {
+     "year": 2015,
+     "prod_t": 94138460.0,
+     "yield_t_ha": 67.21,
+     "area_ha": 1400747.0,
+     "area_1000ha": 1400.7
+    },
+    {
+     "year": 2016,
+     "prod_t": 94138460.0,
+     "yield_t_ha": 65.69,
+     "area_ha": 1433119.0,
+     "area_1000ha": 1433.1
+    },
+    {
+     "year": 2017,
+     "prod_t": 93088460.0,
+     "yield_t_ha": 66.33,
+     "area_ha": 1403520.0,
+     "area_1000ha": 1403.5
+    },
+    {
+     "year": 2018,
+     "prod_t": 135073800.0,
+     "yield_t_ha": 75.45,
+     "area_ha": 1790207.0,
+     "area_1000ha": 1790.2
+    },
+    {
+     "year": 2019,
+     "prod_t": 131002180.0,
+     "yield_t_ha": 71.39,
+     "area_ha": 1835086.0,
+     "area_1000ha": 1835.1
+    },
+    {
+     "year": 2020,
+     "prod_t": 74968070.0,
+     "yield_t_ha": 43.74,
+     "area_ha": 1714136.0,
+     "area_1000ha": 1714.1
+    },
+    {
+     "year": 2021,
+     "prod_t": 66725460.0,
+     "yield_t_ha": 48.72,
+     "area_ha": 1369601.0,
+     "area_1000ha": 1369.6
+    },
+    {
+     "year": 2022,
+     "prod_t": 92162730.0,
+     "yield_t_ha": 64.58,
+     "area_ha": 1427200.0,
+     "area_1000ha": 1427.2
+    },
+    {
+     "year": 2023,
+     "prod_t": 93981770.0,
+     "yield_t_ha": 57.36,
+     "area_ha": 1638401.0,
+     "area_1000ha": 1638.4
+    },
+    {
+     "year": 2024,
+     "prod_t": 82435400.0,
+     "yield_t_ha": 55.28,
+     "area_ha": 1491199.0,
+     "area_1000ha": 1491.2
+    }
+   ],
+   "years_present": 20
+  },
+  "美国": {
+   "entity_owid": "United States",
+   "rows": [
+    {
+     "year": 2005,
+     "prod_t": 26606000.0,
+     "yield_t_ha": 71.31,
+     "area_ha": 373084.0,
+     "area_1000ha": 373.1
+    },
+    {
+     "year": 2006,
+     "prod_t": 29564000.0,
+     "yield_t_ha": 81.38,
+     "area_ha": 363290.0,
+     "area_1000ha": 363.3
+    },
+    {
+     "year": 2007,
+     "prod_t": 27750600.0,
+     "yield_t_ha": 77.96,
+     "area_ha": 355965.0,
+     "area_1000ha": 356.0
+    },
+    {
+     "year": 2008,
+     "prod_t": 25041020.0,
+     "yield_t_ha": 71.29,
+     "area_ha": 351271.0,
+     "area_1000ha": 351.3
+    },
+    {
+     "year": 2009,
+     "prod_t": 27607450.0,
+     "yield_t_ha": 78.06,
+     "area_ha": 353659.0,
+     "area_1000ha": 353.7
+    },
+    {
+     "year": 2010,
+     "prod_t": 24820574.0,
+     "yield_t_ha": 69.9,
+     "area_ha": 355112.0,
+     "area_1000ha": 355.1
+    },
+    {
+     "year": 2011,
+     "prod_t": 26511598.0,
+     "yield_t_ha": 75.08,
+     "area_ha": 353129.0,
+     "area_1000ha": 353.1
+    },
+    {
+     "year": 2012,
+     "prod_t": 29235840.0,
+     "yield_t_ha": 80.06,
+     "area_ha": 365190.0,
+     "area_1000ha": 365.2
+    },
+    {
+     "year": 2013,
+     "prod_t": 27905910.0,
+     "yield_t_ha": 75.71,
+     "area_ha": 368590.0,
+     "area_1000ha": 368.6
+    },
+    {
+     "year": 2014,
+     "prod_t": 27600190.0,
+     "yield_t_ha": 78.53,
+     "area_ha": 351470.0,
+     "area_1000ha": 351.5
+    },
+    {
+     "year": 2015,
+     "prod_t": 29140590.0,
+     "yield_t_ha": 81.15,
+     "area_ha": 359080.0,
+     "area_1000ha": 359.1
+    },
+    {
+     "year": 2016,
+     "prod_t": 29136968.0,
+     "yield_t_ha": 79.72,
+     "area_ha": 365472.0,
+     "area_1000ha": 365.5
+    },
+    {
+     "year": 2017,
+     "prod_t": 30153010.0,
+     "yield_t_ha": 82.41,
+     "area_ha": 365880.0,
+     "area_1000ha": 365.9
+    },
+    {
+     "year": 2018,
+     "prod_t": 31335980.0,
+     "yield_t_ha": 86.06,
+     "area_ha": 364100.0,
+     "area_1000ha": 364.1
+    },
+    {
+     "year": 2019,
+     "prod_t": 28972760.0,
+     "yield_t_ha": 78.4,
+     "area_ha": 369560.0,
+     "area_1000ha": 369.6
+    },
+    {
+     "year": 2020,
+     "prod_t": 32749370.0,
+     "yield_t_ha": 85.4,
+     "area_ha": 383480.0,
+     "area_1000ha": 383.5
+    },
+    {
+     "year": 2021,
+     "prod_t": 29790130.0,
+     "yield_t_ha": 78.71,
+     "area_ha": 378470.0,
+     "area_1000ha": 378.5
+    },
+    {
+     "year": 2022,
+     "prod_t": 31453000.0,
+     "yield_t_ha": 83.55,
+     "area_ha": 376440.0,
+     "area_1000ha": 376.4
+    },
+    {
+     "year": 2023,
+     "prod_t": 29897180.0,
+     "yield_t_ha": 79.31,
+     "area_ha": 376970.0,
+     "area_1000ha": 377.0
+    },
+    {
+     "year": 2024,
+     "prod_t": 31609950.0,
+     "yield_t_ha": 84.21,
+     "area_ha": 375390.0,
+     "area_1000ha": 375.4
+    }
+   ],
+   "years_present": 20
+  },
+  "墨西哥": {
+   "entity_owid": "Mexico",
+   "rows": [
+    {
+     "year": 2005,
+     "prod_t": 51645544.0,
+     "yield_t_ha": 77.11,
+     "area_ha": 669781.0,
+     "area_1000ha": 669.8
+    },
+    {
+     "year": 2006,
+     "prod_t": 50675820.0,
+     "yield_t_ha": 74.53,
+     "area_ha": 679936.0,
+     "area_1000ha": 679.9
+    },
+    {
+     "year": 2007,
+     "prod_t": 52089356.0,
+     "yield_t_ha": 75.44,
+     "area_ha": 690441.0,
+     "area_1000ha": 690.4
+    },
+    {
+     "year": 2008,
+     "prod_t": 51090720.0,
+     "yield_t_ha": 73.89,
+     "area_ha": 691441.0,
+     "area_1000ha": 691.4
+    },
+    {
+     "year": 2009,
+     "prod_t": 49492696.0,
+     "yield_t_ha": 69.65,
+     "area_ha": 710585.0,
+     "area_1000ha": 710.6
+    },
+    {
+     "year": 2010,
+     "prod_t": 50421620.0,
+     "yield_t_ha": 71.63,
+     "area_ha": 703943.0,
+     "area_1000ha": 703.9
+    },
+    {
+     "year": 2011,
+     "prod_t": 49735270.0,
+     "yield_t_ha": 69.67,
+     "area_ha": 713824.0,
+     "area_1000ha": 713.8
+    },
+    {
+     "year": 2012,
+     "prod_t": 50946484.0,
+     "yield_t_ha": 69.3,
+     "area_ha": 735127.0,
+     "area_1000ha": 735.1
+    },
+    {
+     "year": 2013,
+     "prod_t": 61182076.0,
+     "yield_t_ha": 78.16,
+     "area_ha": 782801.0,
+     "area_1000ha": 782.8
+    },
+    {
+     "year": 2014,
+     "prod_t": 56672828.0,
+     "yield_t_ha": 74.39,
+     "area_ha": 761834.0,
+     "area_1000ha": 761.8
+    },
+    {
+     "year": 2015,
+     "prod_t": 55396060.0,
+     "yield_t_ha": 73.02,
+     "area_ha": 758608.0,
+     "area_1000ha": 758.6
+    },
+    {
+     "year": 2016,
+     "prod_t": 56446820.0,
+     "yield_t_ha": 72.27,
+     "area_ha": 781055.0,
+     "area_1000ha": 781.1
+    },
+    {
+     "year": 2017,
+     "prod_t": 56954990.0,
+     "yield_t_ha": 73.78,
+     "area_ha": 772003.0,
+     "area_1000ha": 772.0
+    },
+    {
+     "year": 2018,
+     "prod_t": 56841524.0,
+     "yield_t_ha": 72.33,
+     "area_ha": 785905.0,
+     "area_1000ha": 785.9
+    },
+    {
+     "year": 2019,
+     "prod_t": 59334060.0,
+     "yield_t_ha": 74.54,
+     "area_ha": 795984.0,
+     "area_1000ha": 796.0
+    },
+    {
+     "year": 2020,
+     "prod_t": 53841556.0,
+     "yield_t_ha": 69.48,
+     "area_ha": 774954.0,
+     "area_1000ha": 775.0
+    },
+    {
+     "year": 2021,
+     "prod_t": 55247516.0,
+     "yield_t_ha": 68.26,
+     "area_ha": 809317.0,
+     "area_1000ha": 809.3
+    },
+    {
+     "year": 2022,
+     "prod_t": 55556084.0,
+     "yield_t_ha": 69.86,
+     "area_ha": 795206.0,
+     "area_1000ha": 795.2
+    },
+    {
+     "year": 2023,
+     "prod_t": 55589516.0,
+     "yield_t_ha": 69.29,
+     "area_ha": 802222.0,
+     "area_1000ha": 802.2
+    },
+    {
+     "year": 2024,
+     "prod_t": 53051360.0,
+     "yield_t_ha": 67.64,
+     "area_ha": 784347.0,
+     "area_1000ha": 784.3
+    }
+   ],
+   "years_present": 20
+  },
+  "巴基斯坦": {
+   "entity_owid": "Pakistan",
+   "rows": [
+    {
+     "year": 2005,
+     "prod_t": 47244100.0,
+     "yield_t_ha": 48.89,
+     "area_ha": 966400.0,
+     "area_1000ha": 966.4
+    },
+    {
+     "year": 2006,
+     "prod_t": 44665500.0,
+     "yield_t_ha": 49.23,
+     "area_ha": 907301.0,
+     "area_1000ha": 907.3
+    },
+    {
+     "year": 2007,
+     "prod_t": 54741600.0,
+     "yield_t_ha": 53.21,
+     "area_ha": 1028800.0,
+     "area_1000ha": 1028.8
+    },
+    {
+     "year": 2008,
+     "prod_t": 63920000.0,
+     "yield_t_ha": 51.49,
+     "area_ha": 1241300.0,
+     "area_1000ha": 1241.3
+    },
+    {
+     "year": 2009,
+     "prod_t": 50045400.0,
+     "yield_t_ha": 48.62,
+     "area_ha": 1029400.0,
+     "area_1000ha": 1029.4
+    },
+    {
+     "year": 2010,
+     "prod_t": 49372900.0,
+     "yield_t_ha": 52.37,
+     "area_ha": 942799.0,
+     "area_1000ha": 942.8
+    },
+    {
+     "year": 2011,
+     "prod_t": 55308500.0,
+     "yield_t_ha": 56.0,
+     "area_ha": 987699.0,
+     "area_1000ha": 987.7
+    },
+    {
+     "year": 2012,
+     "prod_t": 58397000.0,
+     "yield_t_ha": 55.22,
+     "area_ha": 1057600.0,
+     "area_1000ha": 1057.6
+    },
+    {
+     "year": 2013,
+     "prod_t": 67460100.0,
+     "yield_t_ha": 57.54,
+     "area_ha": 1172353.0,
+     "area_1000ha": 1172.4
+    },
+    {
+     "year": 2014,
+     "prod_t": 62826456.0,
+     "yield_t_ha": 55.09,
+     "area_ha": 1140491.0,
+     "area_1000ha": 1140.5
+    },
+    {
+     "year": 2015,
+     "prod_t": 65482336.0,
+     "yield_t_ha": 57.87,
+     "area_ha": 1131476.0,
+     "area_1000ha": 1131.5
+    },
+    {
+     "year": 2016,
+     "prod_t": 75482260.0,
+     "yield_t_ha": 62.0,
+     "area_ha": 1217509.0,
+     "area_1000ha": 1217.5
+    },
+    {
+     "year": 2017,
+     "prod_t": 83332740.0,
+     "yield_t_ha": 62.11,
+     "area_ha": 1341780.0,
+     "area_1000ha": 1341.8
+    },
+    {
+     "year": 2018,
+     "prod_t": 67173976.0,
+     "yield_t_ha": 60.96,
+     "area_ha": 1101946.0,
+     "area_1000ha": 1101.9
+    },
+    {
+     "year": 2019,
+     "prod_t": 66379580.0,
+     "yield_t_ha": 63.84,
+     "area_ha": 1039769.0,
+     "area_1000ha": 1039.8
+    },
+    {
+     "year": 2020,
+     "prod_t": 81009260.0,
+     "yield_t_ha": 69.53,
+     "area_ha": 1165029.0,
+     "area_1000ha": 1165.0
+    },
+    {
+     "year": 2021,
+     "prod_t": 88650590.0,
+     "yield_t_ha": 70.34,
+     "area_ha": 1260290.0,
+     "area_1000ha": 1260.3
+    },
+    {
+     "year": 2022,
+     "prod_t": 87981140.0,
+     "yield_t_ha": 66.71,
+     "area_ha": 1318836.0,
+     "area_1000ha": 1318.8
+    },
+    {
+     "year": 2023,
+     "prod_t": 87637670.0,
+     "yield_t_ha": 74.25,
+     "area_ha": 1180280.0,
+     "area_1000ha": 1180.3
+    },
+    {
+     "year": 2024,
+     "prod_t": 84235450.0,
+     "yield_t_ha": 70.6,
+     "area_ha": 1193093.0,
+     "area_1000ha": 1193.1
+    }
+   ],
+   "years_present": 20
+  },
+  "印尼": {
+   "entity_owid": "Indonesia",
+   "rows": [
+    {
+     "year": 2005,
+     "prod_t": 29300000.0,
+     "yield_t_ha": 76.68,
+     "area_ha": 382083.0,
+     "area_1000ha": 382.1
+    },
+    {
+     "year": 2006,
+     "prod_t": 29200000.0,
+     "yield_t_ha": 73.66,
+     "area_ha": 396441.0,
+     "area_1000ha": 396.4
+    },
+    {
+     "year": 2007,
+     "prod_t": 25200000.0,
+     "yield_t_ha": 58.91,
+     "area_ha": 427799.0,
+     "area_1000ha": 427.8
+    },
+    {
+     "year": 2008,
+     "prod_t": 25600000.0,
+     "yield_t_ha": 58.65,
+     "area_ha": 436505.0,
+     "area_1000ha": 436.5
+    },
+    {
+     "year": 2009,
+     "prod_t": 26400000.0,
+     "yield_t_ha": 59.8,
+     "area_ha": 441440.0,
+     "area_1000ha": 441.4
+    },
+    {
+     "year": 2010,
+     "prod_t": 26600000.0,
+     "yield_t_ha": 60.93,
+     "area_ha": 436600.0,
+     "area_1000ha": 436.6
+    },
+    {
+     "year": 2011,
+     "prod_t": 24000000.0,
+     "yield_t_ha": 55.17,
+     "area_ha": 435000.0,
+     "area_1000ha": 435.0
+    },
+    {
+     "year": 2012,
+     "prod_t": 28700000.0,
+     "yield_t_ha": 64.84,
+     "area_ha": 442658.0,
+     "area_1000ha": 442.7
+    },
+    {
+     "year": 2013,
+     "prod_t": 28400000.0,
+     "yield_t_ha": 60.3,
+     "area_ha": 470941.0,
+     "area_1000ha": 470.9
+    },
+    {
+     "year": 2014,
+     "prod_t": 27100000.0,
+     "yield_t_ha": 57.33,
+     "area_ha": 472676.0,
+     "area_1000ha": 472.7
+    },
+    {
+     "year": 2015,
+     "prod_t": 27000000.0,
+     "yield_t_ha": 59.23,
+     "area_ha": 455819.0,
+     "area_1000ha": 455.8
+    },
+    {
+     "year": 2016,
+     "prod_t": 28000000.0,
+     "yield_t_ha": 62.59,
+     "area_ha": 447350.0,
+     "area_1000ha": 447.4
+    },
+    {
+     "year": 2017,
+     "prod_t": 28000000.0,
+     "yield_t_ha": 66.64,
+     "area_ha": 420146.0,
+     "area_1000ha": 420.1
+    },
+    {
+     "year": 2018,
+     "prod_t": 29500000.0,
+     "yield_t_ha": 70.97,
+     "area_ha": 415663.0,
+     "area_1000ha": 415.7
+    },
+    {
+     "year": 2019,
+     "prod_t": 29100000.0,
+     "yield_t_ha": 70.45,
+     "area_ha": 413054.0,
+     "area_1000ha": 413.1
+    },
+    {
+     "year": 2020,
+     "prod_t": 29300000.0,
+     "yield_t_ha": 69.93,
+     "area_ha": 418996.0,
+     "area_1000ha": 419.0
+    },
+    {
+     "year": 2021,
+     "prod_t": 32200000.0,
+     "yield_t_ha": 71.71,
+     "area_ha": 449008.0,
+     "area_1000ha": 449.0
+    },
+    {
+     "year": 2022,
+     "prod_t": 32400000.0,
+     "yield_t_ha": 61.74,
+     "area_ha": 524804.0,
+     "area_1000ha": 524.8
+    },
+    {
+     "year": 2023,
+     "prod_t": 31000000.0,
+     "yield_t_ha": 60.66,
+     "area_ha": 511048.0,
+     "area_1000ha": 511.0
+    },
+    {
+     "year": 2024,
+     "prod_t": 32000000.0,
+     "yield_t_ha": 60.97,
+     "area_ha": 524886.0,
+     "area_1000ha": 524.9
+    }
+   ],
+   "years_present": 20
+  },
+  "澳大利亚": {
+   "entity_owid": "Australia",
+   "rows": [
+    {
+     "year": 2005,
+     "prod_t": 37822190.0,
+     "yield_t_ha": 87.16,
+     "area_ha": 433953.0,
+     "area_1000ha": 434.0
+    },
+    {
+     "year": 2006,
+     "prod_t": 37128108.0,
+     "yield_t_ha": 93.35,
+     "area_ha": 397745.0,
+     "area_1000ha": 397.7
+    },
+    {
+     "year": 2007,
+     "prod_t": 36396996.0,
+     "yield_t_ha": 89.07,
+     "area_ha": 408624.0,
+     "area_1000ha": 408.6
+    },
+    {
+     "year": 2008,
+     "prod_t": 32621112.0,
+     "yield_t_ha": 85.72,
+     "area_ha": 380543.0,
+     "area_1000ha": 380.5
+    },
+    {
+     "year": 2009,
+     "prod_t": 31456858.0,
+     "yield_t_ha": 80.39,
+     "area_ha": 391291.0,
+     "area_1000ha": 391.3
+    },
+    {
+     "year": 2010,
+     "prod_t": 31234824.0,
+     "yield_t_ha": 80.2,
+     "area_ha": 389471.0,
+     "area_1000ha": 389.5
+    },
+    {
+     "year": 2011,
+     "prod_t": 25181814.0,
+     "yield_t_ha": 81.73,
+     "area_ha": 308104.0,
+     "area_1000ha": 308.1
+    },
+    {
+     "year": 2012,
+     "prod_t": 25957092.0,
+     "yield_t_ha": 76.65,
+     "area_ha": 338626.0,
+     "area_1000ha": 338.6
+    },
+    {
+     "year": 2013,
+     "prod_t": 27136082.0,
+     "yield_t_ha": 82.4,
+     "area_ha": 329303.0,
+     "area_1000ha": 329.3
+    },
+    {
+     "year": 2014,
+     "prod_t": 30517650.0,
+     "yield_t_ha": 81.33,
+     "area_ha": 375216.0,
+     "area_1000ha": 375.2
+    },
+    {
+     "year": 2015,
+     "prod_t": 32379152.0,
+     "yield_t_ha": 85.99,
+     "area_ha": 376530.0,
+     "area_1000ha": 376.5
+    },
+    {
+     "year": 2016,
+     "prod_t": 34403004.0,
+     "yield_t_ha": 76.93,
+     "area_ha": 447204.0,
+     "area_1000ha": 447.2
+    },
+    {
+     "year": 2017,
+     "prod_t": 36561496.0,
+     "yield_t_ha": 80.63,
+     "area_ha": 453470.0,
+     "area_1000ha": 453.5
+    },
+    {
+     "year": 2018,
+     "prod_t": 33506830.0,
+     "yield_t_ha": 75.64,
+     "area_ha": 442958.0,
+     "area_1000ha": 443.0
+    },
+    {
+     "year": 2019,
+     "prod_t": 32415352.0,
+     "yield_t_ha": 81.98,
+     "area_ha": 395399.0,
+     "area_1000ha": 395.4
+    },
+    {
+     "year": 2020,
+     "prod_t": 30283456.0,
+     "yield_t_ha": 82.65,
+     "area_ha": 366426.0,
+     "area_1000ha": 366.4
+    },
+    {
+     "year": 2021,
+     "prod_t": 31133488.0,
+     "yield_t_ha": 85.93,
+     "area_ha": 362320.0,
+     "area_1000ha": 362.3
+    },
+    {
+     "year": 2022,
+     "prod_t": 28669280.0,
+     "yield_t_ha": 85.32,
+     "area_ha": 336003.0,
+     "area_1000ha": 336.0
+    },
+    {
+     "year": 2023,
+     "prod_t": 32589392.0,
+     "yield_t_ha": 98.62,
+     "area_ha": 330456.0,
+     "area_1000ha": 330.5
+    },
+    {
+     "year": 2024,
+     "prod_t": 29855156.0,
+     "yield_t_ha": 87.66,
+     "area_ha": 340590.0,
+     "area_1000ha": 340.6
+    }
+   ],
+   "years_present": 20
+  },
+  "危地马拉": {
+   "entity_owid": "Guatemala",
+   "rows": [
+    {
+     "year": 2005,
+     "prod_t": 18007620.0,
+     "yield_t_ha": 97.38,
+     "area_ha": 184928.0,
+     "area_1000ha": 184.9
+    },
+    {
+     "year": 2006,
+     "prod_t": 17631588.0,
+     "yield_t_ha": 93.44,
+     "area_ha": 188702.0,
+     "area_1000ha": 188.7
+    },
+    {
+     "year": 2007,
+     "prod_t": 20312464.0,
+     "yield_t_ha": 94.18,
+     "area_ha": 215679.0,
+     "area_1000ha": 215.7
+    },
+    {
+     "year": 2008,
+     "prod_t": 20311940.0,
+     "yield_t_ha": 94.18,
+     "area_ha": 215679.0,
+     "area_1000ha": 215.7
+    },
+    {
+     "year": 2009,
+     "prod_t": 21525684.0,
+     "yield_t_ha": 92.32,
+     "area_ha": 233152.0,
+     "area_1000ha": 233.2
+    },
+    {
+     "year": 2010,
+     "prod_t": 22313828.0,
+     "yield_t_ha": 95.11,
+     "area_ha": 234619.0,
+     "area_1000ha": 234.6
+    },
+    {
+     "year": 2011,
+     "prod_t": 20586052.0,
+     "yield_t_ha": 83.94,
+     "area_ha": 245243.0,
+     "area_1000ha": 245.2
+    },
+    {
+     "year": 2012,
+     "prod_t": 24289900.0,
+     "yield_t_ha": 94.93,
+     "area_ha": 255866.0,
+     "area_1000ha": 255.9
+    },
+    {
+     "year": 2013,
+     "prod_t": 26913622.0,
+     "yield_t_ha": 103.07,
+     "area_ha": 261107.0,
+     "area_1000ha": 261.1
+    },
+    {
+     "year": 2014,
+     "prod_t": 33239196.0,
+     "yield_t_ha": 125.16,
+     "area_ha": 265580.0,
+     "area_1000ha": 265.6
+    },
+    {
+     "year": 2015,
+     "prod_t": 33869276.0,
+     "yield_t_ha": 126.43,
+     "area_ha": 267887.0,
+     "area_1000ha": 267.9
+    },
+    {
+     "year": 2016,
+     "prod_t": 33533402.0,
+     "yield_t_ha": 129.05,
+     "area_ha": 259850.0,
+     "area_1000ha": 259.8
+    },
+    {
+     "year": 2017,
+     "prod_t": 25951272.0,
+     "yield_t_ha": 102.98,
+     "area_ha": 252000.0,
+     "area_1000ha": 252.0
+    },
+    {
+     "year": 2018,
+     "prod_t": 27665416.0,
+     "yield_t_ha": 103.08,
+     "area_ha": 268400.0,
+     "area_1000ha": 268.4
+    },
+    {
+     "year": 2019,
+     "prod_t": 29865166.0,
+     "yield_t_ha": 107.52,
+     "area_ha": 277762.0,
+     "area_1000ha": 277.8
+    },
+    {
+     "year": 2020,
+     "prod_t": 27669110.0,
+     "yield_t_ha": 107.27,
+     "area_ha": 257941.0,
+     "area_1000ha": 257.9
+    },
+    {
+     "year": 2021,
+     "prod_t": 25525852.0,
+     "yield_t_ha": 107.59,
+     "area_ha": 237261.0,
+     "area_1000ha": 237.3
+    },
+    {
+     "year": 2022,
+     "prod_t": 25845178.0,
+     "yield_t_ha": 107.69,
+     "area_ha": 240000.0,
+     "area_1000ha": 240.0
+    },
+    {
+     "year": 2023,
+     "prod_t": 23971750.0,
+     "yield_t_ha": 99.47,
+     "area_ha": 241000.0,
+     "area_1000ha": 241.0
+    },
+    {
+     "year": 2024,
+     "prod_t": 22907870.0,
+     "yield_t_ha": 104.75,
+     "area_ha": 218690.0,
+     "area_1000ha": 218.7
+    }
+   ],
+   "years_present": 20
+  },
+  "哥伦比亚": {
+   "entity_owid": "Colombia",
+   "rows": [
+    {
+     "year": 2005,
+     "prod_t": 39849240.0,
+     "yield_t_ha": 98.14,
+     "area_ha": 406060.0,
+     "area_1000ha": 406.1
+    },
+    {
+     "year": 2006,
+     "prod_t": 37100000.0,
+     "yield_t_ha": 90.47,
+     "area_ha": 410060.0,
+     "area_1000ha": 410.1
+    },
+    {
+     "year": 2007,
+     "prod_t": 35200000.0,
+     "yield_t_ha": 85.81,
+     "area_ha": 410201.0,
+     "area_1000ha": 410.2
+    },
+    {
+     "year": 2008,
+     "prod_t": 32300000.0,
+     "yield_t_ha": 84.25,
+     "area_ha": 383388.0,
+     "area_1000ha": 383.4
+    },
+    {
+     "year": 2009,
+     "prod_t": 36700000.0,
+     "yield_t_ha": 96.7,
+     "area_ha": 379505.0,
+     "area_1000ha": 379.5
+    },
+    {
+     "year": 2010,
+     "prod_t": 32538976.0,
+     "yield_t_ha": 93.36,
+     "area_ha": 348531.0,
+     "area_1000ha": 348.5
+    },
+    {
+     "year": 2011,
+     "prod_t": 34889670.0,
+     "yield_t_ha": 91.34,
+     "area_ha": 381961.0,
+     "area_1000ha": 382.0
+    },
+    {
+     "year": 2012,
+     "prod_t": 33336952.0,
+     "yield_t_ha": 84.07,
+     "area_ha": 396532.0,
+     "area_1000ha": 396.5
+    },
+    {
+     "year": 2013,
+     "prod_t": 34876332.0,
+     "yield_t_ha": 85.86,
+     "area_ha": 406204.0,
+     "area_1000ha": 406.2
+    },
+    {
+     "year": 2014,
+     "prod_t": 38157132.0,
+     "yield_t_ha": 95.12,
+     "area_ha": 401132.0,
+     "area_1000ha": 401.1
+    },
+    {
+     "year": 2015,
+     "prod_t": 36139170.0,
+     "yield_t_ha": 88.26,
+     "area_ha": 409462.0,
+     "area_1000ha": 409.5
+    },
+    {
+     "year": 2016,
+     "prod_t": 34759610.0,
+     "yield_t_ha": 86.4,
+     "area_ha": 402314.0,
+     "area_1000ha": 402.3
+    },
+    {
+     "year": 2017,
+     "prod_t": 23389040.0,
+     "yield_t_ha": 54.26,
+     "area_ha": 431027.0,
+     "area_1000ha": 431.0
+    },
+    {
+     "year": 2018,
+     "prod_t": 33454408.0,
+     "yield_t_ha": 73.51,
+     "area_ha": 455114.0,
+     "area_1000ha": 455.1
+    },
+    {
+     "year": 2019,
+     "prod_t": 33835410.0,
+     "yield_t_ha": 50.25,
+     "area_ha": 673293.0,
+     "area_1000ha": 673.3
+    },
+    {
+     "year": 2020,
+     "prod_t": 36364744.0,
+     "yield_t_ha": 89.22,
+     "area_ha": 407583.0,
+     "area_1000ha": 407.6
+    },
+    {
+     "year": 2021,
+     "prod_t": 34583308.0,
+     "yield_t_ha": 95.99,
+     "area_ha": 360290.0,
+     "area_1000ha": 360.3
+    },
+    {
+     "year": 2022,
+     "prod_t": 35723116.0,
+     "yield_t_ha": 91.41,
+     "area_ha": 390798.0,
+     "area_1000ha": 390.8
+    },
+    {
+     "year": 2023,
+     "prod_t": 32189252.0,
+     "yield_t_ha": 91.04,
+     "area_ha": 353571.0,
+     "area_1000ha": 353.6
+    },
+    {
+     "year": 2024,
+     "prod_t": 31856922.0,
+     "yield_t_ha": 89.22,
+     "area_ha": 357070.0,
+     "area_1000ha": 357.1
+    }
+   ],
+   "years_present": 20
+  }
+ },
+ "missing_entities": []
+}

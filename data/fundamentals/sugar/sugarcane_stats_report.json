@@ -1,0 +1,450 @@
+{
+ "countries": {
+  "全球": {
+   "year0": 2005,
+   "year1": 2024,
+   "area_2005": 19569.7,
+   "area_2024": 26743.9,
+   "area_chg_1000ha": 7174.2,
+   "area_pct": 36.7,
+   "area_min": 19569.7,
+   "area_max": 27002.6,
+   "area_min_year": 2005,
+   "area_max_year": 2014,
+   "yield_2005": 66.75,
+   "yield_2024": 72.53,
+   "yield_chg_pct": 8.7,
+   "yield_min": 66.75,
+   "yield_max": 75.1,
+   "yield_min_year": 2005,
+   "yield_max_year": 2023,
+   "prod_2005": 1306.2,
+   "prod_2024": 1939.8
+  },
+  "中国": {
+   "year0": 2005,
+   "year1": 2024,
+   "area_2005": 1354.3,
+   "area_2024": 1262.4,
+   "area_chg_1000ha": -91.9,
+   "area_pct": -6.8,
+   "area_min": 1262.4,
+   "area_max": 1816.5,
+   "area_min_year": 2024,
+   "area_max_year": 2013,
+   "yield_2005": 63.97,
+   "yield_2024": 80.87,
+   "yield_chg_pct": 26.4,
+   "yield_min": 63.97,
+   "yield_max": 82.65,
+   "yield_min_year": 2005,
+   "yield_max_year": 2023,
+   "prod_2005": 86.6,
+   "prod_2024": 102.1
+  },
+  "巴西": {
+   "year0": 2005,
+   "year1": 2024,
+   "area_2005": 5805.5,
+   "area_2024": 10051.3,
+   "area_chg_1000ha": 4245.8,
+   "area_pct": 73.1,
+   "area_min": 5805.5,
+   "area_max": 10419.7,
+   "area_min_year": 2005,
+   "area_max_year": 2014,
+   "yield_2005": 72.85,
+   "yield_2024": 75.58,
+   "yield_chg_pct": 3.7,
+   "yield_min": 70.65,
+   "yield_max": 80.26,
+   "yield_min_year": 2014,
+   "yield_max_year": 2009,
+   "prod_2005": 423.0,
+   "prod_2024": 759.7
+  },
+  "印度": {
+   "year0": 2005,
+   "year1": 2024,
+   "area_2005": 3661.5,
+   "area_2024": 5739.6,
+   "area_chg_1000ha": 2078.1,
+   "area_pct": 56.8,
+   "area_min": 3661.5,
+   "area_max": 5885.3,
+   "area_min_year": 2005,
+   "area_max_year": 2023,
+   "yield_2005": 64.75,
+   "yield_2024": 78.95,
+   "yield_chg_pct": 21.9,
+   "yield_min": 64.55,
+   "yield_max": 84.91,
+   "yield_min_year": 2009,
+   "yield_max_year": 2022,
+   "prod_2005": 237.1,
+   "prod_2024": 453.2
+  },
+  "泰国": {
+   "year0": 2005,
+   "year1": 2024,
+   "area_2005": 1067.2,
+   "area_2024": 1491.2,
+   "area_chg_1000ha": 424.0,
+   "area_pct": 39.7,
+   "area_min": 963.6,
+   "area_max": 1835.1,
+   "area_min_year": 2009,
+   "area_max_year": 2019,
+   "yield_2005": 46.46,
+   "yield_2024": 55.28,
+   "yield_chg_pct": 19.0,
+   "yield_min": 43.74,
+   "yield_max": 76.75,
+   "yield_min_year": 2020,
+   "yield_max_year": 2012,
+   "prod_2005": 49.6,
+   "prod_2024": 82.4
+  },
+  "美国": {
+   "year0": 2005,
+   "year1": 2024,
+   "area_2005": 373.1,
+   "area_2024": 375.4,
+   "area_chg_1000ha": 2.3,
+   "area_pct": 0.6,
+   "area_min": 351.3,
+   "area_max": 383.5,
+   "area_min_year": 2008,
+   "area_max_year": 2020,
+   "yield_2005": 71.31,
+   "yield_2024": 84.21,
+   "yield_chg_pct": 18.1,
+   "yield_min": 69.9,
+   "yield_max": 86.06,
+   "yield_min_year": 2010,
+   "yield_max_year": 2018,
+   "prod_2005": 26.6,
+   "prod_2024": 31.6
+  },
+  "墨西哥": {
+   "year0": 2005,
+   "year1": 2024,
+   "area_2005": 669.8,
+   "area_2024": 784.3,
+   "area_chg_1000ha": 114.5,
+   "area_pct": 17.1,
+   "area_min": 669.8,
+   "area_max": 809.3,
+   "area_min_year": 2005,
+   "area_max_year": 2021,
+   "yield_2005": 77.11,
+   "yield_2024": 67.64,
+   "yield_chg_pct": -12.3,
+   "yield_min": 67.64,
+   "yield_max": 78.16,
+   "yield_min_year": 2024,
+   "yield_max_year": 2013,
+   "prod_2005": 51.6,
+   "prod_2024": 53.1
+  },
+  "巴基斯坦": {
+   "year0": 2005,
+   "year1": 2024,
+   "area_2005": 966.4,
+   "area_2024": 1193.1,
+   "area_chg_1000ha": 226.7,
+   "area_pct": 23.5,
+   "area_min": 907.3,
+   "area_max": 1341.8,
+   "area_min_year": 2006,
+   "area_max_year": 2017,
+   "yield_2005": 48.89,
+   "yield_2024": 70.6,
+   "yield_chg_pct": 44.4,
+   "yield_min": 48.62,
+   "yield_max": 74.25,
+   "yield_min_year": 2009,
+   "yield_max_year": 2023,
+   "prod_2005": 47.2,
+   "prod_2024": 84.2
+  },
+  "印尼": {
+   "year0": 2005,
+   "year1": 2024,
+   "area_2005": 382.1,
+   "area_2024": 524.9,
+   "area_chg_1000ha": 142.8,
+   "area_pct": 37.4,
+   "area_min": 382.1,
+   "area_max": 524.9,
+   "area_min_year": 2005,
+   "area_max_year": 2024,
+   "yield_2005": 76.68,
+   "yield_2024": 60.97,
+   "yield_chg_pct": -20.5,
+   "yield_min": 55.17,
+   "yield_max": 76.68,
+   "yield_min_year": 2011,
+   "yield_max_year": 2005,
+   "prod_2005": 29.3,
+   "prod_2024": 32.0
+  },
+  "澳大利亚": {
+   "year0": 2005,
+   "year1": 2024,
+   "area_2005": 434.0,
+   "area_2024": 340.6,
+   "area_chg_1000ha": -93.4,
+   "area_pct": -21.5,
+   "area_min": 308.1,
+   "area_max": 453.5,
+   "area_min_year": 2011,
+   "area_max_year": 2017,
+   "yield_2005": 87.16,
+   "yield_2024": 87.66,
+   "yield_chg_pct": 0.6,
+   "yield_min": 75.64,
+   "yield_max": 98.62,
+   "yield_min_year": 2018,
+   "yield_max_year": 2023,
+   "prod_2005": 37.8,
+   "prod_2024": 29.9
+  },
+  "危地马拉": {
+   "year0": 2005,
+   "year1": 2024,
+   "area_2005": 184.9,
+   "area_2024": 218.7,
+   "area_chg_1000ha": 33.8,
+   "area_pct": 18.3,
+   "area_min": 184.9,
+   "area_max": 277.8,
+   "area_min_year": 2005,
+   "area_max_year": 2019,
+   "yield_2005": 97.38,
+   "yield_2024": 104.75,
+   "yield_chg_pct": 7.6,
+   "yield_min": 83.94,
+   "yield_max": 129.05,
+   "yield_min_year": 2011,
+   "yield_max_year": 2016,
+   "prod_2005": 18.0,
+   "prod_2024": 22.9
+  },
+  "哥伦比亚": {
+   "year0": 2005,
+   "year1": 2024,
+   "area_2005": 406.1,
+   "area_2024": 357.1,
+   "area_chg_1000ha": -49.0,
+   "area_pct": -12.1,
+   "area_min": 348.5,
+   "area_max": 673.3,
+   "area_min_year": 2010,
+   "area_max_year": 2019,
+   "yield_2005": 98.14,
+   "yield_2024": 89.22,
+   "yield_chg_pct": -9.1,
+   "yield_min": 50.25,
+   "yield_max": 98.14,
+   "yield_min_year": 2019,
+   "yield_max_year": 2005,
+   "prod_2005": 39.8,
+   "prod_2024": 31.9
+  }
+ },
+ "world_series": [
+  {
+   "year": 2005,
+   "prod": 1306183600.0,
+   "yield": 66.75,
+   "area": 19569.7
+  },
+  {
+   "year": 2006,
+   "prod": 1417229700.0,
+   "yield": 69.2,
+   "area": 20479.5
+  },
+  {
+   "year": 2007,
+   "prod": 1602129800.0,
+   "yield": 70.94,
+   "area": 22584.7
+  },
+  {
+   "year": 2008,
+   "prod": 1716381000.0,
+   "yield": 71.59,
+   "area": 23974.3
+  },
+  {
+   "year": 2009,
+   "prod": 1673251300.0,
+   "yield": 70.94,
+   "area": 23588.2
+  },
+  {
+   "year": 2010,
+   "prod": 1676608800.0,
+   "yield": 71.18,
+   "area": 23554.5
+  },
+  {
+   "year": 2011,
+   "prod": 1792304300.0,
+   "yield": 70.49,
+   "area": 25425.2
+  },
+  {
+   "year": 2012,
+   "prod": 1829505300.0,
+   "yield": 70.55,
+   "area": 25931.7
+  },
+  {
+   "year": 2013,
+   "prod": 1904033400.0,
+   "yield": 71.06,
+   "area": 26795.7
+  },
+  {
+   "year": 2014,
+   "prod": 1887758800.0,
+   "yield": 69.91,
+   "area": 27002.6
+  },
+  {
+   "year": 2015,
+   "prod": 1873834000.0,
+   "yield": 70.87,
+   "area": 26440.8
+  },
+  {
+   "year": 2016,
+   "prod": 1881739300.0,
+   "yield": 70.96,
+   "area": 26517.7
+  },
+  {
+   "year": 2017,
+   "prod": 1837827100.0,
+   "yield": 70.29,
+   "area": 26147.3
+  },
+  {
+   "year": 2018,
+   "prod": 1934052100.0,
+   "yield": 73.28,
+   "area": 26391.7
+  },
+  {
+   "year": 2019,
+   "prod": 1962081700.0,
+   "yield": 72.73,
+   "area": 26979.2
+  },
+  {
+   "year": 2020,
+   "prod": 1882175400.0,
+   "yield": 72.08,
+   "area": 26111.5
+  },
+  {
+   "year": 2021,
+   "prod": 1866448900.0,
+   "yield": 72.1,
+   "area": 25887.1
+  },
+  {
+   "year": 2022,
+   "prod": 1921167400.0,
+   "yield": 73.57,
+   "area": 26114.7
+  },
+  {
+   "year": 2023,
+   "prod": 2017376400.0,
+   "yield": 75.1,
+   "area": 26862.1
+  },
+  {
+   "year": 2024,
+   "prod": 1939782000.0,
+   "yield": 72.53,
+   "area": 26743.9
+  }
+ ],
+ "world_overview": {
+  "area_2005_1000ha": 19569.7,
+  "area_2024_1000ha": 26743.9,
+  "area_chg_1000ha": 7174.2,
+  "area_pct": 36.7,
+  "yield_2005": 66.75,
+  "yield_2024": 72.53,
+  "yield_chg_pct": 8.7,
+  "prod_2005_MT": 1306.2,
+  "prod_2024_MT": 1939.8,
+  "prod_pct": 48.5
+ },
+ "china": {
+  "area_2005_1000ha": 1354.3,
+  "area_2024_1000ha": 1262.4,
+  "area_chg_1000ha": -91.9,
+  "area_chg_pct": -6.8,
+  "area_max_1000ha": 1816.5,
+  "area_max_year": 2013,
+  "yield_2005": 63.97,
+  "yield_2024": 80.87,
+  "yield_chg_pct": 26.4,
+  "yield_max": 82.65,
+  "yield_max_year": 2023
+ },
+ "area_change_breakdown": [
+  {
+   "country": "巴西",
+   "chg_1000ha": 4245.8
+  },
+  {
+   "country": "印度",
+   "chg_1000ha": 2078.1
+  },
+  {
+   "country": "泰国",
+   "chg_1000ha": 424.0
+  },
+  {
+   "country": "巴基斯坦",
+   "chg_1000ha": 226.7
+  },
+  {
+   "country": "印尼",
+   "chg_1000ha": 142.8
+  },
+  {
+   "country": "墨西哥",
+   "chg_1000ha": 114.5
+  },
+  {
+   "country": "危地马拉",
+   "chg_1000ha": 33.8
+  },
+  {
+   "country": "美国",
+   "chg_1000ha": 2.3
+  },
+  {
+   "country": "哥伦比亚",
+   "chg_1000ha": -49.0
+  },
+  {
+   "country": "中国",
+   "chg_1000ha": -91.9
+  },
+  {
+   "country": "澳大利亚",
+   "chg_1000ha": -93.4
+  }
+ ],
+ "world_area_chg": 7174.2
+}

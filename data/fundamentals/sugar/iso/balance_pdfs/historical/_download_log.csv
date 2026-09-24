@@ -1,0 +1,40 @@
+file,status,source
+world_sugar_balance_february_2015.pdf,FAIL https://archive.isosugar.org/content/memo/ -> ERR HTTPError: HTTP Error 404: Not Found,-
+world_sugar_balance_may_2015.pdf,FAIL https://archive.isosugar.org/content/memo/ -> ERR HTTPError: HTTP Error 404: Not Found,-
+world_sugar_balance_august_2015.pdf,FAIL https://archive.isosugar.org/content/memo/ -> ERR HTTPError: HTTP Error 404: Not Found,-
+world_sugar_balance_november_2015.pdf,FAIL https://archive.isosugar.org/content/memo/ -> ERR HTTPError: HTTP Error 404: Not Found,-
+world_sugar_balance_february_2016.pdf,FAIL https://archive.isosugar.org/content/memo/ -> ERR HTTPError: HTTP Error 404: Not Found,-
+world_sugar_balance_may_2016.pdf,FAIL https://archive.isosugar.org/content/memo/ -> ERR HTTPError: HTTP Error 404: Not Found,-
+world_sugar_balance_august_2016.pdf,FAIL https://archive.isosugar.org/content/memo/ -> ERR HTTPError: HTTP Error 404: Not Found,-
+world_sugar_balance_november_2016.pdf,FAIL https://archive.isosugar.org/content/memo/ -> ERR HTTPError: HTTP Error 404: Not Found,-
+world_sugar_balance_february_2017.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_february_2017.pdf
+world_sugar_balance_may_2017.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_may_2017.pdf
+world_sugar_balance_august_2017.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_august_2017.pdf
+world_sugar_balance_november_2017.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_november_2017.pdf
+world_sugar_balance_february_2018.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_february_2018.pdf
+world_sugar_balance_may_2018.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_may_2018.pdf
+world_sugar_balance_august_2018.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_august_2018.pdf
+world_sugar_balance_november_2018.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_november_2018.pdf
+world_sugar_balance_february_2019.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_february_2019.pdf
+world_sugar_balance_may_2019.pdf,FAIL https://archive.isosugar.org/content/memo/ -> ERR HTTPError: HTTP Error 404: Not Found,-
+world_sugar_balance_august_2019.pdf,FAIL https://archive.isosugar.org/content/memo/ -> ERR HTTPError: HTTP Error 404: Not Found,-
+world_sugar_balance_november_2019.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_november_2019.pdf
+world_sugar_balance_february_2020.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_february_2020.pdf
+world_sugar_balance_may_2020.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_may_2020.pdf
+world_sugar_balance_august_2020.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_august_2020.pdf
+world_sugar_balance_november_2020.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_november_2020.pdf
+world_sugar_balance_february_2021.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_february_2021.pdf
+world_sugar_balance_may_2021.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_may_2021.pdf
+world_sugar_balance_august_2021.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_august_2021.pdf
+world_sugar_balance_november_2021.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_november_2021.pdf
+world_sugar_balance_february_2022.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_february_2022.pdf
+world_sugar_balance_may_2022.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_may_2022.pdf
+world_sugar_balance_august_2022.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_august_2022.pdf
+world_sugar_balance_november_2022.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_november_2022.pdf
+world_sugar_balance_february_2023.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_february_2023.pdf
+world_sugar_balance_may_2023.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_may_2023.pdf
+world_sugar_balance_august_2023.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_august_2023.pdf
+world_sugar_balance_november_2023.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_november_2023.pdf
+world_sugar_balance_february_2024.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_february_2024.pdf
+world_sugar_balance_may_2024.pdf,FAIL https://archive.isosugar.org/content/memo/ -> ERR HTTPError: HTTP Error 404: Not Found,-
+world_sugar_balance_august_2024.pdf,SKIP(exists),C:\Users\Administrator\Desktop\农业\data\sugar\iso\balance_pdfs\historical\world_sugar_balance_august_2024.pdf

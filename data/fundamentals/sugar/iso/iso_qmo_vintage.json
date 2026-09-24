@@ -1,0 +1,1060 @@
+{
+  "metadata": {
+    "subject": "ISO (International Sugar Organization) 全球食糖供需平衡表 vintage 追踪库",
+    "scope": "ISO Quarterly Market Outlook (QMO) 对全球食糖市场年度平衡表的历次修订轨迹",
+    "unit": "百万吨 (Million tonnes, tel quel / raw)",
+    "balance_convention": "balance = production - consumption（口径为 ISO 全球平衡表；与贸易盈余不同口径）",
+    "collected_at": "2026-09-24",
+    "collection_method": "官方 HEADLINES 免费公开页全文 + 多来源媒体交叉核实（新浪财经/网易/泛糖/生意社/ChiniMandi/baonghean/Nasdaq/agri-food-update/金十期货等）",
+    "paywall_notice": "QMO 全文(£250/期)、World Sugar Balance(£170/期)、月报订阅(£260/年)为付费产品，本库只收录公开可见的 HEADLINES 与经多源核实的平衡表数字",
+    "stock_ratio_caliber_warning": "库消比存在两套口径不可混用：旧口径(Feb-2026 及以前, 约50-52%) vs 修订口径(May-2026 起采用'shares methodology', 44.15%并另报<42.4%的调整后值)。任何跨 vintage 比较都必须先对齐口径。"
+  },
+  "vintages": [
+    {
+      "id": "QMO-2025-08",
+      "report": "Quarterly Market Outlook - August 2025",
+      "release_date": "2025-08-29",
+      "revision": "initial / 1st estimate (首版)",
+      "market_year": "2025/26",
+      "balance_mt": -0.231,
+      "production_mt": 180.593,
+      "production_chg_mt": 5.419,
+      "consumption_mt": 180.824,
+      "consumption_chg_mt": 0.771,
+      "exports_mt": 63.89,
+      "imports_mt": 63.768,
+      "ending_stocks_mt": null,
+      "stock_to_use_pct": null,
+      "prior_year_deficit_mt": 4.879,
+      "key_drivers": "印度/泰国/巴基斯坦增产；全球连续第六年缺口；2023/24 消费上修至 18.1639 亿吨(历史最高)",
+      "sources": [
+        "https://www.agri-food-update.com/sugar-ethanol-news/sugarethanolbioenergycom-season-2025-26-iso-sees-global-sugar-deficit-of-just-0231-million-tonnes",
+        "https://www.nasdaq.com/articles/sugar-prices-climb-signs-stronger-global-sugar-demand",
+        "https://www.msweet.com.cn/eportal/ui?pageId=2590581&articleKey=3162076&columnId=2593939"
+      ],
+      "notes": "ISO 对 2025/26 的首份全面预测：微幅缺口，但被解读为接近平衡。 [官方PDF校正: Aug-2025 期未发布库存列; 此前媒体转述的 92.489 为 2024/25 期末库存, 已移除]"
+    },
+    {
+      "id": "QMO-2025-11",
+      "report": "Quarterly Market Outlook - November 2025",
+      "release_date": "2025-11-17",
+      "revision": "2nd (第二次修订)",
+      "market_year": "2025/26",
+      "balance_mt": 1.625,
+      "production_mt": 181.767,
+      "production_chg_pct": 3.15,
+      "consumption_mt": 180.142,
+      "consumption_chg_pct": 0.56,
+      "stock_to_use_pct": 52.74,
+      "prior_year_deficit_mt": 2.916,
+      "key_drivers": "印度/泰国/巴基斯坦产量比预期更快修复，由缺转盈；2024/25 缺口从 487.9 万吨收窄至 291.6 万吨；2023/24 消费上修至创纪录 181.207 万吨",
+      "sources": [
+        "https://www.isosugar.org/publication/429/quarterly-market-outlook---november-2025",
+        "https://www.cnfin.com/kx/detail/20251117/4336532_1.html",
+        "https://www.hisugar.com/home/articleContent?id=2025111809005816811984",
+        "https://tradingeconomics.com/commodity/sugar/news/502984",
+        "https://nasdaq.com/articles/sugar-prices-undercut-weakness-crude-oil"
+      ],
+      "notes": "官方 HEADLINES 全文已存 headlines/qmo_2025-11.md。官方精确值(消费 180.142 vs 媒体转述 180.140, 库消比 52.74% 旧口径)。此为 2024/25 缺口修订链中间一环: 4.879(Aug-25) → 2.916(Nov-25) → 3.464(Feb-26) → 3.196(May-26)。 [官方PDF校正: 期末库存 95.015, 库消比 52.74]",
+      "ending_stocks_mt": 95.015
+    },
+    {
+      "id": "QMO-2026-02",
+      "report": "Quarterly Market Outlook - February 2026",
+      "release_date": "2026-02-27",
+      "revision": "3rd (第三次修订)",
+      "market_year": "2025/26",
+      "balance_mt": 1.218,
+      "production_mt": 181.287,
+      "production_chg_mt": 5.231,
+      "production_chg_pct": 2.97,
+      "consumption_mt": 180.069,
+      "consumption_chg_mt": 0.549,
+      "consumption_chg_pct": 0.31,
+      "exports_mt": 64.324,
+      "imports_mt": 63.222,
+      "ending_stocks_mt": 93.3,
+      "stock_to_use_pct": 51.81,
+      "trade_surplus_mt": 1.102,
+      "prior_year_deficit_mt": 3.464,
+      "key_drivers": "印度/泰国增产速度不及 11 月预期，过剩收窄 40.7 万吨；2024/25 缺口从 292 万吨上修至 346 万吨(美国消费上修带动)",
+      "sources": [
+        "https://www.isosugar.org/publication/437/quarterly-market-outlook---february-2026",
+        "https://www.chinimandi.com/iso-quarterly-report-suggests-modest-global-surplus-consumption-uptick-led-by-usa/",
+        "https://finance.sina.com.cn/money/future/fmnews/2026-03-02/doc-inhpqvai4586831.shtml",
+        "https://m.163.com/dy/article/KN1EH41L05568W0A.html",
+        "https://baonghean.vn/en/iso-ha-du-bao-thang-du-duong-toan-cau-xuong-1218-trieu-tan-trong-nien-vu-202526-10328083.html"
+      ],
+      "notes": "官方 HEADLINES 全文已存 headlines/qmo_2026-02.md。ChiniMandi 给出完整平衡表(消费 1.80069 亿吨, 期末库存 9330 万吨, 库消比 51.81%)。此版库消比仍为旧口径。 [官方PDF校正: 期末库存 93.300 库消比 51.81 一致]"
+    },
+    {
+      "id": "QMO-2026-05",
+      "report": "Quarterly Market Outlook - May 2026",
+      "release_date": "2026-05",
+      "revision": "4th (第四次修订)",
+      "market_year": "2025/26",
+      "balance_mt": 2.244,
+      "consumption_mt": 179.76,
+      "consumption_chg_pct": 0.39,
+      "trade_surplus_mt": 0.9,
+      "stock_to_use_pct": 44.15,
+      "prior_year_deficit_mt": 3.196,
+      "key_drivers": "第三次上修过剩至 224.4 万吨(全球增产超预期)；2024/25 缺口从 346.4 万吨收窄至 319.6 万吨",
+      "sources": [
+        "https://www.isosugar.org/publication/445/quarterly-market-outlook---may-2026--",
+        "https://ponnisugars.com/SiteImages/Announcements/8af0e01547c2c4f662963ab9105e7ae4.pdf"
+      ],
+      "notes": "官方 HEADLINES 全文已存 headlines/qmo_2026-05.md。库消比 44.15% 采用修订后方法论(旧口径下或约 51-52%)，此版起开始切换口径，跨期比较必须注意。 [官方PDF校正: 产量 182.004 官方值; 旧口径库消比 52.98 / updated 44.15, 期末库存 95.240 / updated 79.360]",
+      "production_mt": 182.004,
+      "ending_stocks_mt": 95.24,
+      "updated_end_stocks_mt": 79.36,
+      "stock_to_use_old_pct": 52.98
+    },
+    {
+      "id": "QMO-2026-08",
+      "report": "Quarterly Market Outlook - August 2026",
+      "release_date": "2026-08",
+      "revision": "5th / latest (第五次修订, 本季最新)",
+      "market_year": "2025/26",
+      "balance_mt": 1.144,
+      "balance_rev_from_mt": 2.2,
+      "consumption_mt": 179.551,
+      "consumption_chg_pct": 0.5,
+      "consumption_chg_mt": 0.9,
+      "trade_surplus_2026_27_mt": 1.3,
+      "key_drivers": "巴西中南部 2026 收割季上半年产糖低于预期，过剩从 220 万吨腰斩至 110 万吨(本季第四次下调)；中国产量近 1300 万吨(2013/14 以来最高)部分抵消",
+      "sources": [
+        "https://www.isosugar.org/publication/460/quarterly-market-outlook---august-2026-",
+        "https://qihuo.jin10.com/articleDetail.html?id=1128733",
+        "https://www.chinimandi.com/world-raw-sugar-prices-jump-13-in-august-on-speculative-fund-buying",
+        "https://cropgpt.ai/iso-cuts-2025-26-global-sugar-surplus-forecast-sees-small-deficit-for-2026-27"
+      ],
+      "notes": "官方 HEADLINES 全文已存 headlines/qmo_2026-08.md。本季累计第四次下调(11月1.63→2月1.22→5月2.24→8月1.1 Mt)。 [官方PDF校正: surplus 官方 1.144 Mt(HEADLINES 舍入 1.1); 产量 180.695 消费 179.551; 库存自本期暂停发布(数据重审中)]",
+      "production_mt": 180.695,
+      "ending_stocks_mt": null,
+      "stock_to_use_pct": null
+    },
+    {
+      "id": "QMO-2026-08-first-2026-27",
+      "report": "Quarterly Market Outlook - August 2026 (2026/27 首版)",
+      "release_date": "2026-08",
+      "revision": "initial / 1st estimate for 2026/27",
+      "market_year": "2026/27",
+      "balance_mt": -0.234,
+      "consumption_mt": 180.375,
+      "consumption_chg_mt": 0.8,
+      "trade_surplus_mt": 1.3,
+      "key_drivers": "首份详细预估即指向 20 万吨微幅缺口(假设高糖价促使巴西大幅偏向产糖)；巴西以外产量预计减少约 440 万吨(欧盟/泰国/中美洲)；厄尔尼诺为最大风险；贸易盈余 130 万吨(欧盟/埃及高位库存去化)",
+      "sources": [
+        "https://www.isosugar.org/publication/460/quarterly-market-outlook---august-2026-",
+        "https://qihuo.jin10.com/articleDetail.html?id=1128733",
+        "https://cropgpt.ai/iso-cuts-2025-26-global-sugar-surplus-forecast-sees-small-deficit-for-2026-27"
+      ],
+      "notes": "aug-2026 期同时给出 2026/27 首版预估。参考：盘中媒体转述 Covrig Analytics 2026/27 缺口 30 万吨、Green Pool 缺口 324 万吨、StoneX 缺口 170 万吨——ISO 首版属于中性偏保守。 [官方PDF校正: 首版 official: 生产 180.141, 消费 180.375, 产销差 -0.234 Mt(HEADLINES 舍入 -0.2)]",
+      "production_mt": 180.141
+    }
+  ],
+  "revision_timeline_2025_26_mt": [
+    {
+      "vintage": "2025-08 (1st)",
+      "balance": -0.231,
+      "production": 180.593,
+      "consumption": 180.824
+    },
+    {
+      "vintage": "2025-11 (2nd)",
+      "balance": 1.625,
+      "production": 181.767,
+      "consumption": 180.142
+    },
+    {
+      "vintage": "2026-02 (3rd)",
+      "balance": 1.218,
+      "production": 181.287,
+      "consumption": 180.069
+    },
+    {
+      "vintage": "2026-05 (4th)",
+      "balance": 2.244,
+      "production": 182.004,
+      "consumption": 179.76
+    },
+    {
+      "vintage": "2026-08 (5th)",
+      "balance": 1.144,
+      "production": 180.695,
+      "consumption": 179.551
+    }
+  ],
+  "cross_institution_2026_27_consensus": [
+    {
+      "institution": "ISO (QMO Aug-2026, 首版)",
+      "balance_mt": -0.2
+    },
+    {
+      "institution": "Covrig Analytics",
+      "balance_mt": -0.3
+    },
+    {
+      "institution": "Green Pool",
+      "balance_mt": -3.24
+    },
+    {
+      "institution": "StoneX",
+      "balance_mt": -1.7
+    },
+    {
+      "institution": "Czarnikow",
+      "balance_mt": -0.6
+    }
+  ],
+  "historical_final_series_2010_2026_mt": [
+    {
+      "market_year": "2011/12",
+      "production": 163.597,
+      "consumption": 157.961,
+      "balance": 5.636,
+      "end_stocks": 73.583,
+      "stock_to_use_pct": 46.58,
+      "caliber": "latest official"
+    },
+    {
+      "market_year": "2012/13",
+      "production": 171.804,
+      "consumption": 163.645,
+      "balance": 8.159,
+      "end_stocks": 81.742,
+      "stock_to_use_pct": 49.95,
+      "caliber": "latest official"
+    },
+    {
+      "market_year": "2013/14",
+      "production": 174.132,
+      "consumption": 164.215,
+      "balance": 9.917,
+      "end_stocks": 91.659,
+      "stock_to_use_pct": 55.82,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2014/15",
+      "production": 169.373,
+      "consumption": 167.079,
+      "balance": 2.294,
+      "end_stocks": 93.953,
+      "stock_to_use_pct": 56.23,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2015/16",
+      "production": 163.825,
+      "consumption": 170.287,
+      "balance": -6.462,
+      "end_stocks": 88.362,
+      "stock_to_use_pct": 51.89,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2016/17",
+      "production": 169.073,
+      "consumption": 172.683,
+      "balance": -3.61,
+      "end_stocks": 86.492,
+      "stock_to_use_pct": 50.09,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2017/18",
+      "production": 179.828,
+      "consumption": 170.42,
+      "balance": 9.408,
+      "end_stocks": 96.543,
+      "stock_to_use_pct": 56.65,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2018/19",
+      "production": 174.435,
+      "consumption": 169.315,
+      "balance": 5.12,
+      "end_stocks": 103.525,
+      "stock_to_use_pct": 61.14,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2019/20",
+      "production": 167.866,
+      "consumption": 168.492,
+      "balance": -0.626,
+      "end_stocks": 102.95,
+      "stock_to_use_pct": 61.1,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2020/21",
+      "production": 168.702,
+      "consumption": 169.266,
+      "balance": -0.564,
+      "end_stocks": 102.544,
+      "stock_to_use_pct": 60.58,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2021/22",
+      "production": 172.189,
+      "consumption": 176.066,
+      "balance": -3.877,
+      "end_stocks": 98.801,
+      "stock_to_use_pct": 56.12,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2022/23",
+      "production": 175.473,
+      "consumption": 177.344,
+      "balance": -1.871,
+      "end_stocks": 96.919,
+      "stock_to_use_pct": 54.65,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2023/24",
+      "production": 180.954,
+      "consumption": 181.207,
+      "balance": -0.253,
+      "end_stocks": 96.761,
+      "stock_to_use_pct": 53.4,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2024/25",
+      "production": 174.994,
+      "consumption": 178.637,
+      "balance": -3.643,
+      "end_stocks": null,
+      "stock_to_use_pct": null,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2025/26",
+      "production": 180.695,
+      "consumption": 179.551,
+      "balance": 1.144,
+      "end_stocks": null,
+      "stock_to_use_pct": null,
+      "caliber": "latest official (Aug-2026)"
+    },
+    {
+      "market_year": "2026/27",
+      "production": 180.141,
+      "consumption": 180.375,
+      "balance": -0.234,
+      "end_stocks": null,
+      "stock_to_use_pct": null,
+      "caliber": "latest official"
+    }
+  ],
+  "official_balance_pdfs": {
+    "path": "balance_pdfs/",
+    "public": true,
+    "files": [
+      "world_sugar_balance_november_2024.pdf",
+      "world_sugar_balance_february_2025.pdf",
+      "world_sugar_balance_may_2025.pdf",
+      "world_sugar_balance_august_2025.pdf",
+      "world_sugar_balance_november_2025.pdf",
+      "world_sugar_balance_february_2026.pdf",
+      "world_sugar_balance_may_2026.pdf",
+      "world_sugar_balance_august_2026.pdf",
+      "world_sugar_balance_november_2023.pdf"
+    ],
+    "note": "ISO 官网 /content/memo/ 路径公开可下载(年度报表由各期 QMO 同期发布)。购买版World Sugar Balance为£170/期, 但官方 memo PDF 免费。",
+    "stock_discontinuity": "Aug-2026 起 ISO 正在进行全球库存数据的全面重审, 该期不发布库存/库消比, 修订结果将于2026年鉴与Nov-2026 QMO发布。"
+  },
+  "official_vintage_matrix": {
+    "surplus_deficit_kt": {
+      "2011/12": {
+        "2024-11": 5636,
+        "2025-02": 5636,
+        "2025-05": 5636,
+        "2025-08": null,
+        "2025-11": null,
+        "2026-02": null,
+        "2026-05": null,
+        "2026-08": null
+      },
+      "2012/13": {
+        "2024-11": 8159,
+        "2025-02": 8159,
+        "2025-05": 8159,
+        "2025-08": 8159,
+        "2025-11": 8159,
+        "2026-02": 8159,
+        "2026-05": 8159,
+        "2026-08": null
+      },
+      "2013/14": {
+        "2024-11": 9917,
+        "2025-02": 9917,
+        "2025-05": 9917,
+        "2025-08": 9917,
+        "2025-11": 9917,
+        "2026-02": 9917,
+        "2026-05": 9917,
+        "2026-08": 9917
+      },
+      "2014/15": {
+        "2024-11": 2294,
+        "2025-02": 2294,
+        "2025-05": 2294,
+        "2025-08": 2294,
+        "2025-11": 2294,
+        "2026-02": 2294,
+        "2026-05": 2294,
+        "2026-08": 2294
+      },
+      "2015/16": {
+        "2024-11": -6462,
+        "2025-02": -6462,
+        "2025-05": -6462,
+        "2025-08": -6462,
+        "2025-11": -6462,
+        "2026-02": -6462,
+        "2026-05": -6462,
+        "2026-08": -6462
+      },
+      "2016/17": {
+        "2024-11": -3610,
+        "2025-02": -3610,
+        "2025-05": -3610,
+        "2025-08": -3610,
+        "2025-11": -3610,
+        "2026-02": -3610,
+        "2026-05": -3610,
+        "2026-08": -3610
+      },
+      "2017/18": {
+        "2024-11": 9408,
+        "2025-02": 9408,
+        "2025-05": 9408,
+        "2025-08": 9408,
+        "2025-11": 9408,
+        "2026-02": 9408,
+        "2026-05": 9408,
+        "2026-08": 9408
+      },
+      "2018/19": {
+        "2024-11": 5120,
+        "2025-02": 5120,
+        "2025-05": 5120,
+        "2025-08": 5120,
+        "2025-11": 5120,
+        "2026-02": 5120,
+        "2026-05": 5120,
+        "2026-08": 5120
+      },
+      "2019/20": {
+        "2024-11": -626,
+        "2025-02": -626,
+        "2025-05": -626,
+        "2025-08": -626,
+        "2025-11": -626,
+        "2026-02": -626,
+        "2026-05": -626,
+        "2026-08": -626
+      },
+      "2020/21": {
+        "2024-11": -564,
+        "2025-02": -564,
+        "2025-05": -564,
+        "2025-08": -564,
+        "2025-11": -564,
+        "2026-02": -564,
+        "2026-05": -564,
+        "2026-08": -564
+      },
+      "2021/22": {
+        "2024-11": -3877,
+        "2025-02": -3877,
+        "2025-05": -3877,
+        "2025-08": -3877,
+        "2025-11": -3877,
+        "2026-02": -3877,
+        "2026-05": -3877,
+        "2026-08": -3877
+      },
+      "2022/23": {
+        "2024-11": -1871,
+        "2025-02": -1871,
+        "2025-05": -1871,
+        "2025-08": -1871,
+        "2025-11": -1871,
+        "2026-02": -1871,
+        "2026-05": -1871,
+        "2026-08": -1871
+      },
+      "2023/24": {
+        "2024-11": 1312,
+        "2025-02": 1412,
+        "2025-05": 2039,
+        "2025-08": -431,
+        "2025-11": -160,
+        "2026-02": -112,
+        "2026-05": -253,
+        "2026-08": -253
+      },
+      "2024/25": {
+        "2024-11": -2513,
+        "2025-02": -4881,
+        "2025-05": -5466,
+        "2025-08": -4879,
+        "2025-11": -2916,
+        "2026-02": -3464,
+        "2026-05": -3196,
+        "2026-08": -3643
+      },
+      "2025/26": {
+        "2024-11": null,
+        "2025-02": null,
+        "2025-05": null,
+        "2025-08": -231,
+        "2025-11": 1625,
+        "2026-02": 1218,
+        "2026-05": 2244,
+        "2026-08": 1144
+      },
+      "2026/27": {
+        "2024-11": null,
+        "2025-02": null,
+        "2025-05": null,
+        "2025-08": null,
+        "2025-11": null,
+        "2026-02": null,
+        "2026-05": null,
+        "2026-08": -234
+      }
+    }
+  },
+  "revision_timeline_2024_25_mt": [
+    {
+      "vintage": "2024-11",
+      "balance": -2.513
+    },
+    {
+      "vintage": "2025-02",
+      "balance": -4.881
+    },
+    {
+      "vintage": "2025-05",
+      "balance": -5.466
+    },
+    {
+      "vintage": "2025-08",
+      "balance": -4.879
+    },
+    {
+      "vintage": "2025-11",
+      "balance": -2.916
+    },
+    {
+      "vintage": "2026-02",
+      "balance": -3.464
+    },
+    {
+      "vintage": "2026-05",
+      "balance": -3.196
+    },
+    {
+      "vintage": "2026-08",
+      "balance": -3.643
+    }
+  ],
+  "revision_timeline_2024_25_mt_note": "2024/25 缺口修订链(千吨, 官方 PDF): 2024-11 首版 -2,513 → 2025-08 扩大至 -4,879 → 2025-11 收窄 -2,916 → 2026-02 -3,464 → 2026-05 -3,196 → 2026-08 -3,643",
+  "early_vintage_matrix_2015_16_2023_24": {
+    "scope": "早期官方 World Sugar Balance memo（当年发布视角）中 2015/16~2023/24 的 surplus/deficit 修订轨迹",
+    "source_files": "balance_pdfs/historical/world_sugar_balance_<month>_<year>.pdf (2017-02 ~ 2024-08, 28期)",
+    "unit": "千吨 tel quel",
+    "release_order": [
+      "2017-02",
+      "2017-05",
+      "2017-08",
+      "2017-11",
+      "2018-02",
+      "2018-05",
+      "2018-08",
+      "2018-11",
+      "2019-02",
+      "2019-11",
+      "2020-02",
+      "2020-05",
+      "2020-08",
+      "2020-11",
+      "2021-02",
+      "2021-05",
+      "2021-08",
+      "2021-11",
+      "2022-02",
+      "2022-05",
+      "2022-08",
+      "2022-11",
+      "2023-02",
+      "2023-05",
+      "2023-08",
+      "2023-11",
+      "2024-02",
+      "2024-08"
+    ],
+    "revision_chain_kt": {
+      "2015/16": [
+        -5359,
+        -4899,
+        -4962,
+        -4840,
+        -4870,
+        -6015,
+        -5848,
+        -5848,
+        -5848,
+        -5864,
+        -6491,
+        -6491,
+        -6462,
+        -6462,
+        -6462,
+        -6462,
+        -6462,
+        -6462,
+        -6462,
+        -6462,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "2016/17": [
+        -5869,
+        -6465,
+        -3860,
+        -3105,
+        -2543,
+        -3670,
+        -2847,
+        -2847,
+        -2962,
+        -3887,
+        -3414,
+        -3414,
+        -3095,
+        -3095,
+        -3095,
+        -2940,
+        -2940,
+        -2940,
+        -3610,
+        -3610,
+        -3610,
+        -3610,
+        -3610,
+        -3610,
+        null,
+        null,
+        null,
+        null
+      ],
+      "2017/18": [
+        null,
+        null,
+        4636,
+        5034,
+        5153,
+        10512,
+        8597,
+        7280,
+        7773,
+        8587,
+        8533,
+        8533,
+        8634,
+        8634,
+        8634,
+        8675,
+        9408,
+        9408,
+        9408,
+        9408,
+        9408,
+        9408,
+        9408,
+        9408,
+        9408,
+        9408,
+        9408,
+        null
+      ],
+      "2018/19": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        6747,
+        2172,
+        641,
+        1671,
+        1230,
+        620,
+        3353,
+        3547,
+        3547,
+        2916,
+        4526,
+        4526,
+        4526,
+        4526,
+        4526,
+        4699,
+        4699,
+        4699,
+        4699,
+        5120,
+        5120,
+        5120
+      ],
+      "2019/20": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -6115,
+        -9435,
+        -9298,
+        -136,
+        1855,
+        882,
+        882,
+        1639,
+        -53,
+        -123,
+        -123,
+        -123,
+        -50,
+        -50,
+        -50,
+        -50,
+        -626,
+        -626,
+        -626
+      ],
+      "2020/21": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -724,
+        -3504,
+        -4782,
+        -3142,
+        -1454,
+        -2021,
+        -2294,
+        -2050,
+        -4367,
+        -762,
+        -762,
+        -762,
+        -762,
+        -564,
+        -564,
+        -564
+      ],
+      "2021/22": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -3829,
+        -2552,
+        -1928,
+        237,
+        -1340,
+        -1665,
+        -2247,
+        -2270,
+        -2036,
+        -2655,
+        -3877,
+        -3877
+      ],
+      "2022/23": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        5571,
+        6185,
+        4151,
+        852,
+        493,
+        310,
+        308,
+        -1101
+      ],
+      "2023/24": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        -2118,
+        -335,
+        -689,
+        -200
+      ]
+    }
+  },
+  "revision_timeline_2015_16_kt": [
+    {
+      "vintage": "2017-02",
+      "balance_kt": -5359
+    },
+    {
+      "vintage": "2017-05",
+      "balance_kt": -4899
+    },
+    {
+      "vintage": "2017-08",
+      "balance_kt": -4962
+    },
+    {
+      "vintage": "2017-11",
+      "balance_kt": -4840
+    },
+    {
+      "vintage": "2018-02",
+      "balance_kt": -4870
+    },
+    {
+      "vintage": "2018-05",
+      "balance_kt": -6015
+    },
+    {
+      "vintage": "2018-08",
+      "balance_kt": -5848
+    },
+    {
+      "vintage": "2018-11",
+      "balance_kt": -5848
+    },
+    {
+      "vintage": "2019-02",
+      "balance_kt": -5848
+    },
+    {
+      "vintage": "2019-11",
+      "balance_kt": -5864
+    },
+    {
+      "vintage": "2020-02",
+      "balance_kt": -6491
+    },
+    {
+      "vintage": "2020-05",
+      "balance_kt": -6491
+    },
+    {
+      "vintage": "2020-08",
+      "balance_kt": -6462
+    },
+    {
+      "vintage": "2020-11",
+      "balance_kt": -6462
+    },
+    {
+      "vintage": "2021-02",
+      "balance_kt": -6462
+    },
+    {
+      "vintage": "2021-05",
+      "balance_kt": -6462
+    },
+    {
+      "vintage": "2021-08",
+      "balance_kt": -6462
+    },
+    {
+      "vintage": "2021-11",
+      "balance_kt": -6462
+    },
+    {
+      "vintage": "2022-02",
+      "balance_kt": -6462
+    },
+    {
+      "vintage": "2022-05",
+      "balance_kt": -6462
+    }
+  ],
+  "revision_timeline_2016_17_kt": [
+    {
+      "vintage": "2017-02",
+      "balance_kt": -5869
+    },
+    {
+      "vintage": "2017-05",
+      "balance_kt": -6465
+    },
+    {
+      "vintage": "2017-08",
+      "balance_kt": -3860
+    },
+    {
+      "vintage": "2017-11",
+      "balance_kt": -3105
+    },
+    {
+      "vintage": "2018-02",
+      "balance_kt": -2543
+    },
+    {
+      "vintage": "2018-05",
+      "balance_kt": -3670
+    },
+    {
+      "vintage": "2018-08",
+      "balance_kt": -2847
+    },
+    {
+      "vintage": "2018-11",
+      "balance_kt": -2847
+    },
+    {
+      "vintage": "2019-02",
+      "balance_kt": -2962
+    },
+    {
+      "vintage": "2019-11",
+      "balance_kt": -3887
+    },
+    {
+      "vintage": "2020-02",
+      "balance_kt": -3414
+    },
+    {
+      "vintage": "2020-05",
+      "balance_kt": -3414
+    },
+    {
+      "vintage": "2020-08",
+      "balance_kt": -3095
+    },
+    {
+      "vintage": "2020-11",
+      "balance_kt": -3095
+    },
+    {
+      "vintage": "2021-02",
+      "balance_kt": -3095
+    },
+    {
+      "vintage": "2021-05",
+      "balance_kt": -2940
+    },
+    {
+      "vintage": "2021-08",
+      "balance_kt": -2940
+    },
+    {
+      "vintage": "2021-11",
+      "balance_kt": -2940
+    },
+    {
+      "vintage": "2022-02",
+      "balance_kt": -3610
+    },
+    {
+      "vintage": "2022-05",
+      "balance_kt": -3610
+    },
+    {
+      "vintage": "2022-08",
+      "balance_kt": -3610
+    },
+    {
+      "vintage": "2022-11",
+      "balance_kt": -3610
+    },
+    {
+      "vintage": "2023-02",
+      "balance_kt": -3610
+    },
+    {
+      "vintage": "2023-05",
+      "balance_kt": -3610
+    }
+  ]
+}
