@@ -32,7 +32,7 @@ const EDGE = 'C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe'
   await new Promise(r => setTimeout(r, 4000));
 
   const res = await page.evaluate(() => {
-    const ids = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'];
+    const ids = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8'];
     const charts = ids.map(id => {
       const el = document.getElementById(id);
       if (!el) return { id, ok: false, reason: 'container missing' };

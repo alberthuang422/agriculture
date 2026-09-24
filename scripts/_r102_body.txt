@@ -27,7 +27,8 @@ ICE 11 号原糖（全球口径）｜数据窗口 2011-12 ~ 2026-09</div>
 <a href="#s7">⑦ vintage 修订：当时市场看到了什么</a> ·
 <a href="#s8">⑧ 持仓：为什么 2023 涨不动</a> ·
 <a href="#s9">⑨ 顶部与崩塌机制</a> ·
-<a href="#s10">⑩ 方法论、口径与局限</a>
+<a href="#s10">⑩ 方法论、口径与局限</a> ·
+<a href="#s11">⑪ 当下背景：2026/27 vs 两轮牛市起点</a>
 </div>
 
 <!-- ============================================================ -->
@@ -558,6 +559,130 @@ ICE 11 号原糖（全球口径）｜数据窗口 2011-12 ~ 2026-09</div>
 <tr><td>ONI 2015-16 峰值</td><td class="num">+2.6 °C</td><td>NOAA CPC；iamelnino.com、elninoguide.com 均记 +2.6</td><td class="up">△ 部分中文券商引 +2.8，已标注差异</td></tr>
 <tr><td>ISO 2022/23 终值</td><td class="num">-1,871 kt（Aug-2026）</td><td>本项目 vintage 矩阵 Aug-2024 为 -1,101 kt</td><td class="down">✓ 同一序列的更晚 vintage，已在正文注明</td></tr>
 </table>
+</div>
+
+<!-- ============================================================ -->
+<h2 id="s11">十一、当下背景：2026/27 vs 两轮牛市起点（2026-09-24 补记）</h2>
+
+<div class="sec">
+<div class="kicker">
+<b>一句话结论：用本报告自己的框架（库存 + 瓶颈可逆性 + 缺口量级 + 持仓拥挤度）逐维度打分，2026/27 的起点比 2015/16 和 2023 都更紧——四个维度没有一个更宽松。</b><br>
+库存：残差层可自由流通库存 <span class="hl3">12,092 kt</span>（MY2025），低于两轮起点（12,547 / 12,803）；瓶颈：卡点在田里（巴西糖醇比 + 印泰单产 + 欧盟甜菜），<b>解除需等下一季</b>，属 2015/16 型不可逆瓶颈，而非 2023 型港口挤兑（桑托斯当前中位等待仅 0.54 天）；持仓：<span class="hl">OI 归一后净多仅 12.4%、处全样本 51.7 百分位</span>（即历史中位），远低于 2016 顶部的 38.4%（99 百分位）——<b>资金远未拥挤</b>。<br>
+唯一的"乐观"来自 ISO 首版 −0.2 Mt，而这个数字建立在一个<b>榨季日历错位 + 趋势外推</b>的方法论之上，见本章 11.4。
+</div>
+
+<div class="note">本章为 2026-09-24 应要求补记，把前五轮的复盘框架套用到当前市场。所有持仓数字已改用 <b>/OI 归一 + 全样本百分位</b>——因为绝对手数跨年代不可比（OI 已从 2015 年的 ~74 万手增至 2026 年的 ~128 万手，+72%），直接比手数会系统性高估当前拥挤度。</div>
+
+<h3>11.1 四维对照：当前起点 vs 两轮牛市起点</h3>
+<table>
+<tr><th style="width:18%">维度</th><th>2015/16 起点</th><th>2023 起点</th><th>2026/27 当前</th><th style="width:14%">谁更紧</th></tr>
+<tr><td><b>残差层库存</b><br><span class="dim sm">可自由流通 kt</span></td><td class="num">12,547<br><span class="dim sm">MY2015</span></td><td class="num">12,803<br><span class="dim sm">MY2022</span></td><td class="num up">12,092<br><span class="dim sm">MY2025</span></td><td class="up">当前最低</td></tr>
+<tr><td><b>世界库消比</b><br><span class="dim sm">PSD 口径</span></td><td class="num">25.8%</td><td class="num">25.7%</td><td class="num up">24.1%</td><td class="up">当前最低</td></tr>
+<tr><td><b>瓶颈位置</b></td><td>田里（印度−8,260 kt、泰国−13%）</td><td>港口（桑托斯 17→40+ 天）</td><td>田里（巴西糖醇比、印泰单产、欧盟甜菜）</td><td class="up">当前=不可逆型</td></tr>
+<tr><td><b>瓶颈解除时间</b></td><td class="up">12–24 个月</td><td class="down">约 1 个月</td><td class="up">12–24 个月</td><td class="up">当前=慢解除</td></tr>
+<tr><td><b>桑托斯港等待</b><br><span class="dim sm">物流挤兑指标</span></td><td>正常</td><td class="down">17 → 40+ 天</td><td class="up">中位 0.54 天<br><span class="dim sm">低拥堵档</span></td><td>当前无物流瓶颈</td></tr>
+<tr><td><b>ISO 缺口</b><br><span class="dim sm">对应榨季</span></td><td class="num">−6,462 kt<br><span class="dim sm">15/16 终值</span></td><td class="num">−1,871 kt<br><span class="dim sm">22/23 终值</span></td><td class="num">−234 kt 首版<br><span class="dim sm">行业共识 −0.6~−3.2</span></td><td>首版偏乐观</td></tr>
+<tr><td><b>非商业净多 /OI</b><br><span class="dim sm">时代中性</span></td><td class="num">−1.1%<br><span class="dim sm">底部，净空</span></td><td class="num">6.9%<br><span class="dim sm">39.9 百分位</span></td><td class="num">12.4%<br><span class="dim sm">51.7 百分位</span></td><td>中位，未拥挤</td></tr>
+<tr><td><b>商业空头 /OI</b><br><span class="dim sm">套保进场度</span></td><td class="num">49.2%<br><span class="dim sm">9.9 百分位</span></td><td class="num">62.1%<br><span class="dim sm">31.2 百分位</span></td><td class="num">57.0%<br><span class="dim sm">22.1 百分位</span></td><td>套保未进场</td></tr>
+</table>
+<div class="src">库存分层：sugar_stock_layers_2014_2025.json；库消比：sugar_tradeable.csv（PSD 口径，注意 ISO 新方法论给 2025/26 = 44.15%，口径不同不可混用，且 ISO 对 2026/27 库存至今未发布）；瓶颈与桑托斯：本报告第五章 + Portcast/Kuehne+Nagel 2026-08；持仓：sugar_cftc_futonly_1986_2026.csv，/OI 归一后取全样本（n≈1,931）百分位。</div>
+
+<div class="warn"><b>关于持仓的口径修正（重要）：</b>若只看<b>绝对手数</b>，当前非商业净多 158,186 手、商业空头 727,367 手，都逼近历史极值（净多 ≈ 2015-10-13 的 158,907；商业空头居全样本 95.5 百分位）。但这是<b>假象</b>——OI 涨了 72%。归一到 /OI 后：净多 12.4%（仅 51.7 百分位 = 中位数）、商业空头 57.0%（仅 22.1 百分位）。<b>结论相反</b>：当前既不是资金拥挤，也不是产业套保大举进场；真正接近顶部的 2016-09（净多/OI 38.4%、99 百分位）和 2023-04（净多/OI 29.1%、95 百分位）才是拥挤顶。当前更像 <b>2015-10 中旬</b>——净多刚起来、价格 13.83、距顶还有 12 个月 +66%。</div>
+
+<h3>11.2 时代中性持仓定位图</h3>
+<div id="c8" class="chart"></div>
+<div class="src">横轴为净多/OI，纵轴为商业空头/OI，气泡=OI 规模。右下角（低净多 + 低套保）=行情早期；左上角（高净多 + 高套保）=顶部拥挤区。当前点（橙）落在中段，离两轮顶部（蓝/红）尚有距离。数据为 futures-only 口径。</div>
+
+<h3>11.3 巴西 26/27 的缓冲空间：小，而且已花掉大半</h3>
+<p>ISO 首版 −0.234 Mt 能成立，<b>几乎全靠一句假设</b>：HEADLINES 原文 <span class="hl2">"higher prevailing sugar prices encourage Brazil to heavily favour sugar production"</span>。它对应 memo 里巴西 <b>44,900 kt（2026/27）vs 41,100 kt（2025/26）= +3,800 kt / +9.2%</b>，距其自身纪录 46,712 kt 仅差 1,812 kt。问题在于：这个 +3,800 kt 要求巴西在<b>剩下 35% 的甘蔗</b>里把糖醇比推到历史没做到过的水平，而前半季的实际数据完全相反。</p>
+
+<div class="vs">
+<div>
+<h5>已实现（前半季，不可逆）</h5>
+<ul>
+<li>截至 8/31，中南部压榨 <b>413.55 Mt</b>（+2.2%），但产糖仅 <b>23.95 Mt</b>（<span class="hl3">−10.7%</span>），乙醇 +13.2%</li>
+<li>4 月开榨首半月糖醇比仅 <b>32.93%</b>（去年同期 44.71%）——当时糖价五年低位、低于乙醇平价，糖厂理性选乙醇</li>
+<li>UNICA 到 7/1 累计糖醇比 <b>42.52% vs 去年 51.04%，−8.52pp</b>；同期甘蔗 +3.82%、ATR +1.29%（两项天气指标都在改善）</li>
+<li>→ 产量下滑 <b>100% 来自配比决策，不是天气</b>。反事实测算：本季甘蔗/ATR 若套用上季配比应产 12.91 Mt，实际 10.75 Mt，<b>三个月单地区丢了 2.16 Mt</b></li>
+</ul>
+</div>
+<div>
+<h5>剩余空间（Sep–Mar，尾部 35%）</h5>
+<ul>
+<li>8 月下半月单旬糖醇比已回升至 <b>51.79%</b>、累计 46.15%——方向在验证 ISO 假设，但起点太低</li>
+<li>剩余甘蔗 ≈ 224 Mt，每 <b>1pp 糖醇比 ≈ 0.29 Mt 糖</b></li>
+<li>从当前 ~52% 推到 <b>54%（超历史任何全季水平）</b>：+2.2pp ≈ <span class="hl">+0.64 Mt</span></li>
+<li>整个尾部缓冲 ≈ <b>1.0–1.2 Mt</b>；Rabobank 反证：即便压榨 6.4 亿吨，追平上季 40.43 Mt 需剩余糖醇比做到 <b>53%</b>——"减产几乎已成定局，唯一问题是减多少"</li>
+</ul>
+</div>
+</div>
+
+<div class="note b"><b>四个反向拉力，都在压缩这个缓冲：</b>① <b>E32 强制掺混自 8/1 起</b>，行业测算增乙醇需求 ~7.8 亿升，其中 5.85 亿升需甘蔗乙醇 → 约 <b>0.95 Mt 糖</b>被结构性锁进乙醇；② <b>霍尔木兹持续关闭</b> → Brent 7 月均 84、月末破 90 → 乙醇平价走强，对冲糖厂转糖动力；③ <b>9/10 起含水乙醇联邦税降至零</b>（至 10/9）+ 汽油税减 R$0.63/L，短期进一步偏向乙醇；④ <b>雷亚尔偏强</b>，压缩出口端 BRL 回报。唯一支持缓冲的是糖厂本季<b>提前锁价比例偏低</b> + 糖价从 6/22 的 13.35 涨到 9/2 的 18.70（+40%），未对冲甘蔗可响应价格——但受结晶产能上限约束，只作用于尾部 35%。</div>
+
+<div class="note k"><b>与 2015/16 的关键结构差异：</b>那轮巴西的缓冲是<b>反向且巨大的</b>——2015 开榨糖醇比压到 38.9%（历史低位），有 10pp+ 回摆空间 + 雷亚尔贬值 32-33% 加成；结果 2016/17 开榨首半月糖比例 40.99%（+10.5pp）、全季中南部 35.62 Mt（+14%），<b>这个缓冲的释放正是 2016-10 见顶的直接原因</b>。现在巴西在 46% 中位、两头都薄——<b>缓冲薄 = 没有泄压阀</b>，这对多头有利，但也意味着 ISO 那句"巴西增产对冲缺口"的假设很难兑现。</div>
+
+<h3>11.4 为什么 8 月巴西已榨 65%，ISO 还敢给 −0.2 Mt 的乐观数？</h3>
+<p>这是本章的方法论要害。直觉上：8 月底巴西压榨进度已过 <b>64.9%</b>（413.55 / 637.5 Mt），大半个榨季的实物已经落袋，ISO 应该早就看到巴西在减产——为什么首版还把 2026/27 记成几乎打平？答案有两层，<b>一层是日历错位，一层是首版方法论</b>。</p>
+
+<h4>① 日历错位：ISO 记的"巴西 2026/27"根本不是此刻在榨的那批甘蔗</h4>
+<p>这是最容易踩的坑。两个榨季定义<b>错开 6 个月</b>：</p>
+<ul>
+<li><b>UNICA/巴西中南部榨季 = 4 月–次年 3 月</b>。此刻（2026 年 4–9 月）在榨、已榨 65% 的，是 <b>UNICA 2026/27 榨季</b>。</li>
+<li><b>ISO/全球市场年 = 10 月–次年 9 月</b>。ISO 口径的 <b>2026/27</b> 指 2026 年 10 月–2027 年 9 月。</li>
+</ul>
+<p>把 UNICA 榨季切成两半映射到 ISO 市场年：</p>
+<div style="border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:10px 0 6px;">
+  <div style="display:grid;grid-template-columns:1fr 46px 1fr;background:var(--card2);font-size:12px;color:var(--dim);font-weight:600;">
+    <div style="padding:8px 14px;">UNICA / 巴西中南部榨季（4 月–次年 3 月）</div>
+    <div></div>
+    <div style="padding:8px 14px;">ISO 全球市场年（10 月–次年 9 月）</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 46px 1fr;align-items:stretch;border-top:1px solid var(--line);">
+    <div style="padding:11px 14px;background:#241d12;font-size:12.8px;line-height:1.6;"><b style="color:#ffd79a;">① UNICA 2026/27 前半</b><br>2026 Apr–Sep｜<b>已榨 65%、产糖 −10.7%</b>（此刻正在发生的实物）</div>
+    <div style="display:flex;align-items:center;justify-content:center;color:var(--oi-orange);font-size:20px;font-weight:700;">→</div>
+    <div style="padding:11px 14px;font-size:12.8px;line-height:1.6;color:var(--dim);background:#1a1e26;"><b style="color:#9fd4f0;">ISO 2025/26</b>（上一季）<br>终值 <span class="hl2">+1.144 过剩</span> ← 已榨 65% 的实物绝大部分落在这里</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 46px 1fr;align-items:stretch;border-top:1px solid var(--line);">
+    <div style="padding:11px 14px;background:#2a1c1c;font-size:12.8px;line-height:1.6;"><b style="color:#ffb3a0;">② UNICA 2026/27 后半</b><br>2026 Oct–2027 Mar｜尾部，糖醇比回升中</div>
+    <div style="display:flex;align-items:center;justify-content:center;color:var(--oi-verm);font-size:20px;font-weight:700;">→</div>
+    <div style="padding:11px 14px;font-size:12.8px;line-height:1.6;color:var(--dim);background:#1e222a;"><b style="color:#fff;">ISO 2026/27</b>（本季）<br>首版 <span class="hl">−0.234</span></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 46px 1fr;align-items:stretch;border-top:1px solid var(--line);">
+    <div style="padding:11px 14px;background:#1c2530;font-size:12.8px;line-height:1.6;"><b style="color:#9fd4f0;">③ UNICA 2027/28 前半</b><br>2027 Apr–Sep｜<b>尚未种植、尚未开榨</b>（纯预测）</div>
+    <div style="display:flex;align-items:center;justify-content:center;color:var(--oi-blue);font-size:20px;font-weight:700;">→</div>
+    <div style="padding:11px 14px;font-size:12.8px;line-height:1.6;color:var(--dim);background:#1e222a;">↑ 与 ② 共同构成 ISO 2026/27，<b style="color:#ffd79a;">两块此刻都还没榨</b></div>
+  </div>
+</div>
+<div class="src sm" style="margin-top:2px;">配色：橙=已榨前半（计入上一季）｜朱红=尾部｜蓝=未种植；非颜色线索用 ①②③ 序号与文字标注。榨季映射规则见项目记忆"UNICA 季 4–9 月大头记入 ISO 上一季标签"。</div>
+<p>结论：<b>此刻巴西已榨 65%、产糖 −10.7% 的实物，绝大部分（4–9 月）计入的是 ISO 的 <span class="hl">2025/26</span>（上一季，终值 +1.144 过剩），而不是 ISO 2026/27。</b>ISO 8 月发首版 2026/27 时，真正属于"2026/27 市场年"的巴西甘蔗是 <b>10 月–次年 3 月的尾巴 + 下一个 4–9 月</b>——后者<b>此刻还没种、更没榨</b>。所以 ISO 给 2026/27 的巴西数字，本质上是一个<b>对一年后的预测</b>，不是对当前已榨 65% 这批甘蔗的读数。这正是项目记忆里"看 UNICA 双周报对 ISO 数字加 6 个月偏移"规则的具体体现。</p>
+
+<div class="warn"><b>一句话版本：</b>在 ISO 2026/27 首版发布日（2026 年 8 月底），其 2026/27 窗口（10 月–次年 9 月）内的巴西糖<b>已榨比例 = 0%</b>——巴西压榨季 4 月才开工，窗口内唯一的已开榨季部分（10 月–次年 3 月）还要再等一个多月才启动，而 2027 年 4–9 月对应<b>尚未种植</b>的甘蔗。−0.234 不是"读了巴西数据后觉得没事"，而是"按它的日历，这一季的巴西根本没有数据可读"，只能靠价格信号外推。上一段已实现的 −10.7% 则被日历切进了 ISO 2025/26 的 +1.144 过剩——<b>两件事发生在同一片蔗田里，但被记到了两个市场年</b>。</div>
+
+<div class="warn"><b>反过来说，这恰恰暴露了 ISO 首版的乐观：</b>当前已榨的 UNICA 26/27 前半季产糖 −10.7%、糖醇比 42.5% 的事实，<b>是 ISO 2026/27 巴西产量最直接的领先指标</b>（同一批蔗田、同一批糖厂、同一种配比逻辑会延续到尾部与下一前半季）。ISO 在明知前半季 −10.7% 的情况下，仍假设 2026/27 巴西 +9.2%（44,900 kt），等于<b>假定糖厂会在未来一年把糖醇比从 42.5% 拉回历史高位并维持</b>。这个假设需要尾部糖醇比做到 53%+（见 11.3），而 8 月实测才刚回到 ~46% 累计。<b>ISO 自己也心知肚明</b>——同一份 HEADLINES 里写着"El Niño 是未来数月对产量预测的最大威胁""任何 2026/27 产量恶化都可能迅速把平衡推入显著缺口"，等于给 −0.234 这个数字挂了免责声明。</div>
+
+<h4>② 首版方法论：面积 × 趋势单产，零天气折扣</h4>
+<p>即便撇开日历错位，ISO 每年 8 月的新季<b>首版</b>本身就是结构性偏乐观的"地板数"，这是项目已确立的规则：</p>
+<ul>
+<li>首视产量 = <b>面积 × 趋势单产</b>，<b>不给天气折扣</b>——El Niño 只进"风险提示"文字，不进数字。印度记 29,500 kt（恢复性增产 + 净出口 2,800），但 ISMA 已推迟 2026/27 估产、季风 −15%、政府已批 100 万吨免税进口 + 出口禁令至 9/30，与 ISO 的净出口假设直接矛盾。</li>
+<li><b>历史摆幅巨大</b>：2025/26 首版 −0.231 → 终值 +1.144（拉尼娜年，翻成过剩）；2015/16 首版 −2.49 → 终值 −6.46（厄尔尼诺年，<b>放大 2.6 倍</b>）。首版双向都不可信，参考价值极低。</li>
+<li>但今年的修订风险是<b>单边的</b>：首版挂的三个强假设（巴西顶格糖醇比 / 印度 V 型恢复 / 出口解禁）<b>每一个都已被 8–9 月的已实现数据反驳</b>。Niño3.4 距平 2026-08 = <b>+1.67</b>，比 2015-08 的 +1.58 更强——指向的是 2015/16 那种"首版被大幅下修放大"的路径，而非 2025/26 那种"翻成过剩"。</li>
+</ul>
+
+<div class="note"><b>行业共识已全面比 ISO 悲观（2026-09）：</b>Green Pool −3.24 / Datagro −2.68 / StoneX −1.70 / Rabobank −1.10 / Czarnikow −0.60，全部比 ISO 首版 −0.234 更空。其中 Czarnikow 5 月还是 +1.40 过剩、9 月翻空——共识方向已从"过剩"转为"缺口"。只要巴西落在共识中枢（中南部 ~39 Mt），ISO 的 −0.234 就会在 11 月 QMO 自动走到 −2 Mt 档（StoneX −1.70 与 Datagro −2.68 之间）。<b>这是排期性下修催化剂，不是尾部风险。</b></div>
+
+<h3>11.5 综合判断与跟踪节点</h3>
+<p><b>判断（置信度 中-高）：</b>用本报告框架逐维度打分，2026/27 起点比 2015/16 和 2023 都更紧张——库存更低、瓶颈不可逆、缺口方向有全行业共识支撑且大概率被 ISO 低估、持仓仍在中位且套保未进场。<b>唯一与 2015/16 不同的是催化剂节奏</b>：2015/16 的缺口是季内被逐步修出来的（−2.49 → −6.46），<b>修订本身就是行情燃料</b>；现在 ISO 首版与行业共识的裂口已明摆着，11 月对账更像"官方追认已知事实"而非"发现新信息"，因此这段的催化剂密度可能不如 2015/16 持续。</p>
+<p><b>正确的对标是 2015 年 10 月中旬</b>：净多刚过 15 万手、净多/OI 21%（当前 12.4% 更低）、价格 13.83、商业套保刚开始进场——那时距 2016-10 顶还有 12 个月、+66%。<b>不是</b> 2016-09 的顶部（净多/OI 38.4%、99 百分位）。</p>
+<table>
+<tr><th style="width:24%">跟踪节点</th><th>检验什么</th><th style="width:20%">时点</th></tr>
+<tr><td>ISMA 2026/27 首版估产</td><td>印度是否从 ISO 的 29,500 下修到 28–29（季风 −15% 的实际兑现）</td><td>10 月底–11 月</td></tr>
+<tr><td>ISO Nov QMO</td><td>是否把巴西从 44,900 下修 + 首次发布 2026/27 库存 + 缺口是否走到 −1~−2 Mt 档</td><td>11 月中</td></tr>
+<tr><td>MAPA 旬报糖醇比</td><td>能否站上 52% 并维持——这是 ISO"巴西增产"假设<b>唯一</b>的实证检验窗口</td><td>逐旬（至 2027-03）</td></tr>
+<tr><td>印度 9–10 月降雨 + 10/15 开榨</td><td>提前开榨执行度、Niño3.4 是否继续走强（当前 +1.67）</td><td>9–10 月</td></tr>
+<tr><td>net/OI 与 c_s/OI</td><td>net/OI 突破 21%（= 2015-10 水平）确认趋势展开；<b>c_s/OI 升破 70%</b>（套保真正进场）才是需警惕顶部的信号</td><td>逐周</td></tr>
+</table>
+<div class="warn"><b>与第五章操作纪律的衔接：</b>第五章确立"农业性瓶颈可顺势加、物流性瓶颈当有到期日的期权交易"。当前瓶颈是<b>农业性</b>（田里 + 糖醇比，解除需 12–24 个月），按该纪律<b>持仓可顺势</b>；顶部信号要看资金是否仍在跟进（2015/16 净多在价峰前 9 天才见顶，是健康顶）。当前 net/OI 仅 51.7 百分位、c_s/OI 仅 22.1 百分位，<b>两个顶部预警灯都还没亮</b>。</div>
+<div class="src">本章数据：MAPA/UNICA 巴西中南部旬报与累计（2026-09-17 发布）· Rabobank/StoneX/Czarnikow/Green Pool/Datagro 2026-09 公开预测 · Bloomberg 印度机构调查 · ISO Aug-2026 QMO HEADLINES 与 World Sugar Balance memo · NOAA CPC Niño3.4 · 本项目 sb_price_daily.csv / sugar_cftc_futonly_1986_2026.csv / iso_world_balance_2010_2026.csv。所有 ISO 数字标注 vintage（首版 Aug-2026）。巴西 UNICA 中南部序列与 ISO 全国序列<b>不做跨口径直接相减</b>（残差不稳定，见第十章）。</div>
 </div>
 
 <footer>

@@ -231,3 +231,40 @@ dual('c3',P.W23,OK.blue,OK.pink,OK.sky,OK.orange,[
       {name:'榨季均价（右轴）',type:'line',yAxisIndex:1,data:pxAvg,showSymbol:true,symbolSize:8,
        symbol:'diamond',lineStyle:{width:2.8,color:OK.yellow},itemStyle:{color:OK.yellow}}]});
   window.addEventListener('resize',function(){ch.resize();});})();
+
+/* ============ C8 时代中性持仓定位（净多/OI × 商业空头/OI 散点） ============ */
+(function(){var ch=mk('c8');if(!ch)return;
+  var pts=P.pos.map(function(p){return {
+    name:p.phase, value:[p.noi,p.coi,p.oi/1000], d:p.d, net:p.net, noiP:p.noiP, cs:p.cs, coiP:p.coiP, oi:p.oi, close:p.close};});
+  var col={'15/16 底部':OK.dim,'15/16 启动后约2月':OK.blue,'15/16 净多峰':OK.verm,
+           '23 起点':OK.sky,'23 净多峰':OK.orange,'当前':'#F0E442'};
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:{trigger:'item',backgroundColor:'#232933',borderColor:OK.line,
+      textStyle:{color:OK.tx,fontSize:12},formatter:function(o){var p=o.data;
+        return '<b>'+p.name+'</b>（'+p.d+'）<br/>'
+          +'非商业净多：<b>'+p.net.toLocaleString()+' 手</b> = '+p.noi+'% OI（'+p.noiP+' 百分位）<br/>'
+          +'商业空头：<b>'+p.cs.toLocaleString()+' 手</b> = '+p.coi+'% OI（'+p.coiP+' 百分位）<br/>'
+          +'OI：'+p.oi.toLocaleString()+(p.close?'　收盘：'+p.close.toFixed(2)+' c/lb':'');}},
+    grid:{left:64,right:40,top:30,bottom:64},
+    xAxis:Object.assign(axStyle(),{type:'value',name:'非商业净多 / OI（%）',nameLocation:'middle',nameGap:34,
+      nameTextStyle:{color:OK.dim,fontSize:11.5},min:-5,max:42,
+      axisLabel:{color:OK.dim,fontSize:11,formatter:'{value}%'},
+      splitLine:{lineStyle:{color:'#252b35'}}}),
+    yAxis:Object.assign(axStyle(),{type:'value',name:'商业空头 / OI（%）',nameLocation:'middle',nameGap:46,
+      nameTextStyle:{color:OK.dim,fontSize:11.5},min:40,max:90,
+      axisLabel:{color:OK.dim,fontSize:11,formatter:'{value}%'},
+      splitLine:{lineStyle:{color:'#252b35'}}}),
+    series:[
+      {type:'scatter',data:pts,
+       symbolSize:function(v){return Math.max(13,Math.sqrt(v[2])*0.95);},
+       itemStyle:{color:function(o){return col[o.data.name]||OK.blue;},opacity:.92,
+         borderColor:'#14171c',borderWidth:1.5},
+       label:{show:true,position:'right',color:OK.tx,fontSize:11,fontWeight:'bold',
+         formatter:function(o){return o.data.name;}},
+       markArea:{silent:true,itemStyle:{color:'rgba(240,121,59,0.07)'},
+         data:[[{coord:[24,68]},{coord:[42,90]}]]},
+       markLine:{silent:true,symbol:'none',lineStyle:{color:'#5b6577',type:'dotted'},
+         label:{color:OK.dim,fontSize:10},
+         data:[{xAxis:21.4,label:{formatter:'2015-10 启动位 21.4%'}},
+               {yAxis:70,label:{formatter:'套保进场警戒线 70%'}}]}}]});
+  window.addEventListener('resize',function(){ch.resize();});})();
