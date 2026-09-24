@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>101号 · 软商品横盘与持仓背离前瞻研究 (2011–2026)</title>
+<style>
+:root {
+  --bg:#14171c; --card:#1c2028; --card2:#232933; --line:#303642;
+  --tx:#e8eaee; --dim:#9aa3b2; --up:#ff5d5d; --down:#38c976; --flat:#c9d1dc;
+  --accent:#4c9be8; --warn:#e8a33d;
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--tx);
+  font:15px/1.6 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+.wrap { max-width:1180px; margin:0 auto; padding:32px 20px 60px; }
+h1 { font-size:26px; margin:0 0 6px; letter-spacing:.3px; }
+h3 { font-size:19px; margin:0 0 12px; }
+.sub { color:var(--dim); font-size:12.5px; font-weight:400; }
+.lede { color:var(--dim); margin:8px 0 22px; }
+.meta { display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 26px; }
+.meta span { background:var(--card2); border:1px solid var(--line); border-radius:8px;
+  padding:6px 12px; font-size:12.5px; color:var(--dim); }
+.sec { background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:22px 22px 10px; margin:22px 0; }
+.note { color:var(--dim); font-size:13px; border-left:3px solid var(--accent);
+  padding-left:12px; margin:12px 4px 16px; }
+.note.b { border-left-color:var(--warn); color:#cbd3de; }
+h4 { color:var(--dim); font-weight:600; font-size:14px; }
+.chiprow { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+.chip { background:var(--card2); border:1px solid var(--line); padding:4px 10px;
+  border-radius:20px; font-size:12.5px; color:var(--dim); }
+.chip b { color:var(--tx); }
+table { border-collapse:collapse; width:100%; margin:8px 0 18px; font-size:13.5px; }
+th { text-align:left; background:var(--card2); color:var(--dim); font-weight:600;
+  padding:8px 10px; border-bottom:2px solid var(--line); }
+td { padding:7px 10px; border-bottom:1px solid #2a2f3a; }
+tr:hover td { background:#20242e; }
+.ret { font-weight:700; font-variant-numeric:tabular-nums; }
+.up { color:var(--up); } .down { color:var(--down); } .flat { color:var(--flat); }
+.na { color:var(--dim); }
+.num { font-variant-numeric:tabular-nums; }
+.dir { font-weight:600; }
+.hidx { font-variant-numeric:tabular-nums; }
+.mk { font-weight:600; }
+.dim { color:var(--dim); font-size:12.5px; }
+table.mini td, table.mini th { padding:8px 12px; }
+table.ev td { font-variant-numeric:tabular-nums; }
+.cid { font-variant-numeric:tabular-nums; }
+footer { color:var(--dim); font-size:12px; margin-top:30px; text-align:center; }
+a { color:var(--accent); text-decoration:none; }
+</style></head><body><div class="wrap">
+<h1>价格横盘 ±5% 期间，非商业净持仓大幅异动后，价格怎么走？</h1>
+<div class="lede">2011–2026 · 咖啡 C / 可可 / 糖 11号 (ICE) &nbsp;|&nbsp; 数据: CFTC 周度持仓 (Futures+Options), TradingView 周线 / 自聚合周线</div>
+<div class="meta">
+  <span>事件定义: 横盘4–12周(周收盘相对起点±5%内) 且 期间 |Δ净仓|/OI ≥ 8%</span>
+  <span>前瞻: 事件终点后 +4/+8/+12 周</span>
+  <span>基准: 全样本任意周等间隔收益</span>
+  <span>口径: 非商业 = 投机净持仓(CFTC Legacy)</span>
+  <span>生成: 2026-09-23 (vintage=2026-09)</span>
+</div>
+
+
+<div class="sec" id="summary">
+<h3>三品种汇总 · 主口径 |Δ净仓|/OI ≥ 8%</h3>
+<table class="mini">
+<thead><tr><th>品种</th><th>事件数</th><th>事件后4周中位</th><th>事件后12周中位</th><th>12周上涨占比</th></tr></thead>
+<tbody><tr><td class="mk">咖啡 C</td><td>20</td>
+<td class="ret up">+0.3%</td>
+<td class="ret up">+0.2%</td>
+<td>50%</td></tr><tr><td class="mk">可可</td><td>28</td>
+<td class="ret up">+2.0%</td>
+<td class="ret up">+6.6%</td>
+<td>57%</td></tr><tr><td class="mk">糖 11号</td><td>25</td>
+<td class="ret up">+0.4%</td>
+<td class="ret down">-1.9%</td>
+<td>44%</td></tr></tbody>
+</table>
+<div class="note">基准中位数(任意周买入): 咖啡 +4周 -0.2% / +12周 +0.3%; 可可 +4周 +0.5% / +12周 +1.0%; 白糖 +4周 -0.7% / +12周 -1.5%。<br>
+显著性提醒: 事件样本 20–28 个/品种, 统计功效有限, 以下差异仅为方向性参考。</div>
+</div>
+
+<div class="sec" id="stat">
+<h3>统计检验: 净仓方向能否预测未来方向? (主口径 ≥8%)</h3>
+<h4 style="margin:6px 0">方向一致性 — 增仓后应上涨 / 减仓后应下跌 的比例</h4>
+<table class="mini">
+<thead><tr><th>品种</th><th>+4周 (n=)</th><th>+8周 (n=)</th><th>+12周 (n=)</th></tr></thead>
+<tbody><tr><td class="mk">咖啡 C</td>
+<td>11/20 (55%)</td><td>10/20 (50%)</td><td>11/20 (55%)</td></tr><tr><td class="mk">可可</td>
+<td>12/28 (43%)</td><td>12/28 (43%)</td><td>12/28 (43%)</td></tr><tr><td class="mk">糖 11号</td>
+<td>13/25 (52%)</td><td>16/25 (64%)</td><td>14/25 (56%)</td></tr></tbody>
+</table>
+<div class="note b">核心发现: 一致性 43%–64%, 接近抛硬币 (50%)。横盘期间非商业净仓的大幅变化, <b>对后续价格方向几乎没有方向性预测力</b>。白糖+8周达 64% 是唯一略高于随机的点, 但 n=25, 不构成稳健证据。</div>
+<h4 style="margin:14px 0 6px">波动幅度 — 事件后收益标准差 vs 全样本基准 (p10–p90 估算)</h4>
+<table class="mini">
+<thead><tr><th>品种</th><th>+4周 事件SD/基准SD</th><th>+8周</th><th>+12周</th></tr></thead>
+<tbody><tr><td class="mk">咖啡 C</td>
+<td>7.9% / ~8.5% (0.93x)</td><td>17.8% / ~11.2% (1.58x)</td><td>19.5% / ~14.0% (1.40x)</td></tr><tr><td class="mk">可可</td>
+<td>7.2% / ~7.9% (0.92x)</td><td>9.5% / ~10.5% (0.90x)</td><td>9.9% / ~13.1% (0.75x)</td></tr><tr><td class="mk">糖 11号</td>
+<td>6.0% / ~7.6% (0.79x)</td><td>9.7% / ~10.1% (0.96x)</td><td>9.9% / ~12.6% (0.79x)</td></tr></tbody>
+</table>
+<div class="note b">波动检验: 除咖啡 +8/+12 周略放大 (1.4–1.6x) 外, 可可/白糖事件后波动与基准相当甚至更低。整体无系统性"横盘蓄势后爆发"证据; 但事件收益平均值显著高于中位数(右偏), 表明少数大行情贡献了大部分回报, 分布厚尾。</div>
+</div>
+
+<div class="sec" id="dir">
+<h3>方向拆分: 净仓增仓 vs 减仓</h3>
+<table class="mini">
+<thead><tr><th>品种</th>
+<th colspan="5">非商业净仓 增仓</th>
+<th colspan="5">非商业净仓 减仓</th></tr>
+<tr><th></th><th>+4周</th><th>+8周</th><th>+12周</th><th>12周涨占</th><th></th>
+<th>+4周</th><th>+8周</th><th>+12周</th><th>12周涨占</th></tr></thead>
+<tbody><tr>
+<td class="mk">咖啡 C</td>
+<td class="dir">增仓<br><span class="sub">n=7</span></td>
+<td class="ret up">+1.2%</td>
+<td class="ret up">+1.7%</td>
+<td class="ret up">+6.9%</td>
+<td>57.0%</td>
+<td class="dir">减仓<br><span class="sub">n=13</span></td>
+<td class="ret down">-1.1%</td>
+<td class="ret up">+0.0%</td>
+<td class="ret down">-0.8%</td>
+<td>46.0%</td></tr><tr>
+<td class="mk">可可</td>
+<td class="dir">增仓<br><span class="sub">n=14</span></td>
+<td class="ret down">-0.7%</td>
+<td class="ret down">-3.1%</td>
+<td class="ret up">+1.6%</td>
+<td>50.0%</td>
+<td class="dir">减仓<br><span class="sub">n=14</span></td>
+<td class="ret up">+6.0%</td>
+<td class="ret up">+6.0%</td>
+<td class="ret up">+9.4%</td>
+<td>64.0%</td></tr><tr>
+<td class="mk">糖 11号</td>
+<td class="dir">增仓<br><span class="sub">n=13</span></td>
+<td class="ret up">+2.4%</td>
+<td class="ret up">+1.9%</td>
+<td class="ret up">+3.7%</td>
+<td>54.0%</td>
+<td class="dir">减仓<br><span class="sub">n=12</span></td>
+<td class="ret up">+0.4%</td>
+<td class="ret down">-0.2%</td>
+<td class="ret down">-1.9%</td>
+<td>33.0%</td></tr></tbody>
+</table>
+<div class="note">按方向拆开后样本进一步减半 (单组 n=7–14), 组间中位差异 (咖啡增仓 +6.9% vs 减仓 -0.8%) 受尾部案例影响大, 仅作探索性参考, 不构成稳健信号。</div>
+</div>
+
+<div class="sec" id="咖啡 C (ICE)">
+<h3>咖啡 C <span class="sub">(咖啡 C (ICE))</span></h3>
+<div class="chiprow">
+  <span class="chip">事件数 <b>20</b></span>
+  <span class="chip">增仓 <b>7</b> / 减仓 <b>13</b></span>
+  <span class="chip">横盘带 ±5% &nbsp;长度 4–12周</span>
+  <span class="chip">仓位变化 |Δ净仓|/OI ≥ 8%</span>
+</div><div class="note">2023 年出现 3 次事件; 2021 年价格历史高位横盘后净仓大幅减仓的案例集中。</div>
+<table class="mini">
+<thead><tr><th>前瞻窗口</th><th>事件后中位收益</th><th>上涨占比</th><th>全样本基准中位</th><th>基准上涨占比</th><th>对照解读</th></tr></thead>
+<tbody>
+<tr><td>+4周</td><td class="ret up">+0.3%</td><td>50%</td>
+    <td class="ret down">-0.2%</td><td>48.7%</td>
+    <td class="dim">跑赢基准</td></tr>
+<tr><td>+8周</td><td class="ret up">+0.1%</td><td>55%</td>
+    <td class="ret up">+0.1%</td><td>50.4%</td>
+    <td class="dim">跑赢基准</td></tr>
+<tr><td>+12周</td><td class="ret up">+0.2%</td><td>50%</td>
+    <td class="ret up">+0.3%</td><td>50.9%</td>
+    <td class="dim">低于基准</td></tr>
+</tbody></table>
+<table class="ev">
+<thead><tr><th>横盘起点→终点</th><th>长度</th><th>期初价</th><th>带内高/低</th><th>方向</th><th>Δ净仓(手)</th><th>变动/OI</th><th>OI均值</th><th>+4周</th><th>+8周</th><th>+12周</th></tr></thead>
+<tbody><tr>
+  <td class="cid">2011-05-10<br><span class="sub">2011-06-07</span></td>
+  <td>4周</td>
+  <td>269.4</td>
+  <td class="hidx">+0.0%<br><span class="sub">-3.8%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-16,626</td>
+  <td class="num">9.5%</td>
+  <td class="sub2">+174,629</td>
+  <td class="ret down">-1.8%</td>
+  <td class="ret down">-11.6%</td>
+  <td class="ret up">+7.3%</td>
+</tr><tr>
+  <td class="cid">2012-08-07<br><span class="sub">2012-09-04</span></td>
+  <td>4周</td>
+  <td>169.35</td>
+  <td class="hidx">+0.0%<br><span class="sub">-4.2%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-18,268</td>
+  <td class="num">9.2%</td>
+  <td class="sub2">+198,446</td>
+  <td class="ret up">+2.3%</td>
+  <td class="ret down">-5.9%</td>
+  <td class="ret down">-8.4%</td>
+</tr><tr>
+  <td class="cid">2012-10-09<br><span class="sub">2012-11-06</span></td>
+  <td>4周</td>
+  <td>161.7</td>
+  <td class="hidx">+0.0%<br><span class="sub">-4.3%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-18,113</td>
+  <td class="num">8.5%</td>
+  <td class="sub2">+214,190</td>
+  <td class="ret down">-1.1%</td>
+  <td class="ret up">+0.1%</td>
+  <td class="ret down">-9.9%</td>
+</tr><tr>
+  <td class="cid">2013-02-19<br><span class="sub">2013-05-14</span></td>
+  <td>12周</td>
+  <td>140.2</td>
+  <td class="hidx">+2.9%<br><span class="sub">-4.5%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+27,834</td>
+  <td class="num">12.9%</td>
+  <td class="sub2">+214,860</td>
+  <td class="ret down">-9.7%</td>
+  <td class="ret down">-13.1%</td>
+  <td class="ret down">-8.7%</td>
+</tr><tr>
+  <td class="cid">2013-12-10<br><span class="sub">2014-01-14</span></td>
+  <td>5周</td>
+  <td>115.45</td>
+  <td class="hidx">+4.3%<br><span class="sub">-0.3%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+20,090</td>
+  <td class="num">11.3%</td>
+  <td class="sub2">+177,987</td>
+  <td class="ret up">+21.4%</td>
+  <td class="ret up">+69.2%</td>
+  <td class="ret up">+73.6%</td>
+</tr><tr>
+  <td class="cid">2015-11-17<br><span class="sub">2016-01-05</span></td>
+  <td>7周</td>
+  <td>124.4</td>
+  <td class="hidx">+2.0%<br><span class="sub">-4.3%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+21,676</td>
+  <td class="num">10.7%</td>
+  <td class="sub2">+202,129</td>
+  <td class="ret up">+1.2%</td>
+  <td class="ret up">+1.7%</td>
+  <td class="ret up">+6.9%</td>
+</tr><tr>
+  <td class="cid">2016-03-22<br><span class="sub">2016-05-03</span></td>
+  <td>6周</td>
+  <td>127.55</td>
+  <td class="hidx">+0.0%<br><span class="sub">-4.7%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-31,246</td>
+  <td class="num">13.1%</td>
+  <td class="sub2">+238,848</td>
+  <td class="ret down">-2.6%</td>
+  <td class="ret up">+17.6%</td>
+  <td class="ret up">+17.4%</td>
+</tr><tr>
+  <td class="cid">2016-12-06<br><span class="sub">2017-01-03</span></td>
+  <td>4周</td>
+  <td>139.35</td>
+  <td class="hidx">+2.2%<br><span class="sub">-2.3%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-19,006</td>
+  <td class="num">8.5%</td>
+  <td class="sub2">+222,580</td>
+  <td class="ret up">+7.4%</td>
+  <td class="ret up">+5.3%</td>
+  <td class="ret up">+2.3%</td>
+</tr><tr>
+  <td class="cid">2017-04-18<br><span class="sub">2017-06-06</span></td>
+  <td>7周</td>
+  <td>132.9</td>
+  <td class="hidx">+2.1%<br><span class="sub">-3.0%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-38,534</td>
+  <td class="num">15.4%</td>
+  <td class="sub2">+249,415</td>
+  <td class="ret up">+3.8%</td>
+  <td class="ret up">+11.6%</td>
+  <td class="ret up">+0.2%</td>
+</tr><tr>
+  <td class="cid">2017-09-26<br><span class="sub">2017-11-07</span></td>
+  <td>6周</td>
+  <td>128.05</td>
+  <td class="hidx">+2.2%<br><span class="sub">-3.2%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-32,159</td>
+  <td class="num">12.3%</td>
+  <td class="sub2">+260,772</td>
+  <td class="ret down">-6.3%</td>
+  <td class="ret down">-8.0%</td>
+  <td class="ret down">-8.0%</td>
+</tr><tr>
+  <td class="cid">2018-02-13<br><span class="sub">2018-04-17</span></td>
+  <td>9周</td>
+  <td>120.45</td>
+  <td class="hidx">+1.4%<br><span class="sub">-2.7%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-25,009</td>
+  <td class="num">8.6%</td>
+  <td class="sub2">+292,013</td>
+  <td class="ret up">+0.3%</td>
+  <td class="ret down">-0.1%</td>
+  <td class="ret down">-6.6%</td>
+</tr><tr>
+  <td class="cid">2018-06-05<br><span class="sub">2018-07-03</span></td>
+  <td>4周</td>
+  <td>117.25</td>
+  <td class="hidx">+0.3%<br><span class="sub">-2.7%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-40,744</td>
+  <td class="num">12.6%</td>
+  <td class="sub2">+324,359</td>
+  <td class="ret down">-5.6%</td>
+  <td class="ret down">-10.8%</td>
+  <td class="ret down">-10.2%</td>
+</tr><tr>
+  <td class="cid">2018-10-09<br><span class="sub">2018-11-20</span></td>
+  <td>6周</td>
+  <td>116.55</td>
+  <td class="hidx">+4.8%<br><span class="sub">-4.8%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+50,349</td>
+  <td class="num">14.8%</td>
+  <td class="sub2">+340,058</td>
+  <td class="ret down">-10.1%</td>
+  <td class="ret down">-6.5%</td>
+  <td class="ret down">-9.6%</td>
+</tr><tr>
+  <td class="cid">2018-12-04<br><span class="sub">2019-02-26</span></td>
+  <td>10周</td>
+  <td>104.0</td>
+  <td class="hidx">+1.4%<br><span class="sub">-4.1%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-27,747</td>
+  <td class="num">8.2%</td>
+  <td class="sub2">+339,161</td>
+  <td class="ret down">-5.8%</td>
+  <td class="ret down">-6.3%</td>
+  <td class="ret down">-7.1%</td>
+</tr><tr>
+  <td class="cid">2019-07-23<br><span class="sub">2019-09-03</span></td>
+  <td>6周</td>
+  <td>99.75</td>
+  <td class="hidx">+1.1%<br><span class="sub">-4.6%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-35,333</td>
+  <td class="num">10.9%</td>
+  <td class="sub2">+324,502</td>
+  <td class="ret up">+2.1%</td>
+  <td class="ret up">+7.7%</td>
+  <td class="ret up">+23.4%</td>
+</tr><tr>
+  <td class="cid">2020-09-29<br><span class="sub">2020-11-10</span></td>
+  <td>6周</td>
+  <td>109.4</td>
+  <td class="hidx">+2.5%<br><span class="sub">-4.6%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-31,821</td>
+  <td class="num">9.5%</td>
+  <td class="sub2">+335,212</td>
+  <td class="ret up">+7.8%</td>
+  <td class="ret up">+13.9%</td>
+  <td class="ret up">+9.2%</td>
+</tr><tr>
+  <td class="cid">2022-03-01<br><span class="sub">2022-03-29</span></td>
+  <td>4周</td>
+  <td>224.2</td>
+  <td class="hidx">+1.9%<br><span class="sub">-1.9%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-30,461</td>
+  <td class="num">10.7%</td>
+  <td class="sub2">+285,685</td>
+  <td class="ret down">-2.8%</td>
+  <td class="ret up">+0.0%</td>
+  <td class="ret down">-0.8%</td>
+</tr><tr>
+  <td class="cid">2023-04-04<br><span class="sub">2023-05-02</span></td>
+  <td>4周</td>
+  <td>184.25</td>
+  <td class="hidx">+4.7%<br><span class="sub">+0.0%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+21,922</td>
+  <td class="num">9.4%</td>
+  <td class="sub2">+233,736</td>
+  <td class="ret down">-3.8%</td>
+  <td class="ret down">-15.4%</td>
+  <td class="ret down">-14.1%</td>
+</tr><tr>
+  <td class="cid">2023-08-22<br><span class="sub">2023-09-19</span></td>
+  <td>4周</td>
+  <td>151.95</td>
+  <td class="hidx">+4.8%<br><span class="sub">-1.1%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+18,484</td>
+  <td class="num">8.4%</td>
+  <td class="sub2">+220,312</td>
+  <td class="ret up">+10.3%</td>
+  <td class="ret up">+11.2%</td>
+  <td class="ret up">+26.5%</td>
+</tr><tr>
+  <td class="cid">2023-10-17<br><span class="sub">2023-11-21</span></td>
+  <td>5周</td>
+  <td>165.65</td>
+  <td class="hidx">+3.2%<br><span class="sub">-3.1%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+36,164</td>
+  <td class="num">15.4%</td>
+  <td class="sub2">+234,523</td>
+  <td class="ret up">+15.9%</td>
+  <td class="ret up">+7.4%</td>
+  <td class="ret up">+11.1%</td>
+</tr></tbody>
+</table></div>
+
+<div class="sec" id="可可 (ICE)">
+<h3>可可 <span class="sub">(可可 (ICE))</span></h3>
+<div class="chiprow">
+  <span class="chip">事件数 <b>28</b></span>
+  <span class="chip">增仓 <b>14</b> / 减仓 <b>14</b></span>
+  <span class="chip">横盘带 ±5% &nbsp;长度 4–12周</span>
+  <span class="chip">仓位变化 |Δ净仓|/OI ≥ 8%</span>
+</div><div class="note">2014/2019/2022 事件较集中; 减仓型案例 12 周中位收益明显高于增仓型。</div>
+<table class="mini">
+<thead><tr><th>前瞻窗口</th><th>事件后中位收益</th><th>上涨占比</th><th>全样本基准中位</th><th>基准上涨占比</th><th>对照解读</th></tr></thead>
+<tbody>
+<tr><td>+4周</td><td class="ret up">+2.0%</td><td>50%</td>
+    <td class="ret up">+0.5%</td><td>52.8%</td>
+    <td class="dim">跑赢基准</td></tr>
+<tr><td>+8周</td><td class="ret up">+1.1%</td><td>50%</td>
+    <td class="ret up">+1.2%</td><td>54.1%</td>
+    <td class="dim">低于基准</td></tr>
+<tr><td>+12周</td><td class="ret up">+6.6%</td><td>57%</td>
+    <td class="ret up">+1.0%</td><td>53.9%</td>
+    <td class="dim">跑赢基准</td></tr>
+</tbody></table>
+<table class="ev">
+<thead><tr><th>横盘起点→终点</th><th>长度</th><th>期初价</th><th>带内高/低</th><th>方向</th><th>Δ净仓(手)</th><th>变动/OI</th><th>OI均值</th><th>+4周</th><th>+8周</th><th>+12周</th></tr></thead>
+<tbody><tr>
+  <td class="cid">2012-06-05<br><span class="sub">2012-07-10</span></td>
+  <td>5周</td>
+  <td>2205.0</td>
+  <td class="hidx">+3.9%<br><span class="sub">-4.2%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+24,060</td>
+  <td class="num">12.7%</td>
+  <td class="sub2">+189,285</td>
+  <td class="ret up">+10.9%</td>
+  <td class="ret up">+17.8%</td>
+  <td class="ret up">+7.5%</td>
+</tr><tr>
+  <td class="cid">2012-12-18<br><span class="sub">2013-01-29</span></td>
+  <td>4周</td>
+  <td>2312.0</td>
+  <td class="hidx">+0.0%<br><span class="sub">-4.9%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-24,817</td>
+  <td class="num">11.1%</td>
+  <td class="sub2">+223,138</td>
+  <td class="ret down">-5.5%</td>
+  <td class="ret down">-1.5%</td>
+  <td class="ret up">+7.6%</td>
+</tr><tr>
+  <td class="cid">2013-04-16<br><span class="sub">2013-05-14</span></td>
+  <td>4周</td>
+  <td>2340.0</td>
+  <td class="hidx">+3.1%<br><span class="sub">-1.5%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+23,878</td>
+  <td class="num">10.3%</td>
+  <td class="sub2">+232,328</td>
+  <td class="ret down">-2.5%</td>
+  <td class="ret down">-3.1%</td>
+  <td class="ret up">+7.0%</td>
+</tr><tr>
+  <td class="cid">2013-06-11<br><span class="sub">2013-07-09</span></td>
+  <td>4周</td>
+  <td>2250.0</td>
+  <td class="hidx">+0.0%<br><span class="sub">-4.2%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-24,003</td>
+  <td class="num">11.7%</td>
+  <td class="sub2">+205,487</td>
+  <td class="ret up">+10.5%</td>
+  <td class="ret up">+8.4%</td>
+  <td class="ret up">+17.4%</td>
+</tr><tr>
+  <td class="cid">2013-08-13<br><span class="sub">2013-09-17</span></td>
+  <td>5周</td>
+  <td>2489.0</td>
+  <td class="hidx">+4.8%<br><span class="sub">-2.6%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+17,465</td>
+  <td class="num">8.0%</td>
+  <td class="sub2">+217,549</td>
+  <td class="ret up">+4.1%</td>
+  <td class="ret up">+4.5%</td>
+  <td class="ret up">+6.6%</td>
+</tr><tr>
+  <td class="cid">2014-02-18<br><span class="sub">2014-05-13</span></td>
+  <td>12周</td>
+  <td>2962.0</td>
+  <td class="hidx">+1.8%<br><span class="sub">-3.4%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-33,074</td>
+  <td class="num">14.0%</td>
+  <td class="sub2">+236,360</td>
+  <td class="ret up">+6.5%</td>
+  <td class="ret up">+6.0%</td>
+  <td class="ret up">+10.7%</td>
+</tr><tr>
+  <td class="cid">2014-05-20<br><span class="sub">2014-06-17</span></td>
+  <td>4周</td>
+  <td>3023.0</td>
+  <td class="hidx">+2.7%<br><span class="sub">+0.0%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+21,376</td>
+  <td class="num">8.6%</td>
+  <td class="sub2">+247,430</td>
+  <td class="ret down">-0.7%</td>
+  <td class="ret up">+4.3%</td>
+  <td class="ret down">-1.6%</td>
+</tr><tr>
+  <td class="cid">2014-08-19<br><span class="sub">2014-10-21</span></td>
+  <td>9周</td>
+  <td>3192.0</td>
+  <td class="hidx">+3.9%<br><span class="sub">-4.5%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-22,580</td>
+  <td class="num">9.0%</td>
+  <td class="sub2">+249,899</td>
+  <td class="ret down">-7.6%</td>
+  <td class="ret down">-2.4%</td>
+  <td class="ret down">-3.1%</td>
+</tr><tr>
+  <td class="cid">2014-12-09<br><span class="sub">2015-01-20</span></td>
+  <td>6周</td>
+  <td>2865.0</td>
+  <td class="hidx">+3.8%<br><span class="sub">+0.0%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+23,944</td>
+  <td class="num">10.3%</td>
+  <td class="sub2">+231,415</td>
+  <td class="ret down">-0.8%</td>
+  <td class="ret down">-6.4%</td>
+  <td class="ret down">-3.7%</td>
+</tr><tr>
+  <td class="cid">2015-03-10<br><span class="sub">2015-04-07</span></td>
+  <td>4周</td>
+  <td>2816.0</td>
+  <td class="hidx">+0.0%<br><span class="sub">-2.7%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-35,349</td>
+  <td class="num">14.5%</td>
+  <td class="sub2">+243,969</td>
+  <td class="ret up">+6.0%</td>
+  <td class="ret up">+11.5%</td>
+  <td class="ret up">+17.5%</td>
+</tr><tr>
+  <td class="cid">2015-07-21<br><span class="sub">2015-08-25</span></td>
+  <td>5周</td>
+  <td>3194.0</td>
+  <td class="hidx">+0.3%<br><span class="sub">-4.2%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-31,054</td>
+  <td class="num">12.7%</td>
+  <td class="sub2">+245,569</td>
+  <td class="ret up">+6.3%</td>
+  <td class="ret up">+2.0%</td>
+  <td class="ret up">+9.9%</td>
+</tr><tr>
+  <td class="cid">2015-10-27<br><span class="sub">2015-12-08</span></td>
+  <td>6周</td>
+  <td>3259.0</td>
+  <td class="hidx">+4.1%<br><span class="sub">-1.1%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+30,828</td>
+  <td class="num">10.7%</td>
+  <td class="sub2">+287,353</td>
+  <td class="ret down">-10.7%</td>
+  <td class="ret down">-16.7%</td>
+  <td class="ret down">-10.8%</td>
+</tr><tr>
+  <td class="cid">2016-05-10<br><span class="sub">2016-06-07</span></td>
+  <td>4周</td>
+  <td>2973.0</td>
+  <td class="hidx">+4.2%<br><span class="sub">-1.8%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-27,792</td>
+  <td class="num">10.0%</td>
+  <td class="sub2">+277,613</td>
+  <td class="ret down">-3.5%</td>
+  <td class="ret down">-3.0%</td>
+  <td class="ret down">-6.5%</td>
+</tr><tr>
+  <td class="cid">2016-08-02<br><span class="sub">2016-08-30</span></td>
+  <td>4周</td>
+  <td>3005.0</td>
+  <td class="hidx">+2.8%<br><span class="sub">-3.6%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+23,635</td>
+  <td class="num">9.5%</td>
+  <td class="sub2">+248,703</td>
+  <td class="ret down">-4.0%</td>
+  <td class="ret down">-4.9%</td>
+  <td class="ret down">-16.5%</td>
+</tr><tr>
+  <td class="cid">2017-09-12<br><span class="sub">2017-10-10</span></td>
+  <td>4周</td>
+  <td>2009.0</td>
+  <td class="hidx">+3.9%<br><span class="sub">-1.3%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+24,221</td>
+  <td class="num">8.4%</td>
+  <td class="sub2">+287,037</td>
+  <td class="ret up">+6.0%</td>
+  <td class="ret down">-8.4%</td>
+  <td class="ret down">-13.2%</td>
+</tr><tr>
+  <td class="cid">2017-10-17<br><span class="sub">2017-11-14</span></td>
+  <td>4周</td>
+  <td>2138.0</td>
+  <td class="hidx">+3.5%<br><span class="sub">-4.1%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+27,853</td>
+  <td class="num">9.7%</td>
+  <td class="sub2">+288,470</td>
+  <td class="ret down">-10.4%</td>
+  <td class="ret down">-9.3%</td>
+  <td class="ret down">-2.7%</td>
+</tr><tr>
+  <td class="cid">2019-02-05<br><span class="sub">2019-03-26</span></td>
+  <td>7周</td>
+  <td>2231.0</td>
+  <td class="hidx">+4.8%<br><span class="sub">-3.2%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-40,115</td>
+  <td class="num">14.4%</td>
+  <td class="sub2">+278,314</td>
+  <td class="ret up">+2.0%</td>
+  <td class="ret up">+7.7%</td>
+  <td class="ret up">+9.4%</td>
+</tr><tr>
+  <td class="cid">2019-04-02<br><span class="sub">2019-06-25</span></td>
+  <td>12周</td>
+  <td>2413.0</td>
+  <td class="hidx">+3.6%<br><span class="sub">-4.4%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+68,392</td>
+  <td class="num">24.0%</td>
+  <td class="sub2">+285,381</td>
+  <td class="ret down">-1.8%</td>
+  <td class="ret down">-8.5%</td>
+  <td class="ret up">+1.6%</td>
+</tr><tr>
+  <td class="cid">2019-08-06<br><span class="sub">2019-09-03</span></td>
+  <td>4周</td>
+  <td>2257.0</td>
+  <td class="hidx">+0.0%<br><span class="sub">-2.7%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-49,798</td>
+  <td class="num">16.8%</td>
+  <td class="sub2">+296,437</td>
+  <td class="ret up">+11.9%</td>
+  <td class="ret up">+11.0%</td>
+  <td class="ret up">+15.3%</td>
+</tr><tr>
+  <td class="cid">2019-09-17<br><span class="sub">2019-11-05</span></td>
+  <td>7周</td>
+  <td>2475.0</td>
+  <td class="hidx">+1.7%<br><span class="sub">-1.3%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+46,102</td>
+  <td class="num">13.7%</td>
+  <td class="sub2">+336,217</td>
+  <td class="ret up">+5.0%</td>
+  <td class="ret up">+1.1%</td>
+  <td class="ret up">+11.0%</td>
+</tr><tr>
+  <td class="cid">2020-01-14<br><span class="sub">2020-02-11</span></td>
+  <td>4周</td>
+  <td>2799.0</td>
+  <td class="hidx">+3.6%<br><span class="sub">-1.2%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+33,640</td>
+  <td class="num">8.8%</td>
+  <td class="sub2">+380,857</td>
+  <td class="ret down">-15.8%</td>
+  <td class="ret down">-19.9%</td>
+  <td class="ret down">-16.8%</td>
+</tr><tr>
+  <td class="cid">2020-06-16<br><span class="sub">2020-07-21</span></td>
+  <td>5周</td>
+  <td>2246.0</td>
+  <td class="hidx">+1.2%<br><span class="sub">-3.6%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-20,923</td>
+  <td class="num">8.5%</td>
+  <td class="sub2">+244,956</td>
+  <td class="ret up">+9.0%</td>
+  <td class="ret up">+20.4%</td>
+  <td class="ret up">+6.5%</td>
+</tr><tr>
+  <td class="cid">2021-03-16<br><span class="sub">2021-05-04</span></td>
+  <td>7周</td>
+  <td>2479.0</td>
+  <td class="hidx">+0.0%<br><span class="sub">-4.0%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-37,432</td>
+  <td class="num">17.2%</td>
+  <td class="sub2">+217,726</td>
+  <td class="ret down">-2.4%</td>
+  <td class="ret down">-6.0%</td>
+  <td class="ret down">-4.5%</td>
+</tr><tr>
+  <td class="cid">2021-06-01<br><span class="sub">2021-07-20</span></td>
+  <td>7周</td>
+  <td>2410.0</td>
+  <td class="hidx">+0.0%<br><span class="sub">-4.2%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-31,006</td>
+  <td class="num">12.1%</td>
+  <td class="sub2">+255,723</td>
+  <td class="ret up">+10.3%</td>
+  <td class="ret up">+14.7%</td>
+  <td class="ret up">+12.5%</td>
+</tr><tr>
+  <td class="cid">2022-02-15<br><span class="sub">2022-04-26</span></td>
+  <td>10周</td>
+  <td>2638.0</td>
+  <td class="hidx">+1.8%<br><span class="sub">-3.9%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-25,543</td>
+  <td class="num">8.6%</td>
+  <td class="sub2">+296,133</td>
+  <td class="ret down">-4.1%</td>
+  <td class="ret down">-5.0%</td>
+  <td class="ret down">-10.9%</td>
+</tr><tr>
+  <td class="cid">2022-05-03<br><span class="sub">2022-06-14</span></td>
+  <td>6周</td>
+  <td>2472.0</td>
+  <td class="hidx">+0.0%<br><span class="sub">-2.5%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-43,245</td>
+  <td class="num">13.0%</td>
+  <td class="sub2">+332,753</td>
+  <td class="ret down">-4.7%</td>
+  <td class="ret down">-2.0%</td>
+  <td class="ret down">-1.4%</td>
+</tr><tr>
+  <td class="cid">2022-11-01<br><span class="sub">2022-12-13</span></td>
+  <td>6周</td>
+  <td>2428.0</td>
+  <td class="hidx">+4.5%<br><span class="sub">+0.0%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+38,825</td>
+  <td class="num">11.8%</td>
+  <td class="sub2">+329,121</td>
+  <td class="ret up">+7.5%</td>
+  <td class="ret up">+6.2%</td>
+  <td class="ret up">+9.2%</td>
+</tr><tr>
+  <td class="cid">2023-01-17<br><span class="sub">2023-02-28</span></td>
+  <td>6周</td>
+  <td>2655.0</td>
+  <td class="hidx">+4.6%<br><span class="sub">-3.5%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+33,672</td>
+  <td class="num">9.3%</td>
+  <td class="sub2">+363,659</td>
+  <td class="ret up">+6.2%</td>
+  <td class="ret up">+6.4%</td>
+  <td class="ret up">+8.7%</td>
+</tr></tbody>
+</table></div>
+
+<div class="sec" id="糖 11号 (ICE)">
+<h3>糖 11号 <span class="sub">(糖 11号 (ICE))</span></h3>
+<div class="chiprow">
+  <span class="chip">事件数 <b>25</b></span>
+  <span class="chip">增仓 <b>13</b> / 减仓 <b>12</b></span>
+  <span class="chip">横盘带 ±5% &nbsp;长度 4–12周</span>
+  <span class="chip">仓位变化 |Δ净仓|/OI ≥ 8%</span>
+</div><div class="note">2019/2022 事件较集中; 12 周维度方向性弱于咖啡/可可。</div>
+<table class="mini">
+<thead><tr><th>前瞻窗口</th><th>事件后中位收益</th><th>上涨占比</th><th>全样本基准中位</th><th>基准上涨占比</th><th>对照解读</th></tr></thead>
+<tbody>
+<tr><td>+4周</td><td class="ret up">+0.4%</td><td>52%</td>
+    <td class="ret down">-0.7%</td><td>45.6%</td>
+    <td class="dim">跑赢基准</td></tr>
+<tr><td>+8周</td><td class="ret up">+0.4%</td><td>52%</td>
+    <td class="ret down">-0.5%</td><td>46.7%</td>
+    <td class="dim">跑赢基准</td></tr>
+<tr><td>+12周</td><td class="ret down">-1.9%</td><td>44%</td>
+    <td class="ret down">-1.5%</td><td>45.1%</td>
+    <td class="dim">低于基准</td></tr>
+</tbody></table>
+<table class="ev">
+<thead><tr><th>横盘起点→终点</th><th>长度</th><th>期初价</th><th>带内高/低</th><th>方向</th><th>Δ净仓(手)</th><th>变动/OI</th><th>OI均值</th><th>+4周</th><th>+8周</th><th>+12周</th></tr></thead>
+<tbody><tr>
+  <td class="cid">2012-10-09<br><span class="sub">2012-11-27</span></td>
+  <td>7周</td>
+  <td>20.05</td>
+  <td class="hidx">+1.1%<br><span class="sub">-4.9%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-72,932</td>
+  <td class="num">8.8%</td>
+  <td class="sub2">+831,198</td>
+  <td class="ret down">-0.8%</td>
+  <td class="ret down">-6.0%</td>
+  <td class="ret down">-3.4%</td>
+</tr><tr>
+  <td class="cid">2013-01-15<br><span class="sub">2013-04-09</span></td>
+  <td>12周</td>
+  <td>18.46</td>
+  <td class="hidx">+1.9%<br><span class="sub">-4.5%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-76,578</td>
+  <td class="num">8.2%</td>
+  <td class="sub2">+938,208</td>
+  <td class="ret down">-3.7%</td>
+  <td class="ret down">-9.0%</td>
+  <td class="ret down">-10.1%</td>
+</tr><tr>
+  <td class="cid">2013-07-23<br><span class="sub">2013-09-24</span></td>
+  <td>9周</td>
+  <td>16.47</td>
+  <td class="hidx">+4.2%<br><span class="sub">-0.8%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+119,284</td>
+  <td class="num">11.7%</td>
+  <td class="sub2">+1,017,323</td>
+  <td class="ret up">+13.3%</td>
+  <td class="ret up">+4.0%</td>
+  <td class="ret down">-2.3%</td>
+</tr><tr>
+  <td class="cid">2013-12-03<br><span class="sub">2013-12-31</span></td>
+  <td>4周</td>
+  <td>16.58</td>
+  <td class="hidx">+0.0%<br><span class="sub">-3.0%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-82,559</td>
+  <td class="num">8.2%</td>
+  <td class="sub2">+1,001,146</td>
+  <td class="ret down">-3.0%</td>
+  <td class="ret up">+9.8%</td>
+  <td class="ret up">+11.8%</td>
+</tr><tr>
+  <td class="cid">2014-02-25<br><span class="sub">2014-04-08</span></td>
+  <td>6周</td>
+  <td>17.66</td>
+  <td class="hidx">+2.0%<br><span class="sub">-4.9%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+95,293</td>
+  <td class="num">9.7%</td>
+  <td class="sub2">+978,869</td>
+  <td class="ret up">+2.4%</td>
+  <td class="ret up">+0.7%</td>
+  <td class="ret up">+6.0%</td>
+</tr><tr>
+  <td class="cid">2014-05-20<br><span class="sub">2014-07-22</span></td>
+  <td>9周</td>
+  <td>17.37</td>
+  <td class="hidx">+3.2%<br><span class="sub">-3.0%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-117,651</td>
+  <td class="num">11.9%</td>
+  <td class="sub2">+987,433</td>
+  <td class="ret down">-8.8%</td>
+  <td class="ret down">-21.2%</td>
+  <td class="ret down">-3.0%</td>
+</tr><tr>
+  <td class="cid">2014-12-23<br><span class="sub">2015-01-27</span></td>
+  <td>5周</td>
+  <td>14.7</td>
+  <td class="hidx">+4.3%<br><span class="sub">-3.6%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+91,586</td>
+  <td class="num">9.2%</td>
+  <td class="sub2">+995,409</td>
+  <td class="ret down">-6.9%</td>
+  <td class="ret down">-18.0%</td>
+  <td class="ret down">-10.5%</td>
+</tr><tr>
+  <td class="cid">2015-04-07<br><span class="sub">2015-05-12</span></td>
+  <td>5周</td>
+  <td>12.83</td>
+  <td class="hidx">+4.6%<br><span class="sub">+0.0%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+113,991</td>
+  <td class="num">11.0%</td>
+  <td class="sub2">+1,036,043</td>
+  <td class="ret down">-9.1%</td>
+  <td class="ret down">-3.7%</td>
+  <td class="ret down">-17.3%</td>
+</tr><tr>
+  <td class="cid">2018-11-06<br><span class="sub">2019-01-08</span></td>
+  <td>7周</td>
+  <td>12.73</td>
+  <td class="hidx">+1.1%<br><span class="sub">-3.1%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-123,241</td>
+  <td class="num">12.4%</td>
+  <td class="sub2">+995,246</td>
+  <td class="ret down">-0.4%</td>
+  <td class="ret down">-4.5%</td>
+  <td class="ret flat">+0.0%</td>
+</tr><tr>
+  <td class="cid">2019-03-12<br><span class="sub">2019-04-23</span></td>
+  <td>6周</td>
+  <td>12.52</td>
+  <td class="hidx">+2.0%<br><span class="sub">-2.1%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+86,826</td>
+  <td class="num">8.4%</td>
+  <td class="sub2">+1,033,039</td>
+  <td class="ret down">-4.9%</td>
+  <td class="ret down">-0.2%</td>
+  <td class="ret down">-5.5%</td>
+</tr><tr>
+  <td class="cid">2019-04-30<br><span class="sub">2019-05-28</span></td>
+  <td>4周</td>
+  <td>12.01</td>
+  <td class="hidx">+0.8%<br><span class="sub">-3.8%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-123,179</td>
+  <td class="num">11.1%</td>
+  <td class="sub2">+1,112,147</td>
+  <td class="ret up">+4.3%</td>
+  <td class="ret down">-0.7%</td>
+  <td class="ret down">-5.2%</td>
+</tr><tr>
+  <td class="cid">2019-06-04<br><span class="sub">2019-07-09</span></td>
+  <td>5周</td>
+  <td>12.5</td>
+  <td class="hidx">+2.0%<br><span class="sub">-2.2%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+117,659</td>
+  <td class="num">11.1%</td>
+  <td class="sub2">+1,059,001</td>
+  <td class="ret down">-3.6%</td>
+  <td class="ret down">-10.4%</td>
+  <td class="ret up">+3.7%</td>
+</tr><tr>
+  <td class="cid">2019-07-16<br><span class="sub">2019-09-03</span></td>
+  <td>7周</td>
+  <td>11.59</td>
+  <td class="hidx">+3.7%<br><span class="sub">-4.9%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-112,909</td>
+  <td class="num">9.9%</td>
+  <td class="sub2">+1,141,693</td>
+  <td class="ret up">+15.8%</td>
+  <td class="ret up">+13.2%</td>
+  <td class="ret up">+17.4%</td>
+</tr><tr>
+  <td class="cid">2019-10-22<br><span class="sub">2019-11-19</span></td>
+  <td>4周</td>
+  <td>12.35</td>
+  <td class="hidx">+3.9%<br><span class="sub">+0.0%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+98,778</td>
+  <td class="num">9.0%</td>
+  <td class="sub2">+1,097,169</td>
+  <td class="ret up">+5.5%</td>
+  <td class="ret up">+12.6%</td>
+  <td class="ret up">+17.4%</td>
+</tr><tr>
+  <td class="cid">2019-11-26<br><span class="sub">2019-12-24</span></td>
+  <td>4周</td>
+  <td>12.94</td>
+  <td class="hidx">+4.6%<br><span class="sub">+0.0%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+144,362</td>
+  <td class="num">12.4%</td>
+  <td class="sub2">+1,167,690</td>
+  <td class="ret up">+6.3%</td>
+  <td class="ret up">+15.1%</td>
+  <td class="ret down">-19.4%</td>
+</tr><tr>
+  <td class="cid">2020-07-28<br><span class="sub">2020-08-25</span></td>
+  <td>4周</td>
+  <td>12.64</td>
+  <td class="hidx">+3.6%<br><span class="sub">-0.3%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+97,509</td>
+  <td class="num">8.2%</td>
+  <td class="sub2">+1,182,866</td>
+  <td class="ret up">+3.2%</td>
+  <td class="ret up">+16.8%</td>
+  <td class="ret up">+20.7%</td>
+</tr><tr>
+  <td class="cid">2021-04-13<br><span class="sub">2021-05-11</span></td>
+  <td>4周</td>
+  <td>16.72</td>
+  <td class="hidx">+4.6%<br><span class="sub">+0.0%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+102,283</td>
+  <td class="num">8.6%</td>
+  <td class="sub2">+1,196,902</td>
+  <td class="ret up">+3.4%</td>
+  <td class="ret up">+1.9%</td>
+  <td class="ret up">+10.1%</td>
+</tr><tr>
+  <td class="cid">2021-08-17<br><span class="sub">2021-10-26</span></td>
+  <td>10周</td>
+  <td>19.58</td>
+  <td class="hidx">+3.6%<br><span class="sub">-4.0%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-114,258</td>
+  <td class="num">9.9%</td>
+  <td class="sub2">+1,153,172</td>
+  <td class="ret up">+0.4%</td>
+  <td class="ret down">-0.2%</td>
+  <td class="ret down">-1.9%</td>
+</tr><tr>
+  <td class="cid">2021-12-28<br><span class="sub">2022-02-15</span></td>
+  <td>7周</td>
+  <td>18.88</td>
+  <td class="hidx">+0.1%<br><span class="sub">-4.4%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-103,273</td>
+  <td class="num">10.0%</td>
+  <td class="sub2">+1,031,564</td>
+  <td class="ret up">+4.0%</td>
+  <td class="ret up">+10.2%</td>
+  <td class="ret up">+5.3%</td>
+</tr><tr>
+  <td class="cid">2022-03-01<br><span class="sub">2022-03-29</span></td>
+  <td>4周</td>
+  <td>19.35</td>
+  <td class="hidx">+1.3%<br><span class="sub">-2.2%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+78,927</td>
+  <td class="num">8.2%</td>
+  <td class="sub2">+961,290</td>
+  <td class="ret down">-1.1%</td>
+  <td class="ret up">+1.2%</td>
+  <td class="ret down">-5.2%</td>
+</tr><tr>
+  <td class="cid">2022-04-19<br><span class="sub">2022-06-14</span></td>
+  <td>8周</td>
+  <td>19.24</td>
+  <td class="hidx">+3.7%<br><span class="sub">-3.3%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-90,819</td>
+  <td class="num">9.2%</td>
+  <td class="sub2">+986,119</td>
+  <td class="ret up">+3.5%</td>
+  <td class="ret flat">+0.0%</td>
+  <td class="ret down">-2.0%</td>
+</tr><tr>
+  <td class="cid">2022-06-21<br><span class="sub">2022-08-09</span></td>
+  <td>7周</td>
+  <td>18.37</td>
+  <td class="hidx">+4.8%<br><span class="sub">-4.5%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-163,388</td>
+  <td class="num">18.5%</td>
+  <td class="sub2">+883,695</td>
+  <td class="ret down">-2.0%</td>
+  <td class="ret up">+0.4%</td>
+  <td class="ret up">+0.6%</td>
+</tr><tr>
+  <td class="cid">2022-09-20<br><span class="sub">2022-10-18</span></td>
+  <td>4周</td>
+  <td>18.28</td>
+  <td class="hidx">+3.1%<br><span class="sub">-3.5%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+98,725</td>
+  <td class="num">11.7%</td>
+  <td class="sub2">+840,942</td>
+  <td class="ret up">+9.1%</td>
+  <td class="ret up">+9.3%</td>
+  <td class="ret up">+7.3%</td>
+</tr><tr>
+  <td class="cid">2022-11-08<br><span class="sub">2022-12-13</span></td>
+  <td>5周</td>
+  <td>19.64</td>
+  <td class="hidx">+2.3%<br><span class="sub">-1.8%</span></td>
+  <td class="dir">增仓</td>
+  <td class="num">+124,814</td>
+  <td class="num">12.2%</td>
+  <td class="sub2">+1,023,397</td>
+  <td class="ret down">-1.8%</td>
+  <td class="ret up">+7.4%</td>
+  <td class="ret up">+5.3%</td>
+</tr><tr>
+  <td class="cid">2025-06-17<br><span class="sub">2025-09-09</span></td>
+  <td>12周</td>
+  <td>16.06</td>
+  <td class="hidx">+4.5%<br><span class="sub">-3.0%</span></td>
+  <td class="dir">减仓</td>
+  <td class="num">-85,509</td>
+  <td class="num">8.4%</td>
+  <td class="sub2">+1,021,736</td>
+  <td class="ret up">+1.8%</td>
+  <td class="ret down">-10.6%</td>
+  <td class="ret down">-4.5%</td>
+</tr></tbody>
+</table></div>
+
+<div class="sec" id="sens">
+<h3>阈值敏感性</h3>
+<table class="mini">
+<thead><tr><th>变动/OI 阈值</th><th>事件总数</th><th>各品种 事件数 · +12周中位</th></tr></thead>
+<tbody><tr><td>≥5%</td><td>125</td><td class='dim'> 咖啡 C: n=39 中位-3.6% 可可: n=44 中位+3.1% 糖 11号: n=42 中位-1.9%</td></tr><tr><td>≥8%</td><td>73</td><td class='dim'> 咖啡 C: n=20 中位+0.2% 可可: n=28 中位+6.6% 糖 11号: n=25 中位-1.9%</td></tr><tr><td>≥10%</td><td>40</td><td class='dim'> 咖啡 C: n=11 中位+0.2% 可可: n=18 中位+9.2% 糖 11号: n=11 中位+0.0%</td></tr></tbody>
+</table>
+<div class="note">阈值越高(事件越极端), 可可+12周中位从 +1.0%(≥5%) → +6.6%(≥8%) → +9.2%(≥10%) 单调抬升, 咖啡均值亦抬升, 但 n 仅 11–18 且方向一致性检验显示无预测力, 提示这是"厚尾大行情"而非方向性规律; 白糖 12 周维度无稳定盈余。综合: 极端净仓异动后软商品 12 周内波动可能放大, 但方向不可预知。</div>
+</div>
+
+<div class="sec">
+<h3>方法说明与局限</h3>
+<ul style="color:var(--dim);font-size:13px;padding-left:20px;line-height:1.9;">
+<li>持仓数据为 CFTC Legacy 口径的期货+期权非商业净持仓; 价格用周收盘(周五)对齐 CFTC 周二快照所在周。</li>
+<li>横盘窗口以「所有周收盘相对起点 ±5% 内」判定; 4–12周为窗口长度区间, 事件取窗口内 |Δ净仓| 最大的一次并做重叠去重。</li>
+<li>"大幅变化"主口径 = |Δ净仓|/OI ≥ 8%（诊断显示咖啡/可可/白糖 p90 约 7–14%），并给出 ≥5%/≥10% 敏感性。</li>
+<li>样本量 20–28/品种, 置信区间宽, 结论为方向性参考而非稳健统计信号; 未做多重检验校正。</li>
+<li>价格受宏观/基本面外生冲击(如 2014 可可 Ebola、2021 巴西霜冻、疫情)影响, 未单独剔除。</li>
+</ul></div>
+<footer>101号研究报告 · 农业项目 · 内部研究用</footer>
+</div></body></html>

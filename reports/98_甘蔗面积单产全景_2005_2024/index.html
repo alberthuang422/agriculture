@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>全球甘蔗面积与单产 20 年全景（2005–2024）· 报告 98</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+  :root{--oi-blue:#0072B2; --oi-orange:#E69F00; --oi-verm:#D55E00; --oi-green:#009E73;
+        --oi-sky:#56B4E9; --oi-purple:#CC79A7; --oi-yellow:#F0E442; --oi-black:#000000;
+        --ink:#1a2330; --sub:#5a6a7d; --line:#dde4ec; --card:#fff; --bg:#f5f7fa; --ref-bg:#eef2f7;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px 20px 60px;}
+  .hero{background:linear-gradient(135deg,#12365e 0%,#1d5c93 100%);color:#fff;border-radius:12px;padding:28px 32px;margin-bottom:20px;}
+  .hero h1{font-size:23px;margin-bottom:6px;line-height:1.45;}
+  .hero .meta{font-size:12.5px;opacity:.85;margin-top:4px;}
+  .hero .sub{margin-top:12px;font-size:14px;opacity:.96;border-top:1px solid rgba(255,255,255,.25);padding-top:10px;}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px;}
+  .kcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
+  .kcard .lab{font-size:12px;color:var(--sub);margin-bottom:3px;}
+  .kcard .val{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums;}
+  .kcard .note{font-size:12px;color:var(--sub);margin-top:3px;}
+  .red{color:#b2182b;} .green{color:#1a7a3a;} .blue{color:#0072B2;} .orange{color:#b47400;}
+  h2{font-size:19px;margin:34px 0 12px;padding-left:12px;border-left:4px solid var(--oi-blue);}
+  h3{font-size:16px;color:#12365e;margin:18px 0 8px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin-bottom:16px;}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;background:#fff;margin-top:6px;}
+  th{background:#eef2f7;color:#12365e;padding:6px 7px;text-align:left;border-bottom:2px solid var(--line);font-weight:600;white-space:nowrap;}
+  td{padding:5px 7px;border-bottom:1px solid var(--line);vertical-align:middle;}
+  tr:last-child td{border-bottom:none;}
+  .num{font-variant-numeric:tabular-nums;text-align:right;}
+  th.num{text-align:right;}
+  .src{font-size:11px;color:var(--sub);margin-top:7px;line-height:1.5;}
+  .callout{background:#fff8ee;border:1px solid #f0d9a8;border-radius:10px;padding:14px 18px;margin:14px 0;font-size:13.5px;}
+  .warn{background:#fdf2f2;border:1px solid #eccaca;border-radius:10px;padding:12px 16px;margin:12px 0;font-size:13px;}
+  .ok{background:#f0f8f4;border:1px solid #c9e5d6;border-radius:10px;padding:12px 16px;margin:12px 0;font-size:13px;}
+  .chart{width:100%;height:380px;}
+  .chart-sm{width:100%;height:330px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .footer{margin-top:34px;padding:16px 20px;background:var(--ref-bg);border-radius:10px;font-size:12px;color:var(--sub);}
+  code{background:#eef2f7;padding:1px 5px;border-radius:4px;font-size:12px;}
+  ul{padding-left:22px;} li{margin:4px 0;}
+  .tbl-scroll{overflow-x:auto;}
+  @media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr);}.grid2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>全球甘蔗面积与单产 20 年全景（2005–2024）：增产是「种得更多」，不是「长得更好」</h1>
+    <div class="meta">报告编号 98 ｜ 数据源：FAOSTAT「Production: Crops and livestock products」2025 版（经 Our World in Data 镜像） ｜ 口径：收获面积（ha）、单产（t/ha）、产量（t），面积=产量÷单产 ｜ 2026-09-21</div>
+    <div class="sub">结论一句话：<b>
+    2005–2024 全球甘蔗收获面积从 <span id="kpi_a05">–</span> 千公顷扩至 <span id="kpi_a24">–</span> 千公顷（<b class="red">+<span id="kpi_achg">–</span>，+<span id="kpi_apct">–</span>%</b>），
+    其中 <b class="red"><span id="kpi_top2">–</span>%</b> 的增量来自巴西（+4,246 千公顷）与印度（+2,078 千公顷）两国；
+    与此同时全球单产仅从 <span id="kpi_y05">–</span> 升到 <span id="kpi_y24">–</span> t/ha（<b>+<span id="kpi_ypct">–</span>%</b>）。
+    <b>结论：全球甘蔗增产是「面积驱动型」——20 年间甘蔗总产的 +49% 中，面积扩张贡献远大于单产提升。</b>
+    这种结构意味着：<b>一旦主产国面积增长见顶（如巴西 2014 年后停滞在 1,000–1,050 万公顷），全球供给的边际弹性将越来越依赖单产与出糖率，而单产的提升空间正在收窄（全球 20 年仅 +8.7%）</b>——
+    这是糖市长期供给的隐形约束。中国是例外：<b class="red">全国面积收缩 <span id="kpi_cn_apct">–</span>%（2013 年峰值 <span id="kpi_cn_amax">–</span> 千公顷 → 2024 年 <span id="kpi_cn_a24">–</span> 千公顷）</b>，
+    但<b>单产 +<span id="kpi_cn_ypct">–</span>%（<span id="kpi_cn_ymax">–</span> t/ha 创近年新高）</b>——「退面积、提单产」正在抵消面积流失。
+    </b></div>
+  </div>
+
+  <div class="cards">
+    <div class="kcard"><div class="lab">全球甘蔗面积（2024）</div><div class="val" id="kc_a24">–</div>
+      <div class="note">千公顷 ｜ 2005 年 <span id="kc_a05">–</span>（+<span id="kc_apct">–</span>%）</div></div>
+    <div class="kcard"><div class="lab">面积增量来源</div><div class="val red" id="kc_top2">–</div>
+      <div class="note">巴西+印度贡献全球增量的 <span id="kc_top2b">–</span>%</div></div>
+    <div class="kcard"><div class="lab">全球单产（2024）</div><div class="val" id="kc_y24">–</div>
+      <div class="note">t/ha ｜ 2005 年 <span id="kc_y05">–</span>（+<span id="kc_ypct">–</span>%）</div></div>
+    <div class="kcard"><div class="lab">中国面积/单产</div><div class="val" id="kc_cn">–</div>
+      <div class="note">面积 ｜ 单产 +<span id="kc_cn_yp">–</span>%（<span id="kc_cn_ym">–</span> t/ha 峰值，<span id="kc_cn_yy">–</span>）</div></div>
+  </div>
+
+  <h2>一、全球盘子：面积扩张是主引擎</h2>
+  <div class="panel">
+    <div id="c1" class="chart"></div>
+    <div class="src">全球甘蔗收获面积（柱，左轴，千公顷）与单产（线，右轴，t/ha）。面积在 2005–2014 年快速扩张（+7,433 千公顷），2014 年后进入平台期；单产整体缓慢抬升但波动不大，全球均值区间 67–75 t/ha。</div>
+  </div>
+  <div class="panel">
+    <h3>全球甘蔗三要素表（面积 / 单产 / 产量）</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>年份</th><th class="num">面积（千公顷）</th><th class="num">单产（t/ha）</th><th class="num">产量（百万吨）</th><th class="num">面积同比</th><th class="num">单产同比</th></tr>
+<tr><td>2005</td><td class='num'>19,570</td><td class='num'>66.8</td><td class='num'>1306</td><td class='num'>-</td><td class='num'>-</td></tr>
+<tr><td>2006</td><td class='num'>20,480</td><td class='num'>69.2</td><td class='num'>1417</td><td class='num'>+4.6%</td><td class='num'>+3.7%</td></tr>
+<tr><td>2007</td><td class='num'>22,585</td><td class='num'>70.9</td><td class='num'>1602</td><td class='num'>+10.3%</td><td class='num'>+2.5%</td></tr>
+<tr><td>2008</td><td class='num'>23,974</td><td class='num'>71.6</td><td class='num'>1716</td><td class='num'>+6.2%</td><td class='num'>+0.9%</td></tr>
+<tr><td>2009</td><td class='num'>23,588</td><td class='num'>70.9</td><td class='num'>1673</td><td class='num'>-1.6%</td><td class='num'>-0.9%</td></tr>
+<tr><td>2010</td><td class='num'>23,554</td><td class='num'>71.2</td><td class='num'>1677</td><td class='num'>-0.1%</td><td class='num'>+0.3%</td></tr>
+<tr><td>2011</td><td class='num'>25,425</td><td class='num'>70.5</td><td class='num'>1792</td><td class='num'>+7.9%</td><td class='num'>-1.0%</td></tr>
+<tr><td>2012</td><td class='num'>25,932</td><td class='num'>70.5</td><td class='num'>1830</td><td class='num'>+2.0%</td><td class='num'>+0.1%</td></tr>
+<tr><td>2013</td><td class='num'>26,796</td><td class='num'>71.1</td><td class='num'>1904</td><td class='num'>+3.3%</td><td class='num'>+0.7%</td></tr>
+<tr><td>2014</td><td class='num'>27,003</td><td class='num'>69.9</td><td class='num'>1888</td><td class='num'>+0.8%</td><td class='num'>-1.6%</td></tr>
+<tr><td>2015</td><td class='num'>26,441</td><td class='num'>70.9</td><td class='num'>1874</td><td class='num'>-2.1%</td><td class='num'>+1.4%</td></tr>
+<tr><td>2016</td><td class='num'>26,518</td><td class='num'>71.0</td><td class='num'>1882</td><td class='num'>+0.3%</td><td class='num'>+0.1%</td></tr>
+<tr><td>2017</td><td class='num'>26,147</td><td class='num'>70.3</td><td class='num'>1838</td><td class='num'>-1.4%</td><td class='num'>-0.9%</td></tr>
+<tr><td>2018</td><td class='num'>26,392</td><td class='num'>73.3</td><td class='num'>1934</td><td class='num'>+0.9%</td><td class='num'>+4.3%</td></tr>
+<tr><td>2019</td><td class='num'>26,979</td><td class='num'>72.7</td><td class='num'>1962</td><td class='num'>+2.2%</td><td class='num'>-0.8%</td></tr>
+<tr><td>2020</td><td class='num'>26,112</td><td class='num'>72.1</td><td class='num'>1882</td><td class='num'>-3.2%</td><td class='num'>-0.9%</td></tr>
+<tr><td>2021</td><td class='num'>25,887</td><td class='num'>72.1</td><td class='num'>1866</td><td class='num'>-0.9%</td><td class='num'>+0.0%</td></tr>
+<tr><td>2022</td><td class='num'>26,115</td><td class='num'>73.6</td><td class='num'>1921</td><td class='num'>+0.9%</td><td class='num'>+2.0%</td></tr>
+<tr><td>2023</td><td class='num'>26,862</td><td class='num'>75.1</td><td class='num'>2017</td><td class='num'>+2.9%</td><td class='num'>+2.1%</td></tr>
+<tr><td>2024</td><td class='num'>26,744</td><td class='num'>72.5</td><td class='num'>1940</td><td class='num'>-0.4%</td><td class='num'>-3.4%</td></tr>
+    </table></div>
+    <div class="src">逐年变化均为同比（本年÷上年−1）。面积×单产=产量，仅显示小数位舍入差异。</div>
+  </div>
+  <div class="callout">
+    <b>两个阶段的读数：</b>
+    <ul>
+      <li><b>2005–2014：面积驱动期。</b>全球面积 +7,433 千公顷（+38%），同期产量 +44%；单产仅 +5%。这一轮扩张主要是巴西乙醇—糖联产体系大扩容（甘蔗面积 581 万→1,042 万公顷，+79%）叠加印度、泰国种植面积扩张。</li>
+      <li><b>2015–2024：平台期。</b>全球面积在 2,585 万–2,700 万公顷窄幅波动（中枢约 2,640 万），产量增长 <b>完全依赖单产</b>（该期 +4.9%）与结构性因素（泰国/印度天气恢复、出糖率改善）。全球单产 20 年仅 <b>+8.7%</b>——在面积平台期，单产是唯一增长来源，而它的增速在放缓。</li>
+    </ul>
+  </div>
+
+  <h2>二、国别：谁在扩，谁在退</h2>
+  <div class="panel">
+    <div class="grid2">
+      <div><div id="c2" class="chart-sm"></div></div>
+      <div><div id="c3" class="chart-sm"></div></div>
+    </div>
+    <div class="src">左：主产国甘蔗收获面积（千公顷，堆叠）。右：主产国甘蔗单产（t/ha）。注意巴西面积在 2014 年见顶后 10 年未再扩张，印度面积持续上行并在 2023 年创 588.5 万公顷新高；中国面积持续收缩但单产稳居第一梯队。</div>
+  </div>
+
+  <div class="panel">
+    <h3>主产国面积与单产变化（2005 → 2024）</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>国家</th><th class="num">面积 2005</th><th class="num">面积 2024</th><th class="num">面积变化</th><th class="num">面积%</th><th class="num">单产 2005</th><th class="num">单产 2024</th><th class="num">单产%</th></tr>
+<tr><td><b>巴西</b></td><td class='num'>5,806</td><td class='num'>10,051</td><td class='num red'>+4,246</td><td class='num red'>+73.1%</td><td class='num'>72.8</td><td class='num'>75.6</td><td class='num red'>+3.7%</td></tr>
+<tr><td><b>印度</b></td><td class='num'>3,662</td><td class='num'>5,740</td><td class='num red'>+2,078</td><td class='num red'>+56.8%</td><td class='num'>64.8</td><td class='num'>79.0</td><td class='num red'>+21.9%</td></tr>
+<tr><td><b>泰国</b></td><td class='num'>1,067</td><td class='num'>1,491</td><td class='num red'>+424</td><td class='num red'>+39.7%</td><td class='num'>46.5</td><td class='num'>55.3</td><td class='num red'>+19.0%</td></tr>
+<tr><td><b>中国</b></td><td class='num'>1,354</td><td class='num'>1,262</td><td class='num green'>-92</td><td class='num green'>-6.8%</td><td class='num'>64.0</td><td class='num'>80.9</td><td class='num green'>+26.4%</td></tr>
+<tr><td><b>巴基斯坦</b></td><td class='num'>966</td><td class='num'>1,193</td><td class='num red'>+227</td><td class='num red'>+23.5%</td><td class='num'>48.9</td><td class='num'>70.6</td><td class='num red'>+44.4%</td></tr>
+<tr><td><b>墨西哥</b></td><td class='num'>670</td><td class='num'>784</td><td class='num red'>+114</td><td class='num red'>+17.1%</td><td class='num'>77.1</td><td class='num'>67.6</td><td class='num red'>-12.3%</td></tr>
+<tr><td><b>印尼</b></td><td class='num'>382</td><td class='num'>525</td><td class='num red'>+143</td><td class='num red'>+37.4%</td><td class='num'>76.7</td><td class='num'>61.0</td><td class='num red'>-20.5%</td></tr>
+<tr><td><b>美国</b></td><td class='num'>373</td><td class='num'>375</td><td class='num red'>+2</td><td class='num red'>+0.6%</td><td class='num'>71.3</td><td class='num'>84.2</td><td class='num red'>+18.1%</td></tr>
+<tr><td><b>澳大利亚</b></td><td class='num'>434</td><td class='num'>341</td><td class='num green'>-93</td><td class='num green'>-21.5%</td><td class='num'>87.2</td><td class='num'>87.7</td><td class='num green'>+0.6%</td></tr>
+<tr><td><b>哥伦比亚</b></td><td class='num'>406</td><td class='num'>357</td><td class='num green'>-49</td><td class='num green'>-12.1%</td><td class='num'>98.1</td><td class='num'>89.2</td><td class='num green'>-9.1%</td></tr>
+<tr><td><b>危地马拉</b></td><td class='num'>185</td><td class='num'>219</td><td class='num red'>+34</td><td class='num red'>+18.3%</td><td class='num'>97.4</td><td class='num'>104.8</td><td class='num red'>+7.6%</td></tr>
+    </table></div>
+    <div class="src">面积单位千公顷，单产单位 t/ha。面积变化=2024−2005（千公顷），百分比=（2024÷2005−1）×100。红涨绿跌（中国习惯）。</div>
+  </div>
+
+  <div class="ok">
+    <b>核心判断：</b>
+    <ul>
+      <li><b>巴西：面积见顶的信号。</b>2014 年达 1,042 万公顷后 10 年停滞（2024 年 1,005 万），单产 70–80 t/ha 波动但无趋势性提升。巴西是全球最大甘蔗生产国，其面积不再扩张，直接封死了全球面积的增量空间。</li>
+      <li><b>印度：面积是唯一仍在扩张的主力。</b>从 366 万 → 574 万公顷（+57%），单产也从 64.8 大幅升至 78.9 t/ha（灌溉改善 + 品种升级）——印度是「面积+单产双轮」的典型案例。</li>
+      <li><b>中国：逆势收缩但效率补位。</b>面积从 135.4 万 → 126.2 万公顷（-6.8%），单产从 64.0 → 80.9 t/ha（+26.4%），2023 年单产 82.7 t/ha 创历史新高。中国是「退面积、提单产」的代表——国内糖料面积红线思维下，未来供给弹性主要来自单产而非扩种。</li>
+      <li><b>泰国：单产高波动。</b>2020/21 年极端干旱把单产打到 43.7/48.7 t/ha（-30% 级别），面积仍在 107 万–183 万公顷间大幅摆动——泰国是全球甘蔗供给的「边际波动源」。</li>
+      <li><b>澳大利亚/哥伦比亚：面积收缩。</b>澳 -21.5%、哥伦比亚 -12.1%，且单产几乎未变，产量靠存量效率维持。</li>
+    </ul>
+  </div>
+
+  <h2>三、口径说明与数据源</h2>
+  <div class="panel">
+    <ul>
+      <li><b>面积口径</b>：FAOSTAT 标准定义是<b>收获面积（area harvested）</b>，不是播种面积。甘蔗是宿根作物、年度内可多次收获，中国官方统计的「播种面积」与之有差异；本文面积由 FAO 产量÷单产反推，与 FAO 口径自洽。</li>
+      <li><b>单产口径</b>：FAOSTAT「yield」= 产量÷收获面积（t/ha）。FAO 年度全球均值约 60–110 t/ha，本文主产国样本 43.7–105 t/ha，符合分布。</li>
+      <li><b>年份</b>：本报告为 2005–2024（FAO 目前最新发布至 2024 日历年；2025 需 FAO 2026 年版发布后补充）。历年均按日历年（calendar year）；巴西/印度/泰国等国的甘蔗市场年（如巴西 4 月–次年 3 月）跨日历年度，纯日历口径下存在 1–6 个月错位。</li>
+      <li><b>原始数据</b>：原始 CSV 存档于 <code>data/sugar/raw/owid_sugarcane_production.csv</code> 与 <code>owid_sugarcane_yields.csv</code>；派生面板 <code>data/sugar/sugarcane_area_yield_2005_2024.csv</code>。</li>
+      <li><b>交叉验证</b>：全球与国别数值与 USDA PSD（糖平衡表）、Conab（巴西）、OCSB（泰国）、ISMA（印度）等机构报告的甘蔗产量量级一致；未来可继续用各机构季报校准本文面积/单产的 vintage。</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <b>报告 98 · 全球甘蔗面积与单产 20 年全景（2005–2024）</b>｜数据源：FAOSTAT Production: Crops and livestock products（FAO 2025 版）经 Our World in Data 镜像拉取｜
+    派生数据：<code>data/sugar/sugarcane_area_yield_2005_2024.csv</code>、<code>data/sugar/sugarcane_stats_report.json</code>｜
+    口径：面积=产量÷单产｜生成于 2026-09-21。所有数字可复算：产量÷单产=面积。<br>
+    ⚠️ vintage 提示：FAO/FAOSTAT 为年度发布，2024 为已定稿数据（非预测）；巴西/印度/泰国的 2025/26 甘蔗季数据需从 Conab/ISMA/OCSB 等季报另行获取。图表配色为 Okabe-Ito 色弱安全方案（蓝/橙/朱红/天蓝/紫/黑 + 线型差异），不依赖红绿区分。
+  </div>
+</div>
+
+<script>
+const K = {"world_area_2005": "19,570", "world_area_2024": "26,744", "world_area_chg": "+7,174", "world_area_pct": "+36.7", "world_yield_2005": "66.8", "world_yield_2024": "72.5", "world_yield_pct": "+8.7", "top2_share": "88", "cn_area_pct": "-6.8", "cn_yield_pct": "+26.4", "cn_yield_max": "82.7", "cn_yield_year": 2023, "cn_area_max": "1,816", "cn_area_peak_year": 2013, "cn_area_2024": "1,262", "br_area_pct": "+73.1", "in_area_pct": "+56.8", "th_yield_min": "43.7", "th_yield_min_year": 2020};
+const P = {"Y": [2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024], "world_area": [19569.7, 20479.5, 22584.7, 23974.3, 23588.2, 23554.5, 25425.2, 25931.7, 26795.7, 27002.6, 26440.8, 26517.7, 26147.3, 26391.7, 26979.2, 26111.5, 25887.1, 26114.7, 26862.1, 26743.9], "world_yield": [66.75, 69.2, 70.94, 71.59, 70.94, 71.18, 70.49, 70.55, 71.06, 69.91, 70.87, 70.96, 70.29, 73.28, 72.73, 72.08, 72.1, 73.57, 75.1, 72.53], "world_prod": [1306.2, 1417.2, 1602.1, 1716.4, 1673.3, 1676.6, 1792.3, 1829.5, 1904.0, 1887.8, 1873.8, 1881.7, 1837.8, 1934.1, 1962.1, 1882.2, 1866.4, 1921.2, 2017.4, 1939.8], "series": {"巴西": {"area": [5805.5, 6355.5, 7080.9, 8140.1, 8617.6, 9076.7, 9601.3, 9705.4, 10195.2, 10419.7, 10111.4, 10223.9, 10189.2, 10024.1, 10092.4, 9996.1, 9971.4, 9882.6, 10039.1, 10051.3], "yield": [72.85, 75.12, 77.63, 79.27, 80.26, 79.04, 76.45, 74.3, 75.34, 70.65, 74.2, 75.18, 74.46, 74.58, 74.66, 75.64, 71.77, 73.43, 77.9, 75.58]}, "印度": {"area": [3661.5, 4201.1, 5150.0, 5055.2, 4415.4, 4174.6, 4944.4, 5040.0, 5000.0, 4990.0, 5070.0, 4950.0, 4435.7, 4737.1, 5061.1, 4602.7, 4851.2, 5175.4, 5885.3, 5739.6], "yield": [64.75, 66.93, 69.03, 68.88, 64.55, 70.02, 69.25, 71.63, 68.24, 70.57, 71.47, 70.39, 69.0, 80.2, 80.1, 80.5, 83.57, 84.91, 83.35, 78.95]}, "泰国": {"area": [1067.2, 965.3, 1010.3, 1054.1, 963.6, 1009.6, 1259.2, 1282.1, 1321.6, 1353.0, 1400.7, 1433.1, 1403.5, 1790.2, 1835.1, 1714.1, 1369.6, 1427.2, 1638.4, 1491.2], "yield": [46.46, 49.37, 63.71, 69.73, 69.34, 68.15, 76.2, 76.75, 75.74, 76.64, 67.21, 65.69, 66.33, 75.45, 71.39, 43.74, 48.72, 64.58, 57.36, 55.28]}, "中国": {"area": [1354.3, 1378.2, 1585.8, 1743.5, 1697.5, 1686.3, 1721.2, 1794.7, 1816.5, 1760.5, 1476.0, 1402.0, 1371.4, 1405.8, 1390.7, 1353.4, 1316.1, 1289.2, 1265.1, 1262.4], "yield": [63.97, 70.45, 71.23, 71.21, 68.09, 65.7, 66.48, 68.6, 70.58, 71.35, 72.54, 73.62, 76.13, 76.89, 78.66, 79.89, 81.05, 80.19, 82.65, 80.87]}, "巴基斯坦": {"area": [966.4, 907.3, 1028.8, 1241.3, 1029.4, 942.8, 987.7, 1057.6, 1172.4, 1140.5, 1131.5, 1217.5, 1341.8, 1101.9, 1039.8, 1165.0, 1260.3, 1318.8, 1180.3, 1193.1], "yield": [48.89, 49.23, 53.21, 51.49, 48.62, 52.37, 56.0, 55.22, 57.54, 55.09, 57.87, 62.0, 62.11, 60.96, 63.84, 69.53, 70.34, 66.71, 74.25, 70.6]}, "墨西哥": {"area": [669.8, 679.9, 690.4, 691.4, 710.6, 703.9, 713.8, 735.1, 782.8, 761.8, 758.6, 781.1, 772.0, 785.9, 796.0, 775.0, 809.3, 795.2, 802.2, 784.3], "yield": [77.11, 74.53, 75.44, 73.89, 69.65, 71.63, 69.67, 69.3, 78.16, 74.39, 73.02, 72.27, 73.78, 72.33, 74.54, 69.48, 68.26, 69.86, 69.29, 67.64]}, "印尼": {"area": [382.1, 396.4, 427.8, 436.5, 441.4, 436.6, 435.0, 442.7, 470.9, 472.7, 455.8, 447.4, 420.1, 415.7, 413.1, 419.0, 449.0, 524.8, 511.0, 524.9], "yield": [76.68, 73.66, 58.91, 58.65, 59.8, 60.93, 55.17, 64.84, 60.3, 57.33, 59.23, 62.59, 66.64, 70.97, 70.45, 69.93, 71.71, 61.74, 60.66, 60.97]}, "美国": {"area": [373.1, 363.3, 356.0, 351.3, 353.7, 355.1, 353.1, 365.2, 368.6, 351.5, 359.1, 365.5, 365.9, 364.1, 369.6, 383.5, 378.5, 376.4, 377.0, 375.4], "yield": [71.31, 81.38, 77.96, 71.29, 78.06, 69.9, 75.08, 80.06, 75.71, 78.53, 81.15, 79.72, 82.41, 86.06, 78.4, 85.4, 78.71, 83.55, 79.31, 84.21]}, "澳大利亚": {"area": [434.0, 397.7, 408.6, 380.5, 391.3, 389.5, 308.1, 338.6, 329.3, 375.2, 376.5, 447.2, 453.5, 443.0, 395.4, 366.4, 362.3, 336.0, 330.5, 340.6], "yield": [87.16, 93.35, 89.07, 85.72, 80.39, 80.2, 81.73, 76.65, 82.4, 81.33, 85.99, 76.93, 80.63, 75.64, 81.98, 82.65, 85.93, 85.32, 98.62, 87.66]}, "哥伦比亚": {"area": [406.1, 410.1, 410.2, 383.4, 379.5, 348.5, 382.0, 396.5, 406.2, 401.1, 409.5, 402.3, 431.0, 455.1, 673.3, 407.6, 360.3, 390.8, 353.6, 357.1], "yield": [98.14, 90.47, 85.81, 84.25, 96.7, 93.36, 91.34, 84.07, 85.86, 95.12, 88.26, 86.4, 54.26, 73.51, 50.25, 89.22, 95.99, 91.41, 91.04, 89.22]}, "危地马拉": {"area": [184.9, 188.7, 215.7, 215.7, 233.2, 234.6, 245.2, 255.9, 261.1, 265.6, 267.9, 259.8, 252.0, 268.4, 277.8, 257.9, 237.3, 240.0, 241.0, 218.7], "yield": [97.38, 93.44, 94.18, 94.18, 92.32, 95.11, 83.94, 94.93, 103.07, 125.16, 126.43, 129.05, 102.98, 103.08, 107.52, 107.27, 107.59, 107.69, 99.47, 104.75]}}};
+const ROWS = [{"cn": "巴西", "a05": "5,806", "a24": "10,051", "ad": "+4,246", "ap": "+73.1", "y05": "72.8", "y24": "75.6", "yp": "+3.7"}, {"cn": "印度", "a05": "3,662", "a24": "5,740", "ad": "+2,078", "ap": "+56.8", "y05": "64.8", "y24": "79.0", "yp": "+21.9"}, {"cn": "泰国", "a05": "1,067", "a24": "1,491", "ad": "+424", "ap": "+39.7", "y05": "46.5", "y24": "55.3", "yp": "+19.0"}, {"cn": "中国", "a05": "1,354", "a24": "1,262", "ad": "-92", "ap": "-6.8", "y05": "64.0", "y24": "80.9", "yp": "+26.4"}, {"cn": "巴基斯坦", "a05": "966", "a24": "1,193", "ad": "+227", "ap": "+23.5", "y05": "48.9", "y24": "70.6", "yp": "+44.4"}, {"cn": "墨西哥", "a05": "670", "a24": "784", "ad": "+114", "ap": "+17.1", "y05": "77.1", "y24": "67.6", "yp": "-12.3"}, {"cn": "印尼", "a05": "382", "a24": "525", "ad": "+143", "ap": "+37.4", "y05": "76.7", "y24": "61.0", "yp": "-20.5"}, {"cn": "美国", "a05": "373", "a24": "375", "ad": "+2", "ap": "+0.6", "y05": "71.3", "y24": "84.2", "yp": "+18.1"}, {"cn": "澳大利亚", "a05": "434", "a24": "341", "ad": "-93", "ap": "-21.5", "y05": "87.2", "y24": "87.7", "yp": "+0.6"}, {"cn": "哥伦比亚", "a05": "406", "a24": "357", "ad": "-49", "ap": "-12.1", "y05": "98.1", "y24": "89.2", "yp": "-9.1"}, {"cn": "危地马拉", "a05": "185", "a24": "219", "ad": "+34", "ap": "+18.3", "y05": "97.4", "y24": "104.8", "yp": "+7.6"}];
+const C = {blue:'#0072B2',orange:'#E69F00',verm:'#D55E00',green:'#009E73',sky:'#56B4E9',purple:'#CC79A7',yellow:'#F0E442',black:'#000000'};
+const axis = {axisLine:{lineStyle:{color:'#c8d2de'}},axisLabel:{color:'#5a6a7d',fontSize:11},splitLine:{lineStyle:{color:'#eef2f7'}}};
+function mk(id,opt){const el=document.getElementById(id);if(!el)return;const ch=echarts.init(el);ch.setOption(opt);window.addEventListener('resize',()=>ch.resize());}
+const tip = {trigger:'axis',valueFormatter:v=>v==null?'-':(+v).toLocaleString()};
+const Y = P.Y;
+
+// KPI 填充
+(function(){
+  const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+  set('kpi_a05',K.world_area_2005); set('kpi_a24',K.world_area_2024);
+  set('kpi_achg',K.world_area_chg); set('kpi_apct',K.world_area_pct);
+  set('kpi_top2',K.top2_share); set('kpi_y05',K.world_yield_2005); set('kpi_y24',K.world_yield_2024);
+  set('kpi_ypct',K.world_yield_pct); set('kpi_cn_apct',K.cn_area_pct); set('kpi_cn_amax',K.cn_area_max);
+  set('kpi_cn_a24',K.cn_area_2024); set('kpi_cn_ypct',K.cn_yield_pct); set('kpi_cn_ymax',K.cn_yield_max);
+  set('kc_a24',K.world_area_2024); set('kc_a05',K.world_area_2005); set('kc_apct',K.world_area_pct);
+  set('kc_top2',K.top2_share+'%'); set('kc_top2b',K.top2_share);
+  set('kc_y24',K.world_yield_2024); set('kc_y05',K.world_yield_2005); set('kc_ypct',K.world_yield_pct);
+  set('kc_cn',K.cn_area_pct+'%'); set('kc_cn_yp',K.cn_yield_pct); set('kc_cn_ym',K.cn_yield_max); set('kc_cn_yy',K.cn_yield_year);
+})();
+
+// C1 全球面积+单产
+mk('c1',{
+  tooltip:tip, legend:{top:0,textStyle:{color:'#1a2330'}},
+  grid:{left:66,right:60,top:36,bottom:40},
+  xAxis:{type:'category',data:Y,...axis},
+  yAxis:[{type:'value',name:'千公顷',...axis},{type:'value',name:'t/ha',min:60,max:80,...axis,splitLine:{show:false}}],
+  series:[
+    {name:'收获面积',type:'bar',data:P.world_area,itemStyle:{color:C.sky,opacity:.6},barWidth:'48%'},
+    {name:'单产',type:'line',data:P.world_yield,lineStyle:{width:2.6,color:C.verm},itemStyle:{color:C.verm},symbol:'circle',symbolSize:6}
+  ]
+});
+
+// C2 分国面积堆叠
+const order = ['巴西','印度','泰国','中国','巴基斯坦','墨西哥','印尼','美国','澳大利亚','哥伦比亚','危地马拉'];
+const colors = ['#0072B2','#E69F00','#D55E00','#009E73','#56B4E9','#CC79A7','#F0E442','#000000','#999999','#661100','#882255'];
+mk('c2',{
+  tooltip:tip, title:{text:'主产国甘蔗收获面积（千公顷）',left:'center',top:0,textStyle:{fontSize:13,color:'#12365e'}},
+  legend:{top:24,textStyle:{color:'#1a2330',fontSize:10},type:'scroll'},
+  grid:{left:58,right:24,top:60,bottom:36},
+  xAxis:{type:'category',data:Y,...axis},
+  yAxis:{type:'value',name:'千公顷',...axis},
+  series:order.map((n,i)=>({name:n,type:'bar',stack:'a',data:P.series[n].area,itemStyle:{color:colors[i]},barWidth:'70%'}))
+});
+
+// C3 分国单产
+const yl = ['中国','巴西','印度','泰国','全球'];
+const yc = ['#009E73','#0072B2','#E69F00','#D55E00','#000000'];
+const yt = ['solid','solid','solid','solid','dashed'];
+mk('c3',{
+  tooltip:tip, title:{text:'主产国甘蔗单产（t/ha）',left:'center',top:0,textStyle:{fontSize:13,color:'#12365e'}},
+  legend:{top:24,textStyle:{color:'#1a2330',fontSize:11}},
+  grid:{left:52,right:24,top:60,bottom:36},
+  xAxis:{type:'category',data:Y,...axis},
+  yAxis:{type:'value',name:'t/ha',min:40,max:110,...axis},
+  series:yl.map((n,i)=>{
+    const data = n==='全球' ? P.world_yield : P.series[n].yield;
+    return {name:n,type:'line',data,lineStyle:{width:i===0?3:2.2,color:yc[i],type:yt[i]},itemStyle:{color:yc[i]},symbol:'circle',symbolSize:i===0?7:5};
+  })
+});
+</script>
+</body>
+</html>
