@@ -1,0 +1,83 @@
+=== TOP 25 by ENDING STOCKS 2023 ===
+TH   Thailand                     end=    10556  prod=     8808
+IN   India                        end=     8400  prod=    29500
+PK   Pakistan                     end=     3392  prod=     6560
+US   United States                end=     2014  prod=     8449
+ID   Indonesia                    end=     1950  prod=     2300
+MX   Mexico                       end=     1503  prod=     4986
+CH   China                        end=     1395  prod=     9960
+EG   Egypt                        end=      845  prod=     2600
+AS   Australia                    end=      788  prod=     4035
+BR   Brazil                       end=      760  prod=    45544
+RP   Philippines                  end=      656  prod=     1923
+IR   Iran                         end=      651  prod=     1620
+UP   Ukraine                      end=      636  prod=     1820
+RS   Russia                       end=      624  prod=     6600
+JA   Japan                        end=      444  prod=      630
+GT   Guatemala                    end=      434  prod=     2621
+BG   Bangladesh                   end=      409  prod=       40
+VM   Vietnam                      end=      408  prod=     1125
+AG   Algeria                      end=      398  prod=        0
+EC   Ecuador                      end=      392  prod=      420
+CS   Costa Rica                   end=      387  prod=      424
+KS   Korea, South                 end=      381  prod=        0
+E4   European Union               end=      376  prod=    15699
+MY   Malaysia                     end=      322  prod=        0
+AR   Argentina                    end=      315  prod=     1730
+
+=== codes containing C / I / B / T / A (check CN vs CH) ===
+AF   Afghanistan   end=0 prod=0
+AG   Algeria   end=398 prod=0
+AJ   Azerbaijan   end=58 prod=35
+AL   Albania   end=0 prod=0
+AM   Armenia   end=0 prod=0
+AO   Angola   end=58 prod=140
+AR   Argentina   end=315 prod=1730
+AS   Australia   end=788 prod=4035
+BA   Bahrain   end=18 prod=0
+BB   Barbados   end=2 prod=7
+BC   Botswana   end=0 prod=0
+BD   Bermuda   end=0 prod=0
+BF   Bahamas, The   end=0 prod=0
+BG   Bangladesh   end=409 prod=40
+BH   Belize   end=17 prod=140
+BK   Bosnia and Herzegovina   end=0 prod=0
+BL   Bolivia   end=84 prod=535
+BM   Burma   end=76 prod=400
+BO   Belarus   end=130 prod=715
+BR   Brazil   end=760 prod=45544
+BX   Brunei   end=0 prod=0
+BY   Burundi   end=0 prod=0
+CA   Canada   end=301 prod=130
+CB   Cambodia   end=25 prod=120
+CD   Chad   end=0 prod=0
+CE   Sri Lanka   end=124 prod=55
+CF   Congo (Brazzaville)   end=16 prod=75
+CG   Congo (Kinshasa)   end=0 prod=0
+CH   China   end=1395 prod=9960
+CI   Chile   end=152 prod=110
+CM   Cameroon   end=0 prod=0
+CN   Comoros   end=0 prod=0
+CO   Colombia   end=129 prod=2000
+CS   Costa Rica   end=387 prod=424
+CT   Central African Republic   end=0 prod=0
+CU   Cuba   end=70 prod=160
+CV   Cabo Verde   end=0 prod=0
+IC   Iceland   end=0 prod=0
+ID   Indonesia   end=1950 prod=2300
+IN   India   end=8400 prod=29500
+IR   Iran   end=651 prod=1620
+IS   Israel   end=67 prod=0
+IV   Cote d'Ivoire   end=66 prod=210
+IZ   Iraq   end=272 prod=0
+TC   United Arab Emirates   end=242 prod=0
+TD   Trinidad and Tobago   end=16 prod=0
+TH   Thailand   end=10556 prod=8808
+TI   Tajikistan   end=0 prod=0
+TN   Tonga   end=0 prod=0
+TO   Togo   end=35 prod=0
+TS   Tunisia   end=39 prod=15
+TU   Turkey   end=10 prod=3400
+TW   Taiwan   end=125 prod=75
+TX   Turkmenistan   end=0 prod=0
+TZ   Tanzania   end=157 prod=450

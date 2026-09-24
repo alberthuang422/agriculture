@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>全球甘蔗面积与单产 20 年全景（2005–2024）· 报告 98</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+  :root{--oi-blue:#0072B2; --oi-orange:#E69F00; --oi-verm:#D55E00; --oi-green:#009E73;
+        --oi-sky:#56B4E9; --oi-purple:#CC79A7; --oi-yellow:#F0E442; --oi-black:#000000;
+        --ink:#1a2330; --sub:#5a6a7d; --line:#dde4ec; --card:#fff; --bg:#f5f7fa; --ref-bg:#eef2f7;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:24px 20px 60px;}
+  .hero{background:linear-gradient(135deg,#12365e 0%,#1d5c93 100%);color:#fff;border-radius:12px;padding:28px 32px;margin-bottom:20px;}
+  .hero h1{font-size:23px;margin-bottom:6px;line-height:1.45;}
+  .hero .meta{font-size:12.5px;opacity:.85;margin-top:4px;}
+  .hero .sub{margin-top:12px;font-size:14px;opacity:.96;border-top:1px solid rgba(255,255,255,.25);padding-top:10px;}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px;}
+  .kcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
+  .kcard .lab{font-size:12px;color:var(--sub);margin-bottom:3px;}
+  .kcard .val{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums;}
+  .kcard .note{font-size:12px;color:var(--sub);margin-top:3px;}
+  .red{color:#b2182b;} .green{color:#1a7a3a;} .blue{color:#0072B2;} .orange{color:#b47400;}
+  h2{font-size:19px;margin:34px 0 12px;padding-left:12px;border-left:4px solid var(--oi-blue);}
+  h3{font-size:16px;color:#12365e;margin:18px 0 8px;}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin-bottom:16px;}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;background:#fff;margin-top:6px;}
+  th{background:#eef2f7;color:#12365e;padding:6px 7px;text-align:left;border-bottom:2px solid var(--line);font-weight:600;white-space:nowrap;}
+  td{padding:5px 7px;border-bottom:1px solid var(--line);vertical-align:middle;}
+  tr:last-child td{border-bottom:none;}
+  .num{font-variant-numeric:tabular-nums;text-align:right;}
+  th.num{text-align:right;}
+  .src{font-size:11px;color:var(--sub);margin-top:7px;line-height:1.5;}
+  .callout{background:#fff8ee;border:1px solid #f0d9a8;border-radius:10px;padding:14px 18px;margin:14px 0;font-size:13.5px;}
+  .warn{background:#fdf2f2;border:1px solid #eccaca;border-radius:10px;padding:12px 16px;margin:12px 0;font-size:13px;}
+  .ok{background:#f0f8f4;border:1px solid #c9e5d6;border-radius:10px;padding:12px 16px;margin:12px 0;font-size:13px;}
+  .chart{width:100%;height:380px;}
+  .chart-sm{width:100%;height:330px;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .footer{margin-top:34px;padding:16px 20px;background:var(--ref-bg);border-radius:10px;font-size:12px;color:var(--sub);}
+  code{background:#eef2f7;padding:1px 5px;border-radius:4px;font-size:12px;}
+  ul{padding-left:22px;} li{margin:4px 0;}
+  .tbl-scroll{overflow-x:auto;}
+  @media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr);}.grid2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <h1>全球甘蔗面积与单产 20 年全景（2005–2024）：增产是「种得更多」，不是「长得更好」</h1>
+    <div class="meta">报告编号 98 ｜ 数据源：FAOSTAT「Production: Crops and livestock products」2025 版（经 Our World in Data 镜像） ｜ 口径：收获面积（ha）、单产（t/ha）、产量（t），面积=产量÷单产 ｜ 2026-09-21</div>
+    <div class="sub">结论一句话：<b>
+    2005–2024 全球甘蔗收获面积从 <span id="kpi_a05">–</span> 千公顷扩至 <span id="kpi_a24">–</span> 千公顷（<b class="red">+<span id="kpi_achg">–</span>，+<span id="kpi_apct">–</span>%</b>），
+    其中 <b class="red"><span id="kpi_top2">–</span>%</b> 的增量来自巴西（+4,246 千公顷）与印度（+2,078 千公顷）两国；
+    与此同时全球单产仅从 <span id="kpi_y05">–</span> 升到 <span id="kpi_y24">–</span> t/ha（<b>+<span id="kpi_ypct">–</span>%</b>）。
+    <b>结论：全球甘蔗增产是「面积驱动型」——20 年间甘蔗总产的 +49% 中，面积扩张贡献远大于单产提升。</b>
+    这种结构意味着：<b>一旦主产国面积增长见顶（如巴西 2014 年后停滞在 1,000–1,050 万公顷），全球供给的边际弹性将越来越依赖单产与出糖率，而单产的提升空间正在收窄（全球 20 年仅 +8.7%）</b>——
+    这是糖市长期供给的隐形约束。中国是例外：<b class="red">全国面积收缩 <span id="kpi_cn_apct">–</span>%（2013 年峰值 <span id="kpi_cn_amax">–</span> 千公顷 → 2024 年 <span id="kpi_cn_a24">–</span> 千公顷）</b>，
+    但<b>单产 +<span id="kpi_cn_ypct">–</span>%（<span id="kpi_cn_ymax">–</span> t/ha 创近年新高）</b>——「退面积、提单产」正在抵消面积流失。
+    </b></div>
+  </div>
+
+  <div class="cards">
+    <div class="kcard"><div class="lab">全球甘蔗面积（2024）</div><div class="val" id="kc_a24">–</div>
+      <div class="note">千公顷 ｜ 2005 年 <span id="kc_a05">–</span>（+<span id="kc_apct">–</span>%）</div></div>
+    <div class="kcard"><div class="lab">面积增量来源</div><div class="val red" id="kc_top2">–</div>
+      <div class="note">巴西+印度贡献全球增量的 <span id="kc_top2b">–</span>%</div></div>
+    <div class="kcard"><div class="lab">全球单产（2024）</div><div class="val" id="kc_y24">–</div>
+      <div class="note">t/ha ｜ 2005 年 <span id="kc_y05">–</span>（+<span id="kc_ypct">–</span>%）</div></div>
+    <div class="kcard"><div class="lab">中国面积/单产</div><div class="val" id="kc_cn">–</div>
+      <div class="note">面积 ｜ 单产 +<span id="kc_cn_yp">–</span>%（<span id="kc_cn_ym">–</span> t/ha 峰值，<span id="kc_cn_yy">–</span>）</div></div>
+  </div>
+
+  <h2>一、全球盘子：面积扩张是主引擎</h2>
+  <div class="panel">
+    <div id="c1" class="chart"></div>
+    <div class="src">全球甘蔗收获面积（柱，左轴，千公顷）与单产（线，右轴，t/ha）。面积在 2005–2014 年快速扩张（+7,433 千公顷），2014 年后进入平台期；单产整体缓慢抬升但波动不大，全球均值区间 67–75 t/ha。</div>
+  </div>
+  <div class="panel">
+    <h3>全球甘蔗三要素表（面积 / 单产 / 产量）</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>年份</th><th class="num">面积（千公顷）</th><th class="num">单产（t/ha）</th><th class="num">产量（百万吨）</th><th class="num">面积同比</th><th class="num">单产同比</th></tr>
+__YR_ROWS__
+    </table></div>
+    <div class="src">逐年变化均为同比（本年÷上年−1）。面积×单产=产量，仅显示小数位舍入差异。</div>
+  </div>
+  <div class="callout">
+    <b>两个阶段的读数：</b>
+    <ul>
+      <li><b>2005–2014：面积驱动期。</b>全球面积 +7,433 千公顷（+38%），同期产量 +44%；单产仅 +5%。这一轮扩张主要是巴西乙醇—糖联产体系大扩容（甘蔗面积 581 万→1,042 万公顷，+79%）叠加印度、泰国种植面积扩张。</li>
+      <li><b>2015–2024：平台期。</b>全球面积在 2,585 万–2,700 万公顷窄幅波动（中枢约 2,640 万），产量增长 <b>完全依赖单产</b>（该期 +4.9%）与结构性因素（泰国/印度天气恢复、出糖率改善）。全球单产 20 年仅 <b>+8.7%</b>——在面积平台期，单产是唯一增长来源，而它的增速在放缓。</li>
+    </ul>
+  </div>
+
+  <h2>二、国别：谁在扩，谁在退</h2>
+  <div class="panel">
+    <div class="grid2">
+      <div><div id="c2" class="chart-sm"></div></div>
+      <div><div id="c3" class="chart-sm"></div></div>
+    </div>
+    <div class="src">左：主产国甘蔗收获面积（千公顷，堆叠）。右：主产国甘蔗单产（t/ha）。注意巴西面积在 2014 年见顶后 10 年未再扩张，印度面积持续上行并在 2023 年创 588.5 万公顷新高；中国面积持续收缩但单产稳居第一梯队。</div>
+  </div>
+
+  <div class="panel">
+    <h3>主产国面积与单产变化（2005 → 2024）</h3>
+    <div class="tbl-scroll"><table>
+      <tr><th>国家</th><th class="num">面积 2005</th><th class="num">面积 2024</th><th class="num">面积变化</th><th class="num">面积%</th><th class="num">单产 2005</th><th class="num">单产 2024</th><th class="num">单产%</th></tr>
+__TR_ROWS__
+    </table></div>
+    <div class="src">面积单位千公顷，单产单位 t/ha。面积变化=2024−2005（千公顷），百分比=（2024÷2005−1）×100。红涨绿跌（中国习惯）。</div>
+  </div>
+
+  <div class="ok">
+    <b>核心判断：</b>
+    <ul>
+      <li><b>巴西：面积见顶的信号。</b>2014 年达 1,042 万公顷后 10 年停滞（2024 年 1,005 万），单产 70–80 t/ha 波动但无趋势性提升。巴西是全球最大甘蔗生产国，其面积不再扩张，直接封死了全球面积的增量空间。</li>
+      <li><b>印度：面积是唯一仍在扩张的主力。</b>从 366 万 → 574 万公顷（+57%），单产也从 64.8 大幅升至 78.9 t/ha（灌溉改善 + 品种升级）——印度是「面积+单产双轮」的典型案例。</li>
+      <li><b>中国：逆势收缩但效率补位。</b>面积从 135.4 万 → 126.2 万公顷（-6.8%），单产从 64.0 → 80.9 t/ha（+26.4%），2023 年单产 82.7 t/ha 创历史新高。中国是「退面积、提单产」的代表——国内糖料面积红线思维下，未来供给弹性主要来自单产而非扩种。</li>
+      <li><b>泰国：单产高波动。</b>2020/21 年极端干旱把单产打到 43.7/48.7 t/ha（-30% 级别），面积仍在 107 万–183 万公顷间大幅摆动——泰国是全球甘蔗供给的「边际波动源」。</li>
+      <li><b>澳大利亚/哥伦比亚：面积收缩。</b>澳 -21.5%、哥伦比亚 -12.1%，且单产几乎未变，产量靠存量效率维持。</li>
+    </ul>
+  </div>
+
+  <h2>三、口径说明与数据源</h2>
+  <div class="panel">
+    <ul>
+      <li><b>面积口径</b>：FAOSTAT 标准定义是<b>收获面积（area harvested）</b>，不是播种面积。甘蔗是宿根作物、年度内可多次收获，中国官方统计的「播种面积」与之有差异；本文面积由 FAO 产量÷单产反推，与 FAO 口径自洽。</li>
+      <li><b>单产口径</b>：FAOSTAT「yield」= 产量÷收获面积（t/ha）。FAO 年度全球均值约 60–110 t/ha，本文主产国样本 43.7–105 t/ha，符合分布。</li>
+      <li><b>年份</b>：本报告为 2005–2024（FAO 目前最新发布至 2024 日历年；2025 需 FAO 2026 年版发布后补充）。历年均按日历年（calendar year）；巴西/印度/泰国等国的甘蔗市场年（如巴西 4 月–次年 3 月）跨日历年度，纯日历口径下存在 1–6 个月错位。</li>
+      <li><b>原始数据</b>：原始 CSV 存档于 <code>data/sugar/raw/owid_sugarcane_production.csv</code> 与 <code>owid_sugarcane_yields.csv</code>；派生面板 <code>data/sugar/sugarcane_area_yield_2005_2024.csv</code>。</li>
+      <li><b>交叉验证</b>：全球与国别数值与 USDA PSD（糖平衡表）、Conab（巴西）、OCSB（泰国）、ISMA（印度）等机构报告的甘蔗产量量级一致；未来可继续用各机构季报校准本文面积/单产的 vintage。</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <b>报告 98 · 全球甘蔗面积与单产 20 年全景（2005–2024）</b>｜数据源：FAOSTAT Production: Crops and livestock products（FAO 2025 版）经 Our World in Data 镜像拉取｜
+    派生数据：<code>data/sugar/sugarcane_area_yield_2005_2024.csv</code>、<code>data/sugar/sugarcane_stats_report.json</code>｜
+    口径：面积=产量÷单产｜生成于 2026-09-21。所有数字可复算：产量÷单产=面积。<br>
+    ⚠️ vintage 提示：FAO/FAOSTAT 为年度发布，2024 为已定稿数据（非预测）；巴西/印度/泰国的 2025/26 甘蔗季数据需从 Conab/ISMA/OCSB 等季报另行获取。图表配色为 Okabe-Ito 色弱安全方案（蓝/橙/朱红/天蓝/紫/黑 + 线型差异），不依赖红绿区分。
+  </div>
+</div>
+
+<script>
+const K = __KPI__;
+const P = __JS__;
+const ROWS = __ROWS_JS__;
+const C = {blue:'#0072B2',orange:'#E69F00',verm:'#D55E00',green:'#009E73',sky:'#56B4E9',purple:'#CC79A7',yellow:'#F0E442',black:'#000000'};
+const axis = {axisLine:{lineStyle:{color:'#c8d2de'}},axisLabel:{color:'#5a6a7d',fontSize:11},splitLine:{lineStyle:{color:'#eef2f7'}}};
+function mk(id,opt){const el=document.getElementById(id);if(!el)return;const ch=echarts.init(el);ch.setOption(opt);window.addEventListener('resize',()=>ch.resize());}
+const tip = {trigger:'axis',valueFormatter:v=>v==null?'-':(+v).toLocaleString()};
+const Y = P.Y;
+
+// KPI 填充
+(function(){
+  const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v;};
+  set('kpi_a05',K.world_area_2005); set('kpi_a24',K.world_area_2024);
+  set('kpi_achg',K.world_area_chg); set('kpi_apct',K.world_area_pct);
+  set('kpi_top2',K.top2_share); set('kpi_y05',K.world_yield_2005); set('kpi_y24',K.world_yield_2024);
+  set('kpi_ypct',K.world_yield_pct); set('kpi_cn_apct',K.cn_area_pct); set('kpi_cn_amax',K.cn_area_max);
+  set('kpi_cn_a24',K.cn_area_2024); set('kpi_cn_ypct',K.cn_yield_pct); set('kpi_cn_ymax',K.cn_yield_max);
+  set('kc_a24',K.world_area_2024); set('kc_a05',K.world_area_2005); set('kc_apct',K.world_area_pct);
+  set('kc_top2',K.top2_share+'%'); set('kc_top2b',K.top2_share);
+  set('kc_y24',K.world_yield_2024); set('kc_y05',K.world_yield_2005); set('kc_ypct',K.world_yield_pct);
+  set('kc_cn',K.cn_area_pct+'%'); set('kc_cn_yp',K.cn_yield_pct); set('kc_cn_ym',K.cn_yield_max); set('kc_cn_yy',K.cn_yield_year);
+})();
+
+// C1 全球面积+单产
+mk('c1',{
+  tooltip:tip, legend:{top:0,textStyle:{color:'#1a2330'}},
+  grid:{left:66,right:60,top:36,bottom:40},
+  xAxis:{type:'category',data:Y,...axis},
+  yAxis:[{type:'value',name:'千公顷',...axis},{type:'value',name:'t/ha',min:60,max:80,...axis,splitLine:{show:false}}],
+  series:[
+    {name:'收获面积',type:'bar',data:P.world_area,itemStyle:{color:C.sky,opacity:.6},barWidth:'48%'},
+    {name:'单产',type:'line',data:P.world_yield,lineStyle:{width:2.6,color:C.verm},itemStyle:{color:C.verm},symbol:'circle',symbolSize:6}
+  ]
+});
+
+// C2 分国面积堆叠
+const order = ['巴西','印度','泰国','中国','巴基斯坦','墨西哥','印尼','美国','澳大利亚','哥伦比亚','危地马拉'];
+const colors = ['#0072B2','#E69F00','#D55E00','#009E73','#56B4E9','#CC79A7','#F0E442','#000000','#999999','#661100','#882255'];
+mk('c2',{
+  tooltip:tip, title:{text:'主产国甘蔗收获面积（千公顷）',left:'center',top:0,textStyle:{fontSize:13,color:'#12365e'}},
+  legend:{top:24,textStyle:{color:'#1a2330',fontSize:10},type:'scroll'},
+  grid:{left:58,right:24,top:60,bottom:36},
+  xAxis:{type:'category',data:Y,...axis},
+  yAxis:{type:'value',name:'千公顷',...axis},
+  series:order.map((n,i)=>({name:n,type:'bar',stack:'a',data:P.series[n].area,itemStyle:{color:colors[i]},barWidth:'70%'}))
+});
+
+// C3 分国单产
+const yl = ['中国','巴西','印度','泰国','全球'];
+const yc = ['#009E73','#0072B2','#E69F00','#D55E00','#000000'];
+const yt = ['solid','solid','solid','solid','dashed'];
+mk('c3',{
+  tooltip:tip, title:{text:'主产国甘蔗单产（t/ha）',left:'center',top:0,textStyle:{fontSize:13,color:'#12365e'}},
+  legend:{top:24,textStyle:{color:'#1a2330',fontSize:11}},
+  grid:{left:52,right:24,top:60,bottom:36},
+  xAxis:{type:'category',data:Y,...axis},
+  yAxis:{type:'value',name:'t/ha',min:40,max:110,...axis},
+  series:yl.map((n,i)=>{
+    const data = n==='全球' ? P.world_yield : P.series[n].yield;
+    return {name:n,type:'line',data,lineStyle:{width:i===0?3:2.2,color:yc[i],type:yt[i]},itemStyle:{color:yc[i]},symbol:'circle',symbolSize:i===0?7:5};
+  })
+});
+</script>
+</body>
+</html>

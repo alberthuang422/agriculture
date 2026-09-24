@@ -1,0 +1,19 @@
+ncol distribution: {12: 152016}
+sample row: ['0612000', 'Sugar, Centrifugal', 'AF', 'Afghanistan', '1972', '1972', '00', '030', 'Beet Sugar Production', '08', '(1000 MT)', '0.0000']
+--- ATTRS (16 distinct) ---
+020 | Beginning Stocks                         | 9501
+028 | Production                               | 9501
+030 | Beet Sugar Production                    | 9501
+043 | Cane Sugar Production                    | 9501
+057 | Imports                                  | 9501
+064 | Raw Imports                              | 9501
+074 | Refined Imp.(Raw Val)                    | 9501
+086 | Total Supply                             | 9501
+088 | Exports                                  | 9501
+089 | Raw Exports                              | 9501
+099 | Refined Exp.(Raw Val)                    | 9501
+126 | Total Disappearance                      | 9501
+139 | Human Dom. Consumption                   | 9501
+151 | Other Disappearance                      | 9501
+176 | Ending Stocks                            | 9501
+178 | Total Distribution                       | 9501

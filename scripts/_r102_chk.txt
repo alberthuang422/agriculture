@@ -1,0 +1,22 @@
+size: 111845 bytes
+JS refs: ['N15', 'N23', 'W15', 'W23', 'iso_bal', 'locked', 'savg', 'stocks', 'vintage', 'world', 'world_end', 'years']
+UNDEFINED refs: none
+all markPoint coords: [(282, 229.16), (275, 160.56)]
+  N15 n=468 true peak=[282, 229.16] -> matched in JS: OK
+     x within axis max(480): True
+  N23 n=418 true peak=[275, 160.56] -> matched in JS: OK
+     x within axis max(480): True
+markLine xAxis: ['275']
+C1 xAxis max: ['480']
+caption 口径提示: True
+caption 282 vs 275: True
+note 275-282 交易日: True
+stale '267 个交易日': False
+stale '+129%' bare: 0
+stale '+59%' bare: 0
+div balance: 168 / 168
+table balance: 12 / 12
+h2: 10 | h3: 17
+anchors missing: none
+charts: ['c1', 'c2', 'c3', 'c7', 'c5', 'c6', 'c4']
+leftovers TODO/allpx/_r102: []

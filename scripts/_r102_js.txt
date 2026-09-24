@@ -1,0 +1,233 @@
+/* ===== Okabe-Ito 色弱安全调色板 + 形状/线型冗余编码 ===== */
+var OK = {blue:'#56B4E9', orange:'#E69F00', sky:'#8fd0f5', pink:'#CC79A7',
+          verm:'#F0793B', yellow:'#F0E442', dim:'#9aa3b2', line:'#303642', tx:'#e8eaee'};
+function axStyle(){return {axisLine:{lineStyle:{color:OK.line}},axisTick:{lineStyle:{color:OK.line}},
+  axisLabel:{color:OK.dim,fontSize:11},splitLine:{lineStyle:{color:'#252b35'}}};}
+function tt(){return {trigger:'axis',backgroundColor:'#232933',borderColor:OK.line,
+  textStyle:{color:OK.tx,fontSize:12},axisPointer:{lineStyle:{color:'#4a5364'}}};}
+function mk(id){var el=document.getElementById(id);return el?echarts.init(el,null,{renderer:'canvas'}):null;}
+function idx(W,date){for(var i=0;i<W.length;i++){if(W[i].d>=date)return i;}return -1;}
+
+/* ============ C1 归一化价格叠加 ============ */
+(function(){var ch=mk('c1');if(!ch)return;
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{formatter:function(ps){
+      var s='<b>距底部第 '+ps[0].value[0]+' 个交易日</b><br/>';
+      ps.forEach(function(p){if(p.value&&p.value[1]!=null){
+        var base=p.seriesName.indexOf('2015')>=0?10.39:17.42;
+        s+=p.marker+p.seriesName+'：<b>'+(p.value[1]-100>=0?'+':'')+(p.value[1]-100).toFixed(1)
+          +'%</b>（'+(base*p.value[1]/100).toFixed(2)+' c/lb）<br/>';}});
+      return s;}}),
+    legend:{data:['2015/16 牛市（收盘底 2015-08-24 = 10.39）','2023 牛市（收盘底 2022-10-03 = 17.42）'],
+      textStyle:{color:OK.dim,fontSize:11.5},top:4,itemWidth:26,itemHeight:3},
+    grid:{left:62,right:40,top:44,bottom:56},
+    xAxis:Object.assign(axStyle(),{type:'value',name:'距底部交易日数',nameLocation:'middle',
+      nameGap:30,nameTextStyle:{color:OK.dim,fontSize:11},min:0,max:480}),
+    yAxis:Object.assign(axStyle(),{type:'value',name:'指数（收盘价，底部=100）',min:80,max:250,
+      nameTextStyle:{color:OK.dim,fontSize:11}}),
+    series:[
+      {name:'2015/16 牛市（收盘底 2015-08-24 = 10.39）',type:'line',data:P.N15,showSymbol:false,
+       lineStyle:{width:2.7,color:OK.orange},itemStyle:{color:OK.orange},
+       markPoint:{symbol:'circle',symbolSize:10,data:[{coord:[282,229.16]}],
+         itemStyle:{color:OK.verm},
+         label:{show:true,position:'top',formatter:'收盘顶 2016-10-05  +129.2%',color:OK.verm,
+           fontSize:11.5,fontWeight:'bold'}}},
+      {name:'2023 牛市（收盘底 2022-10-03 = 17.42）',type:'line',data:P.N23,showSymbol:false,
+       lineStyle:{width:2.7,color:OK.blue,type:'dashed'},itemStyle:{color:OK.blue},
+       markPoint:{symbol:'diamond',symbolSize:11,data:[{coord:[275,160.56]}],
+         itemStyle:{color:OK.sky},
+         label:{show:true,position:'top',formatter:'收盘顶 2023-11-06  +60.6%',color:OK.sky,
+           fontSize:11.5,fontWeight:'bold'}},
+       markLine:{silent:true,symbol:'none',lineStyle:{color:'#5b6577',type:'dotted'},
+         label:{color:OK.dim,fontSize:10,formatter:'两轮收盘见顶日几乎重合（第 282 vs 第 275 个交易日）'},
+         data:[{xAxis:275}]}}]});
+  window.addEventListener('resize',function(){ch.resize();});})();
+
+/* ============ C2/C3 价格 × CFTC 持仓 双窗 ============ */
+function dual(id,W,cMain,cNet,cL,cS,marks){var ch=mk(id);if(!ch)return;
+  var d=W.map(function(r){return r.d;}),c=W.map(function(r){return r.c;}),
+      n=W.map(function(r){return r.net;}),l=W.map(function(r){return r.l;}),
+      s=W.map(function(r){return r.s;});
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{formatter:function(ps){
+      var s2='<b>'+ps[0].axisValue+'</b><br/>';
+      ps.forEach(function(p){var v=p.value;
+        s2+=p.marker+p.seriesName+'：<b>'+(p.seriesName.indexOf('价格')>=0?
+          v.toFixed(2)+' c/lb':(v>=0?'+':'')+v.toLocaleString()+' 手')+'</b><br/>';});
+      return s2;}}),
+    legend:{data:['价格（ICE 11号原糖）','非商业净持仓','非商业多头','非商业空头'],
+      textStyle:{color:OK.dim,fontSize:11.5},top:4,itemWidth:24,itemHeight:3},
+    grid:[{left:62,right:76,top:40,height:'42%'},{left:62,right:76,top:'58%',height:'32%'}],
+    xAxis:[Object.assign(axStyle(),{type:'category',data:d,gridIndex:0,
+        axisLabel:{show:false},boundaryGap:false}),
+      Object.assign(axStyle(),{type:'category',data:d,gridIndex:1,boundaryGap:false,
+        axisLabel:{color:OK.dim,fontSize:10,interval:Math.max(1,Math.floor(d.length/9)),
+          formatter:function(v){return v.slice(0,7);}}})],
+    yAxis:[Object.assign(axStyle(),{type:'value',gridIndex:0,name:'美分/磅',scale:true,
+        nameTextStyle:{color:OK.dim,fontSize:10}}),
+      Object.assign(axStyle(),{type:'value',gridIndex:1,name:'手',
+        nameTextStyle:{color:OK.dim,fontSize:10},
+        axisLabel:{color:OK.dim,fontSize:10,formatter:function(v){return (v/10000).toFixed(0)+'万';}}})],
+    series:[
+      {name:'价格（ICE 11号原糖）',type:'line',xAxisIndex:0,yAxisIndex:0,data:c,showSymbol:false,
+       lineStyle:{width:2.4,color:cMain},itemStyle:{color:cMain},
+       areaStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[
+         {offset:0,color:cMain+'30'},{offset:1,color:cMain+'05'}]}},
+       markPoint:{data:marks,symbolSize:9}},
+      {name:'非商业净持仓',type:'line',xAxisIndex:1,yAxisIndex:1,data:n,showSymbol:false,
+       lineStyle:{width:2.3,color:cNet},itemStyle:{color:cNet},
+       markLine:{silent:true,symbol:'none',lineStyle:{color:'#5b6577',type:'dashed',width:1},
+         label:{color:OK.dim,fontSize:10,formatter:'0'},data:[{yAxis:0}]}},
+      {name:'非商业多头',type:'line',xAxisIndex:1,yAxisIndex:1,data:l,showSymbol:false,
+       lineStyle:{width:1.4,color:cL,type:'dotted'},itemStyle:{color:cL}},
+      {name:'非商业空头',type:'line',xAxisIndex:1,yAxisIndex:1,data:s,showSymbol:false,
+       lineStyle:{width:1.4,color:cS,type:'dashed'},itemStyle:{color:cS}}]});
+  window.addEventListener('resize',function(){ch.resize();});}
+
+var i15b=idx(P.W15,'2015-08-25'),i15p=idx(P.W15,'2016-10-04'),i15n=idx(P.W15,'2016-09-27');
+dual('c2',P.W15,OK.orange,OK.pink,OK.sky,OK.blue,[
+  {coord:[i15b,P.W15[i15b].c],itemStyle:{color:OK.blue},
+   label:{show:true,position:'bottom',formatter:'底 10.60',color:OK.blue,fontSize:10.5,fontWeight:'bold'}},
+  {coord:[i15p,P.W15[i15p].c],itemStyle:{color:OK.verm},
+   label:{show:true,position:'top',formatter:'顶 23.26',color:OK.verm,fontSize:10.5,fontWeight:'bold'}}]);
+var i23b=idx(P.W23,'2022-10-04'),i23a=idx(P.W23,'2023-04-25'),i23p=idx(P.W23,'2023-11-07');
+dual('c3',P.W23,OK.blue,OK.pink,OK.sky,OK.orange,[
+  {coord:[i23b,P.W23[i23b].c],itemStyle:{color:OK.blue},
+   label:{show:true,position:'bottom',formatter:'底 17.65',color:OK.blue,fontSize:10.5,fontWeight:'bold'}},
+  {coord:[i23a,P.W23[i23a].c],itemStyle:{color:OK.yellow},
+   label:{show:true,position:'top',formatter:'净多峰 +27.95万手',color:OK.yellow,fontSize:10.5,fontWeight:'bold'}},
+  {coord:[i23p,P.W23[i23p].c],itemStyle:{color:OK.verm},
+   label:{show:true,position:'top',formatter:'价峰 27.55（净多已 -17%）',color:OK.verm,fontSize:10.5,fontWeight:'bold'}}]);
+
+/* ============ C4 ISO vintage 修订路径 ============ */
+(function(){var ch=mk('c4');if(!ch)return;
+  var order=['2015/16','2016/17','2017/18','2021/22','2022/23','2023/24'];
+  var cols=[OK.orange,OK.verm,OK.pink,OK.sky,OK.blue,OK.yellow];
+  var allV=[];order.forEach(function(my){(P.vintage[my]||[]).forEach(function(p){
+    if(allV.indexOf(p[0])<0)allV.push(p[0]);});});allV.sort();
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{trigger:'item',formatter:function(p){
+      return '<b>'+p.seriesName+' 榨季</b><br/>vintage '+p.value[0]+'：<b>'
+        +(p.value[1]>0?'+':'')+p.value[1].toLocaleString()+' kt</b><br/>'
+        +(p.value[1]>0?'<span style="color:#8fd0f5">▲ 过剩（利空）</span>'
+                     :'<span style="color:#F0793B">▼ 缺口（利多）</span>');}}),
+    legend:{data:order,textStyle:{color:OK.dim,fontSize:11.5},top:4,itemWidth:22,itemHeight:3},
+    grid:{left:76,right:36,top:44,bottom:66},
+    xAxis:Object.assign(axStyle(),{type:'category',data:allV,name:'预测发布 vintage',
+      nameLocation:'middle',nameGap:36,nameTextStyle:{color:OK.dim,fontSize:11},
+      axisLabel:{color:OK.dim,fontSize:10,rotate:45}}),
+    yAxis:Object.assign(axStyle(),{type:'value',name:'全球产销差 (kt, tel quel)',
+      nameTextStyle:{color:OK.dim,fontSize:11},
+      axisLabel:{color:OK.dim,fontSize:10,formatter:function(v){return (v/1000).toFixed(0)+'k';}}}),
+    series:order.map(function(my,i){return {name:my,type:'line',connectNulls:true,
+      data:(P.vintage[my]||[]).map(function(p){return [p[0],p[1]];}),
+      showSymbol:true,symbolSize:5,symbol:i<3?'circle':'rect',
+      lineStyle:{width:2.3,color:cols[i],type:i<3?'solid':'dashed'},itemStyle:{color:cols[i]}};})
+      .concat([{type:'line',data:[],markLine:{silent:true,symbol:'none',
+        lineStyle:{color:'#7d8798',width:1.6},
+        label:{color:OK.dim,fontSize:10.5,formatter:'0 = 平衡'},data:[{yAxis:0}]}}])});
+  window.addEventListener('resize',function(){ch.resize();});})();
+
+/* ============ C5 库存分层 ============ */
+(function(){var ch=mk('c5');if(!ch)return;
+  var ys=P.years.map(String);
+  var lock=ys.map(function(y){return P.locked[y];});
+  var res=ys.map(function(y){return P.world_end[y]-P.locked[y];});
+  var su=ys.map(function(y){var w=P.world[y];return +(w.end/w.disp*100).toFixed(1);});
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{formatter:function(ps){
+      var s='<b>MY '+ps[0].axisValue+'（'+ps[0].axisValue+'/'+String(+ps[0].axisValue+1).slice(2)+' 榨季）</b><br/>';
+      var tot=0;
+      ps.forEach(function(p){if(p.seriesName.indexOf('库消比')<0){tot+=p.value;
+        s+=p.marker+p.seriesName+'：<b>'+p.value.toLocaleString()+' kt</b><br/>';}});
+      s+='<b>世界期末库存合计：'+tot.toLocaleString()+' kt</b><br/>';
+      s+='<b>锁定层占比：'+(lock[ys.indexOf(ps[0].axisValue)]/tot*100).toFixed(1)+'%</b><br/>';
+      ps.forEach(function(p){if(p.seriesName.indexOf('库消比')>=0)s+=p.marker+'库消比：<b>'+p.value+'%</b>';});
+      return s;}}),
+    legend:{data:['锁定层库存（中国国储/印度政策/泰国残差等12国）','残差库存（巴西+澳+欧盟+其他，可自由流通）','库消比（右轴）'],
+      textStyle:{color:OK.dim,fontSize:11},top:4,itemWidth:22,itemHeight:9},
+    grid:{left:72,right:66,top:56,bottom:48},
+    xAxis:Object.assign(axStyle(),{type:'category',data:ys,name:'市场年（MY2015 = 2015/16 榨季）',
+      nameLocation:'middle',nameGap:30,nameTextStyle:{color:OK.dim,fontSize:11},
+      axisLabel:{color:OK.dim,fontSize:10.5,formatter:function(v){return 'MY'+v.slice(2);}}}),
+    yAxis:[Object.assign(axStyle(),{type:'value',name:'期末库存 (kt)',
+        nameTextStyle:{color:OK.dim,fontSize:11},
+        axisLabel:{color:OK.dim,fontSize:10,formatter:function(v){return (v/1000).toFixed(0)+'k';}}}),
+      Object.assign(axStyle(),{type:'value',name:'库消比 %',position:'right',min:20,max:32,
+        nameTextStyle:{color:OK.dim,fontSize:11},splitLine:{show:false},
+        axisLabel:{color:OK.dim,fontSize:10,formatter:'{value}%'}})],
+    series:[
+      {name:'锁定层库存（中国国储/印度政策/泰国残差等12国）',type:'bar',stack:'s',data:lock,
+       itemStyle:{color:OK.blue+'cc'},barWidth:'54%'},
+      {name:'残差库存（巴西+澳+欧盟+其他，可自由流通）',type:'bar',stack:'s',data:res,
+       itemStyle:{color:OK.orange+'dd'},
+       label:{show:true,position:'top',color:OK.orange,fontSize:10.5,fontWeight:'bold',
+         formatter:function(p){return (p.value/1000).toFixed(1)+'k';}}},
+      {name:'库消比（右轴）',type:'line',yAxisIndex:1,data:su,showSymbol:true,symbolSize:7,
+       symbol:'triangle',lineStyle:{width:2.5,color:OK.pink,type:'dashed'},itemStyle:{color:OK.pink}}]});
+  window.addEventListener('resize',function(){ch.resize();});})();
+
+/* ============ C6 国别库存份额 ============ */
+(function(){var ch=mk('c6');if(!ch)return;
+  var ys=P.years.map(String);
+  var cfg=[['IN','印度（政策库存）',OK.blue,'circle','solid'],
+           ['TH','泰国（残差累积）',OK.sky,'rect','solid'],
+           ['CH','中国（国储去库）',OK.pink,'triangle','dashed'],
+           ['BR','巴西（零库存出口机器）',OK.orange,'diamond','dashed']];
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{formatter:function(ps){
+      var s='<b>MY '+ps[0].axisValue+'</b><br/>';
+      ps.forEach(function(p){var tot=P.world_end[p.axisValue];
+        s+=p.marker+p.seriesName+'：<b>'+p.value.toLocaleString()+' kt</b>（'
+          +(p.value/tot*100).toFixed(1)+'% 世界）<br/>';});
+      s+='<span style="color:#9aa3b2">世界期末库存：'+P.world_end[ps[0].axisValue].toLocaleString()+' kt</span>';
+      return s;}}),
+    legend:{data:cfg.map(function(x){return x[1];}),textStyle:{color:OK.dim,fontSize:11.5},
+      top:4,itemWidth:22,itemHeight:3},
+    grid:{left:68,right:36,top:44,bottom:48},
+    xAxis:Object.assign(axStyle(),{type:'category',data:ys,boundaryGap:false,
+      axisLabel:{color:OK.dim,fontSize:10.5,formatter:function(v){return 'MY'+v.slice(2);}}}),
+    yAxis:Object.assign(axStyle(),{type:'value',name:'期末库存 (kt)',
+      nameTextStyle:{color:OK.dim,fontSize:11},
+      axisLabel:{color:OK.dim,fontSize:10,formatter:function(v){return (v/1000).toFixed(0)+'k';}}}),
+    series:cfg.map(function(c){return {name:c[1],type:'line',
+      data:ys.map(function(y){return P.stocks[c[0]][y];}),
+      showSymbol:true,symbolSize:6,symbol:c[3],
+      lineStyle:{width:2.4,color:c[2],type:c[4]},itemStyle:{color:c[2]}};})});
+  window.addEventListener('resize',function(){ch.resize();});})();
+
+/* ============ C7 全球产销差 × 榨季均价 ============ */
+(function(){var ch=mk('c7');if(!ch)return;
+  var mys=[];for(var y=2014;y<=2025;y++)mys.push(y);
+  var lab=mys.map(function(y){return y+'/'+String(y+1).slice(2);});
+  var iso=mys.map(function(y){var k=y+'/'+String(y+1).slice(2);
+    return P.iso_bal[k]?Math.round(P.iso_bal[k].bal*1000):null;});
+  var usda=mys.map(function(y){var w=P.world[String(y)];return w?w.prod+w.imp-w.exp-w.disp:null;});
+  var pxAvg=mys.map(function(y){return P.savg[String(y)]!=null?P.savg[String(y)]:null;});
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{formatter:function(ps){
+      var s='<b>'+ps[0].axisValue+' 榨季</b><br/>';
+      ps.forEach(function(p){
+        if(p.value==null){s+=p.marker+p.seriesName+'：<span style="color:#7c8698">无数据</span><br/>';return;}
+        if(p.seriesName.indexOf('均价')>=0)s+=p.marker+p.seriesName+'：<b>'+p.value+' c/lb</b><br/>';
+        else s+=p.marker+p.seriesName+'：<b>'+(p.value>0?'+':'')+p.value.toLocaleString()+' kt</b> '
+          +(p.value>0?'▲过剩':'▼缺口')+'<br/>';});
+      return s;}}),
+    legend:{data:['ISO 全球产销差（终值，tel quel）','USDA PSD 全球产销差（raw value）','榨季均价（右轴）'],
+      textStyle:{color:OK.dim,fontSize:11.5},top:4,itemWidth:22,itemHeight:9},
+    grid:{left:74,right:66,top:52,bottom:52},
+    xAxis:Object.assign(axStyle(),{type:'category',data:lab,
+      axisLabel:{color:OK.dim,fontSize:10.5,rotate:38}}),
+    yAxis:[Object.assign(axStyle(),{type:'value',name:'产销差 (kt)',
+        nameTextStyle:{color:OK.dim,fontSize:11},
+        axisLabel:{color:OK.dim,fontSize:10,formatter:function(v){return (v/1000).toFixed(0)+'k';}}}),
+      Object.assign(axStyle(),{type:'value',name:'美分/磅',position:'right',splitLine:{show:false},
+        nameTextStyle:{color:OK.dim,fontSize:11},axisLabel:{color:OK.dim,fontSize:10}})],
+    series:[
+      {name:'ISO 全球产销差（终值，tel quel）',type:'bar',data:iso,barWidth:'34%',
+       itemStyle:{color:function(p){return p.value>=0?OK.sky:OK.verm;}}},
+      {name:'USDA PSD 全球产销差（raw value）',type:'bar',data:usda,barWidth:'34%',
+       itemStyle:{color:function(p){return p.value>=0?OK.blue+'88':OK.orange+'cc';}}},
+      {name:'榨季均价（右轴）',type:'line',yAxisIndex:1,data:pxAvg,showSymbol:true,symbolSize:8,
+       symbol:'diamond',lineStyle:{width:2.8,color:OK.yellow},itemStyle:{color:OK.yellow}}]});
+  window.addEventListener('resize',function(){ch.resize();});})();

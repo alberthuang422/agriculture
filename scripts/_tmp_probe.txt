@@ -1,0 +1,4 @@
+price rows: 3709  header=['time', 'open', 'high', 'low', 'close', 'MA', 'MA', 'MA']
+first=['2011-12-23', '23.5', '23.86', '23.5', '23.59']  last=['2026-09-18', '17.44', '17.62', '17.34', '17.4']
+cftc rows: 1932 header=['date', 'oi', 'nc_l', 'nc_s', 'nc_sp', 'c_l', 'c_s', 'nr_l', 'nr_s', 'nc_net', 'c_net', 'nr_net', 'nc_l_chg', 'nc_s_chg', 'c_l_chg', 'c_s_chg']
+cftc first=1986-01-15 last=2026-09-08

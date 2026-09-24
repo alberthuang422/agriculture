@@ -1,0 +1,16 @@
+MY2015: w=43735 (csv w=43603) | R1 calc=34144 (csv 34012) | R2 calc=24850 (csv 24718)
+    cn csv=9591 psd=9591 | ind csv=9294 psd=9294
+MY2019: w=47183 (csv w=47033) | R1 calc=43156 (csv 43006) | R2 calc=28542 (csv 28392)
+    cn csv=4027 psd=4027 | ind csv=14614 psd=14614
+MY2023: w=44824 (csv w=44649) | R1 calc=43429 (csv 43254) | R2 calc=35029 (csv 34854)
+    cn csv=1395 psd=1395 | ind csv=8400 psd=8400
+
+target core_stocks: [(2015, 17926.0), (2019, 24866.0), (2023, 23532.0)]
+top20 holders: [('IN', 'India'), ('TH', 'Thailand'), ('CH', 'China'), ('PK', 'Pakistan'), ('E4', 'European Union'), ('US', 'United States'), ('ID', 'Indonesia'), ('MX', 'Mexico'), ('EG', 'Egypt'), ('AS', 'Australia'), ('BR', 'Brazil'), ('RP', 'Philippines'), ('IR', 'Iran'), ('UP', 'Ukraine'), ('RS', 'Russia'), ('JA', 'Japan'), ('BG', 'Bangladesh'), ('GT', 'Guatemala'), ('AG', 'Algeria'), ('VM', 'Vietnam')]
+
+=== MATCHES (tolerance 60kt) ===
+   none found; core may use ISO MY or non-PSD source
+
+MY2015 core/w = 40.99% (csv core_share=41.11%)
+MY2019 core/w = 52.70% (csv core_share=52.87%)
+MY2023 core/w = 52.50% (csv core_share=52.70%)

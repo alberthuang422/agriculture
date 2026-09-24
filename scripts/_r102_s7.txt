@@ -1,0 +1,50 @@
+=================================================== -->
+<h2 id="s7">七、vintage 修订：当时市场到底看到了什么</h2>
+
+<p>本节回答一个关键问题——<b>行情发生时，市场手里的数字是什么？</b>这决定了预期差的方向与大小。ISO 每季度发布《World Sugar Balance》，本项目已抓取 2017-02 至 2026-08 的逐版数据。</p>
+
+<div class="sec">
+  <div id="c4" class="chart tall"></div>
+  <div class="src">图 4　ISO 全球产销差的 vintage 修订路径（kt, tel quel）。x 轴为预测发布月份，y 轴为该 vintage 对某一榨季的产销差估计。<b>实线圆点</b> = 2015/16、2016/17、2017/18 三个榨季；<b>虚线方块</b> = 2021/22、2022/23、2023/24。零线以上为过剩（利空）、以下为缺口（利多）。<b>最戏剧性的是蓝虚线（2022/23）</b>：从 +5,571 kt 一路下修穿过零线至 -1,101 kt。</div>
+</div>
+
+<div class="sec">
+<h3>7.1 修订路径明细</h3>
+<table>
+<tr><th>榨季</th><th class="num">首版 vintage</th><th class="num">首版估计</th><th class="num">行情期间<br><span class="dim sm">（市场看到的）</span></th><th class="num">最新终值</th><th class="num">累计修订</th><th>修订方向与含义</th></tr>
+<tr style="background:#2a2218"><td><b>2015/16</b></td><td class="num">2017-02</td><td class="num down">-5,359</td><td class="num">行情当时无 ISO 版本<br><span class="dim sm">（ contemporaneous 见下）</span></td><td class="num down"><b>-6,462</b></td><td class="num down"><b>-1,103</b></td><td><b>缺口被低估。</b>方向正确、幅度不够——市场从 2015 年 8 月起就在正确的方向上，每次上修都推动价格。</td></tr>
+<tr><td><b>2016/17</b></td><td class="num">2017-02</td><td class="num down">-5,869</td><td class="num">2017-05 -6,465</td><td class="num down">-3,610</td><td class="num up">+2,259</td><td>缺口被<b>高估</b>。这是 2017 年价格崩盘的伏笔——事后看 2016/17 缺口只有 3,610 kt。</td></tr>
+<tr><td><b>2017/18</b></td><td class="num">2017-08</td><td class="num up">+4,636</td><td class="num">2018-05 <b>+10,512</b></td><td class="num up">+9,408</td><td class="num up">+4,772</td><td><b>过剩翻倍。</b>2018-05 一度估到 +10,512 kt，为序列最大过剩。这解释了为何中国 95% 关税（2017-05-22）落地后价格仍从 16.51 跌到 13.51。</td></tr>
+<tr><td>2021/22</td><td class="num">2021-08</td><td class="num down">-3,829</td><td class="num">2022-05 一度 +237</td><td class="num down">-3,877</td><td class="num down">-48</td><td><b>最稳定的一季。</b>中间虽有反复（2022-05 甚至预测过剩 +237），但首尾几乎一致。ISO 2024 年起做过回溯修订，从旧口径 -2,655 扩至 -3,877。</td></tr>
+<tr style="background:#1c2530"><td><b>2022/23</b></td><td class="num">2022-08</td><td class="num up"><b>+5,571</b></td><td class="num">2022-11 +6,185<br>2023-02 +4,151<br>2023-05 <b>+852</b><br>2023-08 +493<br>2023-11 +310</td><td class="num down"><b>-1,871</b></td><td class="num down"><b>-7,442</b></td><td><span class="hl">本轮牛市最大的预期差。</span>行情启动时（2022 年秋）ISO 共识是 <b>+5,571 kt 大幅过剩</b>，2023 年 11 月价格见顶时官方数字仍是 <b>+310 kt 过剩</b>——<b>牛市全程，ISO 都没有承认存在缺口</b>。缺口是事后（2024-08 起）通过库存重审才确认的。</td></tr>
+<tr style="background:#1c2530"><td><b>2023/24</b></td><td class="num">2023-08</td><td class="num down"><b>-2,118</b></td><td class="num">2023-11 -335<br>2024-02 -689</td><td class="num down">-253</td><td class="num up"><b>+1,918</b></td><td><b>缺口几乎被抹平。</b>首版 -2,118 kt（这正是 2023 年 8-11 月价格上涨的官方依据），三个月后修订到 -335 kt，终值 -253 kt。<span class="hl3">市场为一个后来证明不存在的缺口付了 28 c/lb 的价格。</span></td></tr>
+</table>
+<div class="src">ISO《World Sugar Balance》逐版，本项目解析自 <code>data/fundamentals/sugar/iso/balance_pdfs/</code>，单位 kt（tel quel，未折 raw value）。2022/23 终值 -1,871 取自 Aug-2026 vintage（<code>iso_world_balance_2010_2026.csv</code>），比 Aug-2024 的 -1,101 更晚；两者差异源于 ISO 库存重审。</div>
+</div>
+
+<h3>7.2 2015/16 当时的实时预测（contemporaneous）</h3>
+<p>上表 2015/16 的"首版"是 2017-02，已在行情结束后。行情<b>当时</b>市场看到的数字来自 ISO 季度发布与商业机构，路径如下（均已核实来源）：</p>
+<div class="sec">
+<table>
+<tr><th>时点</th><th>机构</th><th class="num">2015/16 缺口估计</th><th>说明</th></tr>
+<tr><td>2015 年 8 月</td><td>ISO</td><td class="num down">-2,490 kt</td><td>首次预测转为缺口，此前连续 5 年过剩</td></tr>
+<tr><td>2015 年 9 月</td><td>F.O. Licht</td><td class="num down">-3,800 kt</td><td>—</td></tr>
+<tr><td>2015 年 11 月</td><td>ISO</td><td class="num down">-3,500 kt</td><td>上调</td></tr>
+<tr><td>2015 年 11 月 12 日</td><td>F.O. Licht</td><td class="num down"><b>-5,600 kt</b></td><td>从 9 月的 380 万吨大幅上调，理由为欧洲与印度干旱减产</td></tr>
+<tr><td>2016 年 2 月</td><td>ISO</td><td class="num down"><b>-5,000 kt</b></td><td>再度上调</td></tr>
+<tr><td>2016 年 9-10 月</td><td>中泰证券 / USDA</td><td class="num down">-5,000 ~ -7,000 kt</td><td>USDA 估 2016/17 缺口扩至 490 万吨，库消比降至近 6 年新低</td></tr>
+<tr><td>2016 年 10 月</td><td>Datagro</td><td class="num down"><b>2016/17 -8,260 kt</b></td><td>顶部时刻的最激进预测</td></tr>
+<tr style="background:#20242e"><td><b>终值</b></td><td><b>ISO Aug-2026</b></td><td class="num down"><b>-6,462 kt</b></td><td>落在实时预测区间内，<b>略偏保守端</b></td></tr>
+</table>
+<div class="src">来源：中国经济网 2016-04-27、浙商期货白糖周报 2015-11、中国新闻网 2016-09、广西糖网 2016-10-28、本项目 ISO vintage 矩阵。</div>
+</div>
+
+<div class="kicker">
+<b>两轮牛市在"信息质量"上的根本差别：</b><br>
+<b>2015/16</b>：市场手里的数字<b>方向正确、幅度保守</b>，且在整个行情期间被<b>连续上修 5 次</b>（-2,490 → -3,500 → -5,000 → -5,600 → -6,462 kt）。每一次上修都是一次基本面确认，多头得到持续弹药，因此行情能走 13 个月、涨 136%。<span class="hl">这是"证据逐步累积"型牛市。</span><br>
+<b>2023</b>：市场手里的数字<b>方向就是错的</b>。ISO 从 2022-08 到 2023-11 连续五个版本都说 2022/23 是<b>过剩</b>（+5,571 → +6,185 → +4,151 → +852 → +493 → +310 kt），而价格上涨靠的是印度禁令与巴西港口这两个<b>ISO 平衡表根本不捕捉的变量</b>。等 2023-08 首版给出 2023/24 -2,118 kt 缺口时，价格已在 24-25 c/lb；三个月后这个数字被修到 -335 kt。<span class="hl">这是"叙事先于数据、数据随后否定叙事"型牛市。</span>
+</div>
+
+<div class="warn"><b>对本项目 vintage 纪律的直接印证。</b>　用户 2026-09-14 确立的纪律是"USDA 最新 vintage ≠ 最新事实"，须核查行业机构并标注偏离。本报告的数据提供了一个更强的版本：<b>即使是最权威的 ISO，其当季 vintage 也可能是方向性错误的</b>（2022/23 榨季在行情全程被报为过剩，事后翻转为缺口，累计修订 7,442 kt）。因此对于<b>正在进行</b>的榨季，ISO/USDA 数字应视为"待修订的初值"，真正的边际信息来自：①出口国的政策性变量（印度配额/禁令）；②物流变量（巴西港口等待时间、待装船数）；③本土机构（ISMA、UNICA、OCSB）的先行指引。</div>
+
+<!-- =========

@@ -1,0 +1,63 @@
+== WORLD (sum all countries) ==
+2010 prod=162100 cons=156188 imp=49122 exp=53939 end=28781 bal=1095 s/u=18.4%
+2011 prod=172193 cons=160217 imp=48565 exp=54996 end=34326 bal=5545 s/u=21.4%
+2012 prod=177898 cons=166437 imp=51447 exp=55742 end=41492 bal=7166 s/u=24.9%
+2013 prod=175933 cons=166960 imp=51452 exp=57951 end=43966 bal=2474 s/u=26.3%
+2014 prod=177756 cons=168839 imp=50251 exp=55033 end=48101 bal=4135 s/u=28.5%
+2015 prod=164972 cons=169798 imp=54647 exp=54187 end=43735 bal=-4366 s/u=25.8%
+2016 prod=172143 cons=169924 imp=55419 exp=60047 end=41326 bal=-2409 s/u=24.3%
+2017 prod=194206 cons=174413 imp=55685 exp=65868 end=50936 bal=9610 s/u=29.2%
+2018 prod=179132 cons=172780 imp=53189 exp=58285 end=52192 bal=1256 s/u=30.2%
+2019 prod=166555 cons=172137 imp=54097 exp=53524 end=47183 bal=-5009 s/u=27.4%
+2020 prod=180262 cons=172150 imp=58291 exp=63971 end=49615 bal=2432 s/u=28.8%
+2021 prod=180601 cons=175313 imp=56629 exp=64456 end=47076 bal=-2539 s/u=26.9%
+2022 prod=178756 cons=177530 imp=59185 exp=61932 end=45555 bal=-1521 s/u=25.7%
+2023 prod=179565 cons=177637 imp=60382 exp=63041 end=44824 bal=-731 s/u=25.2%
+2024 prod=180345 cons=176004 imp=57900 exp=64813 end=42252 bal=-2572 s/u=24.0%
+2025 prod=186056 cons=180469 imp=58332 exp=62648 end=43523 bal=1271 s/u=24.1%
+2026 prod=184854 cons=180536 imp=58893 exp=62324 end=44410 bal=887 s/u=24.6%
+== BR+TH+IN+AU ending stocks ==
+   2013 end=13831 prod=75738
+   2014 end=16820 prod=77203
+   2015 end=15325 prod=71778
+   2016 end=13038 prod=71383
+   2017 end=21975 prod=87889
+   2018 end=26164 prod=78381
+   2019 end=22773 prod=67494
+   2020 end=22620 prod=83397
+   2021 end=19058 prod=82487
+   2022 end=20316 prod=86109
+   2023 end=19716 prod=83852
+   2024 end=17912 prod=81940
+   2025 end=18651 prod=85058
+   2026 end=20181 prod=85600
+== BR+TH+IN+AU+CN ending stocks ==
+   2013 end=13832 prod=75738
+   2014 end=16821 prod=77203
+   2015 end=15326 prod=71778
+   2016 end=13038 prod=71383
+   2017 end=21975 prod=87889
+   2018 end=26164 prod=78381
+   2019 end=22773 prod=67494
+   2020 end=22620 prod=83397
+   2021 end=19058 prod=82487
+   2022 end=20316 prod=86109
+   2023 end=19716 prod=83852
+   2024 end=17912 prod=81940
+   2025 end=18651 prod=85058
+   2026 end=20181 prod=85600
+== BR+TH+IN+AU+EU+CN ending stocks ==
+   2013 end=13832 prod=75738
+   2014 end=16821 prod=77203
+   2015 end=15326 prod=71778
+   2016 end=13038 prod=71383
+   2017 end=21975 prod=87889
+   2018 end=26164 prod=78381
+   2019 end=22773 prod=67494
+   2020 end=22620 prod=83397
+   2021 end=19058 prod=82487
+   2022 end=20316 prod=86109
+   2023 end=19716 prod=83852
+   2024 end=17912 prod=81940
+   2025 end=18651 prod=85058
+   2026 end=20181 prod=85600

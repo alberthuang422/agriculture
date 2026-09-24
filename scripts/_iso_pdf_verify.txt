@@ -1,0 +1,19 @@
+== world_sugar_balance_august_2026.pdf | pages=26
+   meta: {'/Author': 'maureen', '/Creator': 'Microsoft® Word for Microsoft 365', '/CreationDate': "D:20260923125542+01'00'", '/ModDate': "D:20260923125542+01'00'", '/Producer': 'Microsoft® Word for Microsoft 365'}
+   p1:    |   |   |   |   |   |   |   |   |   |   |   | WORLD SUGAR BALANCES  | 2013/2014 - 2026/2027  |   |   |   | AUGUST 2026  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | International Sugar Organization 
+
+== world_sugar_balance_may_2026.pdf | pages=23
+   meta: {'/Author': 'maureen', '/Creator': 'Microsoft® Word for Microsoft 365', '/CreationDate': "D:20260519124643+01'00'", '/ModDate': "D:20260519124643+01'00'", '/Producer': 'Microsoft® Word for Microsoft 365'}
+   p1:    |   |   |   |   |   |   |   |   |   |   |   | WORLD SUGAR BALANCES  | 2012/2013 - 2025/2026  |   |   |   | MAY 2026  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | International Sugar Organization 
+
+== world_sugar_balance_november_2024.pdf | pages=23
+   meta: {'/Author': 'maureen', '/Creator': 'Microsoft® Word for Microsoft 365', '/CreationDate': "D:20241122153845+00'00'", '/ModDate': "D:20241122153845+00'00'", '/Producer': 'Microsoft® Word for Microsoft 365'}
+   p1:    |   |   |   |   |   |   |   |   |   |   |   | WORLD SUGAR BALANCES  | 2011/2012 - 2024/2025  |   |   |   | NOVEMBER 2024  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | International Sugar Organization 
+
+== world_sugar_balance_february_2017.pdf | pages=23
+   meta: {'/Author': 'maureen', '/Creator': 'Microsoft® Word 2016', '/CreationDate': "D:20170221163552+00'00'", '/ModDate': "D:20170221163552+00'00'", '/Producer': 'Microsoft® Word 2016'}
+   p1:    |   |   |   |   |   |   |   |   |   | WORLD SUGAR BALANCES  | 2003/2004-2016/17  |   |   |   | FEBRUARY 2017  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | International Sugar Organization 
+
+== world_sugar_balance_august_2024.pdf | pages=23
+   meta: {'/Author': 'maureen', '/Creator': 'Microsoft® Word for Microsoft 365', '/CreationDate': "D:20240830110123+01'00'", '/ModDate': "D:20240830110123+01'00'", '/Producer': 'Microsoft® Word for Microsoft 365'}
+   p1:    |   |   |   |   |   |   |   |   |   |   |   | WORLD SUGAR BALANCES  | 2010/2011-2023/2024  |   |   |   | AUGUST 2024  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   | International Sugar Organization 

@@ -1,0 +1,106 @@
+=== WORLD vs CORE(BR+TH+IN+AU) vs TH+IN  ending stocks / stock-to-use ===
+MY          W_end   W_s/u   CORE_end   C_s/u    THI_end   T_s/u  CORE/W%    BR/W%
+2013        43966    26.3      13942    34.0      13481    47.3     31.7      0.8
+2014        48101    28.5      16960    40.7      15870    54.7     35.3      2.0
+2015        43735    25.8      15555    37.8      14575    49.5     35.6      1.7
+2016        41326    24.3      13258    33.2      12188    43.2     32.1      2.1
+2017        50936    29.2      22105    54.3      21055    72.4     43.4      1.8
+2018        52192    30.2      26301    63.2      25944    86.5     50.4      0.4
+2019        47183    27.4      22811    55.9      22183    75.6     48.3      1.3
+2020        49615    28.8      22755    55.0      22280    73.4     45.9      0.7
+2021        47076    26.9      19352    45.1      18718    57.5     41.1      0.7
+2022        45555    25.7      21100    48.3      19626    58.9     46.3      1.5
+2023        44824    25.2      20504    46.0      18956    55.5     45.7      1.7
+2024        42252    24.0      18974    44.2      17342    52.6     44.9      1.3
+2025        43523    24.1      19917    45.0      18330    54.9     45.8      0.7
+2026        44410    24.6      21092    47.7      19960    58.2     47.5      0.5
+
+=== WORLD balance & stocks 2013-2026 (USDA PSD, raw value, 1000MT) ===
+2013 prod= 175933 cons= 166960 bal= +2474 end=  43966 s/u= 26.3%
+2014 prod= 177756 cons= 168839 bal= +4135 end=  48101 s/u= 28.5%
+2015 prod= 164972 cons= 169798 bal= -4366 end=  43735 s/u= 25.8%
+2016 prod= 172143 cons= 169924 bal= -2409 end=  41326 s/u= 24.3%
+2017 prod= 194206 cons= 174413 bal= +9610 end=  50936 s/u= 29.2%
+2018 prod= 179132 cons= 172780 bal= +1256 end=  52192 s/u= 30.2%
+2019 prod= 166555 cons= 172137 bal= -5009 end=  47183 s/u= 27.4%
+2020 prod= 180262 cons= 172150 bal= +2432 end=  49615 s/u= 28.8%
+2021 prod= 180601 cons= 175313 bal= -2539 end=  47076 s/u= 26.9%
+2022 prod= 178756 cons= 177530 bal= -1521 end=  45555 s/u= 25.7%
+2023 prod= 179565 cons= 177637 bal=  -731 end=  44824 s/u= 25.2%
+2024 prod= 180345 cons= 176004 bal= -2572 end=  42252 s/u= 24.0%
+2025 prod= 186056 cons= 180469 bal= +1271 end=  43523 s/u= 24.1%
+2026 prod= 184854 cons= 180536 bal=  +887 end=  44410 s/u= 24.6%
+
+=== KEY COUNTRIES production/exports/stocks 2014-2024 ===
+--- Brazil (BR) ---
+   2014 prod=  35950 exp=  23950 end=    950 imp=     0 cons=  11400
+   2015 prod=  34650 exp=  24350 end=    750 imp=     0 cons=  10500
+   2016 prod=  39150 exp=  28500 end=    850 imp=     0 cons=  10550
+   2017 prod=  38870 exp=  28200 end=    920 imp=     0 cons=  10600
+   2018 prod=  29500 exp=  19600 end=    220 imp=     0 cons=  10600
+   2019 prod=  30300 exp=  19280 end=    590 imp=     0 cons=  10650
+   2020 prod=  42050 exp=  32150 end=    340 imp=     0 cons=  10150
+   2021 prod=  35450 exp=  25950 end=    340 imp=     0 cons=   9500
+   2022 prod=  38050 exp=  28200 end=    690 imp=     0 cons=   9500
+   2023 prod=  45544 exp=  35974 end=    760 imp=     0 cons=   9500
+   2024 prod=  43700 exp=  34890 end=    570 imp=     0 cons=   9000
+--- Thailand (TH) ---
+   2014 prod=  10793 exp=   8252 end=   5263 imp=     0 cons=   2532
+   2015 prod=   9743 exp=   7055 end=   5281 imp=     0 cons=   2670
+   2016 prod=  10033 exp=   7016 end=   5618 imp=     0 cons=   2680
+   2017 prod=  14710 exp=  10907 end=   6841 imp=     0 cons=   2580
+   2018 prod=  14581 exp=  10612 end=   8330 imp=     0 cons=   2480
+   2019 prod=   8294 exp=   6695 end=   7569 imp=     0 cons=   2360
+   2020 prod=   7587 exp=   3739 end=   9067 imp=     0 cons=   2350
+   2021 prod=  10157 exp=   6835 end=   9212 imp=     0 cons=   3177
+   2022 prod=  11059 exp=   6899 end=  10030 imp=     0 cons=   3342
+   2023 prod=   8808 exp=   4438 end=  10556 imp=     0 cons=   3844
+   2024 prod=  10240 exp=   5650 end=  11296 imp=     0 cons=   3850
+--- India (IN) ---
+   2014 prod=  30460 exp=   2580 end=  10607 imp=  1000 cons=  26500
+   2015 prod=  27385 exp=   3800 end=   9294 imp=  1902 cons=  26800
+   2016 prod=  22200 exp=   2125 end=   6570 imp=  2701 cons=  25500
+   2017 prod=  34309 exp=   2236 end=  14214 imp=  2071 cons=  26500
+   2018 prod=  34300 exp=   4700 end=  17614 imp=  1300 cons=  27500
+   2019 prod=  28900 exp=   5800 end=  14614 imp=   900 cons=  27000
+   2020 prod=  33760 exp=   8406 end=  13213 imp=  1245 cons=  28000
+   2021 prod=  36880 exp=  11548 end=   9506 imp=   340 cons=  29379
+   2022 prod=  37000 exp=   8303 end=   9596 imp=  1393 cons=  30000
+   2023 prod=  29500 exp=   3966 end=   8400 imp=  3558 cons=  30288
+   2024 prod=  28000 exp=   3831 end=   6046 imp=  2599 cons=  29122
+--- Australia (AS) ---
+   2014 prod=   4700 exp=   3561 end=    140 imp=    90 cons=   1200
+   2015 prod=   4900 exp=   3700 end=    230 imp=    90 cons=   1200
+   2016 prod=   5100 exp=   4000 end=    220 imp=    90 cons=   1200
+   2017 prod=   4480 exp=   3600 end=    130 imp=    30 cons=   1000
+   2018 prod=   4725 exp=   3735 end=    137 imp=    17 cons=   1000
+   2019 prod=   4285 exp=   3600 end=     38 imp=    16 cons=    800
+   2020 prod=   4335 exp=   3400 end=    135 imp=    12 cons=    850
+   2021 prod=   4120 exp=   3120 end=    294 imp=     9 cons=    850
+   2022 prod=   4300 exp=   2950 end=    784 imp=    10 cons=    870
+   2023 prod=   4035 exp=   3147 end=    788 imp=    16 cons=    900
+   2024 prod=   3810 exp=   2627 end=   1062 imp=    11 cons=    920
+--- China (CH) ---
+   2014 prod=  11000 exp=     45 end=  10390 imp=  5058 cons=  15600
+   2015 prod=   9050 exp=    165 end=   9591 imp=  6116 cons=  15800
+   2016 prod=   9300 exp=     80 end=   7811 imp=  4600 cons=  15600
+   2017 prod=  10300 exp=    194 end=   6567 imp=  4350 cons=  15700
+   2018 prod=  10760 exp=    205 end=   5408 imp=  4086 cons=  15800
+   2019 prod=  10400 exp=    189 end=   4027 imp=  3808 cons=  15400
+   2020 prod=  10600 exp=    132 end=   5374 imp=  6379 cons=  15500
+   2021 prod=   9600 exp=    160 end=   5014 imp=  5199 cons=  14999
+   2022 prod=   8960 exp=    183 end=   2091 imp=  3841 cons=  15541
+   2023 prod=   9960 exp=    168 end=   1395 imp=  5012 cons=  15500
+   2024 prod=  11160 exp=    166 end=   1643 imp=  4644 cons=  15390
+--- EU (E4) ---
+   2014 prod=  18449 exp=   1582 end=   4151 imp=  2918 cons=  18700
+   2015 prod=  14283 exp=   1548 end=   1241 imp=  3055 cons=  18700
+   2016 prod=  15505 exp=   1987 end=   1776 imp=  2908 cons=  15441
+   2017 prod=  19508 exp=   4349 end=   1547 imp=  1612 cons=  17000
+   2018 prod=  16750 exp=   2411 end=   1260 imp=  2374 cons=  17000
+   2019 prod=  17040 exp=   1459 end=   2076 imp=  2235 cons=  17000
+   2020 prod=  15216 exp=   1265 end=   1106 imp=  1792 cons=  16713
+   2021 prod=  16577 exp=   1217 end=   1463 imp=  1997 cons=  17000
+   2022 prod=  13811 exp=    868 end=   1016 imp=  3110 cons=  16500
+   2023 prod=  15699 exp=   2037 end=    376 imp=  2098 cons=  16400
+   2024 prod=  16277 exp=   2066 end=    200 imp=  1413 cons=  15800

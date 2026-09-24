@@ -1,0 +1,10 @@
+base exists: True
+sys.getdefaultencoding: utf-8
+filesystem encoding: utf-8
+data exists: True
+  data/agri
+  data/cftc
+  data/fundamentals
+  data/price
+data/sugar exists: False
+iso path exists: False  ('C:\\Users\\Administrator\\Desktop\\农业\\data\\sugar\\iso')

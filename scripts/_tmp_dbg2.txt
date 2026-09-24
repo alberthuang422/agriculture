@@ -1,0 +1,170 @@
+=== data  exists=True ===
+   agri                                           DIR
+   cftc                                           DIR
+   fundamentals                                   DIR
+   price                                          DIR
+   reports_md                                     DIR
+=== data/cftc  exists=True ===
+   cotton                                         DIR
+   results_cot                                    DIR
+   sugar                                          DIR
+=== data/fundamentals  exists=True ===
+   _cross                                         DIR
+   corn                                           DIR
+   cotton                                         DIR
+   soybean                                        DIR
+   sugar                                          DIR
+   sugar_psd_aggregates_2010_2027.json            17392
+   wheat                                          DIR
+=== data/price  exists=True ===
+   cotton                                         DIR
+   etf_sina                                       DIR
+   rubber                                         DIR
+   stocks                                         DIR
+   sugar                                          DIR
+   wheat                                          DIR
+=== scripts  exists=True ===
+   _bull_data.json                                73048
+   _bull_key.txt                                  4211
+   _convert_log.txt                               546
+   _convert_log_utf8.txt                          340
+   _extract_feb2017.py                            704
+   _final_check.py                                2724
+   _fix_refs.py                                   4272
+   _fix_structure.py                              3877
+   _iso_feb2017_countries.txt                     69725
+   _iso_pdf_list.txt                              4759
+   _iso_pdf_verify.txt                            2521
+   _iso_test.txt                                  12
+   _out_summary.txt                               3485
+   _pymupdf_check.txt                             17
+   _tmp_attrs.txt                                 1091
+   _tmp_bull.py                                   3557
+   _tmp_bull.txt                                  20521
+   _tmp_codes.py                                  1164
+   _tmp_codes.txt                                 3536
+   _tmp_dbg.py                                    1099
+   _tmp_dbg.txt                                   271
+   _tmp_dbg2.py                                   909
+   _tmp_div.py                                    5587
+   _tmp_extract.py                                2743
+   _tmp_probe.py                                  806
+   _tmp_probe.txt                                 403
+   _tmp_psd_agg.py                                892
+   _tmp_summary.txt                               7122
+   _tmp_vintage.py                                2203
+   _tmp_world.py                                  2132
+   _tmp_world.txt                                 2747
+   _verify_iso_pdfs.py                            1126
+   backfill_hist_cotton.py                        1258
+   build_report96.py                              43433
+   build_sugar_bull_data.py                       3894
+   build_sugarcane_panel.py                       4771
+   build_survey_cotton.py                         7742
+   calc_sugarcane_stats.py                        4639
+   cftc_sugar_divergence.py                       9063
+   cftc_sugar_divergence_robust.py                2611
+   cot_diverge_analysis_20260923.py               8686
+   cot_diverge_diagnose_20260923.py               5770
+   cot_stats_cotton.py                            1976
+   enso_europe_summer.py                          24973
+   export_wb_cotton.py                            1328
+   fetch_cftc_deacot.py                           1832
+   fetch_ct_price.py                              1153
+   fetch_faostat_cane.py                          3331
+   fetch_wb_excel.py                              887
+   fetch_yahoo.py                                 2453
+   iso_build_early_matrix.py                      4524
+   iso_build_iso_series.py                        5223
+   iso_build_vintage_matrix.py                    14136
+   iso_download_historical_pdfs.py                3892
+   iso_extract_early_vintage.py                   4052
+   iso_finalize_iso.py                            8408
+   iso_parse_iso_pdfs.py                          5596
+   make_report100_chart.py                        7442
+   make_report101.py                              16140
+   make_report97.py                               30093
+   make_report98.py                               5349
+   make_report99.py                               12177
+   make_report99_html.py                          37149
+   parse_wb.py                                    1070
+   pdfs_to_md.py                                  5546
+   probe_faostat_bulk.py                          1518
+   probe_owid.py                                  1028
+   probe_sources.py                               2355
+   pull_survey_cotton.py                          3359
+   report98_template.html                         16353
+   sugar_position_price_analysis_20260922.py      15955
+   sugar_position_price_robust_20260922.py        9047
+   sugar_production_panorama_20260918.py          10249
+   verify_flip_button.py                          4498
+=== glob sugar/cftc anywhere ===
+   C:\Users\Administrator\Desktop\农业\data\agri\raw\cpi.csv
+   C:\Users\Administrator\Desktop\农业\data\agri\raw\dgs10.csv
+   C:\Users\Administrator\Desktop\农业\data\agri\raw\dgs2.csv
+   C:\Users\Administrator\Desktop\农业\data\cftc\results_cot\agri_cot_20260901.csv
+   C:\Users\Administrator\Desktop\农业\data\cftc\results_cot\agri_cot_history_1995_2026.csv
+   C:\Users\Administrator\Desktop\农业\data\cftc\results_cot\agri_cot_snapshot_20260901.csv
+   C:\Users\Administrator\Desktop\农业\data\cftc\results_cot\diverge_events_20260923.csv
+   C:\Users\Administrator\Desktop\农业\data\cftc\results_cot\sugar_position_price_analysis_20260922.csv
+   C:\Users\Administrator\Desktop\农业\data\cftc\results_cot\wheat_family_rank_20260901.csv
+   C:\Users\Administrator\Desktop\农业\data\cftc\results_cot\wheat_surge_events_20260905.csv
+   C:\Users\Administrator\Desktop\农业\data\cftc\results_cot\wheat_surge_stats_20260905.csv
+   C:\Users\Administrator\Desktop\农业\data\cftc\results_cot\wheat_weekly_top20_20260901.csv
+   C:\Users\Administrator\Desktop\农业\data\cftc\sugar\sugar_cftc_futonly_1986_2026.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\corn\corn_tribu_stage.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\corn\corn_tribu_stocks.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\cotton_global_sd.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\cotton_tradeable.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\raw\psd_alldata.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\us_cotton_wasde_2026_timeline.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\wasde_2026\oce-wasde-report-data-2026-01.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\wasde_2026\oce-wasde-report-data-2026-02.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\wasde_2026\oce-wasde-report-data-2026-03.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\wasde_2026\oce-wasde-report-data-2026-04.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\wasde_2026\oce-wasde-report-data-2026-05.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\wasde_2026\oce-wasde-report-data-2026-06.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\wasde_2026\oce-wasde-report-data-2026-07.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\wasde_2026\oce-wasde-report-data-2026-08.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\cotton\wasde_2026\oce-wasde-report-data-2026-09.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\soybean\soybean_tribu_stage.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\soybean\soybean_tribu_stocks.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\iso\balance_pdfs\historical\_download_log.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\iso\early_vintage_2015_16_2016_17.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\iso\early_vintage_matrix_2015_16_2023_24.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\iso\iso_balance_vintage_matrix.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\iso\iso_qmo_vintage.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\iso\iso_world_balance_2010_2026.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\raw\owid_sugarcane_production.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\raw\owid_sugarcane_yields.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\raw\psd_sugar_all.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\sugar_analog_fundamental.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\sugar_global_sd.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\sugar_tradeable.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\sugar\sugarcane_area_yield_2005_2024.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\wheat\wheat_stocks_history.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\wheat\wheat_tribu_stage.csv
+   C:\Users\Administrator\Desktop\农业\data\fundamentals\wheat\wheat_tribu_stocks.csv
+   C:\Users\Administrator\Desktop\农业\data\price\cotton\cotton_wb_monthly.csv
+   C:\Users\Administrator\Desktop\农业\data\price\etf_sina\CANE_sina.csv
+   C:\Users\Administrator\Desktop\农业\data\price\etf_sina\CORN_sina.csv
+   C:\Users\Administrator\Desktop\农业\data\price\etf_sina\DBA_sina.csv
+   C:\Users\Administrator\Desktop\农业\data\price\etf_sina\JO_sina.csv
+   C:\Users\Administrator\Desktop\农业\data\price\etf_sina\NIB_sina.csv
+   C:\Users\Administrator\Desktop\农业\data\price\etf_sina\SOYB_sina.csv
+   C:\Users\Administrator\Desktop\农业\data\price\etf_sina\WEAT_sina.csv
+   C:\Users\Administrator\Desktop\农业\data\price\rubber\BR.csv
+   C:\Users\Administrator\Desktop\农业\data\price\rubber\NR.csv
+   C:\Users\Administrator\Desktop\农业\data\price\rubber\RU.csv
+   C:\Users\Administrator\Desktop\农业\data\price\stocks\adm\ADM, 1D.csv
+   C:\Users\Administrator\Desktop\农业\data\price\stocks\agco\AGCO, 1D.csv
+   C:\Users\Administrator\Desktop\农业\data\price\stocks\bg\BG, 1D.csv
+   C:\Users\Administrator\Desktop\农业\data\price\stocks\cf\CF, 1D.csv
+   C:\Users\Administrator\Desktop\农业\data\price\stocks\ctva\CTVA, 1D.csv
+   C:\Users\Administrator\Desktop\农业\data\price\stocks\de\DE, 1D.csv
+   C:\Users\Administrator\Desktop\农业\data\price\stocks\fmc\FMC, 1D.csv
+   C:\Users\Administrator\Desktop\农业\data\price\stocks\mos\MOS, 1D.csv
+   C:\Users\Administrator\Desktop\农业\data\price\stocks\ntr\NTR, 1D.csv
+   C:\Users\Administrator\Desktop\农业\data\price\sugar\sb_price_daily.csv
+   C:\Users\Administrator\Desktop\农业\data\price\wheat\wheat_zw_1D.csv
+   C:\Users\Administrator\Desktop\农业\data\price\wheat\wheat_zw_weekly_tradingview.csv
