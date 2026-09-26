@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>104 · 棉花历史牛市对标：2026/27 供需紧张度衡量</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+  :root{
+    --ink:#1f2430; --ink2:#5a6478; --line:#e3e7ef; --bg:#f7f8fb; --card:#ffffff;
+    --red:#c0392b; --green:#1e8449; --blue:#2c5f9e; --amber:#b9770e; --purple:#6c3483;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px;}
+  header{border-bottom:3px solid var(--ink);padding-bottom:14px;margin-bottom:22px;}
+  .kicker{font-size:12px;letter-spacing:.2em;color:var(--ink2);text-transform:uppercase;}
+  h1{font-size:26px;margin-top:6px;font-weight:700;}
+  .sub{font-size:12.5px;color:var(--ink2);margin-top:8px;}
+  h2{font-size:19px;margin:34px 0 12px;padding-left:10px;border-left:4px solid var(--red);}
+  h3{font-size:15.5px;margin:18px 0 8px;}
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;}
+  .card .num{font-size:24px;font-weight:700;color:var(--red);}
+  .card .num.alt{color:var(--blue);} .card .num.warm{color:var(--amber);}
+  .card .lbl{font-size:12px;color:var(--ink2);margin-top:2px;}
+  .tldr{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:8px;padding:16px 18px;margin:14px 0;}
+  .tldr b{color:var(--red);}
+  .note{font-size:12px;color:var(--ink2);margin-top:4px;}
+  table{width:100%;border-collapse:collapse;background:var(--card);font-size:13px;margin:12px 0;}
+  th{background:#eef1f6;font-weight:600;padding:9px 10px;border:1px solid var(--line);text-align:left;}
+  td{padding:9px 10px;border:1px solid var(--line);vertical-align:top;}
+  td.hl{background:#fdf3f2;font-weight:600;}
+  .chart-box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0;}
+  .chart{width:100%;height:340px;}
+  .chart-note{font-size:12px;color:var(--ink2);margin-top:6px;}
+  .tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:10px;margin-right:6px;vertical-align:middle;}
+  .tag.usda{background:#e8f0fb;color:var(--blue);}
+  .tag.icac{background:#f4ecf9;color:var(--purple);}
+  .tag.est{background:#fdf1e0;color:var(--amber);}
+  .verdict{background:linear-gradient(180deg,#fffdf7,#fff);border:1px solid #eadfc8;border-left:4px solid var(--amber);border-radius:8px;padding:16px 18px;margin:14px 0;}
+  .risk{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin:12px 0;font-size:13.5px;}
+  .disc{margin-top:36px;padding:14px 16px;background:#f2f3f6;border-radius:8px;font-size:12px;color:var(--ink2);}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media (max-width:760px){.cards{grid-template-columns:repeat(2,1fr);}.grid2{grid-template-columns:1fr;}}
+  .src{font-size:11px;color:#8a93a6;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">COTTON BENCHMARK · 2026-09-25</div>
+  <h1>棉花牛市对标：2026/27 这轮，和历史比谁更紧张？</h1>
+  <div class="sub">对标 2010/11 超级牛市 · 2016-18 慢牛 · 2020-22 疫情牛 ｜ 数据：USDA WASDE（2026-09-11）、ICAC（2026-09-01）、CONAB（2026-09-15）、CFTC COT（至 2026-09-01）、Cotlook A Index（至 2026-08）｜ 历史行情数据来源见文内标注（多为媒体/机构复盘转引，非一手，需核实原文）</div>
+</header>
+
+<div class="cards">
+  <div class="card"><div class="num">−122万t</div><div class="lbl">26/27 全球产需缺口（USDA 口径，四轮牛市中绝对值最大）</div></div>
+  <div class="card"><div class="num alt">56.8%</div><div class="lbl">全球库消比 26/27，近 10 年最低（vs 2010/11 的 36%）</div></div>
+  <div class="card"><div class="num warm">43.5%</div><div class="lbl">剥离中国后库消比，逼近 2011 年以来低位（可贸易口径）</div></div>
+  <div class="card"><div class="num">+30万t</div><div class="lbl">ICAC 同季预测为盈余 —— 机构方向相反是最大分歧</div></div>
+</div>
+
+<div class="tldr">
+  <b>一句话结论：按 USDA 口径，这一轮的"缺口强度"是四轮牛市里最大的（缺口/消费 4.6%，绝对量 122 万t 四轮最高），但"总库存缓冲"远不如 2011 年（库消比 56.8% vs 36%）——总盘子不如 2011 紧，真正的历史级紧张在"剥掉中国政策库存之后的可贸易库存"。而 ICAC 认为本季是盈余，若 ICAC 对，这轮根本不紧张。这是本轮多空分歧的核心。</b>
+</div>
+
+<h2>一、四轮牛市档案</h2>
+<table>
+  <tr><th style="width:16%">行情</th><th style="width:21%">价格路径（ICE）</th><th style="width:20%">当时全球供需</th><th>核心驱动</th></tr>
+  <tr>
+    <td><b>2010/11 超级牛</b><br><span class="src">2009.03→2011.04</span></td>
+    <td>36.7¢ → <b>227¢</b>（2011.03，140 年新高），<b>+397%</b><span class="src"><br>来源：方正中期/同花顺复盘 2026-01-13、FT 2011（非一手，需核实）</span></td>
+    <td>库消比 <b>36–37%</b>（1993/94 以来最低）；缺口 34–89万t（USDA 各月口径不同）；期末库存仅约 930万t；中国国内库消比 &lt;20%</td>
+    <td>面积多年收缩 + 巴洪灾/中国减产/印度禁令 + 中美双宽松 + 中国纺织爆发；国储抛储 100% 成交越抛越涨</td>
+  </tr>
+  <tr>
+    <td><b>2016-18 慢牛</b><br><span class="src">2016.03→2018.06</span></td>
+    <td>55.66¢ → <b>94.82¢</b>（2018.06），<b>+54.5%</b><span class="src"><br>来源：方正中期/同花顺复盘 2026-01-13（非一手，需核实）</span></td>
+    <td>库消比 <b>60.6%</b>（2011 以来低点）；18/19 缺口 130万t、消费创当时新高；中国国储去库存收官（余约 260万t）</td>
+    <td>全球需求复苏 + 得州干旱 + 中国轮入预期；被中美关税（2018.06 中国对美棉加 25%）打断</td>
+  </tr>
+  <tr>
+    <td><b>2020-22 疫情牛</b><br><span class="src">2020.05→2022.05</span></td>
+    <td>48.35¢ → <b>≈158¢</b>（2022.05），<b>+175%</b><span class="src"><br>来源：方正中期复盘、中国棉花协会月报 2022-02（非一手，需核实）</span></td>
+    <td>库消比 <b>69%</b>（两年连降但仍高）；缺口 40–59万t；期末库存 1866–2035万t，是 2011 年的 2 倍多</td>
+    <td>疫情后放水 + 得州世纪干旱 + 订单回流中国 + 新疆棉禁令推升外棉；ICE 交割库存只剩 1,101 包引发挤仓</td>
+  </tr>
+  <tr class="hl">
+    <td><b>本轮 2026/27</b><br><span class="src">2026 上半年启动</span></td>
+    <td>约 64¢（2026 年初）→ 93.74¢（8/31 合约新高）→ 84.36¢（9/16），<b>至今约 +46%</b><span class="tag est">估算</span><span class="src"><br>起点 64¢：中国棉花网 2026-01-07；高点/现价：ICE（97 号报告 as-of 09/18）</span></td>
+    <td><span class="tag usda">USDA 9/11</span>缺口 122万t、库消比 <b>56.8%</b>（10 年最低）、连三年去库<br><span class="tag icac">ICAC 9/01</span>同季<b>盈余 +30万t</b>、库消比 70%</td>
+    <td>美棉减产（优良率 36% vs 去年 52%）+ 消费连续两年 &gt;1.2 亿包 + 印度转净进口；中国轮出后补库是潜在增量需求</td>
+  </tr>
+</table>
+
+<h2>二、供需紧张度的三把尺子</h2>
+
+<div class="chart-box">
+  <div id="chartDeficit" class="chart"></div>
+  <div class="chart-note">图1｜各轮牛市对应年度全球产需缺口（万吨）。缺口的"强度"还要看分母：缺口/消费 = 2010/11 约 1.3–3.5%、2018/19 约 4.7%、2021/22 约 1.5–2.2%、2026/27 约 4.6%（按各自消费量计算）。数据：USDA 各期供需报告（历史口径为复盘转引，需核实原文）。</div>
+</div>
+
+<div class="chart-box">
+  <div id="chartSU" class="chart"></div>
+  <div class="chart-note">图2｜牛市起点/对应年度全球库消比。2026/27 加挂"剥中国"口径（43.5%）——全球库存 53% 在中国的国储口袋里，市场化可贸易库存才是真正定价的分母；含出口口径的可贸易库消比约 28%，接近 2011 年低位。数据：USDA PSD（2026-09 快照）、97 号报告。</div>
+</div>
+
+<div class="chart-box">
+  <div id="chartRally" class="chart"></div>
+  <div class="chart-note">图3｜各轮行情 ICE 涨幅与本轮至今涨幅。规律：库消比越低、弹性越大——2010/11 库消比 36% 对应 +397%；2021/22 库消比 69% 但起点仅 48¢（历史低位）+ 宏观放水，属"低价修复型"。本轮 +46% 属早期阶段。本轮起点 64¢ 为估算（中国棉花网 2026-01-07）。</div>
+</div>
+
+<h2>三、全维度对比表</h2>
+<table>
+  <tr>
+    <th>维度</th><th>2010/11 超级牛</th><th>2018/19（慢牛尾）</th><th>2021/22 疫情牛</th><th class="hl">2026/27 本轮</th>
+  </tr>
+  <tr><td>产需缺口（万t）</td><td>34–89</td><td>130</td><td>40–59</td><td class="hl"><b>122</b>（USDA）<span class="tag icac">ICAC：−30（盈余）</span></td></tr>
+  <tr><td>缺口/消费</td><td>1.3–3.5%</td><td>4.7%</td><td>1.5–2.2%</td><td class="hl"><b>4.6%</b></td></tr>
+  <tr><td>全球库消比</td><td><b>36–37%</b>（15 年最低）</td><td>60.6%</td><td>69%</td><td class="hl"><b>56.8%</b>（10 年最低）</td></tr>
+  <tr><td>剥中国后库消比</td><td>中国本身 &lt;20%</td><td>—</td><td>—</td><td class="hl"><b>43.5%</b>；含出口口径 ≈28%</td></tr>
+  <tr><td>全球期末库存（万t）</td><td>≈930</td><td>1581–1741</td><td>1866–2035</td><td class="hl">1521（USDA）/ 1823（ICAC）</td></tr>
+  <tr><td>ICE 峰值 / 涨幅</td><td>227¢ / +397%</td><td>94.82¢ / +54.5%</td><td>≈158¢ / +175%</td><td class="hl">93.74¢（至今） / ≈+46%</td></tr>
+  <tr><td>投机拥挤度</td><td>高（基金狂热）</td><td>中</td><td>中高</td><td class="hl"><b>净多 133,147 手 = 31 年历史新高</b>（CFTC 09-01）；9/8 当周已 −13,118</td></tr>
+  <tr><td>价格历史分位</td><td>历史新高</td><td>6 年新高</td><td>11 年新高</td><td class="hl">A 指数 95.7¢ = <b>全史 92.5 分位</b></td></tr>
+  <tr><td>天气/供应冲击</td><td>巴洪灾、中国减产、澳洪灾</td><td>得州干旱</td><td>得州世纪干旱、巴西旱</td><td class="hl">美棉优良率 36%（去年同期 52%）；澳出口收缩 1/3；新疆减产幅度存分歧（−3.5%~−9%）</td></tr>
+  <tr><td>宏观背景</td><td>中美双宽松、美元贬值</td><td>加息周期前夜、关税战</td><td>疫后大放水、俄乌</td><td class="hl">宽松预期提供估值支撑，但贸易政策仍是压制项</td></tr>
+  <tr><td>行情终结方式</td><td>高价刺激扩产 + 需求被摧毁</td><td>中美关税 + 新兴市场危机</td><td>品牌去库存（耐克阿迪库存 +50–60%）</td><td class="hl">未到——看 10 月 WASDE 与 11 月 ICAC 是否收敛</td></tr>
+</table>
+<div class="note">历史口径数据来自方正中期/同花顺复盘（2026-01-13）、中国棉花协会月报、财联社等媒体转引，非一手来源，需核实原文；USDA 各月份报告对同一年度的缺口估计存在修正（2010/11 在 34–89万t 之间漂移），表中标注区间。</div>
+
+<h2>四、谁更紧张？——分层结论</h2>
+<div class="verdict">
+  <h3>① 总量口径：2010/11 &gt; 本轮 ≈ 2018/19 &gt; 2021/22</h3>
+  <p>2011 年的紧张是"库存耗尽型"：库消比 36%、期末库存只有现在的一半多一点，任何风吹草动都没有缓冲。本轮库消比 56.8% 虽是 10 年最低，但绝对库存缓冲仍在——<b>总量紧张度不如 2011</b>，这决定了价格弹性上限大概率到不了 2011 式的 +397%。</p>
+  <h3>② 缺口强度口径：本轮反而是四轮最大</h3>
+  <p>缺口 122万t、占消费 4.6%，绝对量和强度都超过 2010/11（34–89万t / 1.3–3.5%）和 2021/22（40–59万t），与 2018/19 相当。<b>"当年缺口"比 2011 年更大</b>，这是本轮多头叙事最硬的部分。</p>
+  <h3>③ 可贸易口径：这才是本轮真正的历史级紧张</h3>
+  <p>全球库存 53% 在中国国储口袋（释放由政策决定，当前正轮出）。剥掉中国后库消比 43.5%、含出口口径约 28%，<b>逼近 2011 年低位</b>。市场真正定价的是可贸易部分——巴西+美国占出口 63%，美澳同时减产时，贸易流的紧张被放大。中国轮出收官（推算 40万t+、最晚 11 月）后的补库，是中周期最确定的需求增量。</p>
+  <h3>④ 反面声音：如果 ICAC 对，这轮就不成立</h3>
+  <p>ICAC 同季预测<b>盈余 +30万t</b>、库消比 70%——与 USDA 方向相反，分歧在消费校准与中国产量口径。且 97 号报告已提示风险偏侧：巴西 CONAB（4.16Mt）与印度 CAI 口径均高于 USDA，<b>供应可能未被低估、缺口可能被高估</b>。10 月 WASDE 与 11 月 ICAC 是裁决点。</p>
+</div>
+
+<h2>五、与 2011 的本质差异：市场结构变了</h2>
+<div class="grid2">
+  <div class="risk"><b>当年的"刚性供应"如今不存在。</b>2010 年的爆发力来自面积多年收缩 + 库存极低的"刚性"体系；本轮巴西产量纪录（15.5M 包出口全球第一）、面积仍有弹性，高价会快速召唤供应——2011 年后的剧本（扩产→需求被摧毁→多年熊市）随时可能重演。</div>
+  <div class="risk"><b>极端值已经共振，这不是起涨点而是分歧区。</b>净多持仓 31 年新高 + 价格全史 92.5 分位 + 库消比 10 年最低，三项极值同现。9/8 当周对冲基金已净多 −13,118 手开始离场。历史规律：每轮牛市终局都是"高价刺激扩产→需求被高价抑制→库存回补"，当前位置更像"叙事兑现区"而非"驱动启动区"。</div>
+</div>
+
+<h2>六、跟踪清单（裁决点）</h2>
+<table>
+  <tr><th>时点</th><th>事件</th><th>验证什么</th></tr>
+  <tr><td>每周四</td><td>USDA Export Sales</td><td>美棉出口签约/装运能否兑现 +19% 的需求叙事</td></tr>
+  <tr><td>2026-10</td><td>WASDE 10 月报</td><td>美棉单产（优良率 36% vs USDA 假设）是否再下调；缺口是否扩大</td></tr>
+  <tr><td>2026-11</td><td>ICAC 月报</td><td>盈余 +30万t 是否向缺口收敛（ICAC 产量初值历史逐月下调约 10万t/月）</td></tr>
+  <tr><td>10–11 月</td><td>新疆收购 + 中国轮出收官</td><td>籽棉收购价、轮出总量（推算 40万t+）与之后的轮入/进口节奏</td></tr>
+  <tr><td>持续</td><td>CONAB 巴西产量（4.16Mt）</td><td>巴西超预期丰产 = USDA 缺口叙事的最大证伪项</td></tr>
+</table>
+
+<div class="disc">
+  <b>免责声明</b>：以上内容基于公开数据和量化分析，仅供参考，不构成投资建议。市场有风险，投资需谨慎。任何投资决策应结合个人风险承受能力、资金状况和投资目标独立判断，必要时咨询持牌专业机构。过往表现不预示未来收益。<br><br>
+  数据来源：USDA WASDE（2026-09-11）、USDA PSD、ICAC（2026-09-01）、CONAB（2026-09-15）、CFTC COT（至 2026-09-01）、Cotlook A Index（至 2026-08）、ICE 交易数据（as-of 2026-09-18）；历史行情复盘转引自方正中期研究院（同花顺 2026-01-13）、中国棉花协会月报（2022-02）、财联社（2022-03-01）、FT/Reuters（2011-12）等公开报道，均标注"非一手来源，需核实原文"。
+</div>
+
+</div>
+
+<script>
+// 图1：产需缺口对比
+echarts.init(document.getElementById('chartDeficit')).setOption({
+  tooltip: { trigger: 'axis' },
+  grid: { left: 60, right: 30, top: 40, bottom: 40 },
+  xAxis: { type: 'category', data: ['2010/11\n超级牛', '2018/19\n慢牛尾', '2021/22\n疫情牛', '2026/27\n本轮(USDA)', '2026/27\n本轮(ICAC)'] },
+  yAxis: { type: 'value', name: '缺口(万t)' },
+  series: [{
+    type: 'bar',
+    barWidth: 44,
+    data: [
+      { value: 61.5, itemStyle: { color: '#9fb3c8' } },
+      { value: 130,  itemStyle: { color: '#9fb3c8' } },
+      { value: 49.5, itemStyle: { color: '#9fb3c8' } },
+      { value: 122,  itemStyle: { color: '#c0392b' } },
+      { value: -30,  itemStyle: { color: '#1e8449' } }
+    ],
+    label: {
+      show: true, position: 'top',
+      formatter: function(p) {
+        var map = { 0: '区间 34–89', 1: '130', 2: '区间 40–59', 3: '缺口 122', 4: '盈余 30' };
+        return map[p.dataIndex];
+      }
+    }
+  }]
+});
+
+// 图2：库消比对比
+echarts.init(document.getElementById('chartSU')).setOption({
+  tooltip: { trigger: 'axis', valueFormatter: function(v){ return v + '%'; } },
+  grid: { left: 60, right: 30, top: 40, bottom: 40 },
+  xAxis: { type: 'category', data: ['2010/11', '2018/19', '2021/22', '2026/27\nUSDA全口径', '2026/27\n剥中国', '2026/27\nICAC口径'] },
+  yAxis: { type: 'value', name: '库消比(%)' },
+  series: [{
+    type: 'bar',
+    barWidth: 44,
+    data: [
+      { value: 36.5, itemStyle: { color: '#c0392b' } },
+      { value: 60.6, itemStyle: { color: '#9fb3c8' } },
+      { value: 69,   itemStyle: { color: '#9fb3c8' } },
+      { value: 56.8, itemStyle: { color: '#2c5f9e' } },
+      { value: 43.5, itemStyle: { color: '#b9770e' } },
+      { value: 70,   itemStyle: { color: '#6c3483' } }
+    ],
+    label: { show: true, position: 'top', formatter: '{c}%' }
+  }]
+});
+
+// 图3：涨幅对比
+echarts.init(document.getElementById('chartRally')).setOption({
+  tooltip: { trigger: 'axis', valueFormatter: function(v){ return '+' + v + '%'; } },
+  grid: { left: 60, right: 30, top: 40, bottom: 40 },
+  xAxis: { type: 'category', data: ['2010/11\n+397%', '2016-18\n+54.5%', '2020-22\n+175%', '本轮至今\n≈+46%'] },
+  yAxis: { type: 'value', name: 'ICE涨幅(%)' },
+  series: [{
+    type: 'bar',
+    barWidth: 44,
+    data: [
+      { value: 397,  itemStyle: { color: '#c0392b' } },
+      { value: 54.5, itemStyle: { color: '#9fb3c8' } },
+      { value: 175,  itemStyle: { color: '#9fb3c8' } },
+      { value: 46,   itemStyle: { color: '#2c5f9e' } }
+    ],
+    label: { show: true, position: 'top', formatter: '+{c}%' }
+  }]
+});
+</script>
+</body>
+</html>

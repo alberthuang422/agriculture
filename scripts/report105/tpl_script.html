@@ -1,0 +1,281 @@
+<script>
+var P = /*__DATA__*/null;
+
+var OK = {blue:'#56B4E9', orange:'#E69F00', sky:'#8fd0f5', pink:'#CC79A7',
+          verm:'#F0793B', yellow:'#F0E442', dim:'#9aa3b2', line:'#303642', tx:'#e8eaee',
+          green:'#3ddc97', red:'#ff6b6b'};
+function axStyle(){return {axisLine:{lineStyle:{color:OK.line}},axisTick:{lineStyle:{color:OK.line}},
+  axisLabel:{color:OK.dim,fontSize:11},splitLine:{lineStyle:{color:'#252b35'}}};}
+function tt(){return {trigger:'axis',backgroundColor:'#232933',borderColor:OK.line,
+  textStyle:{color:OK.tx,fontSize:12},axisPointer:{lineStyle:{color:'#4a5364'}}};}
+function mk(id){var el=document.getElementById(id);return el?echarts.init(el,null,{renderer:'canvas'}):null;}
+function idx(W,date){for(var i=0;i<W.length;i++){if(W[i][0]>=date)return i;}return -1;}
+function fmtD(s){return s.slice(0,7);}
+
+/* ============ C0 全史价格 + 牛市阴影 ============ */
+(function(){var ch=mk('c0');if(!ch)return;
+  var d=P.px_all.map(function(r){return r[0];}),c=P.px_all.map(function(r){return r[1];});
+  var areas=[];var cols=[OK.sky,OK.blue,OK.pink,OK.orange,OK.yellow,OK.verm,OK.sky,OK.blue,OK.orange,OK.pink,OK.verm];
+  P.bulls.forEach(function(b,i){
+    areas.push([{xAxis:b.low_d,itemStyle:{color:cols[i%cols.length]+'14'}},{xAxis:b.high_d}]);
+  });
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{formatter:function(ps){var p=ps[0];return '<b>'+p.axisValue+'</b><br/>'+p.marker+'收盘：<b>'+p.value.toFixed(2)+' c/lb</b>';}}),
+    grid:{left:58,right:30,top:30,bottom:60},
+    dataZoom:[{type:'inside'},{type:'slider',height:18,bottom:14,borderColor:OK.line,
+      backgroundColor:'#1c2028',fillerColor:'#30364230',handleStyle:{color:OK.dim},
+      textStyle:{color:OK.dim,fontSize:10}}],
+    xAxis:Object.assign(axStyle(),{type:'category',data:d,boundaryGap:false,
+      axisLabel:{color:OK.dim,fontSize:10,interval:Math.floor(d.length/12),formatter:fmtD}}),
+    yAxis:Object.assign(axStyle(),{type:'log',logBase:10,name:'美分/磅（对数）',min:20,max:250,
+      nameTextStyle:{color:OK.dim,fontSize:10}}),
+    series:[{name:'收盘',type:'line',data:c,showSymbol:false,lineStyle:{width:1.5,color:OK.blue},
+      itemStyle:{color:OK.blue},
+      markArea:{silent:true,data:areas},
+      markPoint:{symbolSize:1,data:[
+        {coord:['2011-03-07',204.94],value:'219.7',itemStyle:{color:OK.verm},label:{show:true,formatter:'2011顶 219.70',color:OK.verm,fontSize:11,fontWeight:'bold',position:'top'}},
+        {coord:['2022-05-02',143.61],value:'155.95',itemStyle:{color:OK.orange},label:{show:true,formatter:'2022顶 155.95',color:OK.orange,fontSize:10.5,position:'top'}},
+        {coord:['2026-08-31',86.43],value:'93.74',itemStyle:{color:OK.yellow},label:{show:true,formatter:'本轮顶 93.74',color:OK.yellow,fontSize:10.5,position:'top'}},
+        {coord:['2001-10-22',28.86],value:'28.2',itemStyle:{color:OK.green},label:{show:true,formatter:'2001底 28.20',color:OK.green,fontSize:10.5,position:'bottom'}}
+      ]}}]});
+  window.addEventListener('resize',function(){ch.resize();});})();
+
+/* ============ C1 归一化叠加 ============ */
+(function(){var ch=mk('c1');if(!ch)return;
+  var cols={'1992-94 复苏牛':'#8fd0f5','1994-95 缺口牛':'#56B4E9','1995 逼空脉冲':'#CC79A7',
+    '2001-03 复苏牛':'#E69F00','2004-08 商品牛':'#F0E442','2008-11 超级牛':'#F0793B',
+    '2012-14 干旱牛':'#8fd0f5','2016-18 去库存牛':'#56B4E9','2020-22 疫情牛':'#E69F00',
+    '2022 干旱脉冲':'#CC79A7','2025-26 本轮':'#ff6b6b'};
+  var widths={'2008-11 超级牛':3,'2020-22 疫情牛':2.4,'2016-18 去库存牛':2.4,'2025-26 本轮':3.4,'2001-03 复苏牛':2.4};
+  var series=P.norm.map(function(n){
+    var data=n.pts.map(function(p){return [p[0],p[1]]});
+    return {name:n.name,type:'line',data:data,showSymbol:false,
+      lineStyle:{width:widths[n.name]||1.5,color:cols[n.name]||OK.dim,type:(n.name==='2025-26 本轮'?'solid':'solid')},
+      itemStyle:{color:cols[n.name]||OK.dim},emphasis:{focus:'series'}};
+  });
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{formatter:function(ps){
+      var s='<b>距底部第 '+ps[0].value[0]+' 周</b><br/>';
+      ps.sort(function(a,b){return b.value[1]-a.value[1];});
+      ps.forEach(function(p){if(p.value&&p.value[1]!=null){
+        s+=p.marker+p.seriesName+'：<b>'+(p.value[1]-100>=0?'+':'')+(p.value[1]-100).toFixed(1)+'%</b><br/>';}});
+      return s;}}),
+    legend:{data:P.norm.map(function(n){return n.name;}),textStyle:{color:OK.dim,fontSize:10.5},
+      top:0,type:'scroll',pageTextStyle:{color:OK.dim},itemWidth:20,itemHeight:3},
+    grid:{left:60,right:36,top:56,bottom:48},
+    xAxis:Object.assign(axStyle(),{type:'value',name:'距底部周数',nameLocation:'middle',nameGap:28,
+      nameTextStyle:{color:OK.dim,fontSize:11},min:0,max:200}),
+    yAxis:Object.assign(axStyle(),{type:'value',name:'指数（底部收盘=100）',min:70,max:320,
+      nameTextStyle:{color:OK.dim,fontSize:10}}),
+    series:series});
+  window.addEventListener('resize',function(){ch.resize();});})();
+
+/* ============ dual() 价格×持仓双窗 ============ */
+function dual(id,rows,cMain,cNet,cL,cS,marks){var ch=mk(id);if(!ch)return;
+  var d=rows.map(function(r){return r[0];}),c=rows.map(function(r){return r[1];}),
+      n=rows.map(function(r){return r[2];}),l=rows.map(function(r){return r[3];}),
+      s=rows.map(function(r){return r[4];});
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{formatter:function(ps){
+      var s2='<b>'+ps[0].axisValue+'</b><br/>';
+      ps.forEach(function(p){var v=p.value;
+        s2+=p.marker+p.seriesName+'：<b>'+(p.seriesName.indexOf('价格')>=0?
+          v.toFixed(2)+' c/lb':(v>=0?'+':'')+v.toLocaleString()+' 手')+'</b><br/>';});
+      return s2;}}),
+    legend:{data:['价格（ICE 棉花 No.2）','非商业净持仓','非商业多头','非商业空头'],
+      textStyle:{color:OK.dim,fontSize:11.5},top:4,itemWidth:24,itemHeight:3},
+    grid:[{left:62,right:76,top:40,height:'42%'},{left:62,right:76,top:'58%',height:'32%'}],
+    xAxis:[Object.assign(axStyle(),{type:'category',data:d,gridIndex:0,
+        axisLabel:{show:false},boundaryGap:false}),
+      Object.assign(axStyle(),{type:'category',data:d,gridIndex:1,boundaryGap:false,
+        axisLabel:{color:OK.dim,fontSize:10,interval:Math.max(1,Math.floor(d.length/9)),formatter:fmtD}})],
+    yAxis:[Object.assign(axStyle(),{type:'value',gridIndex:0,name:'美分/磅',scale:true,
+        nameTextStyle:{color:OK.dim,fontSize:10}}),
+      Object.assign(axStyle(),{type:'value',gridIndex:1,name:'手',
+        nameTextStyle:{color:OK.dim,fontSize:10},
+        axisLabel:{color:OK.dim,fontSize:10,formatter:function(v){return (v/10000).toFixed(1)+'万';}}})],
+    series:[
+      {name:'价格（ICE 棉花 No.2）',type:'line',xAxisIndex:0,yAxisIndex:0,data:c,showSymbol:false,
+       lineStyle:{width:2.4,color:cMain},itemStyle:{color:cMain},
+       areaStyle:{color:{type:'linear',x:0,y:0,x2:0,y2:1,colorStops:[
+         {offset:0,color:cMain+'30'},{offset:1,color:cMain+'05'}]}},
+       markPoint:{data:marks,symbolSize:9}},
+      {name:'非商业净持仓',type:'line',xAxisIndex:1,yAxisIndex:1,data:n,showSymbol:false,
+       lineStyle:{width:2.3,color:cNet},itemStyle:{color:cNet},
+       markLine:{silent:true,symbol:'none',lineStyle:{color:'#5b6577',type:'dashed',width:1},
+         label:{color:OK.dim,fontSize:10,formatter:'0'},data:[{yAxis:0}]}},
+      {name:'非商业多头',type:'line',xAxisIndex:1,yAxisIndex:1,data:l,showSymbol:false,
+       lineStyle:{width:1.4,color:cL,type:'dotted'},itemStyle:{color:cL}},
+      {name:'非商业空头',type:'line',xAxisIndex:1,yAxisIndex:1,data:s,showSymbol:false,
+       lineStyle:{width:1.4,color:cS,type:'dashed'},itemStyle:{color:cS}}]});
+  window.addEventListener('resize',function(){ch.resize();});}
+
+function dualMark(rows,date){for(var i=0;i<rows.length;i++){if(rows[i][0]>=date)return i;}return 0;}
+(function(){
+  var cfg=[
+    ['c2','2001-03 复苏牛',OK.orange,OK.pink,OK.sky,OK.blue,
+      [['2001-10-22','底 28.86','bottom',OK.blue],['2003-10-27','顶 76.73｜净多峰 6 天前','top',OK.verm]]],
+    ['c3','2008-11 超级牛',OK.blue,OK.pink,OK.sky,OK.orange,
+      [['2008-11-10','底 42.51','bottom',OK.blue],['2010-09-14','净多峰 +8.4万手','top',OK.yellow],['2011-03-07','价峰 204.94（净多仅52%）','top',OK.verm]]],
+    ['c4','2016-18 去库存牛',OK.blue,OK.pink,OK.sky,OK.orange,
+      [['2016-02-29','底 57.11','bottom',OK.blue],['2017-03-07','净多峰 13.2万手（netOI 41.5%，历史极值）','top',OK.yellow],['2018-06-11','价峰 89.85（净多仍 96%）','top',OK.verm]]],
+    ['c5','2020-22 疫情牛',OK.orange,OK.pink,OK.sky,OK.blue,
+      [['2020-03-30','底 50.98','bottom',OK.blue],['2021-10-05','净多峰 +12.8万手','top',OK.yellow],['2022-05-02','价峰 143.61（净多 64%）','top',OK.verm]]],
+    ['c6','2025-26 本轮',OK.yellow,OK.pink,OK.sky,OK.orange,
+      [['2025-03-31','底 63.33（空头峰 13.1万手在前）','bottom',OK.blue],['2026-08-25','净多峰 +12.7万手','top',OK.yellow],['2026-08-31','价峰 86.43（净多=峰值100%）','top',OK.verm]]]
+  ];
+  cfg.forEach(function(k){
+    var rows=P.duals[k[1]];if(!rows)return;
+    var marks=k[6].map(function(m){var i=dualMark(rows,m[0]);
+      return {coord:[i,rows[i][1]],itemStyle:{color:m[3]},
+        label:{show:true,position:m[2],formatter:m[1],color:m[3],fontSize:10.5,fontWeight:'bold'}};});
+    dual(k[0],rows,k[2],k[3],k[4],k[5],marks);
+  });
+})();
+
+/* ============ C7 国别分解柱状 ============ */
+(function(){var ch=mk('c7');if(!ch)return;
+  var pick=['1992-94 复苏牛','2001-03 复苏牛','2004-08 商品牛','2008-11 超级牛','2016-18 去库存牛','2020-22 疫情牛','2025-26 本轮'];
+  var dc=P.decomp.filter(function(x){return pick.indexOf(x.name)>=0;});
+  var countries=['中国','印度','美国','巴西','巴基斯坦','澳大利亚','土耳其','乌兹别克斯坦','埃及'];
+  var series=[];var cols=[OK.orange,OK.blue,OK.pink,OK.verm,OK.sky,OK.yellow,OK.green,'#b088e0','#8899aa'];
+  dc.forEach(function(dd,k){
+    series.push({name:dd.name,type:'bar',
+      data:countries.map(function(cn){
+        var r=dd.rows.find(function(x){return x.c===cn;});
+        if(!r||r.chg==null)return null;
+        return r.chg;
+      }),
+      itemStyle:{color:cols[k%cols.length]},barMaxWidth:14});
+  });
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{formatter:function(ps){
+      var s='<b>'+ps[0].axisValue+'</b>（千包，MY 窗口内产量变化）<br/>';
+      ps.forEach(function(p){if(p.value!=null)s+=p.marker+p.seriesName+'：<b>'+(p.value>=0?'+':'')+p.value.toLocaleString()+'</b><br/>';});
+      return s;}}),
+    legend:{textStyle:{color:OK.dim,fontSize:10.5},top:0,type:'scroll',pageTextStyle:{color:OK.dim},itemWidth:16,itemHeight:9},
+    grid:{left:70,right:30,top:52,bottom:40},
+    xAxis:Object.assign(axStyle(),{type:'category',data:countries,
+      axisLabel:{color:OK.dim,fontSize:11,interval:0,rotate:0}}),
+    yAxis:Object.assign(axStyle(),{type:'value',name:'Δ产量（千包）',
+      nameTextStyle:{color:OK.dim,fontSize:10},
+      axisLabel:{color:OK.dim,fontSize:10,formatter:function(v){return (v/1000).toFixed(0)+'M';}}}),
+    series:series});
+  window.addEventListener('resize',function(){ch.resize();});})();
+
+/* ============ C8 库存分层 ============ */
+(function(){var ch=mk('c8');if(!ch)return;
+  var d=P.layer.map(function(r){return 'MY'+r[0];});
+  var w=P.layer.map(function(r){return r[1];}),r1=P.layer.map(function(r){return r[2];}),
+      r2=P.layer.map(function(r){return r[3];}),b3=P.layer.map(function(r){return r[4];});
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{formatter:function(ps){
+      var s='<b>'+ps[0].axisValue+'</b><br/>';
+      ps.forEach(function(p){if(p.value!=null)s+=p.marker+p.seriesName+'：<b>'+p.value.toFixed(1)+(p.seriesName.indexOf('big3')>=0?'%（出口覆盖）':'%')+'</b><br/>';});
+      return s;}}),
+    legend:{data:['全球 W（库消比）','剥中国 R1（库消比）','剥中印 R2（库消比）','出口国 big3（库存/出口覆盖率）'],
+      textStyle:{color:OK.dim,fontSize:11.5},top:4,itemWidth:24,itemHeight:3},
+    grid:{left:58,right:64,top:44,bottom:60},
+    dataZoom:[{type:'inside',start:55,end:100},{type:'slider',height:16,bottom:12,borderColor:OK.line,
+      backgroundColor:'#1c2028',fillerColor:'#30364230',textStyle:{color:OK.dim,fontSize:10},start:55,end:100}],
+    xAxis:Object.assign(axStyle(),{type:'category',data:d,boundaryGap:false,
+      axisLabel:{color:OK.dim,fontSize:10,interval:Math.floor(d.length/14)}}),
+    yAxis:[Object.assign(axStyle(),{type:'value',name:'库消比 %',
+      nameTextStyle:{color:OK.dim,fontSize:10}}),
+      Object.assign(axStyle(),{type:'value',name:'出口覆盖率 %',position:'right',
+      nameTextStyle:{color:OK.dim,fontSize:10},splitLine:{show:false}})],
+    series:[
+      {name:'全球 W（库消比）',type:'line',data:w,showSymbol:false,lineStyle:{width:2.4,color:OK.red},itemStyle:{color:OK.red}},
+      {name:'剥中国 R1（库消比）',type:'line',data:r1,showSymbol:false,lineStyle:{width:2.4,color:OK.yellow},itemStyle:{color:OK.yellow}},
+      {name:'剥中印 R2（库消比）',type:'line',data:r2,showSymbol:false,lineStyle:{width:1.8,color:OK.sky},itemStyle:{color:OK.sky}},
+      {name:'出口国 big3（库存/出口覆盖率）',type:'line',yAxisIndex:1,data:b3,showSymbol:false,lineStyle:{width:2,color:OK.blue,type:'dashed'},itemStyle:{color:OK.blue},
+       markPoint:{symbolSize:1,data:[
+         {coord:[d.length-1,b3[b3.length-1]],label:{show:true,formatter:'本轮 28.7%\n1960年以来最低',color:OK.blue,fontSize:10.5,position:'bottom',fontWeight:'bold'}},
+         {coord:['MY2013',w[P.layer.findIndex(function(r){return r[0]===2013;})]],label:{show:true,formatter:'全球峰值 88.4%\n（中国占65%）',color:OK.red,fontSize:10.5,position:'top'}}
+       ]}}]});
+  window.addEventListener('resize',function(){ch.resize();});})();
+
+/* ============ C9 vintage SU 修订路径 ============ */
+(function(){var ch=mk('c9');if(!ch)return;
+  var order=['2010/11','2016/17','2020/21'];
+  var cols={'2010/11':OK.verm,'2016/17':OK.blue,'2020/21':OK.orange};
+  var series=order.map(function(my){
+    var p=P.vint_intra[my];
+    return {name:'MY'+my,type:'line',
+      data:p.map(function(x,i){return [i,x[1]];}),showSymbol:false,
+      lineStyle:{width:2.6,color:cols[my]},itemStyle:{color:cols[my]},
+      markLine:{silent:true,symbol:'none',lineStyle:{color:cols[my],type:'dashed',width:1,opacity:.5},
+        label:{color:cols[my],fontSize:10,formatter:'终值 '+p[p.length-1][1].toFixed(1)+'%'},
+        data:[{yAxis:p[p.length-1][1]}]}};
+  });
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{formatter:function(ps){
+      var s='<b>第 '+ps[0].value[0]+' 次报告</b><br/>';
+      ps.forEach(function(p){
+        var path=P.vint_intra[p.seriesName.replace('MY','')];
+        var row=path&&path[p.value[0]];
+        s+=p.marker+p.seriesName+'：<b>'+p.value[1].toFixed(1)+'%</b>'+(row?'（'+row[0]+'）':'')+'<br/>';});
+      return s;}}),
+    legend:{data:order.map(function(m){return 'MY'+m;}),textStyle:{color:OK.dim,fontSize:11.5},top:4,itemWidth:24,itemHeight:3},
+    grid:{left:58,right:90,top:44,bottom:44},
+    xAxis:Object.assign(axStyle(),{type:'value',name:'报告序号（首报=该 MY 前一年 5 月）',nameLocation:'middle',nameGap:26,
+      nameTextStyle:{color:OK.dim,fontSize:10.5},min:0,max:36}),
+    yAxis:Object.assign(axStyle(),{type:'value',name:'全球库消比预测 %',scale:true,
+      nameTextStyle:{color:OK.dim,fontSize:10}}),
+    series:series});
+  window.addEventListener('resize',function(){ch.resize();});})();
+
+/* ============ C10 对齐散点：时滞 vs 净多留存 ============ */
+(function(){var ch=mk('c10');if(!ch)return;
+  var pts=P.align.filter(function(a){return a.lag_days<=500;});
+  var cols={'1995 逼空脉冲':OK.pink,'2001-03 复苏牛':OK.orange,'2004-08 商品牛':OK.yellow,
+    '2008-11 超级牛':OK.verm,'2012-14 干旱牛':OK.sky,'2016-18 去库存牛':OK.blue,
+    '2020-22 疫情牛':OK.orange,'2022 干旱脉冲':OK.pink,'2025-26 本轮':OK.red};
+  var data=pts.map(function(a){
+    return {name:a.name,value:[a.lag_days,a.ratio_at_peak,a.nc_net_peak],
+      itemStyle:{color:cols[a.name]||OK.dim},
+      label:{show:true,formatter:a.name.split(' ')[0],color:cols[a.name]||OK.dim,fontSize:10,position:'top'},
+      symbolSize:a.name==='2025-26 本轮'?20:Math.max(9,Math.sqrt(a.nc_net_peak)/7)};
+  });
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{trigger:'item',formatter:function(p){
+      return '<b>'+p.name+'</b><br/>净多峰领先价峰：<b>'+p.value[0]+' 天</b><br/>价峰时净多/峰值：<b>'+p.value[1].toFixed(1)+'%</b><br/>净多峰：'+p.value[2].toLocaleString()+' 手';}}),
+    grid:{left:64,right:40,top:40,bottom:56},
+    xAxis:Object.assign(axStyle(),{type:'value',name:'净多峰领先价峰天数',nameLocation:'middle',nameGap:30,
+      nameTextStyle:{color:OK.dim,fontSize:11},min:0,max:500}),
+    yAxis:Object.assign(axStyle(),{type:'value',name:'价峰时净多 / 净多峰值 %',min:40,max:110,
+      nameTextStyle:{color:OK.dim,fontSize:10}}),
+    series:[{type:'scatter',data:data,
+      markArea:{silent:true,itemStyle:{color:'#3ddc9710'},
+        data:[[{coord:[0,90]},{coord:[14,110]}]]},
+      markLine:{silent:true,symbol:'none',lineStyle:{color:'#5b6577',type:'dashed'},
+        label:{color:OK.dim,fontSize:10},
+        data:[{xAxis:14,label:{formatter:'2周'}},{yAxis:90,label:{formatter:'90%'}}]}}]});
+  window.addEventListener('resize',function(){ch.resize();});})();
+
+/* ============ C11 净多/OI 拥挤度时间序列 ============ */
+(function(){var ch=mk('c11');if(!ch)return;
+  var d=P.netoi_ts.map(function(r){return r[0];}),v=P.netoi_ts.map(function(r){return r[1];});
+  var marks=[{coord:[d.indexOf(P.cur.current_d),P.cur.current_val],symbolSize:13,itemStyle:{color:OK.red},
+    label:{show:true,formatter:'当前 24.5%（82.9 pct）',color:OK.red,fontSize:11,fontWeight:'bold',position:'top'}}];
+  [{n:'2012-14顶',d:'2013-03-19',v:29.6,c:OK.sky},{n:'2016-18顶',d:'2017-03-07',v:41.5,c:OK.blue},
+   {n:'2020-22顶',d:'2021-10-05',v:33.5,c:OK.orange},{n:'2022-05价峰',d:'2022-05-03',v:29.7,c:OK.pink}]
+   .forEach(function(m){var i=idx(P.netoi_ts,m.d);if(i>=0)marks.push(
+    {coord:[i,v[i]],symbolSize:9,itemStyle:{color:m.c},
+     label:{show:true,formatter:m.n+' '+v[i].toFixed(1)+'%',color:m.c,fontSize:10,position:'bottom'}});});
+  ch.setOption({backgroundColor:'transparent',
+    tooltip:Object.assign(tt(),{formatter:function(ps){var p=ps[0];
+      return '<b>'+p.axisValue+'</b><br/>'+p.marker+'净多/OI：<b>'+p.value.toFixed(1)+'%</b>';}}),
+    grid:{left:58,right:30,top:36,bottom:56},
+    dataZoom:[{type:'inside',start:60,end:100},{type:'slider',height:16,bottom:12,borderColor:OK.line,
+      backgroundColor:'#1c2028',fillerColor:'#30364230',textStyle:{color:OK.dim,fontSize:10},start:60,end:100}],
+    xAxis:Object.assign(axStyle(),{type:'category',data:d,boundaryGap:false,
+      axisLabel:{color:OK.dim,fontSize:10,interval:Math.floor(d.length/10),formatter:fmtD}}),
+    yAxis:Object.assign(axStyle(),{type:'value',name:'非商业净多 / OI %',
+      nameTextStyle:{color:OK.dim,fontSize:10}}),
+    series:[{type:'line',data:v,showSymbol:false,lineStyle:{width:1.8,color:OK.pink},itemStyle:{color:OK.pink},
+      markLine:{silent:true,symbol:'none',lineStyle:{color:'#5b6577',type:'dashed',width:1},
+        label:{color:OK.dim,fontSize:10},data:[{yAxis:0},{yAxis:29,label:{formatter:'拥挤顶部区 ~29%'}}]},
+      markPoint:{data:marks,symbolSize:1}}]});
+  window.addEventListener('resize',function(){ch.resize();});})();
+</script>

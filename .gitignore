@@ -6,3 +6,8 @@
 
 # 超过 GitHub 100MB 单文件限制的原始导出（可用 scripts 中脚本从 USDA PSD API 重新生成）
 data/fundamentals/cotton/raw/psd_alldata.csv
+
+# Local scratch data and macOS metadata
+.DS_Store
+Temp/
+data/_tmp/

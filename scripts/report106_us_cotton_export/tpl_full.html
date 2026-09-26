@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美国棉花出口 · 往年同期对比（2026/27 年度第 7 周）</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+:root{
+  --bg:#14171c; --card:#1c2028; --card2:#232933; --line:#303642;
+  --tx:#e8eaee; --dim:#9aa3b2; --dim2:#7c8698;
+  --accent:#4c9be8; --warn:#e8a33d;
+  --oi-blue:#56B4E9; --oi-orange:#E69F00; --oi-sky:#8fd0f5;
+  --oi-pink:#CC79A7; --oi-verm:#F0793B; --oi-yellow:#F0E442; --oi-green:#3ddc97;
+  --up:#ff6b6b; --down:#3ddc97;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font:15px/1.75 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;}
+.wrap{max-width:1200px;margin:0 auto;padding:34px 22px 70px;}
+h1{font-size:26px;margin:0 0 8px;letter-spacing:.2px;line-height:1.4;}
+h2{font-size:20px;margin:36px 0 6px;padding-top:22px;border-top:1px solid var(--line);}
+h3{font-size:16.5px;margin:24px 0 8px;color:#dfe4ec;}
+p{margin:11px 0;font-size:14.2px;line-height:1.85;}
+ul{margin:10px 0;padding-left:22px;}
+ul li{margin:6px 0;font-size:13.4px;line-height:1.8;}
+a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+.lede{color:var(--dim);font-size:13px;margin:6px 0 18px;}
+.meta{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 8px;}
+.meta span{background:var(--card2);border:1px solid var(--line);border-radius:8px;
+  padding:5px 11px;font-size:11.8px;color:var(--dim);}
+.sec{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:20px 24px 12px;margin:18px 0;}
+.kicker{background:linear-gradient(90deg,#232933,#1c2028);border:1px solid var(--line);
+  border-left:4px solid var(--oi-orange);border-radius:10px;padding:15px 20px;margin:16px 0;
+  font-size:14.5px;line-height:1.8;}
+.kicker b{color:#fff;}
+.note{color:var(--dim);font-size:13px;border-left:3px solid var(--accent);
+  padding-left:13px;margin:14px 2px;line-height:1.75;}
+.note.b{border-left-color:var(--warn);}
+.warn{background:#2a2218;border:1px solid #5c4a22;border-radius:9px;padding:12px 15px;
+  font-size:13.2px;color:#e6d3ab;margin:14px 0;line-height:1.75;}
+.warn b{color:#ffd79a;}
+table{border-collapse:collapse;width:100%;margin:10px 0 16px;font-size:13.2px;}
+th{text-align:left;background:var(--card2);color:var(--dim);font-weight:600;
+  padding:9px 10px;border-bottom:2px solid var(--line);white-space:nowrap;font-size:12.6px;}
+td{padding:8px 10px;border-bottom:1px solid #2a2f3a;vertical-align:top;}
+tr:hover td{background:#20242e;}
+.num{font-variant-numeric:tabular-nums;text-align:right;}
+.up{color:var(--up);font-weight:600;}
+.down{color:var(--down);font-weight:600;}
+.dim{color:var(--dim2);}
+.sm{font-size:12.2px;}
+.chart{width:100%;height:440px;margin:8px 0 4px;}
+.chart.tall{height:530px;}
+.chart.short{height:360px;}
+.src{color:var(--dim2);font-size:11.6px;margin:2px 2px 16px;line-height:1.65;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(196px,1fr));gap:11px;margin:14px 0;}
+.card{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:13px 15px;}
+.card .k{color:var(--dim2);font-size:11.4px;letter-spacing:.3px;}
+.card .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;margin:3px 0 1px;}
+.card .d{font-size:11.6px;color:var(--dim);line-height:1.55;}
+.toc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 22px;margin:18px 0;font-size:13px;}
+.toc a{display:inline-block;margin:3px 14px 3px 0;color:var(--accent);}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+  color:var(--dim2);font-size:12px;line-height:1.8;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>美国棉花出口 · 往年同期对比</h1>
+<div class="lede">2026/27 市场年度第 7 周（周截止 2026-09-17）· USDA FAS Export Sales 周度报告口径</div>
+<div class="meta">
+  <span>市场年度 2026/27（2026-08-01 ～ 2027-07-31）</span>
+  <span>数据截至 2026-09-17 周报</span>
+  <span>抓取于 2026-09-25</span>
+  <span>单位：千包（running bales，1 千包 ≈ 224.3 吨）</span>
+  <span>来源：USDA FAS ESRQS / 归档周报 / PSD</span>
+</div>
+
+<div class="toc">
+  <b>目录：</b>
+  <a href="#s1">① 核心结论</a>
+  <a href="#s2">② 全国同期对比（第 7 周快照）</a>
+  <a href="#s3">③ 周度轨迹：12 大买家合计</a>
+  <a href="#s4">④ 分买家同期对比</a>
+  <a href="#s5">⑤ 年度出口长周期</a>
+  <a href="#s6">⑥ 最新一周官方摘要</a>
+  <a href="#s7">⑦ 口径与方法说明</a>
+</div>
+
+<h2 id="s1">① 核心结论</h2>
+<div class="kicker">
+  <b>1. 装运强、签约弱。</b>2026/27 前 7 周美国陆地棉累计出口 <b>121.8 万包（约 27.3 万吨）</b>，同比 +32.2%，但较近 5 年同期均值 <b>-7.4%</b>——这是低基数（2025/26、2024/25 同期均为 9 年低位）上的恢复，而非景气。同期总签约承诺 <b>473.5 万包（约 106.2 万吨）</b>，同比 +16.6%，较 5 年均值 <b>-20.6%</b>：装运靠前期订单支撑，<b>新增签约明显偏慢</b>。
+</div>
+<div class="kicker">
+  <b>2. 中国缺位是核心缺口。</b>当季对中国累计装运仅 <b>1.95 万包（约 0.44 万吨）</b>，5 年同期均值 30.2 万包（<b>-93.5%</b>）；中国在手订单 2.2 万包，几乎可以忽略。对比 2022/23 同期中国在手订单曾高达数百万包级别——中国已连续第二个年度基本退出美棉采购，当前美棉需求重心已转向 <b>越南（较 5 年均值 +84.8%）、印度（+371.5%）、巴基斯坦（+23.2%）</b> 等南亚/东南亚市场。
+</div>
+<div class="kicker">
+  <b>3. 在手订单偏薄，制约后续装运。</b>全美未装运在手订单 351.7 万包，较 5 年同期均值 <b>-24.3%</b>。以 USDA 出口预估 1155 万包计，当前出口进度 10.5%（去年同期 8.3%、2022/23 同期为 15.5%）——要完成年度目标，后续签约必须持续放量，需求端的任何风吹草动（尤其中国政策）都会直接冲击完成度。
+</div>
+<div class="kicker">
+  <b>4. 新年度已现雏形。</b>2027/28 年度本周新增签约 12.3 万包（其中墨西哥 12 万包）——墨西哥提前锁定下一年度，是传统"近水楼台"买家行为。
+</div>
+
+<h2 id="s2">② 全国同期对比：第 7 周快照（All Upland Cotton）</h2>
+<p>每年 9 月中下旬（市场年度第 7 周）的全国累计值横向对比。当季装运同比大增，但绝对水平仅排在近 6 年第 4 位；签约端低于除 2024/25、2025/26 以外的所有年份。</p>
+<div id="c1" class="chart"></div>
+<div class="src">数据：USDA FAS 归档周度出口销售报告（Complete Weekly Report，各年 9 月同期报告的 "SUMMARY - CUMULATIVE" 全国汇总行）。单位：千包（running bales）。总签约 = 累计出口 + 在手未装运。</div>
+
+<div class="cards">
+  <div class="card"><div class="k">累计出口（第 7 周）</div><div class="v">121.8 万包</div><div class="d">≈27.3 万吨 · 同比 <b class="up">+32.2%</b> · vs 5 年均值 <b class="down">-7.4%</b></div></div>
+  <div class="card"><div class="k">总签约承诺</div><div class="v">473.5 万包</div><div class="d">≈106.2 万吨 · 同比 <b class="up">+16.6%</b> · vs 5 年均值 <b class="down">-20.6%</b></div></div>
+  <div class="card"><div class="k">在手未装运订单</div><div class="v">351.7 万包</div><div class="d">vs 5 年均值 <b class="down">-24.3%</b> · 后续装运"燃料"偏薄</div></div>
+  <div class="card"><div class="k">出口进度（vs 预估 1155 万包）</div><div class="v">10.5%</div><div class="d">去年同期 8.3% · 2022/23 同期 15.5%</div></div>
+</div>
+
+<h2 id="s3">③ 周度轨迹：12 大买家合计（覆盖全国约 89%）</h2>
+<p>ESRQS 五年同期对比接口返回的本年度逐周累计值与近 5 个年度（2021/22～2025/26）同期全轨迹。粗看当季装运曲线并不弱，但<b>签约曲线（下图）在 8 月中旬后明显跑输 5 年均值带</b>——装运领先、签约滞后，正是"吃老本"的典型形态。</p>
+<div id="c2" class="chart tall"></div>
+<div class="src">数据：USDA FAS ESRQS Comparison5YearReport，All Upland Cotton（1404），12 个主要目的地合计：中国、越南、巴基斯坦、孟加拉、土耳其、墨西哥、印度、韩国、日本、印尼、泰国、洪都拉斯。单位：千包。当季（2026/27）仅绘至第 7 周；历史年度为完整轨迹。</div>
+
+<div id="c3" class="chart tall"></div>
+<div class="src">累计净销售（Accumulated Net Sales）= 当季已签约总量（含已装运），代表真实采购意愿。同期对比下，2026/27 签约累计较 5 年均值带缺口显著。</div>
+
+<h2 id="s4">④ 分买家同期对比：谁在买、谁缺席</h2>
+<p>当季累计出口 vs 去年同期 vs 5 年同期均值（12 大买家）。<b>越南一国的增量几乎抵消了中国的缺席</b>，印度、巴基斯坦、洪都拉斯、印尼、日本同比亦明显放量；孟加拉、土耳其、泰国则整体收缩。</p>
+<div id="c4" class="chart tall"></div>
+<div class="src">数据：USDA FAS ESRQS Comparison5YearReport，周截止 2026-09-17。单位：千包（running bales）。</div>
+
+<div class="sec">
+<h3>分买家明细（当季累计，千包）</h3>
+<table id="tbl"></table>
+<div class="src">注：vs 5 年均值 =（当季 ÷ 5 年同期均值 - 1）；去年同期若为 0 则不计算同比。在手订单为 Outstanding Sales（当季 vs 5 年均值）。</div>
+<div class="note b"><b>解读要点：</b>① 中国当季装运 1.95 万包，仅相当于 5 年均值 30.2 万包的 6.5%，且去年同期基数本身已极低（0.71 万包）；② 越南当季 39.7 万包，创近 6 年同期新高，同比 +20.2%；③ 印度 17.9 万包（去年同期 6.7 万包）主要为印度国内纱厂补库转向美棉；④ 土耳其 -43.3%、泰国 -40.7%、孟加拉 -25.3%——传统买家里只有南亚/东南亚部分国家在放量。</div>
+</div>
+
+<h2 id="s5">⑤ 年度出口长周期：放在 60 年视角下</h2>
+<p>美国棉花年度出口 1960–2026（USDA PSD 口径，千 480 磅包）。2011 年度（239 万包）与 2005/06（214 万包）为历史双峰；当前 2026/27 预估 1230 万包，处于 2000 年以来的中枢偏下位置——<b>同期周度数据的"恢复"发生在总量中枢下移的背景下</b>。</p>
+<div id="c5" class="chart tall"></div>
+<div class="src">数据：USDA PSD（本地缓存 usda_psd_cotton_major_countries.csv，1960–2026；2026 为 2026 年 9 月 WASDE/PSD 预估）。单位：千 480 磅包（1 包 = 0.2177 吨）。注意 PSD 年度出口与 ESR 周度加总存在口径差（480 磅统计包 vs running bale ×1.03，且含自有账户出口等调整）。</div>
+
+<h2 id="s6">⑥ 最新一周官方摘要（2026-09-17 周报）</h2>
+<div class="sec">
+<p><b>陆地棉：</b>当周 2026/27 净签约 23.05 万包，较前一周和前 4 周均值均明显上升。增量主要来自墨西哥（6.98 万包）、越南（5.12 万包，含自中国转售 0.45 万包）、巴基斯坦（4.45 万包，含自孟加拉转售 0.52 万包）、印度（3.33 万包）、洪都拉斯（1.88 万包）；中国当周净取消 0.47 万包。<b>当周出口装运 16.47 万包</b>，同比上周 +16%，较前 4 周均值 -5%，主要运往越南（4.90 万包）、印度（3.21 万包）、巴基斯坦（2.57 万包）、墨西哥（0.89 万包）、土耳其（0.88 万包）。</p>
+<p><b>皮马棉（Pima）：</b>当周净签约 0.48 万包（-43%），装运 1.17 万包，主要运往印度、埃及、巴基斯坦。另有自有账户出口 0.71 万包运往印度。</p>
+<p><b>2027/28 年度：</b>新增签约 12.3 万包（墨西哥 12.0 万包、巴基斯坦 0.25 万包、日本 0.05 万包）。</p>
+<div class="src">来源：USDA FAS Weekly Export Sales，week ending 2026-09-17（ESRQS WeeklyHighlightsData）。</div>
+</div>
+
+<h2 id="s7">⑦ 口径与方法说明</h2>
+<ul>
+  <li><b>市场年度：</b>棉花为 8 月 1 日 ～ 次年 7 月 31 日；"同期"= 各市场年度的第 7 周（9 月中下旬，周截止日相邻）。</li>
+  <li><b>单位换算：</b>ESR 发布 running bales（RB），480 磅统计包 = RB × 1.03；1 RB ≈ 0.2243 吨。千包（千 RB）≈ 224.3 吨。</li>
+  <li><b>ESR vs Census：</b>周度出口销售（签约/装运）为出口商自报数据，与月度海关口径（Census/GATS）存在时滞与调整差异；年度终值以 Census 为准。</li>
+  <li><b>12 大买家口径：</b>中国、越南、巴基斯坦、孟加拉、土耳其、墨西哥、印度、韩国、日本、印尼、泰国、洪都拉斯，当季合计 108.3 万包，约占全国累计出口（121.8 万包）的 88.9%。</li>
+  <li><b>5 年均值：</b>2021/22～2025/26 五个年度的同期值算术平均（ESRQS 原生返回）。</li>
+  <li><b>数据通道：</b>USDA FAS ESRQS 公开 API（匿名 token）；全国历史快照取自各年 9 月归档周报 PDF（Complete Weekly Report）的全国汇总行；年度序列取自本地 PSD 缓存。全部数据抓取于 2026-09-25。</li>
+</ul>
+
+<footer>
+  报告编号 106 · 生成于 2026-09-25 · 数据源：USDA FAS（ESRQS API / 归档周报 / PSD）· 本地脚本：scripts/report106_us_cotton_export/ · 原始数据：data/fundamentals/cotton/us_cotton_esr_20260925/
+</footer>
+
+</div>
+<script>
+const D = __DATA__;
+const MON = {1:'--oi-blue',2:'--oi-orange'};
+const C = {cur:'#F0793B', y1:'#56B4E9', y2:'#CC79A7', y3:'#3ddc97', y4:'#F0E442', y5:'#8fd0f5', avg:'#9aa3b2'};
+const dark = {
+  backgroundColor:'transparent', textStyle:{color:'#e8eaee'},
+  legend:{textStyle:{color:'#9aa3b2'},top:0},
+  tooltip:{backgroundColor:'#232933',borderColor:'#303642',textStyle:{color:'#e8eaee'},trigger:'axis'},
+  grid:{left:56,right:24,top:44,bottom:40},
+};
+const fmt = n => (n>=1000? (n/1000).toFixed(2)+'M' : Math.round(n).toLocaleString());
+const wkAxis = Array.from({length:D.NWEEK},(_,i)=>'W'+(i+1));
+
+/* c1 national snapshot */
+(function(){
+  const ch=echarts.init(document.getElementById('c1'));
+  const my=D.national.map(x=>x.my+' 周7');
+  ch.setOption({...dark,
+    tooltip:{...dark.tooltip,trigger:'axis',axisPointer:{type:'shadow'}},
+    legend:{...dark.legend},
+    xAxis:{type:'category',data:my,axisLabel:{color:'#9aa3b2'},axisLine:{lineStyle:{color:'#303642'}}},
+    yAxis:{type:'value',name:'千包',nameTextStyle:{color:'#7c8698'},axisLabel:{color:'#9aa3b2'},splitLine:{lineStyle:{color:'#232933'}}},
+    series:[
+      {name:'在手未装运',type:'bar',data:D.national.map(x=>x.out),itemStyle:{color:'#56B4E9'}},
+      {name:'累计出口',type:'bar',data:D.national.map(x=>x.exp),itemStyle:{color:'#F0793B'},label:{show:true,position:'top',color:'#e8eaee',fontSize:11,formatter:p=>fmt(p.value)}},
+      {name:'总签约承诺',type:'bar',data:D.national.map(x=>x.com),itemStyle:{color:'#43506b'}},
+    ]
+  });
+  window.addEventListener('resize',()=>ch.resize());
+})();
+
+/* helper for weekly series */
+function weekSeries(key,label,color,aggKey,dashed){
+  const s=D.agg[aggKey].slice(0,D.NWEEK).map(r=>r[key]);
+  const lim = key==='cur' ? D.L+1 : D.NWEEK;
+  return {name:label,type:'line',symbol:'none',smooth:false,
+    data:s.map((v,i)=> i<lim ? [i,v] : [i,null]),
+    itemStyle:{color},lineStyle:{color,width:key==='cur'?3.2:1.6,type:dashed?'dashed':'solid',opacity:key==='cur'?1:0.9},
+    z:key==='cur'?10:2, emphasis:{focus:'series'}};
+}
+/* c2 accumulated exports weekly */
+(function(){
+  const ch=echarts.init(document.getElementById('c2'));
+  ch.setOption({...dark,
+    tooltip:{...dark.tooltip,valueFormatter:v=>v==null?'-':v.toLocaleString()+' 千包'},
+    legend:{...dark.legend,top:0},
+    xAxis:{type:'category',data:wkAxis,name:'市场年度周数',nameTextStyle:{color:'#7c8698'},axisLabel:{color:'#9aa3b2',interval:3},axisLine:{lineStyle:{color:'#303642'}}},
+    yAxis:{type:'value',name:'累计装运 · 千包',nameTextStyle:{color:'#7c8698'},axisLabel:{color:'#9aa3b2'},splitLine:{lineStyle:{color:'#232933'}}},
+    series:[
+      weekSeries('cur','2026/27（当季）','#F0793B','accumulated_exports'),
+      weekSeries('y1','2025/26','#56B4E9','accumulated_exports'),
+      weekSeries('y2','2024/25','#CC79A7','accumulated_exports'),
+      weekSeries('y3','2023/24','#3ddc97','accumulated_exports'),
+      weekSeries('y4','2022/23','#F0E442','accumulated_exports'),
+      weekSeries('y5','2021/22','#8fd0f5','accumulated_exports'),
+      {name:'5 年均值带',type:'line',symbol:'none',data:D.agg.accumulated_exports.slice(0,D.NWEEK).map(r=>r.avg5),itemStyle:{color:'#9aa3b2'},lineStyle:{color:'#9aa3b2',width:2,type:'dashed'},z:3},
+    ]
+  });
+  window.addEventListener('resize',()=>ch.resize());
+})();
+
+/* c3 accumulated net sales weekly */
+(function(){
+  const ch=echarts.init(document.getElementById('c3'));
+  ch.setOption({...dark,
+    tooltip:{...dark.tooltip,valueFormatter:v=>v==null?'-':v.toLocaleString()+' 千包'},
+    legend:{...dark.legend,top:0},
+    xAxis:{type:'category',data:wkAxis,name:'市场年度周数',nameTextStyle:{color:'#7c8698'},axisLabel:{color:'#9aa3b2',interval:3},axisLine:{lineStyle:{color:'#303642'}}},
+    yAxis:{type:'value',name:'累计净签约 · 千包',nameTextStyle:{color:'#7c8698'},axisLabel:{color:'#9aa3b2'},splitLine:{lineStyle:{color:'#232933'}}},
+    series:[
+      weekSeries('cur','2026/27（当季）','#F0793B','accumulated_net_sales'),
+      weekSeries('y1','2025/26','#56B4E9','accumulated_net_sales'),
+      weekSeries('y2','2024/25','#CC79A7','accumulated_net_sales'),
+      weekSeries('y3','2023/24','#3ddc97','accumulated_net_sales'),
+      weekSeries('y4','2022/23','#F0E442','accumulated_net_sales'),
+      weekSeries('y5','2021/22','#8fd0f5','accumulated_net_sales'),
+      {name:'5 年均值带',type:'line',symbol:'none',data:D.agg.accumulated_net_sales.slice(0,D.NWEEK).map(r=>r.avg5),itemStyle:{color:'#9aa3b2'},lineStyle:{color:'#9aa3b2',width:2,type:'dashed'},z:3},
+    ]
+  });
+  window.addEventListener('resize',()=>ch.resize());
+})();
+
+/* c4 per-country grouped horizontal bars */
+(function(){
+  const ch=echarts.init(document.getElementById('c4'));
+  const names=D.rows.map(r=>r.name);
+  ch.setOption({...dark,
+    tooltip:{...dark.tooltip,trigger:'axis',axisPointer:{type:'shadow'},valueFormatter:v=>v.toLocaleString()+' 千包'},
+    legend:{...dark.legend,top:0},
+    grid:{left:110,right:40,top:40,bottom:36},
+    xAxis:{type:'value',name:'千包',nameTextStyle:{color:'#7c8698'},axisLabel:{color:'#9aa3b2'},splitLine:{lineStyle:{color:'#232933'}}},
+    yAxis:{type:'category',data:names,axisLabel:{color:'#e8eaee'},axisLine:{lineStyle:{color:'#303642'}}},
+    series:[
+      {name:'2026/27 当季',type:'bar',data:D.rows.map(r=>r.exp_cur),itemStyle:{color:'#F0793B'}},
+      {name:'去年同期（2025/26）',type:'bar',data:D.rows.map(r=>r.exp_y1),itemStyle:{color:'#56B4E9'}},
+      {name:'5 年同期均值',type:'bar',data:D.rows.map(r=>r.exp_avg5),itemStyle:{color:'#43506b'}},
+    ]
+  });
+  window.addEventListener('resize',()=>ch.resize());
+})();
+
+/* c5 PSD annual exports */
+(function(){
+  const ch=echarts.init(document.getElementById('c5'));
+  const yrs=D.psd.map(r=>String(r[0])+(r[0]>=2020?'/'+String(r[0]+1).slice(2):''));
+  const vals=D.psd.map(r=>r[1]);
+  const zone=[{value:12300,itemStyle:{color:'#F0793B'}}];
+  ch.setOption({...dark,
+    tooltip:{...dark.tooltip,axisPointer:{type:'shadow'}},
+    xAxis:{type:'category',data:yrs,axisLabel:{color:'#9aa3b2',interval:9,rotate:0},axisLine:{lineStyle:{color:'#303642'}}},
+    yAxis:{type:'value',name:'千 480 磅包',nameTextStyle:{color:'#7c8698'},axisLabel:{color:'#9aa3b2'},splitLine:{lineStyle:{color:'#232933'}}},
+    dataZoom:[{type:'inside',start:55,end:100},{type:'slider',height:18,bottom:2,borderColor:'#303642',textStyle:{color:'#7c8698'}}],
+    series:[
+      {name:'棉花年度出口',type:'bar',data:vals,itemStyle:{color:'#56B4E9'},
+       markPoint:{data:[{type:'max',name:'峰值'}],symbolSize:46,itemStyle:{color:'#E69F00'},label:{color:'#14171c',fontSize:10,formatter:p=>p.value}},
+       markLine:{silent:true,symbol:'none',lineStyle:{color:'#F0793B',type:'dashed'},label:{color:'#F0793B',formatter:'2026/27 预估 1230 万包'},data:[{yAxis:12300}]}}
+    ]
+  });
+  window.addEventListener('resize',()=>ch.resize());
+})();
+
+/* table */
+(function(){
+  const rows=D.rows;
+  let h='<thead><tr><th>目的地</th><th class="num">当季累计装运</th><th class="num">去年同期</th><th class="num">5 年均值</th><th class="num">vs 5 年均值</th><th class="num">当季净签约</th><th class="num">签约 vs 5 年均值</th><th class="num">在手订单 vs 5 年均值</th></tr></thead><tbody>';
+  for(const r of rows){
+    const cls=v=>v>0?'up':'down';
+    h+=`<tr><td>${r.name}</td><td class="num">${r.exp_cur.toLocaleString()}</td><td class="num">${r.exp_y1.toLocaleString()}</td><td class="num">${r.exp_avg5.toLocaleString()}</td><td class="num ${cls(r.exp_vs_avg)}">${r.exp_vs_avg==null?'—':(r.exp_vs_avg>0?'+':'')+r.exp_vs_avg+'%'}</td><td class="num">${r.ns_cur.toLocaleString()}</td><td class="num ${cls(r.ns_vs_avg)}">${r.ns_vs_avg==null?'—':(r.ns_vs_avg>0?'+':'')+r.ns_vs_avg+'%'}</td><td class="num ${r.out_avg5>0?cls(Math.round((r.out_cur/r.out_avg5-1)*1000)/10):'dim'}">${r.out_avg5>0?((r.out_cur/r.out_avg5-1)>0?'+':'')+Math.round((r.out_cur/r.out_avg5-1)*1000)/10+'%':'—'}</td></tr>`;
+  }
+  const t=rows.reduce((a,r)=>({exp_cur:a.exp_cur+r.exp_cur,exp_y1:a.exp_y1+r.exp_y1,exp_avg5:a.exp_avg5+r.exp_avg5,ns_cur:a.ns_cur+r.ns_cur,ns_avg5:a.ns_avg5+r.ns_avg5}),{exp_cur:0,exp_y1:0,exp_avg5:0,ns_cur:0,ns_avg5:0});
+  h+=`<tr style="border-top:2px solid var(--line)"><td><b>12 国合计</b></td><td class="num"><b>${t.exp_cur.toLocaleString()}</b></td><td class="num">${t.exp_y1.toLocaleString()}</td><td class="num">${Math.round(t.exp_avg5).toLocaleString()}</td><td class="num ${t.exp_cur/t.exp_avg5>1?'up':'down'}">${((t.exp_cur/t.exp_avg5-1)*100).toFixed(1)}%</td><td class="num"><b>${t.ns_cur.toLocaleString()}</b></td><td class="num ${t.ns_cur/t.ns_avg5>1?'up':'down'}">${((t.ns_cur/t.ns_avg5-1)*100).toFixed(1)}%</td><td class="num dim">—</td></tr></tbody>`;
+  document.getElementById('tbl').innerHTML=h;
+})();
+</script>
+</body>
+</html>

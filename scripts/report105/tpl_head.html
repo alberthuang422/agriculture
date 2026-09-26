@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>棉花牛市全周期复盘：1988–2026 · 十一轮行情的供需、库存与持仓解剖</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+:root{
+  --bg:#14171c; --card:#1c2028; --card2:#232933; --line:#303642;
+  --tx:#e8eaee; --dim:#9aa3b2; --dim2:#7c8698;
+  --accent:#4c9be8; --warn:#e8a33d;
+  --oi-blue:#56B4E9; --oi-orange:#E69F00; --oi-sky:#8fd0f5;
+  --oi-pink:#CC79A7; --oi-verm:#F0793B; --oi-yellow:#F0E442;
+  --up:#ff6b6b; --down:#3ddc97;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--tx);
+  font:15px/1.75 -apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;}
+.wrap{max-width:1200px;margin:0 auto;padding:34px 22px 70px;}
+h1{font-size:26px;margin:0 0 8px;letter-spacing:.2px;line-height:1.4;}
+h2{font-size:20px;margin:36px 0 6px;padding-top:22px;border-top:1px solid var(--line);}
+h3{font-size:16.5px;margin:24px 0 8px;color:#dfe4ec;}
+p{margin:11px 0;font-size:14.2px;line-height:1.85;}
+ol{margin:10px 0;padding-left:22px;}
+ol li{margin:6px 0;font-size:13.4px;line-height:1.8;}
+a{color:var(--accent);text-decoration:none;}a:hover{text-decoration:underline;}
+h4{font-size:13.5px;margin:18px 0 6px;color:var(--dim);font-weight:600;letter-spacing:.5px;}
+.lede{color:var(--dim);font-size:13px;margin:6px 0 18px;}
+.meta{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 8px;}
+.meta span{background:var(--card2);border:1px solid var(--line);border-radius:8px;
+  padding:5px 11px;font-size:11.8px;color:var(--dim);}
+.sec{background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:20px 24px 12px;margin:18px 0;}
+.kicker{background:linear-gradient(90deg,#232933,#1c2028);border:1px solid var(--line);
+  border-left:4px solid var(--oi-orange);border-radius:10px;padding:15px 20px;margin:16px 0;
+  font-size:14.5px;line-height:1.8;}
+.kicker b{color:#fff;}
+.note{color:var(--dim);font-size:13px;border-left:3px solid var(--accent);
+  padding-left:13px;margin:14px 2px;line-height:1.75;}
+.note.b{border-left-color:var(--warn);}
+.note.k{border-left-color:var(--oi-pink);}
+.warn{background:#2a2218;border:1px solid #5c4a22;border-radius:9px;padding:12px 15px;
+  font-size:13.2px;color:#e6d3ab;margin:14px 0;line-height:1.75;}
+.warn b{color:#ffd79a;}
+table{border-collapse:collapse;width:100%;margin:10px 0 16px;font-size:13.2px;}
+th{text-align:left;background:var(--card2);color:var(--dim);font-weight:600;
+  padding:9px 10px;border-bottom:2px solid var(--line);white-space:nowrap;font-size:12.6px;}
+td{padding:8px 10px;border-bottom:1px solid #2a2f3a;vertical-align:top;}
+tr:hover td{background:#20242e;}
+.num{font-variant-numeric:tabular-nums;text-align:right;}
+.up{color:var(--up);font-weight:600;}
+.down{color:var(--down);font-weight:600;}
+.dim{color:var(--dim2);}
+.sm{font-size:12.2px;}
+.chart{width:100%;height:440px;margin:8px 0 4px;}
+.chart.tall{height:530px;}
+.chart.short{height:340px;}
+.src{color:var(--dim2);font-size:11.6px;margin:2px 2px 16px;line-height:1.65;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:920px){.grid2{grid-template-columns:1fr;}}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(176px,1fr));gap:11px;margin:14px 0;}
+.card{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:13px 15px;}
+.card .k{color:var(--dim2);font-size:11.4px;letter-spacing:.3px;}
+.card .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;margin:3px 0 1px;}
+.card .d{font-size:11.6px;color:var(--dim);line-height:1.55;}
+.tl{position:relative;margin:14px 0 18px;padding-left:26px;}
+.tl:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line);}
+.tl .ev{position:relative;margin:0 0 16px;}
+.tl .ev:before{content:"";position:absolute;left:-24px;top:7px;width:10px;height:10px;
+  border-radius:50%;background:var(--oi-blue);border:2px solid var(--bg);}
+.tl .ev.hot:before{background:var(--oi-orange);}
+.tl .ev.peak:before{background:var(--oi-verm);}
+.tl .ev.bad:before{background:var(--oi-pink);}
+.tl .dt{font-size:11.8px;color:var(--dim2);font-variant-numeric:tabular-nums;letter-spacing:.4px;}
+.tl .ti{font-size:14.3px;font-weight:600;margin:1px 0 3px;color:#eef1f6;}
+.tl .tb{font-size:13px;color:var(--dim);line-height:1.72;}
+.tl .tb b{color:#dfe4ec;font-weight:600;}
+.tag{display:inline-block;padding:1px 8px;border-radius:11px;font-size:11.2px;
+  border:1px solid var(--line);background:var(--card2);color:var(--dim);margin-left:6px;
+  white-space:nowrap;}
+.tag.b{border-color:#5c4a22;background:#2a2218;color:#ffd79a;}
+.tag.r{border-color:#5c2b2b;background:#2a1c1c;color:#ffa8a8;}
+.tag.g{border-color:#2b4a5c;background:#1c2530;color:#9fd4f0;}
+ul{margin:8px 0 14px;padding-left:22px;}
+li{margin:6px 0;}
+code{background:var(--card2);border:1px solid var(--line);border-radius:4px;
+  padding:1px 5px;font-size:12.2px;color:#c9d6e8;}
+footer{color:var(--dim2);font-size:11.6px;margin-top:36px;text-align:center;line-height:1.85;}
+.hl{background:#2a2218;border-radius:3px;padding:0 4px;color:#ffd79a;}
+.hl2{background:#1c2530;border-radius:3px;padding:0 4px;color:#9fd4f0;}
+.hl3{background:#2a1c1c;border-radius:3px;padding:0 4px;color:#ffb3a0;}
+.toc{background:var(--card2);border:1px solid var(--line);border-radius:10px;
+  padding:14px 20px;margin:16px 0;font-size:13px;line-height:2;}
+.toc a{color:var(--dim);}
+.toc a:hover{color:var(--accent);}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:14px 0;
+  border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.vs>div{padding:14px 18px;}
+.vs>div:first-child{border-right:1px solid var(--line);background:#1e222a;}
+.vs>div:last-child{background:#1a1e26;}
+.vs h5{margin:0 0 8px;font-size:13.5px;color:var(--dim);font-weight:600;letter-spacing:.4px;}
+.vs ul{margin:0;padding-left:19px;font-size:13px;}
+.vs li{margin:5px 0;}
+@media(max-width:820px){.vs{grid-template-columns:1fr;}
+  .vs>div:first-child{border-right:none;border-bottom:1px solid var(--line);}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>棉花牛市全周期复盘：1988–2026</h1>
+<div class="lede">十一轮行情的供需缺口、库存分层、vintage 修订与持仓行为解剖 · 对标 102 号白糖牛市复盘方法论 · 姊妹篇：104 号《棉花历史牛市对标》</div>
+<div class="meta">
+  <span>报告编号 105</span><span>2026-09-25</span>
+  <span>价格：ICE Cotton No.2 连续周线（美分/磅，1988-10 ~ 2026-09）</span>
+  <span>持仓：CFTC Legacy Futures-Only 非商业（1995-03 ~ 2026-09）</span>
+  <span>供需：USDA PSD（1000 × 480 lb 包，Aug–Jul 市场年）</span>
+</div>
+
+<div class="kicker">
+<b>一句话结论：</b>棉花的牛市从来不只是"减产"的故事，而是<b>库存放在谁手里</b>的故事。1988 年以来的十一轮牛市可以归成三类——<b>缺口牛</b>（真实产量崩塌，如 2008-11、2020-22，涨幅 200%~500%）、<b>去库存牛</b>（中国政策口袋向外转移，如 2016-18，慢牛 77%）、<b>脉冲牛</b>（逼仓/天气，如 1995、2022，涨幅 30~45%，数周内回吐）。本轮 2025-26 行情（+54.2%）在缺口幅度上排历史第五（−645 万包）、剥中国库消比 43.4% 为近十年最低（已逼近 2009 超级牛起点的 42.3%）、<b>出口国库存/出口覆盖率 28.7% 为 1960 年以来历史最低</b>，但全球 SU 56.8% 仍受中国约 3,470 万包国储/社会库存压制——性质上更接近 <b>2016-18 去库存牛</b>，而非 2010-11 挤仓牛。持仓结构当前呈<b>趋势顶特征</b>（净多峰与价峰仅隔 6 天、价峰时净多=峰值 100%，与 2001-03、2004-08 同款），但净多/OI 24.5%（82.9 百分位）尚未到 2022-05 顶部的 29.7%（92.8 百分位）——<b>趋势未证伪，拥挤度未极致，真正的顶部信号还没出现</b>。
+</div>
+
+<div class="toc">
+<b>目录</b><br>
+一、<a href="#s1">十一轮牛市速览对照</a> ·
+二、<a href="#s2">全史路径与三类牛市</a> ·
+三、<a href="#s3">逐轮复盘（1992–2026）</a> ·
+四、<a href="#s4">缺口从哪来：国别分解</a> ·
+五、<a href="#s5">瓶颈分类：可逆性决定行情级别</a> ·
+六、<a href="#s6">库存分层：中国的政策口袋</a> ·
+七、<a href="#s7">vintage 修订：当时市场看到了什么</a> ·
+八、<a href="#s8">持仓行为：趋势顶与背离顶</a> ·
+九、<a href="#s9">顶部与崩塌机制对照</a> ·
+十、<a href="#s10">本轮 2025-26 解剖与跟踪清单</a> ·
+十一、<a href="#s11">方法论、口径与局限</a>
+</div>
+
+<h2 id="s1">一、十一轮牛市速览对照</h2>
+<p>用 ZigZag（22% 反转阈值）扫描 1988-10 ~ 2026-09 共 1,981 周的 ICE 棉花连续周线，识别出 11 轮涨幅超过 30% 的上行波段。下表是全样本档案：<b>底部/顶部按周线极值，涨幅按盘中极值与收盘价双口径，"顶后路径"用收盘价计算</b>。</p>
+
+<table>
+<thead><tr><th>轮次</th><th>底（周低）</th><th>顶（周高）</th><th class="num">盘中涨幅</th><th class="num">收盘涨幅</th><th class="num">历时</th><th class="num">顶后4周</th><th class="num">顶后52周</th><th>顶部类型</th><th>缺口性质</th></tr></thead>
+<tbody>
+<tr><td>1992-94 复苏牛</td><td>1992-02-03 · 52.65</td><td>1994-05-16 · 84.65</td><td class="num up">+60.8%</td><td class="num">+53.6%</td><td class="num">119周</td><td class="num down">−8.6%</td><td class="num up">+23.9%</td><td>—（无持仓数据）</td><td>中/巴减产+全球低库存</td></tr>
+<tr><td>1994-95 缺口牛</td><td>1994-08-15 · 65.90</td><td>1995-06-05 · 114.65</td><td class="num up">+74.0%</td><td class="num">+66.2%</td><td class="num">42周</td><td class="num down"><b>−31.9%</b></td><td class="num down">−26.7%</td><td>—（无持仓数据）</td><td>多国减产（美旱+巴叶卷病毒）</td></tr>
+<tr><td>1995 逼空脉冲</td><td>1995-07-31 · 70.76</td><td>1995-09-18 · 94.65</td><td class="num up">+33.8%</td><td class="num">+26.8%</td><td class="num">7周</td><td class="num down">−8.9%</td><td class="num down">−17.8%</td><td>滞后13天 · 净多69%</td><td>10月合约交割挤仓</td></tr>
+<tr><td>2001-03 复苏牛</td><td>2001-10-22 · 28.20</td><td>2003-10-27 · 84.80</td><td class="num up"><b>+200.7%</b></td><td class="num">+165.9%</td><td class="num">105周</td><td class="num down">−8.7%</td><td class="num down">−41.4%</td><td><b>滞后6天 · 净多100%</b></td><td>中国入世需求爆发+美旱</td></tr>
+<tr><td>2004-08 商品牛</td><td>2004-12-06 · 41.72</td><td>2008-03-03 · 92.86</td><td class="num up">+122.6%</td><td class="num">+92.1%</td><td class="num">169周</td><td class="num down">−13.2%</td><td class="num down">−48.9%</td><td><b>滞后6天 · 净多100%</b></td><td>商品超级周期+美/澳连年干旱</td></tr>
+<tr><td>2008-11 超级牛</td><td>2008-11-10 · 36.70</td><td>2011-03-07 · <b>219.70</b></td><td class="num up"><b>+498.6%</b></td><td class="num">+382.1%</td><td class="num">121周</td><td class="num">−1.0%</td><td class="num down"><b>−56.7%</b></td><td>滞后174天 · 净多52%</td><td>库存耗尽+巴基斯坦洪水+中国抢收</td></tr>
+<tr><td>2012-14 干旱牛</td><td>2012-06-04 · 66.10</td><td>2014-03-24 · 97.35</td><td class="num up">+47.3%</td><td class="num">+28.6%</td><td class="num">94周</td><td class="num">−0.5%</td><td class="num down">−32.2%</td><td>滞后370天 · 净多73%</td><td>德州大旱+美棉面积被玉米挤压</td></tr>
+<tr><td>2016-18 去库存牛</td><td>2016-02-29 · 54.53</td><td>2018-06-11 · 96.50</td><td class="num up">+77.0%</td><td class="num">+57.3%</td><td class="num">119周</td><td class="num down">−2.2%</td><td class="num down">−26.8%</td><td>滞后461天 · 净多96%（双顶）</td><td>中国抛储备+全球再平衡</td></tr>
+<tr><td>2020-22 疫情牛</td><td>2020-03-30 · 48.35</td><td>2022-05-02 · 155.95</td><td class="num up"><b>+222.5%</b></td><td class="num">+181.7%</td><td class="num">109周</td><td class="num down">−3.8%</td><td class="num down">−41.5%</td><td>滞后209天 · 净多64%</td><td>供应链断裂+美旱+2022挤仓</td></tr>
+<tr><td>2022 干旱脉冲</td><td>2022-07-11 · 82.54</td><td>2022-08-15 · 119.59</td><td class="num up">+44.9%</td><td class="num">+30.8%</td><td class="num">5周</td><td class="num down">−14.4%</td><td class="num down">−27.9%</td><td>滞后34天 · 净多85%</td><td>德州史上最旱（弃收率31%）</td></tr>
+<tr><td><b>2025-26 本轮</b></td><td>2025-03-31 · 60.80</td><td>2026-08-31 · 93.74</td><td class="num up"><b>+54.2%</b></td><td class="num">+36.5%</td><td class="num">74周</td><td class="num down">−3.8%</td><td class="num dim">进行中</td><td><b>滞后6天 · 净多100%</b></td><td>美棉单产下修+全球缺口第五大</td></tr>
+</tbody>
+</table>
+<div class="src">价格：ICE Cotton No.2 连续周线（本地 ct1_weekly_1988_2026.csv，1,981 周）；持仓：CFTC Legacy Futures-Only（1995-03 起）。"顶部类型"= 非商业净多峰与价峰的时滞及价峰时净多相对峰值的比例，详见第八章。本轮顶后 52 周未满。</div>
+
+<div class="cards">
+<div class="card"><div class="k">全史最高价（盘中）</div><div class="v" style="color:var(--oi-verm)">219.70</div><div class="d">2011-03-07 · 2008-11 超级牛顶 · 逼仓行情</div></div>
+<div class="card"><div class="k">当前价（2026-09-21 周收）</div><div class="v">83.16</div><div class="d">距本轮顶 93.74 回撤 −11.3%，距 2011 顶 −62%</div></div>
+<div class="card"><div class="k">当前非商业净多</div><div class="v" style="color:var(--oi-pink)">133,147</div><div class="d">2026-09-01 · 绝对值为 31 年序列新高</div></div>
+<div class="card"><div class="k">净多/OI 拥挤度</div><div class="v" style="color:var(--warn)">24.5% <span style="font-size:13px">/ 82.9 pct</span></div><div class="d">低于 2022-05 顶（29.7% / 92.8 pct），仍有扩张空间</div></div>
+<div class="card"><div class="k">MY2026 全球缺口</div><div class="v" style="color:var(--up)">−645 万包</div><div class="d">历史第五大（USDA 口径）；ICAC 方向相反（+30 万 t 盈余）</div></div>
+<div class="card"><div class="k">剥中国库消比 R1</div><div class="v" style="color:var(--up)">43.4%</div><div class="d">近十年最低，逼近 2009 超级牛起点（42.3%）；中国库存占全球 ~50%</div></div>
+<div class="card"><div class="k">出口国库存覆盖率 big3</div><div class="v" style="color:var(--up)">28.7% <span style="font-size:13px">历史最低</span></div><div class="d">美巴澳库存/其出口量，1960 年以来最低（前低 2020 年 28.9%）</div></div>
+</div>
+
+<h2 id="s2">二、全史路径：1988–2026 与三类牛市</h2>
+<p>下图为 ICE 棉花连续周收盘全史，阴影带标出 11 轮牛市区间。棉花价格的长期形态与白糖不同：<b>没有"十年一遇"的规律，只有"库存周期 + 政策干预"的叠加</b>。1990 年代是天气与减产主导的高波动时代；2001-2011 是中国需求崛起 + 全球库存长期下降的十年大牛市（28 美分 → 219 美分）；2011 年后中国收储/抛储成为价格波动的"减震器兼放大器"；2020 年后疫情与极端天气重新接管定价权。</p>
+<div id="c0" class="chart tall"></div>
+<div class="src">阴影区间为 ZigZag(22%) 识别 + 人工校准的 11 轮牛市；纵轴对数刻度。</div>
+
+<p>把 11 轮牛市按"距底部周数"归一化（底部=100）叠在同一坐标系里，形态差异一目了然：<b>缺口牛是陡峭的抛物线（2008-11、2020-22），去库存牛是缓坡（2016-18），脉冲牛是尖刺（1995、2022），本轮目前走在 2016-18 与 2001-03 之间的斜率带上</b>。</p>
+<div id="c1" class="chart tall"></div>
+<div class="src">横轴：距底部周数；纵轴：收盘价指数（各轮底部收盘=100）。虚线后为顶后路径（至顶后 52 周）。</div>
+
+<div class="vs">
+<div>
+<h5>缺口牛（真实供给崩塌）—— 涨幅 200%~500%</h5>
+<ul>
+<li><b>2008-11</b>：MY2009 缺口 −1,662 万包（历史第二大），SU 36.5%，叠加巴基斯坦洪水、印度出口限制、中国 19,800 元/吨抢收、ICE 交割库存 14 万包 → <b>+498.6%</b></li>
+<li><b>2020-22</b>：MY2020 缺口 −1,240 万包（第三大），供应链断裂 + 美棉旱 + 2022 年 5 月挤仓 → <b>+222.5%</b></li>
+<li><b>2001-03</b>：MY2002 缺口 −551 万包 + 中国入世需求爆发 → <b>+200.7%</b></li>
+<li>共同点：解除瓶颈需要一个完整种植季以上（12-24 个月），行情走"证据累积"式主升浪</li>
+</ul>
+</div>
+<div>
+<h5>去库存牛（政策口袋转移）—— 慢牛 50%~80%</h5>
+<ul>
+<li><b>2016-18</b>：中国三年抛储 839 万吨，全球账面库存下降但实物不缺 → <b>+77.0%</b>，历时 119 周，顶后回撤最温和（4 周 −2.2%）</li>
+<li><b>2025-26 本轮（性质判断）</b>：中国库存 ~3,470 万包占全球 50%，USDA 全球缺口 −645 万包；剥中国后 R1 SU 43.4% 为近十年最低、出口国 big3 库存覆盖率 28.7% 为 1960 年以来最低 → <b>+54.2%（进行中）</b></li>
+<li>共同点：天花板由政策库存的释放节奏决定，涨势"斜率低、持续长、顶部钝"</li>
+</ul>
+<h5>脉冲牛（逼仓/天气）—— 数周回吐</h5>
+<ul>
+<li><b>1995-09</b> 交割挤仓（+33.8%，7 周）；<b>2022-08</b> 德州大旱（+44.9%，5 周，顶后 4 周 −14.4%）</li>
+<li>共同点：瓶颈是物流/仓单而非实物，解除以"周"计</li>
+</ul>
+</div>
+</div>
+
+<div class="note b"><b>对照白糖 102 号报告的核心发现：</b>白糖两轮牛市（2015/16 真减产 +62%、2023 物流挤兑 +45%）的级别差异由"瓶颈可逆性"决定。棉花样本把这个规律放大到 11 轮：<b>顶后 4 周回撤幅度与瓶颈类型严格对应</b>——缺口牛顶部钝化（2008-11 顶后 4 周仅 −1.0%，真正崩塌在 8 周后 −29%），脉冲牛顶部尖锐（1994-95 顶后 4 周 −31.9%、2022 顶后 4 周 −14.4%）。去库存牛（2016-18）顶后 4 周仅 −2.2%，是全部 11 轮中最"温柔"的顶部——因为瓶颈（政策库存）从未真正消失，只是暂停释放。</div>
+
+<h2 id="s3">三、逐轮复盘</h2>
+<p>以下按时间顺序解剖每一轮。1990 年代三轮因 CFTC 数据始于 1995-03 只能部分对齐持仓；2001 年以后的六轮给出完整的"价格 × 持仓"双窗图。<b>每轮固定回答四个问题：前置条件是什么、缺口在哪国、瓶颈是什么性质、顶是怎么形成的。</b></p>
+
+<h3>3.1 1992-94 复苏牛：全球库存周期的谷底反弹（+60.8%）</h3>
+<p>1991-92 年强厄尔尼诺（ONI 峰值 +1.7）重创主产国：<b>中国产量从 MY1991 的 2,610 万包跌至 MY1992 的 1,720 万包</b>（棉铃虫大爆发 + 面积调减，−890 万包为全表最大单国产量降幅之一），巴基斯坦叶卷病毒疫情从 1,000 万包跌至 628 万包（−372 万包），美国亦减产 148 万包。MY1993 全球产不足需 −350 万包，<b>SU 降至 33.3%（1960 年以来第五低）</b>。价格从 1992-02 的 52.65 磨到 1994-05 的 84.65，历时 119 周，是典型的"低库存 + 减产证据累积"慢牛。顶后 4 周仅 −8.6%，52 周后反而 +23.9%——因为 1994-95 年更大的缺口正在路上。</p>
+
+<h3>3.2 1994-95 缺口牛：顶后四周 −31.9% 的经典崩塌（+74.0%）</h3>
+<p>1994 年（又一个厄尔尼诺年）美国德州大旱 + 中国面积继续下滑，MY1994 全球 SU 38.9%、剥中国 R1 仅 33.7%（全史第四低，仅次于 1989/1983/1990）。旧作库存耗尽的恐慌把价格在 42 周内从 65.90 推到 114.65。<b>顶部是教科书式的"新作确认顶"</b>：1995 年 6-8 月，巴基斯坦产量恢复（628→827 万包）、美国新作面积大增、中国增产 200 万包——供给响应需要 12 个月，而价格顶部出现在证据确认的那一刻。顶后 4 周 −31.9%、8 周 −35.4%，11 轮中崩塌最快。缺口牛的宿命：<b>高价本身就是解药，只是药效滞后一年</b>。</p>
+
+<h3>3.3 1995 逼空脉冲：十月合约交割挤仓（+33.8%，7 周）</h3>
+<p>1995 年 7-9 月，ICE 十月合约可交割仓单紧张引发挤仓，价格从 70.76 冲至 94.65。CFTC 数据首次可用：非商业净多峰 6,632 手出现在价峰前 13 天（净多为峰值的 69.3%），净多/OI 仅 5.6%（44.5 百分位）——<b>持仓根本不拥挤，纯实物交割博弈</b>。9 月 Sparks 报告确认美棉创纪录丰产（2,152 万包）后行情终结，十月合约到期跌至 82.42。这是"物流性瓶颈（仓单）解除以周计"的第一个标本。</p>
+
+<h3>3.4 2001-03 复苏牛：中国入世重估全球需求（+200.7%）</h3>
+<p>底部 28.20（2001-10-22）是名义历史最低区：9/11 冲击 + 中国入世前的观望情绪把非商业空头压到 21,897 手（净空 −15,546 手）。随后两件事重估了一切：①<b>中国 2001-12 入世，纺织出口爆发</b>，MY2002 中国产量 2,380 万包 vs 消费缺口靠进口弥补（进口量从 ~50 万 t 级跳到 200 万 t 级）；②2002-03 年美国连续干旱（MY2002 美产 1,826 万包，较上年 −205 万包），MY2002 全球缺口 −551 万包（当时历史前五大）、SU 49.2%。价格两年内 28.20→84.80。持仓对齐堪称完美：<b>净多峰 42,991 手（2003-10-21）与价峰（2003-10-27）只差 6 天，价峰时净多=峰值 100%</b>——资金与价格同步离场，趋势顶。顶后 52 周 −41.4%，因为 MY2003/04 全球大丰产（中国 +650、美国 +500、印度 +500、巴基斯坦 +329 万包，四国同增为全表仅有）。</p>
+<div id="c2" class="chart tall"></div>
+<div class="src">上：ICE 棉花周收盘（美分/磅）；下：CFTC 非商业净/多/空（手）。窗口=底前 78 周 ~ 顶后 78 周。</div>
+
+<h3>3.5 2004-08 商品牛：美元周期 + 连年干旱（+122.6%）</h3>
+<p>商品超级周期背景下的棉花腿：美元贬值、油价推升成本、中国纺纱产能持续扩张。供给端雪上加霜——<b>美棉 MY2004→MY2007 产量 2,325→1,283 万包（三年 −45%）</b>，澳大利亚千年干旱从 300 万包跌到 62.5 万包（−79%）。历时 169 周为 11 轮最长，但盘中涨幅只有 +122.6%，斜率温和。持仓结构与 2001-03 完全同款：<b>净多峰 99,866 手与价峰只差 6 天、价峰时净多=100%</b>，趋势顶。顶后 4 周 −13.2%，52 周 −48.9%——不是牛市逻辑自然终结，而是被 2008 金融危机的需求崩塌拦腰斩断（2008-11 月价格从 92 跌到 36.70，为下一轮超级牛让出起点）。</p>
+
+<h3>3.6 2008-11 超级牛：库存耗尽 + 政策抢收 + 逼仓的三重奏（+498.6%，全史之巅）</h3>
+<p>11 轮中最猛烈的一轮，也是理解"缺口牛"极限形态的标本。三段式推进：</p>
+<div class="tl">
+<div class="ev"><div class="dt">2008-11-10</div><div class="ti">底 36.70：金融危机恐慌底</div><div class="tb">雷曼倒闭后商品全线崩塌，棉花跌至 36.70。但 MY2008/09 全球正在走出 <b>−1,662 万包的历史第二大缺口</b>（SU 36.5%，1960 年以来第七低），中国 10 月启动 12,600-13,800 元/吨救灾性收储 272 万吨——政策底与供需底同时出现。</div></div>
+<div class="ev hot"><div class="dt">2009-2010</div><div class="ti">第一段主升：复苏 + 缺口证据累积（36.7→90 区间）</div><div class="tb">MY2009/10 继续缺口 −219 万包、SU 37.3%。中国 2010 年纺纱需求爆发，棉价与纱价螺旋上行。<b>净多峰 84,409 手出现在 2010-09-14</b>——注意，这距离最终价峰还有 174 天。</div></div>
+<div class="ev hot"><div class="dt">2010-08 ~ 2010-12</div><div class="ti">第二段加速：巴基斯坦洪水 + 印度出口限制 + 中国抢收</div><div class="tb">2010 年 7-8 月巴基斯坦特大洪水损棉约 200 万包；印度 2010 年两度限制出口（先禁后配额）；中国新棉收购价冲到 19,800 元/吨以上（9 月启动临时收储预期），内外价差倒挂。全球 SU 从 MY2009 的 36.5%（1960 年以来第七低）勉强回升到 MY2010 的 37.3%，但<b>出口国 big3（美巴澳）库存/出口覆盖率仅 34.2%→36.4%</b>——即三大出口国的库存只够覆盖自己约三分之一的出口量，出口市场实质性无缓冲。</div></div>
+<div class="ev peak"><div class="dt">2011-02 ~ 2011-03-07</div><div class="ti">第三段逼仓：148→219.70，抛物线终结</div><div class="tb">ICE 可销售库存 2011 年 2 月仅约 <b>14 万包</b>（正常年份数百万包），近月合约挤仓，3-4 月合约对 12 月升水拉爆。2011-03-07 盘中 <b>219.70 美分</b>——全史最高价，至今未被挑战（2022-05 顶为 155.95）。</div></div>
+<div class="ev bad"><div class="dt">2011-03-08 起</div><div class="ti">崩塌：福岛地震 + 中国紧缩 + 高价毁需</div><div class="tb">3-11 日本大地震引发宏观恐慌；中国加息+抛储备（2011 年 8-9 月抛储 100 万吨）；219 美分的天价把全球纺织需求直接打断（MY2011 全球消费较上年 <b>−1,146 万包</b>，PSD 终值口径，1960 年以来最大年度消费降幅）。价峰时非商业净多只有 41,317 手（峰值的 51.8%、净多/OI 13.0%、仅 59.3 百分位）——<b>资金在 174 天前就已经撤退，最后的逼仓是现货逻辑而非持仓逻辑</b>。顶后 4 周 −1.0%（逼仓惯性）、8 周 −29.0%、52 周 −56.7%，11 轮中最深的年度回撤。</div></div>
+</div>
+<div id="c3" class="chart tall"></div>
+<div class="src">净多峰（2010-09-14，黄色标注）与价峰（2011-03-07）相隔 174 天——典型的"背离顶"：价格上涨的最后 40% 由挤仓现货推动，资金早已离场。</div>
+<div class="note k"><b>为什么 2011-03 是全史之巅：</b>三重瓶颈同时锁死——①农业性（连续两年缺口后全球库存耗尽，SU 36.5%）；②政策性（印度出口限制 + 中国抢收把亚洲现货抽干）；③物流性（ICE 仓单 14 万包，期货交割机制失灵）。三者叠加才有 +498.6%。此后任何一轮牛市最多只满足其中两条。</div>
+
+<h3>3.7 2012-14 干旱牛：德州大旱 + 政策底的拉锯（+47.3%）</h3>
+<p>2011-12 年德州遭遇有记录以来最严重干旱（MY2011 美产 1,557→1,291 万包），叠加中国连续两年 19,800/20,400 元/吨敞开收储（2011-2013 三年收储 1,594 万吨，占全球库存增量主体）——<b>国际市场流通棉被中国国储"吸走"，剥中国 R1 SU 从 MY2011 的 53.9% 一路压到 MY2013 的 44.9%</b>，而全球账面 SU 却从 64.2% 膨胀到 88.4%（历史最高）。这就是"库存分层"失效的第一个极端案例：账面充裕度（88.4%）与贸易层充裕度（44.9%）的裂口拉到 43.5 个百分点，为 1960 年以来次大（仅次于 MY2014 的 44.7 点）——全球库存的增量几乎全部沉淀在中国的国储口袋里，国际市场感受到的松紧与账面完全是两个世界。价格 66.10→97.35，涨幅温和（+47.3%）因为中国抛储（2013 年抛 369 万吨）不断封顶。持仓上，<b>净多峰（2013-03-19，94,032 手，netOI 29.6%、92.6 百分位）比价峰早 370 天</b>——2014-03 的价峰是"政策市尾部惯性"，资金一年前就撤了。2014-03 顶部确认后，中国宣布取消收储改新疆目标价格直补，政策底抽走，26 周 −34.0%。</p>
+
+<h3>3.8 2016-18 去库存牛：与本轮结构最相似的一轮（+77.0%）</h3>
+<p><b>本轮 2025-26 行情最重要的对标样本。</b>前置条件：2011-14 收储把中国库存堆到 6,271 万包（MY2013，占全球 65%），全球账面 SU 88.4% 历史最高，价格被死死压在 55-70 区间四年。2015 年中国启动抛储试点、2016-2018 三年累计抛储 839 万吨——<b>MY2015 全球缺口 −1,720 万包（历史最大）本质上是中国库存向市场转移的会计结果</b>，MY2016 再缺口 −1,216 万包（第四大）。vintage 数据揭示了这场"隐性去库存"：MY2016/17 首版 SU 预测 87.1%（2016-05），终值 69.2%（2019-04）——<b>市场花三年时间才承认库存比想象中少 18 个点</b>。价格 54.53→96.50，历时 119 周，斜率全表最缓，顶后 4 周仅 −2.2%（最温柔的顶）。持仓结构极端：<b>净多峰 132,318 手（2017-03-07）的 netOI 达 41.5%、99.9 百分位——31 年序列之最</b>；价峰（2018-06-11）比净多峰晚 461 天但净多仍有峰值的 96%，形成"双顶"：第一顶 2017-05（86 区间）由持仓推动，第二顶 2018-06（96.50）由中美贸易战前的抢出口推动。终局：2018-07-06 美国对华关税生效，需求预期崩塌，52 周 −26.8%。</p>
+<div id="c4" class="chart tall"></div>
+<div class="src">注意 2017-03 净多峰的极端拥挤（netOI 41.5%，历史 99.9 百分位）与 2018-06 价峰时净多仍在 96% 高位的"双顶"结构。</div>
+
+<h3>3.9 2020-22 疫情牛：供应链牛 + 挤仓尾（+222.5%）</h3>
+<p>三段式：①2020-03-30 疫情恐慌底 48.35，非商业净空 −12,544 手、空头峰 90,302 手（2019-08）——<b>启动前空头极度拥挤，逼空燃料充足</b>；②2020 H2-2021 需求 V 型复苏 + MY2020 缺口 −1,240 万包（历史第三大）+ 美棉旱 + 巴基斯坦 MY2020 产量崩至 390 万包（−210 万包），vintage 修订一路下修（MY2020/21 首版 SU 85.4% → 终值 70.4%，−15 个点）；③2022-04/05 挤仓尾：ICE 仓单枯竭 + 运费暴涨 + 印度再度出口禁令（2022-05），近月对远月升水拉爆，2022-05-02 盘中 155.95。<b>净多峰 127,919 手（2021-10-05，netOI 33.5%、97.1 百分位）比价峰早 209 天，价峰时净多 64.2%</b>——背离顶。终局是宏观：2022-05 美联储激进加息 + 纺织订单崩塌（MY2022 全球消费 −800 万包），顶后 8 周 −32.1%、52 周 −41.5%。</p>
+<div id="c5" class="chart tall"></div>
+<div class="src">2021-10 净多峰（黄标）后价格又涨 209 天（+64%）才见顶——最后一段是现货挤仓，不是资金推动。</div>
+
+<h3>3.10 2022 干旱脉冲：五周 44.9%，四周回吐（+44.9%）</h3>
+<p>2022-07/08 德州史上最旱（MY2022 美产 1,447→1,207 万包，弃收率 31%），价格在 5 周内从 82.54 冲至 119.59。启动时非商业净多已高达 +50,339 手（上一轮牛市残留），净多峰反而在启动次日（2022-07-12）就出现——<b>这是一场没有增量资金的天气脉冲</b>。干旱缓解 + 需求崩塌确认后，顶后 4 周 −14.4%、8 周 −28.3%，把全部涨幅回吐。天气脉冲的标准剧本：<b>瓶颈（土壤墒情）解除只需一场雨或一个种植季预期，行情级别被可逆性锁死</b>。</p>
+
+<h3>3.11 2025-26 本轮：史上最大空头仓位被缺口叙事碾压（+54.2%，进行中）</h3>
+<p>启动条件为 11 轮中最极端的空头拥挤：<b>2025-03-04 非商业空头 131,276 手为 31 年序列最大空头仓位，净空 −55,801 手</b>。随后 17 个月，价格从 60.80 涨至 93.74（2026-08-31）。驱动链条：①美棉 26/27 单产从首报 866 磅/英亩连续下修至 9 月 776 磅（−10.4%），产量 13.30→13.20 百万包，期末库存 3.90→3.60（详见第十章）；②USDA MY2026 全球缺口 −645 万包（历史第五大）、World Less China 期末库存降至 3,519 万包；③剥中国 R1 SU 43.4% 为近十年最低（逼近 2009 超级牛起点的 42.3%）、出口国 big3 库存/出口覆盖率 28.7% 为 1960 年以来历史最低；④2026 年强厄尔尼诺发展中（JJA ONI +1.80），对标 1997-98（+2.37）、2015-16（+2.59）两个大缺口年；⑤Cotlook A 指数从 2026-06 的 1.90 涨至 08 月 2.11 USD/kg（+11%），现货升水确认紧张真实。<b>持仓对齐：净多峰 127,183 手（2026-08-25）与价峰（2026-08-31）只差 6 天、价峰时净多=峰值 100%</b>——与 2001-03、2004-08 两个趋势顶同款。当前（2026-09-01）净多 133,147 手再创绝对值新高、净多/OI 24.5%（82.9 百分位）未到极致。9 月以来价格回撤至 83 一线（−11.3%），性质待定：是牛市中的回调（2001-03 中途曾有 −22% 级别回调），还是趋势顶确认——第十章给出跟踪清单。</p>
+<div id="c6" class="chart tall"></div>
+<div class="src">本轮双窗：注意 2025-03 的空头峰（13.1 万手）如何被碾压，以及 2026-08 净多峰与价峰的 6 天同步。</div>

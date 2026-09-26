@@ -1,27 +1,24 @@
 # -*- coding: utf-8 -*-
-"""100号：ICE原糖价格 + CFTC非商业多/空/净 四窗联动曲线图（2009起，实际2011-12~2026-09）
-数据: data/cftc/results_cot/sugar_position_price_report99_data.json 的 series
-输出: reports/100_白糖CFTC价格多空净四窗图/index.html
-"""
+"""103号：棉花价格 × CFTC 非商业多/空/净持仓 四窗联动图（100号白糖四窗图同款）"""
 import json, os
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = ROOT + "/data/cftc/results_cot/sugar_position_price_report99_data.json"
-OUT = ROOT + "/reports/100_白糖CFTC价格多空净四窗图/index.html"
+ROOT = "/Users/alberthuang/agriculture"
+DATA_JSON = ROOT + "/data/cftc/results_cot/cotton_position_price_report103_data.json"
+OUT_HTML = ROOT + "/reports/103_棉花CFTC价格多空净四窗图/index.html"
 
-d = json.load(open(SRC, encoding="utf-8"))
+d = json.load(open(DATA_JSON, encoding="utf-8"))
 ser = d["series"]
+data_js = json.dumps({"series": ser}, ensure_ascii=False, separators=(",", ":"))
 n = len(ser)
-print("series points:", n, "|", ser[0]["date"], "~", ser[-1]["date"])
-
-data_js = json.dumps({"series": ser}, ensure_ascii=False)
+w0, w1 = ser[0]["date"], ser[-1]["date"]
+last = ser[-1]
 
 HTML = r"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ICE原糖价格 × CFTC非商业多/空/净持仓 四窗联动图</title>
+<title>ICE棉花价格 × CFTC非商业多/空/净持仓 四窗联动图</title>
 <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
 <style>
   body{font-family:"Microsoft YaHei","PingFang SC",sans-serif;background:#f5f7fa;color:#1a2330;margin:0;padding:18px 14px 40px;}
@@ -43,18 +40,18 @@ HTML = r"""<!DOCTYPE html>
 <body>
 <div class="wrap">
   <div class="hd">
-    <h1>ICE 原糖价格 × CFTC 非商业多/空/净持仓（周度联动）</h1>
-    <span class="meta">数据窗口 2011-12 ~ 2026-09 · 768 个 CFTC 报告周 · 单位：价格=美分/磅，持仓=手</span>
+    <h1>ICE 棉花 2 号价格 × CFTC 非商业多/空/净持仓（周度联动）</h1>
+    <span class="meta">__META__</span>
   </div>
   <div class="legend">
-    <span><i class="sw" style="background:#12365e"></i>价格（ICE 原糖收盘）</span>
+    <span><i class="sw" style="background:#12365e"></i>价格（ICE CT1! 周线收盘）</span>
     <span><i class="sw" style="background:#E69F00"></i>非商业多头</span>
     <span id="lg_s"><i class="sw" style="background:#56B4E9"></i>非商业空头 <button id="btnFlip" type="button" class="flipbtn" title="纵向翻转空头曲线，空头增加↓、减少↑">↕ 反转</button></span>
     <span><i class="sw" style="background:#CC79A7"></i>净多（多头−空头）</span>
     <span style="color:#5a6a7d">滚轮/拖拽可联动缩放，悬停十字线对齐四窗</span>
   </div>
   <div id="chart"></div>
-  <div class="note">四窗共享时间轴：上一窗=价格走势，下三窗=CFTC 非商业(投机)多/空/净持仓（Futures Only，11 号原糖）。多空同增=分歧放大；价跌但净多增=背离（偏空信号）；价涨但净多减=逼空（短期强、持续性弱）。</div>
+  <div class="note">四窗共享时间轴：上一窗=价格走势，下三窗=CFTC 非商业(投机)多/空/净持仓（Futures Only，棉花 2 号 ICE）。多空同增=分歧放大；价跌但净多增=背离（偏空信号）；价涨但净多减=逼空（短期强、持续性弱）。最新（__LASTDATE__）：净多 __NET__ 万手、OI __OI__ 万手，均处多年高位区。</div>
 </div>
 
 <script>
@@ -140,7 +137,12 @@ btnFlip.addEventListener('click', function(){
 </html>
 """
 
-HTML = HTML.replace("__DATA_JS__", data_js)
-os.makedirs(os.path.dirname(OUT), exist_ok=True)
-open(OUT, "w", encoding="utf-8").write(HTML)
-print("written:", OUT, "| size:", len(HTML))
+HTML = (HTML.replace("__DATA_JS__", data_js)
+            .replace("__META__", f"数据窗口 {w0} ~ {w1} · {n} 个 CFTC 报告周 · 单位：价格=美分/磅，持仓=手")
+            .replace("__LASTDATE__", w1)
+            .replace("__NET__", f"{last['nc_net']/10000:.1f}")
+            .replace("__OI__", f"{last['oi']/10000:.1f}"))
+
+os.makedirs(os.path.dirname(OUT_HTML), exist_ok=True)
+open(OUT_HTML, "w", encoding="utf-8").write(HTML)
+print("saved:", OUT_HTML, "weeks:", n)

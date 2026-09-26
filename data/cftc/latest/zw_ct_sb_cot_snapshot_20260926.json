@@ -1,0 +1,165 @@
+{
+  "source": "CFTC Legacy Futures-Only deacot2026.zip",
+  "fetched": "2026-09-26",
+  "data": {
+    "ZW": {
+      "name": "芝加哥小麦SRW(CBOT)",
+      "latest": {
+        "date": "2026-09-22",
+        "nc_long": 120127,
+        "nc_short": 127487,
+        "nc_net": -7360,
+        "oi": 483279,
+        "name": "芝加哥小麦SRW(CBOT)",
+        "chg_nc_long": -6715,
+        "chg_nc_short": 1873,
+        "chg_nc_net": -8588,
+        "chg_oi": -1859
+      },
+      "last4": [
+        {
+          "date": "2026-09-01",
+          "nc_long": 146391,
+          "nc_short": 121688,
+          "nc_net": 24703,
+          "oi": 470560,
+          "name": "芝加哥小麦SRW(CBOT)"
+        },
+        {
+          "date": "2026-09-08",
+          "nc_long": 131898,
+          "nc_short": 121428,
+          "nc_net": 10470,
+          "oi": 484680,
+          "name": "芝加哥小麦SRW(CBOT)"
+        },
+        {
+          "date": "2026-09-15",
+          "nc_long": 126842,
+          "nc_short": 125614,
+          "nc_net": 1228,
+          "oi": 485138,
+          "name": "芝加哥小麦SRW(CBOT)"
+        },
+        {
+          "date": "2026-09-22",
+          "nc_long": 120127,
+          "nc_short": 127487,
+          "nc_net": -7360,
+          "oi": 483279,
+          "name": "芝加哥小麦SRW(CBOT)",
+          "chg_nc_long": -6715,
+          "chg_nc_short": 1873,
+          "chg_nc_net": -8588,
+          "chg_oi": -1859
+        }
+      ]
+    },
+    "CT": {
+      "name": "棉花2号(ICE)",
+      "latest": {
+        "date": "2026-09-22",
+        "nc_long": 138298,
+        "nc_short": 35270,
+        "nc_net": 103028,
+        "oi": 384016,
+        "name": "棉花2号(ICE)",
+        "chg_nc_long": -13148,
+        "chg_nc_short": 597,
+        "chg_nc_net": -13745,
+        "chg_oi": 3810
+      },
+      "last4": [
+        {
+          "date": "2026-09-01",
+          "nc_long": 167742,
+          "nc_short": 37021,
+          "nc_net": 130721,
+          "oi": 383730,
+          "name": "棉花2号(ICE)"
+        },
+        {
+          "date": "2026-09-08",
+          "nc_long": 158085,
+          "nc_short": 35334,
+          "nc_net": 122751,
+          "oi": 380405,
+          "name": "棉花2号(ICE)"
+        },
+        {
+          "date": "2026-09-15",
+          "nc_long": 151446,
+          "nc_short": 34673,
+          "nc_net": 116773,
+          "oi": 380206,
+          "name": "棉花2号(ICE)"
+        },
+        {
+          "date": "2026-09-22",
+          "nc_long": 138298,
+          "nc_short": 35270,
+          "nc_net": 103028,
+          "oi": 384016,
+          "name": "棉花2号(ICE)",
+          "chg_nc_long": -13148,
+          "chg_nc_short": 597,
+          "chg_nc_net": -13745,
+          "chg_oi": 3810
+        }
+      ]
+    },
+    "SB": {
+      "name": "原糖11号(ICE)",
+      "latest": {
+        "date": "2026-09-22",
+        "nc_long": 362956,
+        "nc_short": 198552,
+        "nc_net": 164404,
+        "oi": 1147767,
+        "name": "原糖11号(ICE)",
+        "chg_nc_long": -14463,
+        "chg_nc_short": 3648,
+        "chg_nc_net": -18111,
+        "chg_oi": -71756
+      },
+      "last4": [
+        {
+          "date": "2026-09-01",
+          "nc_long": 396661,
+          "nc_short": 265136,
+          "nc_net": 131525,
+          "oi": 1275546,
+          "name": "原糖11号(ICE)"
+        },
+        {
+          "date": "2026-09-08",
+          "nc_long": 394122,
+          "nc_short": 235936,
+          "nc_net": 158186,
+          "oi": 1276579,
+          "name": "原糖11号(ICE)"
+        },
+        {
+          "date": "2026-09-15",
+          "nc_long": 377419,
+          "nc_short": 194904,
+          "nc_net": 182515,
+          "oi": 1219523,
+          "name": "原糖11号(ICE)"
+        },
+        {
+          "date": "2026-09-22",
+          "nc_long": 362956,
+          "nc_short": 198552,
+          "nc_net": 164404,
+          "oi": 1147767,
+          "name": "原糖11号(ICE)",
+          "chg_nc_long": -14463,
+          "chg_nc_short": 3648,
+          "chg_nc_net": -18111,
+          "chg_oi": -71756
+        }
+      ]
+    }
+  }
+}
