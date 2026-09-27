@@ -25,17 +25,21 @@
   .flipbtn.on{background:#56B4E9;color:#fff;}
   .flip-tip{font-size:11px;color:#b47400;margin-top:2px;font-weight:600;}
   .cot-cap{margin-top:10px;font-size:12px;color:#5a6a7d;}
-  .cottbl{width:100%;border-collapse:collapse;margin-top:4px;font-size:12.5px;background:#fff;border:1px solid #dde4ec;}
-  .cottbl th,.cottbl td{border:1px solid #e3e8ef;padding:6px 4px;text-align:center;font-weight:400;}
-  .cottbl .grp{background:#f2f5f9;font-weight:700;font-size:13px;padding:9px 4px;}
-  .cottbl .sub{background:#f8fafc;font-weight:700;font-size:12px;}
+  .cot-wrap{margin-top:4px;border:1px solid #dde4ec;border-radius:10px;overflow:hidden;background:#fff;}
+  .cottbl{width:100%;border-collapse:collapse;font-size:12.5px;}
+  .cottbl th,.cottbl td{border-bottom:1px solid #e8edf4;border-right:1px solid #e8edf4;padding:6px 4px;text-align:center;font-weight:400;color:#1a2330;}
+  .cottbl tr th:last-child,.cottbl tr td:last-child{border-right:none;}
+  .cottbl tr:last-child th,.cottbl tr:last-child td{border-bottom:none;}
+  .cottbl .grp{background:#eaf1f8;color:#12365e;font-weight:700;font-size:13px;padding:9px 4px;}
+  .cottbl .sub{background:#f5f7fa;color:#12365e;font-weight:700;font-size:12px;}
   .cottbl .lab{text-align:left;padding-left:12px;color:#1a2330;}
   .cottbl .rit{text-align:right;padding-right:12px;}
+  .cottbl .rit,.cottbl .rit b{color:#12365e;}
   .cottbl .gl{border-left:2px solid #c9d4e0;}
   .cottbl b{font-weight:700;}
   .chip{display:inline-block;padding:2px 7px;border-radius:3px;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;}
-  .chip.up{background:#d9f2e3;color:#1e7b45;}
-  .chip.dn{background:#fde3e1;color:#c0392b;}
+  .chip.up{background:#e3f2ea;color:#20714a;}
+  .chip.dn{background:#fdeae8;color:#c0392b;}
   .chip.z{background:#eef1f5;color:#5a6a7d;}
 </style>
 </head>
@@ -170,7 +174,7 @@ function renderCotTable(t){
   var td = function(v, extra){ return '<td'+(extra||'')+'>'+v+'</td>'; };
   var tdc = function(v){ return '<td>'+chip(v)+'</td>'; };
   var gl = ' class="gl"';
-  var h = '<table class="cottbl">';
+  var h = '<div class="cot-wrap"><table class="cottbl">';
   // 表头两组
   h += '<tr><th class="grp" colspan="3">Non-Commercial</th><th class="grp gl" colspan="2">Commercial</th><th class="grp gl" colspan="2">Total</th><th class="grp gl" colspan="2">Non-Reportable</th></tr>';
   h += '<tr><th class="sub">Long</th><th class="sub">Short</th><th class="sub">Spreads</th><th class="sub gl">Long</th><th class="sub">Short</th><th class="sub gl">Long</th><th class="sub">Short</th><th class="sub gl">Long</th><th class="sub">Short</th></tr>';
@@ -188,7 +192,7 @@ function renderCotTable(t){
   h += '<tr><td class="lab" colspan="5">Number of Traders in Each Category</td><td class="rit" colspan="4">(Total Traders: '+s.totalTraders+')</td></tr>';
   var tr = s.traders;
   h += '<tr>'+td(tr[0], gl)+td(tr[1])+td(tr[2])+td(tr[3], gl)+td(tr[4])+td(tr[5], gl)+td(tr[6])+'<td'+gl+'></td><td></td></tr>';
-  h += '</table>';
+  h += '</table></div>';
   document.getElementById('cotCap').innerHTML = '最新一期 CFTC COT（Legacy · Futures Only · Code '+s.code+'）· 截至 '+s.date+' · 来源 Tradingster/CFTC';
   document.getElementById('cotTblWrap').innerHTML = h;
 }
