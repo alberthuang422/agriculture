@@ -24,10 +24,19 @@
   .flipbtn:hover{background:#eaf4fc;}
   .flipbtn.on{background:#56B4E9;color:#fff;}
   .flip-tip{font-size:11px;color:#b47400;margin-top:2px;font-weight:600;}
-  .latest{margin-top:8px;font-size:12.5px;color:#1a2330;background:#fff;border:1px solid #dde4ec;border-radius:10px;padding:10px 14px;display:flex;gap:26px;flex-wrap:wrap;align-items:baseline;}
-  .latest .lbl{color:#5a6a7d;font-size:12px;}
-  .latest b{font-size:15px;font-weight:700;}
-  .latest .chg{font-size:11px;margin-left:4px;}
+  .cot-cap{margin-top:10px;font-size:12px;color:#5a6a7d;}
+  .cottbl{width:100%;border-collapse:collapse;margin-top:4px;font-size:12.5px;background:#fff;border:1px solid #dde4ec;}
+  .cottbl th,.cottbl td{border:1px solid #e3e8ef;padding:6px 4px;text-align:center;font-weight:400;}
+  .cottbl .grp{background:#f2f5f9;font-weight:700;font-size:13px;padding:9px 4px;}
+  .cottbl .sub{background:#f8fafc;font-weight:700;font-size:12px;}
+  .cottbl .lab{text-align:left;padding-left:12px;color:#1a2330;}
+  .cottbl .rit{text-align:right;padding-right:12px;}
+  .cottbl .gl{border-left:2px solid #c9d4e0;}
+  .cottbl b{font-weight:700;}
+  .chip{display:inline-block;padding:2px 7px;border-radius:3px;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;}
+  .chip.up{background:#d9f2e3;color:#1e7b45;}
+  .chip.dn{background:#fde3e1;color:#c0392b;}
+  .chip.z{background:#eef1f5;color:#5a6a7d;}
 </style>
 </head>
 <body>
@@ -48,7 +57,8 @@
     <span style="color:#5a6a7d">滚轮/拖拽可联动缩放，悬停十字线对齐四窗</span>
   </div>
   <div id="chart"></div>
-  <div class="latest" id="latestBar"></div>
+  <div class="cot-cap" id="cotCap"></div>
+  <div id="cotTblWrap"></div>
   <div class="note" id="hdNote"></div>
 </div>
 
@@ -128,22 +138,59 @@ var chart = echarts.init(document.getElementById('chart'));
 var curTab = 'sb';
 var flipOn = false;
 
-// ===== 当周最新非商业头寸（取内嵌序列最后两行计算周变化） =====
-function renderLatest(t){
-  var ser = t.data.series;
-  var a = ser[ser.length-1], b = ser[ser.length-2] || a;
-  function fmt(v){ return (v/10000).toFixed(2)+'万手'; }
-  function chg(d){
-    var sym = d>0 ? '▲' : (d<0 ? '▼' : '—');
-    var col = d>0 ? '#D55E00' : (d<0 ? '#0072B2' : '#5a6a7d');
-    var s = d>0 ? '+' : '';
-    return ' <span class="chg" style="color:'+col+'">'+sym+' '+s+(d/10000).toFixed(2)+'万</span>';
+// ===== 当周 COT 快照表（格式对齐 Tradingster Legacy Futures-Only；数据源 Tradingster/CFTC） =====
+// vals/chg 顺序: NC Long, NC Short, NC Spreads, Comm Long, Comm Short, Total Long, Total Short, NonRep Long, NonRep Short
+// traders 顺序: NC Long, NC Short, NC Spreads, Comm Long, Comm Short, Total Long, Total Short (NonRep 无交易者数)
+var COT_SNAP = {
+  sb: {
+    date: '2026-09-22', unit: '112,000 POUNDS', code: '080732',
+    oi: 1147767, chg_oi: -71756, totalTraders: 294,
+    vals: [362956, 198552, 190028, 489710, 706807, 1042694, 1095387, 105073, 52380],
+    chg:  [-14463,   3648,  -28969,  -20827,  -41776,  -64259,  -67097,  -7497,  -4659],
+    traders: [119, 62, 92, 80, 83, 249, 194]
+  },
+  ct: {
+    date: '2026-09-22', unit: '50,000 POUNDS', code: '033661',
+    oi: 384016, chg_oi: 3810, totalTraders: 354,
+    vals: [138298, 35270, 77057, 150960, 263770, 366315, 376097, 17701, 7919],
+    chg:  [-13148,   597,  2267,  14383,   1507,   3502,   4371,    308,  -561],
+    traders: [179, 65, 119, 73, 78, 299, 224]
   }
-  document.getElementById('latestBar').innerHTML =
-    '<span class="lbl">最新报告（'+a.date+'，CFTC 周度）</span>' +
-    '<span>非商业多头 <b style="color:#E69F00">'+fmt(a.nc_l)+'</b>'+chg(a.nc_l-b.nc_l)+'</span>' +
-    '<span>非商业空头 <b style="color:#56B4E9">'+fmt(a.nc_s)+'</b>'+chg(a.nc_s-b.nc_s)+'</span>' +
-    '<span>净多 <b style="color:#CC79A7">'+fmt(a.nc_net)+'</b>'+chg(a.nc_net-b.nc_net)+'</span>';
+};
+
+function renderCotTable(t){
+  var s = COT_SNAP[curTab];
+  function n(v){ return v.toLocaleString('en-US'); }
+  function chip(v){
+    var cls = v > 0 ? 'up' : (v < 0 ? 'dn' : 'z');
+    var sign = v > 0 ? '+' : '';
+    return '<span class="chip '+cls+'">'+sign+n(v)+'</span>';
+  }
+  function pct(v){ return (v / s.oi * 100).toFixed(1) + '%'; }
+  var td = function(v, extra){ return '<td'+(extra||'')+'>'+v+'</td>'; };
+  var tdc = function(v){ return '<td>'+chip(v)+'</td>'; };
+  var gl = ' class="gl"';
+  var h = '<table class="cottbl">';
+  // 表头两组
+  h += '<tr><th class="grp" colspan="3">Non-Commercial</th><th class="grp gl" colspan="2">Commercial</th><th class="grp gl" colspan="2">Total</th><th class="grp gl" colspan="2">Non-Reportable</th></tr>';
+  h += '<tr><th class="sub">Long</th><th class="sub">Short</th><th class="sub">Spreads</th><th class="sub gl">Long</th><th class="sub">Short</th><th class="sub gl">Long</th><th class="sub">Short</th><th class="sub gl">Long</th><th class="sub">Short</th></tr>';
+  // 合约单位 + OI
+  h += '<tr><td class="lab" colspan="5">(CONTRACTS OF '+s.unit+')</td><td class="rit" colspan="4">Open Interest: <b>'+n(s.oi)+'</b></td></tr>';
+  // 持仓值
+  h += '<tr>'+td(n(s.vals[0]), gl)+td(n(s.vals[1]))+td(n(s.vals[2]))+td(n(s.vals[3]), gl)+td(n(s.vals[4]))+td(n(s.vals[5]), gl)+td(n(s.vals[6]))+td(n(s.vals[7]), gl)+td(n(s.vals[8]))+'</tr>';
+  // Changes + OI 变化
+  h += '<tr><td class="lab" colspan="5">Changes</td><td class="rit" colspan="4">(Change In Open Interest: '+chip(s.chg_oi)+' )</td></tr>';
+  h += '<tr>'+tdc(s.chg[0])+tdc(s.chg[1])+tdc(s.chg[2])+tdc(s.chg[3])+tdc(s.chg[4])+tdc(s.chg[5])+tdc(s.chg[6])+tdc(s.chg[7])+tdc(s.chg[8])+'</tr>';
+  // 占 OI 比重
+  h += '<tr><td class="lab" colspan="9">Percent of Open Interest for Each Category of Traders</td></tr>';
+  h += '<tr>'+td(pct(s.vals[0]), gl)+td(pct(s.vals[1]))+td(pct(s.vals[2]))+td(pct(s.vals[3]), gl)+td(pct(s.vals[4]))+td(pct(s.vals[5]), gl)+td(pct(s.vals[6]))+td(pct(s.vals[7]), gl)+td(pct(s.vals[8]))+'</tr>';
+  // 交易者数量
+  h += '<tr><td class="lab" colspan="5">Number of Traders in Each Category</td><td class="rit" colspan="4">(Total Traders: '+s.totalTraders+')</td></tr>';
+  var tr = s.traders;
+  h += '<tr>'+td(tr[0], gl)+td(tr[1])+td(tr[2])+td(tr[3], gl)+td(tr[4])+td(tr[5], gl)+td(tr[6])+'<td'+gl+'></td><td></td></tr>';
+  h += '</table>';
+  document.getElementById('cotCap').innerHTML = '最新一期 CFTC COT（Legacy · Futures Only · Code '+s.code+'）· 截至 '+s.date+' · 来源 Tradingster/CFTC';
+  document.getElementById('cotTblWrap').innerHTML = h;
 }
 
 function renderTab(){
@@ -157,7 +204,7 @@ function renderTab(){
   // 全量重建: clear + 重新 setOption, 确保 inverse 切换 100% 生效 (ECharts merge对轴方向更新不可靠)
   chart.clear();
   chart.setOption(buildOption(t, flipOn));
-  renderLatest(t);
+  renderCotTable(t);
 }
 document.getElementById('tabSB').addEventListener('click', function(){ if(curTab!=='sb'){curTab='sb'; renderTab();} });
 document.getElementById('tabCT').addEventListener('click', function(){ if(curTab!=='ct'){curTab='ct'; renderTab();} });
