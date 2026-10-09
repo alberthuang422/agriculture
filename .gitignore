@@ -11,3 +11,4 @@ data/fundamentals/cotton/raw/psd_alldata.csv
 .DS_Store
 Temp/
 data/_tmp/
+data/cftc/latest/fresh_tmp/
