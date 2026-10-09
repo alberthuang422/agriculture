@@ -1,0 +1,39 @@
+{
+ "asOf": "2026-10-07 22:02:45",
+ "source": "USDA FAS PSD API",
+ "commodities": {
+  "4243000": "Oil, Palm",
+  "4232000": "Oil, Soybean",
+  "4242000": "Oil, Coconut",
+  "4244000": "Oil, Palm Kernel",
+  "4239100": "Oil, Rapeseed",
+  "4236000": "Oil, Sunflowerseed"
+ },
+ "countries": {
+  "MY": "Malaysia",
+  "ID": "Indonesia",
+  "TH": "Thailand",
+  "VM": "Vietnam",
+  "RP": "Philippines",
+  "IN": "India",
+  "CH": "China",
+  "PK": "Pakistan",
+  "BG": "Bangladesh",
+  "E4": "European Union",
+  "US": "United States",
+  "MX": "Mexico",
+  "BR": "Brazil",
+  "EG": "Egypt",
+  "NI": "Nigeria",
+  "KE": "Kenya"
+ },
+ "yearsRequested": [
+  1989,
+  2026
+ ],
+ "unitNote": {
+  "unitId8": "1000 MT",
+  "unitId4": "1000 HA",
+  "unitId26": "MT/HA"
+ }
+}

@@ -1,0 +1,383 @@
+{
+ "stock_layers": [
+  {
+   "cc": "ID",
+   "name": "Indonesia",
+   "end": 4066.0,
+   "net_trade": 23500.0,
+   "industrial": 15850.0,
+   "dom": 23725.0,
+   "bio_lock_pct": 66.8,
+   "share": 28.1
+  },
+  {
+   "cc": "MY",
+   "name": "Malaysia",
+   "end": 2345.0,
+   "net_trade": 15450.0,
+   "industrial": 3185.0,
+   "dom": 4280.0,
+   "bio_lock_pct": 74.4,
+   "share": 16.2
+  },
+  {
+   "cc": "IN",
+   "name": "India",
+   "end": 1968.0,
+   "net_trade": -8650.0,
+   "industrial": 650.0,
+   "dom": 8875.0,
+   "bio_lock_pct": 7.3,
+   "share": 13.6
+  },
+  {
+   "cc": "TH",
+   "name": "Thailand",
+   "end": 412.0,
+   "net_trade": 999.0,
+   "industrial": 1400.0,
+   "dom": 2885.0,
+   "bio_lock_pct": 48.5,
+   "share": 2.8
+  },
+  {
+   "cc": "CH",
+   "name": "China",
+   "end": 409.0,
+   "net_trade": -3880.0,
+   "industrial": 1400.0,
+   "dom": 3875.0,
+   "bio_lock_pct": 36.1,
+   "share": 2.8
+  },
+  {
+   "cc": "E4",
+   "name": "EU",
+   "end": 338.0,
+   "net_trade": -2980.0,
+   "industrial": 1300.0,
+   "dom": 3000.0,
+   "bio_lock_pct": 43.3,
+   "share": 2.3
+  },
+  {
+   "cc": "PK",
+   "name": "Pakistan",
+   "end": 281.0,
+   "net_trade": -3700.0,
+   "industrial": 75.0,
+   "dom": 3700.0,
+   "bio_lock_pct": 2.0,
+   "share": 1.9
+  },
+  {
+   "cc": "US",
+   "name": "USA",
+   "end": 136.0,
+   "net_trade": -1685.0,
+   "industrial": 275.0,
+   "dom": 1685.0,
+   "bio_lock_pct": 16.3,
+   "share": 0.9
+  },
+  {
+   "cc": "BG",
+   "name": "Bangladesh",
+   "end": 125.0,
+   "net_trade": -1720.0,
+   "industrial": 50.0,
+   "dom": 1720.0,
+   "bio_lock_pct": 2.9,
+   "share": 0.9
+  },
+  {
+   "cc": "BR",
+   "name": "Brazil",
+   "end": 58.0,
+   "net_trade": -360.0,
+   "industrial": 850.0,
+   "dom": 1050.0,
+   "bio_lock_pct": 81.0,
+   "share": 0.4
+  }
+ ],
+ "layer_hist": [
+  {
+   "my": "1989",
+   "id_my_end": 1067.0,
+   "share_pct": 62.8
+  },
+  {
+   "my": "1990",
+   "id_my_end": 842.0,
+   "share_pct": 59.1
+  },
+  {
+   "my": "1991",
+   "id_my_end": 811.0,
+   "share_pct": 55.2
+  },
+  {
+   "my": "1992",
+   "id_my_end": 1105.0,
+   "share_pct": 61.9
+  },
+  {
+   "my": "1993",
+   "id_my_end": 640.0,
+   "share_pct": 48.6
+  },
+  {
+   "my": "1994",
+   "id_my_end": 720.0,
+   "share_pct": 49.0
+  },
+  {
+   "my": "1995",
+   "id_my_end": 1037.0,
+   "share_pct": 56.7
+  },
+  {
+   "my": "1996",
+   "id_my_end": 1143.0,
+   "share_pct": 55.8
+  },
+  {
+   "my": "1997",
+   "id_my_end": 968.0,
+   "share_pct": 53.4
+  },
+  {
+   "my": "1998",
+   "id_my_end": 1410.0,
+   "share_pct": 52.1
+  },
+  {
+   "my": "1999",
+   "id_my_end": 1759.0,
+   "share_pct": 59.8
+  },
+  {
+   "my": "2000",
+   "id_my_end": 1871.0,
+   "share_pct": 55.7
+  },
+  {
+   "my": "2001",
+   "id_my_end": 1652.0,
+   "share_pct": 48.6
+  },
+  {
+   "my": "2002",
+   "id_my_end": 1685.0,
+   "share_pct": 44.0
+  },
+  {
+   "my": "2003",
+   "id_my_end": 2331.0,
+   "share_pct": 50.0
+  },
+  {
+   "my": "2004",
+   "id_my_end": 2387.0,
+   "share_pct": 48.9
+  },
+  {
+   "my": "2005",
+   "id_my_end": 2724.0,
+   "share_pct": 48.6
+  },
+  {
+   "my": "2006",
+   "id_my_end": 3391.0,
+   "share_pct": 54.5
+  },
+  {
+   "my": "2007",
+   "id_my_end": 3343.0,
+   "share_pct": 54.2
+  },
+  {
+   "my": "2008",
+   "id_my_end": 2628.0,
+   "share_pct": 41.6
+  },
+  {
+   "my": "2009",
+   "id_my_end": 2733.0,
+   "share_pct": 41.9
+  },
+  {
+   "my": "2010",
+   "id_my_end": 4148.0,
+   "share_pct": 48.8
+  },
+  {
+   "my": "2011",
+   "id_my_end": 5273.0,
+   "share_pct": 55.0
+  },
+  {
+   "my": "2012",
+   "id_my_end": 4906.0,
+   "share_pct": 51.6
+  },
+  {
+   "my": "2013",
+   "id_my_end": 5000.0,
+   "share_pct": 51.8
+  },
+  {
+   "my": "2014",
+   "id_my_end": 5500.0,
+   "share_pct": 50.6
+  },
+  {
+   "my": "2015",
+   "id_my_end": 4271.0,
+   "share_pct": 49.1
+  },
+  {
+   "my": "2016",
+   "id_my_end": 4074.0,
+   "share_pct": 38.9
+  },
+  {
+   "my": "2017",
+   "id_my_end": 5566.0,
+   "share_pct": 42.7
+  },
+  {
+   "my": "2018",
+   "id_my_end": 5357.0,
+   "share_pct": 36.1
+  },
+  {
+   "my": "2019",
+   "id_my_end": 6298.0,
+   "share_pct": 39.6
+  },
+  {
+   "my": "2020",
+   "id_my_end": 6811.0,
+   "share_pct": 44.9
+  },
+  {
+   "my": "2021",
+   "id_my_end": 9627.0,
+   "share_pct": 57.3
+  },
+  {
+   "my": "2022",
+   "id_my_end": 7420.0,
+   "share_pct": 43.7
+  },
+  {
+   "my": "2023",
+   "id_my_end": 6775.0,
+   "share_pct": 42.4
+  },
+  {
+   "my": "2024",
+   "id_my_end": 6776.0,
+   "share_pct": 45.1
+  },
+  {
+   "my": "2025",
+   "id_my_end": 6566.0,
+   "share_pct": 43.9
+  },
+  {
+   "my": "2026",
+   "id_my_end": 6411.0,
+   "share_pct": 44.3
+  }
+ ],
+ "scenarios": [
+  {
+   "name": "USDA MY2026 基线（无新增减产）",
+   "dev_pct": 0.0,
+   "prod": 81121.0,
+   "cons": 81366.04719912983,
+   "end": 12374.952800870175,
+   "stu": 15.21,
+   "pctile": 41.9
+  },
+  {
+   "name": "彭博调查共识（两国 −3%）",
+   "dev_pct": -3.0,
+   "prod": 78687.37,
+   "cons": 81366.04719912983,
+   "end": 9941.32280087017,
+   "stu": 12.22,
+   "pctile": 14.9
+  },
+  {
+   "name": "GAPKI 悲观情形（−5%）",
+   "dev_pct": -5.0,
+   "prod": 77064.95,
+   "cons": 81366.04719912983,
+   "end": 8318.902800870172,
+   "stu": 10.22,
+   "pctile": 4.1
+  },
+  {
+   "name": "历史强EN中位（马来−2.0/印尼−6.9）",
+   "dev_pct": -5.5,
+   "prod": 76659.345,
+   "cons": 81366.04719912983,
+   "end": 7913.297800870176,
+   "stu": 9.73,
+   "pctile": 4.1
+  },
+  {
+   "name": "MY2015 类比（全球单产 −9.8%）",
+   "dev_pct": -9.8,
+   "prod": 73171.142,
+   "cons": 81366.04719912983,
+   "end": 4425.094800870182,
+   "stu": 5.44,
+   "pctile": 1.4
+  },
+  {
+   "name": "极端：马来 −15.8%（2015实际）全球折算",
+   "dev_pct": -15.8,
+   "prod": 68303.882,
+   "cons": 81366.04719912983,
+   "end": -442.16519912982767,
+   "stu": -0.54,
+   "pctile": 1.4
+  }
+ ],
+ "buffer": {
+  "world_end": 14472.0,
+  "world_cons": 79269.0,
+  "world_exp": 45261.0,
+  "months_cover": 2.19,
+  "netexp_layer": 6823.0,
+  "netexp_months": 1.03
+ },
+ "biodiesel": {
+  "id_industrial_2015": 3700.0,
+  "id_industrial_2026": 15850.0,
+  "my_industrial_2015": 2033.0,
+  "my_industrial_2026": 3185.0,
+  "b50_increment_kt": 3000.0
+ },
+ "vintage": {
+  "mpob_2026_stocks_wt": {
+   "2026-01": 282,
+   "2026-02": 270,
+   "2026-03": 227,
+   "2026-04": 230,
+   "2026-05": 242,
+   "2026-06": 254,
+   "2026-07": 263,
+   "2026-08": 282,
+   "2026-09": 337
+  },
+  "psd_my_end_kt": 2475.0,
+  "gap_wt": 89.5,
+  "gap_pct": 26.6
+ }
+}

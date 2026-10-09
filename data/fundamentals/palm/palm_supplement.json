@@ -1,0 +1,98 @@
+{
+ "attribution_world": {
+  "area_pct": 78.8,
+  "yield_pct": 21.2
+ },
+ "attribution_ID": {
+  "area_pct": 79.0,
+  "yield_pct": 21.0
+ },
+ "attribution_MY": {
+  "area_pct": 159.9,
+  "yield_pct": -59.9
+ },
+ "concentration": {
+  "prod_top2_pct": 82.3,
+  "exp_top2_pct": 87.1,
+  "imports": [
+   {
+    "cc": "IN",
+    "imp": 8700.0
+   },
+   {
+    "cc": "CH",
+    "imp": 3900.0
+   },
+   {
+    "cc": "PK",
+    "imp": 3700.0
+   },
+   {
+    "cc": "E4",
+    "imp": 3100.0
+   },
+   {
+    "cc": "BG",
+    "imp": 1725.0
+   },
+   {
+    "cc": "US",
+    "imp": 1700.0
+   },
+   {
+    "cc": "MY",
+    "imp": 450.0
+   },
+   {
+    "cc": "BR",
+    "imp": 370.0
+   }
+  ]
+ },
+ "price": {
+  "latest_ym": "2026-07",
+  "palm": 1106.5,
+  "soy": 1590.4,
+  "spread": 483.9,
+  "palm_pctile_all": 95.6,
+  "palm_pctile_10y": 87.8,
+  "palm_pctile_5y": 76.9,
+  "palm_max": 1652.71639279719,
+  "palm_max_ym": "2022-03",
+  "palm_min": 185.065003421233,
+  "palm_min_ym": "2001-02",
+  "palm_mean_all": 585.0
+ },
+ "demand_growth": [
+  {
+   "period": "2000-2010",
+   "d_ind": 7357.0,
+   "d_food": 15414.0,
+   "ind_share_pct": 32.3
+  },
+  {
+   "period": "2010-2020",
+   "d_ind": 12958.0,
+   "d_food": 14227.0,
+   "ind_share_pct": 47.7
+  },
+  {
+   "period": "2020-2026",
+   "d_ind": 4596.0,
+   "d_food": 1946.0,
+   "ind_share_pct": 70.3
+  },
+  {
+   "period": "2015-2026",
+   "d_ind": 11779.0,
+   "d_food": 8156.0,
+   "ind_share_pct": 59.1
+  },
+  {
+   "period": "2025-2026",
+   "d_ind": 677.0,
+   "d_food": 1386.0,
+   "ind_share_pct": 32.8
+  }
+ ]
+}
