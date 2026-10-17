@@ -1,0 +1,139 @@
+{
+ "def": "\u975e\u5546\u4e1a\u591a\u5934\u5355\u5468\u589e\u4ed3>=30000\u624b\uff0c\u671f\u8d27only\u53e3\u5f84\uff0c1986-01\u81f32026-10-06",
+ "n": 19,
+ "events": [
+  {
+   "date": "2007-10-16",
+   "chg_nc_long": 33039,
+   "nc_long": 177201,
+   "nc_net": 62946,
+   "net_oi_pct": 9.3
+  },
+  {
+   "date": "2012-02-28",
+   "chg_nc_long": 41888,
+   "nc_long": 198170,
+   "nc_net": 132097,
+   "net_oi_pct": 18.3
+  },
+  {
+   "date": "2016-03-22",
+   "chg_nc_long": 37702,
+   "nc_long": 237051,
+   "nc_net": 174599,
+   "net_oi_pct": 21.1
+  },
+  {
+   "date": "2016-05-10",
+   "chg_nc_long": 36008,
+   "nc_long": 297398,
+   "nc_net": 231776,
+   "net_oi_pct": 28.8
+  },
+  {
+   "date": "2020-01-14",
+   "chg_nc_long": 39999,
+   "nc_long": 253853,
+   "nc_net": 98296,
+   "net_oi_pct": 9.2
+  },
+  {
+   "date": "2021-01-05",
+   "chg_nc_long": 31862,
+   "nc_long": 330921,
+   "nc_net": 273650,
+   "net_oi_pct": 25.1
+  },
+  {
+   "date": "2021-04-20",
+   "chg_nc_long": 30636,
+   "nc_long": 275744,
+   "nc_net": 229169,
+   "net_oi_pct": 22.6
+  },
+  {
+   "date": "2021-04-27",
+   "chg_nc_long": 35734,
+   "nc_long": 311478,
+   "nc_net": 267768,
+   "net_oi_pct": 26.2
+  },
+  {
+   "date": "2022-03-08",
+   "chg_nc_long": 32692,
+   "nc_long": 213623,
+   "nc_net": 151076,
+   "net_oi_pct": 18.0
+  },
+  {
+   "date": "2022-04-12",
+   "chg_nc_long": 49488,
+   "nc_long": 292621,
+   "nc_net": 239864,
+   "net_oi_pct": 26.2
+  },
+  {
+   "date": "2022-11-15",
+   "chg_nc_long": 56997,
+   "nc_long": 251928,
+   "nc_net": 156194,
+   "net_oi_pct": 18.8
+  },
+  {
+   "date": "2022-11-22",
+   "chg_nc_long": 35268,
+   "nc_long": 287196,
+   "nc_net": 187962,
+   "net_oi_pct": 21.5
+  },
+  {
+   "date": "2022-12-20",
+   "chg_nc_long": 38063,
+   "nc_long": 326115,
+   "nc_net": 233166,
+   "net_oi_pct": 25.3
+  },
+  {
+   "date": "2023-01-31",
+   "chg_nc_long": 63568,
+   "nc_long": 333718,
+   "nc_net": 247072,
+   "net_oi_pct": 24.8
+  },
+  {
+   "date": "2024-10-01",
+   "chg_nc_long": 33125,
+   "nc_long": 230838,
+   "nc_net": 129461,
+   "net_oi_pct": 16.3
+  },
+  {
+   "date": "2026-08-11",
+   "chg_nc_long": 39080,
+   "nc_long": 317380,
+   "nc_net": 27387,
+   "net_oi_pct": 2.5
+  },
+  {
+   "date": "2026-08-25",
+   "chg_nc_long": 39922,
+   "nc_long": 364998,
+   "nc_net": 110134,
+   "net_oi_pct": 8.8
+  },
+  {
+   "date": "2026-09-01",
+   "chg_nc_long": 31663,
+   "nc_long": 396661,
+   "nc_net": 131525,
+   "net_oi_pct": 10.3
+  },
+  {
+   "date": "2026-10-06",
+   "chg_nc_long": 45360,
+   "nc_long": 406286,
+   "nc_net": 217275,
+   "net_oi_pct": 18.7
+  }
+ ]
+}
