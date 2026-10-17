@@ -12,3 +12,11 @@ data/fundamentals/cotton/raw/psd_alldata.csv
 Temp/
 data/_tmp/
 data/cftc/latest/fresh_tmp/
+data/cftc/fresh_tmp/
+
+# Cookie 凭据与无效响应（调试残留，不入库）
+data/price/spx/_stooq_cookies.txt
+data/price/spx/_spx_stooq_daily.csv
+data/price/sugar/_yj.txt
+data/price/sugar/_spx_yahoo.json
+_spx_nasdaq.json
